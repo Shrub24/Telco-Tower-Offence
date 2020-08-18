@@ -51,9 +51,6 @@ func _process(delta):
 	if not zooming:
 		zoom_factor = 1.0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 func _input(event):
 	#process zooming input
 	if event.is_action_pressed("view_zoom_in"):
