@@ -19,7 +19,7 @@ var costs = 0
 
 
 func calculate_costs():
-	return 1
+	costs = advertising
 	
 func get_advertising_mod():
 	return (base_advertising_mod * ISP.modifiers["advertising"]) ^ advertising

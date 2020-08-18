@@ -8,15 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "Tower",
+"language": "GDScript",
+"path": "res://Scripts/Tower/Tower.gd"
+} ]
 _global_script_class_icons={
-
+"Tower": ""
 }
 
 [application]
 
 config/name="unijam2020"
-run/main_scene="res://Scene.tscn"
+run/main_scene="res://Scenes/Scene.tscn"
 config/icon="res://icon.png"
 
 [input]
