@@ -3,14 +3,15 @@ class_name Tower
 
 export var speeds = [1, 2, 3, 4]
 export var bandwidths = [10000, 100000, 1000000, 5000000]
-export var ranges = [0, 1, 2, 3]
+export var reach = [0, 1, 2, 3]
 export var operation_cost = 100000
 export var price = 1000
 export var upgrade_cost = [100, 200, 400, 800]
+export var tower_type = "3g"
 
 var speed_level = 0
 var bandwidth_level = 0
-var range_level = 0
+var reach_level = 0
 var max_level = 3
 
 
@@ -25,12 +26,12 @@ func upgrade_tower(type):
 	elif type == "bandwidths":
 		if bandwidth_level < max_level:
 			bandwidth_level += 1
-	elif type == "range":
-		if range_level < max_level:
-			range_level += 1
+	elif type == "reach":
+		if reach_level < max_level:
+			reach_level += 1
 
 func get_range():
-	return ranges[range_level]
+	return reach[reach_level]
 		
 func get_bandwidth():
 	return bandwidths[bandwidth_level]

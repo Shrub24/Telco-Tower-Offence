@@ -8,13 +8,12 @@ export var player_ISP_options = {"Who-awei":0, "Xiaomy":1, "Alidada":2, "Knockia
 export(Array, PackedScene) var player_ISP_scenes
 export(PackedScene) var player_scene
 export(Array, PackedScene) var AI_scenes
-export(Array, PackedScene) var AI_ISP_scenes
 var ISPs = []
 var AIs = []
 
 var player
 
-signal init_town_ISPs(ISPs, player)
+signal init_town_ISPs(AIs, player)
 signal turn_update()
 
 # Called when the node enters the scene tree for the first time.
@@ -30,9 +29,8 @@ func choose_player_ISP(ISP):
 func game_start():
 	for scene in AI_scenes:
 		var instance = scene.instance()
-		ISPs.append(instance.init_ISP())
 		AIs.append(instance)
-	emit_signal("init_town_ISPs")
+	emit_signal("init_town_ISPs", AIs, player)
 
 func next_turn():
 	for AI in AIs:
