@@ -11,7 +11,7 @@ var connections = 0
 var brand_loyalty = 0.0
 var brand_image = 0.0
 var tower
-var neighbouring_towers = []
+var aoe_neighbouring_towers = {}
 var price = 0.0
 var delta_price = 0.0
 export(float) var base_advertising_mod
@@ -72,8 +72,10 @@ func get_connections_delta(ISPTownInfos):
 		other.delta_connections -= considering_switch
 
 func calculate_aoe_image():
-	#todo
-	return 0		
+	var aoe_image = 0
+	for aoe_image_val in aoe_neighbouring_towers.values():
+		aoe_image += aoe_image_val
+	return aoe_image
 
 func update_brand_image():
 	var share = float(connections)/town_population
@@ -149,8 +151,18 @@ func build_tower(new_tower):
 func update():
 	pass
 # Called when the node enters the scene tree for the first time.
+	
+# add neighbouring towers and aoe to aoe_neighbouring_towers
+func update_aoe_image(aoe_tower, aoe_image):
+	if aoe_tower != tower:
+		if !aoe_neighbouring_towers.has(aoe_tower) or aoe_image > aoe_neighbouring_towers[aoe_tower]:
+			aoe_neighbouring_towers[aoe_tower] = aoe_image
+	
+func remove_aoe_image(aoe_tower):
+	if aoe_neighbouring_towers.has(aoe_tower):
+		aoe_neighbouring_towers.erase(aoe_tower)
 
-
+# todo affluency?
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

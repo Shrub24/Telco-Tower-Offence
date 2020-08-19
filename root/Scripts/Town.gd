@@ -10,6 +10,9 @@ var ISPs = {}
 var Player_ISPTownInfo
 export(float) var affluency
 
+#put this somewhere else?
+const base_aoe_image = 10
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -69,6 +72,19 @@ func create_ISPTownInfo(ISP):
 	var ISPTownInfo = ISPTownInfo_scene.instance()
 	ISPTownInfo.initialise(ISP, self)
 	return ISPTownInfo
+	
+func propagate_brand_image(tower, ISP, dist):
+	ISPs[ISP].update_aoe_image(tower, base_aoe_image * (dist + 1))
+	if dist > 0:
+		# neighbours list of town objects
+		for town in neighbours:
+			town.propagate_brand_image(tower, ISP, dist - 1)
+			
+func depropagate_brand_image(tower, ISP, dist):
+	ISPs[ISP].remove_aoe_image(tower)
+	if dist > 0:
+		for town in neighbours:
+			town.depropagate_brand_image(tower, ISP, dist - 1)
 	
 
 	

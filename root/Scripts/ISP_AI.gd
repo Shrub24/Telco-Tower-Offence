@@ -50,7 +50,7 @@ func set_town_prices(action_budget, revenue, operational_costs):
 	var town_inc = 0
 	for town in ISP.towns:
 		var town_info = town.ISPs[ISP]
-		price_changes[town] = get_price_change(town_info.delta_connections)
+		price_changes[town] = get_price_change(float(town_info.delta_connections)/town.population)
 	
 	var deficit = (revenue - operational_costs - action_budget - saftey_range) * -1
 	if deficit > 0:
@@ -76,7 +76,7 @@ func do_actions(action_budget):
 		var town = town_deltas[1]
 		var town_info = town.ISPs[ISP]
 		# todo use town get share isp function
-		var share = float(town_info.connections)/town.populations
+		var share = float(town_info.connections)/town.population
 		
 		# todo check current adverising
 		# decisions of actions

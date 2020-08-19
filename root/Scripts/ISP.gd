@@ -121,6 +121,18 @@ func get_cyber_attack_target(town):
 
 func get_max_advertising(town):
 	return town.get_ISP_town_info(self).advertising_max
+	
+#todo update when tower destroyed
+# called when tower is build in town or range is upgraded - searches neighbours and calls update aoe image
+func propagate_brand_image(town, tower):
+	#scaling loyalty with remaining range
+	var tower_range = tower.get_range()
+	town.propagate_brand_image(tower, self, tower_range)
+	
+func depropagate_brand_image(town, tower):
+	var tower_range = tower.get_range()
+	town.depropagate_brand_image(tower, self, tower_range)
+	
 
 
 
