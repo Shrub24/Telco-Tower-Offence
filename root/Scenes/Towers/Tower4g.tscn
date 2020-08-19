@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Tower/Tower.gd" type="Script" id=1]
+
+[node name="Tower4g" type="Node"]
+script = ExtResource( 1 )
+speeds = [ 10, 20, 40, 80 ]
+bandwidths = [ 100000, 200000, 400000, 800000 ]
+operation_cost = 5000
+price = 50000
+upgrade_cost = [ 25000, 50000, 100000, 200000 ]
