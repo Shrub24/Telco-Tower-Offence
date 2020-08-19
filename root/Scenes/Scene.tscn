@@ -31,3 +31,5 @@ script = ExtResource( 5 )
 
 [node name="Town" parent="." instance=ExtResource( 3 )]
 position = Vector2( 171.244, 112.096 )
+
+[node name="UI Controller" type="Node" parent="."]

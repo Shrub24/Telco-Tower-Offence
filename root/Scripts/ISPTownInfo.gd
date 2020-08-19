@@ -19,12 +19,15 @@ var advertising = 0.0
 export(float) var base_cyber_attack_mod
 var cyber_attack_mod = 0.0
 var cyber_attack = 0.0
+var max_advertising = 5
+var max_cyber_attack = 1
 var ISP
 var costs = 0
 var shop
 export var loyalty_scale_factor = 1
 export var tower_max_speed = 5000
 var town_population = 0
+var cyber_attack_target
 
 func _ready():
 	shop = load("res://Resources//Shop.tres")
@@ -75,7 +78,7 @@ func calculate_aoe_image():
 func update_brand_image():
 	var share = float(connections)/town_population
 	var aoe_image = calculate_aoe_image()
-	brand_image = float(share)/100 + ((1 - float(share)/100) * get_advertising_mod()) * (1 - get_cyber_attack_mod()) + aoe_image
+	brand_image = float(share)/100 + ((1 - float(share)/100) * get_advertising_mod()) * cyber_attack_mod + aoe_image
 	brand_image = clamp(brand_image, 0.0, 1.0)
 
 func update_brand_loyalty():
@@ -106,6 +109,9 @@ func calculate_costs():
 func get_advertising_mod():
 	return (base_advertising_mod * ISP.modifiers["advertising"]) * advertising
 
+func get_advertising():
+	return advertising
+
 func update_advertising(amount):
 	advertising = amount
 	return [advertising, get_advertising_mod() * 100]
@@ -119,6 +125,8 @@ func do_cyber_attack(mod):
 		return true
 	return false
 
+func get_cyber_attack():
+	return cyber_attack_target
 
 	
 func cancel_cyber_attack():
@@ -135,8 +143,8 @@ func update_delta_price(amount):
 func upgrade_tower():
 	pass
 
-func set_tower():
-	pass
+func build_tower(new_tower):
+	tower = new_tower
 
 func update():
 	pass

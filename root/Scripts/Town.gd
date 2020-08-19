@@ -40,8 +40,22 @@ func get_ISP_town_info(ISP):
 		if ISP == Player_ISPTownInfo.ISP:
 			return Player_ISPTownInfo
 	return false
+	
+func get_ISP_shares():
+	var ISP_shares = {}
+	for ISP in get_ISPs():
+		var share = get_share(ISP)
+		if share:
+			ISP_shares[ISP] = get_share(ISP)
 		
-		
+	return ISP_shares
+
+func get_ISPs():
+	var ISP_list = ISPs.keys()
+	if Player_ISPTownInfo:
+		ISP_list.append(Player_ISPTownInfo.ISP)
+	return ISP_list
+
 func get_share(ISP):
 	return float(ISPs[ISP].connections)/population
 	
