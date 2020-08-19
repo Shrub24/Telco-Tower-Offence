@@ -24,6 +24,10 @@ config/name="Telco: Tower Offence"
 run/main_scene="res://Scenes/Scene.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/fullscreen=true
+
 [input]
 
 ui_left={
