@@ -20,8 +20,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="unijam2020"
-run/main_scene="res://Scenes/Scene.tscn"
+config/name="Telco: Tower Offence"
+run/main_scene="res://Scene.tscn"
 config/icon="res://icon.png"
 
 [input]
