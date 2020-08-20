@@ -4,27 +4,28 @@ extends Node
 export(String) var ISP_name
 export(Color) var colour
 
-var shop
+onready var shop = load("res://Resources//Shop.tres")
 export var modifiers = {"advertising":1.0, "cyber_attack_offense":1.0, "cyber_attack_defense":1.0, "brand_loyalty":1.0, "brand_image":1.0, "price":1.0}
 export var money = 0
 var towns = []
-var connections = 0
 var reserved_money = 0
 export var money_round = 0.5
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$"../GameController".connect("turn_update", self, "turn_update")
-	shop = load("res://Resources//Shop.tres")
+var connections = 0
 	
-func turn_update():
-	pass
+func update_turn():
+	money -= reserved_money
+	reserved_money = 0
+	for town in towns:
+		money += town.get_ISP_town_info(self).get_income()
 
 func spend_money(amount):
 	if money - reserved_money >= amount:
 		money -= amount
 		return true
 	return false
+
+func force_reserve_money(amount):
+	reserved_money += amount
 
 func reserve_money(amount):
 	if money - reserved_money >= amount:
@@ -43,6 +44,11 @@ func get_available_money():
 
 func get_reserved_money():
 	return reserved_money
+	
+func update_connections():
+	for town in towns:
+		connections += town.get_ISP_town_info(self).connections
+	return connections
 
 func add_town(town):
 	if !towns.has(town):
@@ -50,7 +56,10 @@ func add_town(town):
 	
 func change_price(town, amount):
 	amount = stepify(amount, 0.5)
-	return town.ISPs[self].update_delta_price(amount)
+	return town.get_ISP_town_info(self).update_delta_price(amount)
+	
+func get_price(town):
+	return town.get_ISP_town_info(self).get_delta_price()
 	
 func get_tower(type):
 	if type == "3g":
@@ -68,12 +77,11 @@ func get_town_tower(town):
 
 func build_tower(town, type):
 	var temp_tower = get_tower(type)
-	town.get_ISP_town_info(self).build_tower(temp_tower)
-	
+	town.build_tower(self, temp_tower)
+
 func upgrade_tower(town, type):
-	var tower = get_town_tower(town)
-	tower.upgrade_tower(type)
-	
+	town.upgrade_tower(self, town, type)
+
 func get_tower_upgrade_level(town, type):
 	var tower = get_town_tower(town)
 	if type == "speed":
@@ -121,9 +129,10 @@ func get_cyber_attack_target(town):
 
 func get_max_advertising(town):
 	return town.get_ISP_town_info(self).advertising_max
+	
+func get_operation_cost(town):
+	town.get_ISP_town_info(self).tower.operation_cost
 
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func get_total_operation_cost():
+	for town in towns:
+		get_operation_cost(town)

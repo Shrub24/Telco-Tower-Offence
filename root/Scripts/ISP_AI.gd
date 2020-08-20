@@ -2,16 +2,14 @@ extends Node
 
 # scale greedy factor by size of ISP 
 export (float) var greedy_factor = 0.0
-export (PackedScene) var ISP_scene
-var ISP
-var shop = load("res://Resources//Shop.tres")
+onready var ISP = $"ISP"
+onready var shop = load("res://Resources//Shop.tres")
 
 const max_price_change = 3
 const jerk_factor = 3
 
 const advertising_offset = 1000
 const advertising_proportion = 4
-
 const advertising_share_proportion = 30
 
 # scale saftey range buy current $$
@@ -24,7 +22,6 @@ var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#move to init if doesn't work
-	ISP = ISP_scene.init()
 	rng.randomize()
 
 func update_choices():
@@ -108,7 +105,6 @@ func do_advertising(action_budget, town):
 		return amt * price
 	else:
 		return false
-	
 
 func do_tower_upgrade(action_budget, town):
 	var bandwidth_used = town.ISPs[ISP].get_bandwidth_used
