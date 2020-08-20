@@ -156,11 +156,11 @@ func select():
 
 
 func _on_Collider_mouse_entered():
-	emit_signal("town_mouse_entered")
+	border.modulate.a = selected_opacity
 
 
 func _on_Collider_mouse_exited():
-	emit_signal("town_mouse_exited")
+		border.modulate.a = unselected_opacity
 
 func _on_Collider_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("ui_click"):
