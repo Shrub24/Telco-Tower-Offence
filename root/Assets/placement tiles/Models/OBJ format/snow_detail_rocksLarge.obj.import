@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/snow_detail_rocksLarge.obj-057a821b0b684dac220d9e73af20801b.mesh"
+
+[deps]
+
+files=[ "res://.import/snow_detail_rocksLarge.obj-057a821b0b684dac220d9e73af20801b.mesh" ]
+
+source_file="res://Assets/placement tiles/Models/OBJ format/snow_detail_rocksLarge.obj"
+dest_files=[ "res://.import/snow_detail_rocksLarge.obj-057a821b0b684dac220d9e73af20801b.mesh", "res://.import/snow_detail_rocksLarge.obj-057a821b0b684dac220d9e73af20801b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

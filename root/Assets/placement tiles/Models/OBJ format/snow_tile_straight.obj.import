@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/snow_tile_straight.obj-dbefc6a4b3ab54f4a1d74bf4fbdef301.mesh"
+
+[deps]
+
+files=[ "res://.import/snow_tile_straight.obj-dbefc6a4b3ab54f4a1d74bf4fbdef301.mesh" ]
+
+source_file="res://Assets/placement tiles/Models/OBJ format/snow_tile_straight.obj"
+dest_files=[ "res://.import/snow_tile_straight.obj-dbefc6a4b3ab54f4a1d74bf4fbdef301.mesh", "res://.import/snow_tile_straight.obj-dbefc6a4b3ab54f4a1d74bf4fbdef301.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

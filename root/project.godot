@@ -8,15 +8,38 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "Tower",
+"language": "GDScript",
+"path": "res://Scripts/Tower/Tower.gd"
+}, {
+"base": "Polygon2D",
+"class": "Town",
+"language": "GDScript",
+"path": "res://Scripts/Town.gd"
+}, {
+"base": "Polygon2D",
+"class": "abstract_bordered_polygon_2d",
+"language": "GDScript",
+"path": "res://Assets/bordered-polygon-2d/abstract_bordered_polygon_2d.gd"
+}, {
+"base": "",
+"class": "bordered_polygon_2d",
+"language": "GDScript",
+"path": "res://Assets/bordered-polygon-2d/bordered_polygon_2d.gd"
+} ]
 _global_script_class_icons={
-
+"Tower": "",
+"Town": "",
+"abstract_bordered_polygon_2d": "",
+"bordered_polygon_2d": ""
 }
 
 [application]
 
-config/name="unijam2020"
-run/main_scene="res://Scene.tscn"
+config/name="Telco: Tower Offence"
+run/main_scene="res://Scenes/Scene.tscn"
 config/icon="res://icon.png"
 
 [input]
@@ -57,6 +80,11 @@ view_zoom_in={
 view_zoom_out={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":5,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+ui_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 

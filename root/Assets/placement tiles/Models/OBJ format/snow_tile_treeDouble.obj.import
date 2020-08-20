@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/snow_tile_treeDouble.obj-628ce9e2380bf6f5f5e1429ff381d2f9.mesh"
+
+[deps]
+
+files=[ "res://.import/snow_tile_treeDouble.obj-628ce9e2380bf6f5f5e1429ff381d2f9.mesh" ]
+
+source_file="res://Assets/placement tiles/Models/OBJ format/snow_tile_treeDouble.obj"
+dest_files=[ "res://.import/snow_tile_treeDouble.obj-628ce9e2380bf6f5f5e1429ff381d2f9.mesh", "res://.import/snow_tile_treeDouble.obj-628ce9e2380bf6f5f5e1429ff381d2f9.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

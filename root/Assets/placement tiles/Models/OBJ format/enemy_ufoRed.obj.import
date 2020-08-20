@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/enemy_ufoRed.obj-b0c84c5a91b31874dd6a27c3e6e0ee81.mesh"
+
+[deps]
+
+files=[ "res://.import/enemy_ufoRed.obj-b0c84c5a91b31874dd6a27c3e6e0ee81.mesh" ]
+
+source_file="res://Assets/placement tiles/Models/OBJ format/enemy_ufoRed.obj"
+dest_files=[ "res://.import/enemy_ufoRed.obj-b0c84c5a91b31874dd6a27c3e6e0ee81.mesh", "res://.import/enemy_ufoRed.obj-b0c84c5a91b31874dd6a27c3e6e0ee81.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

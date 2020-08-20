@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/detail_rocks.obj-a4bfcc7a8e6a8fb6a257373102fa5cdd.mesh"
+
+[deps]
+
+files=[ "res://.import/detail_rocks.obj-a4bfcc7a8e6a8fb6a257373102fa5cdd.mesh" ]
+
+source_file="res://Assets/placement tiles/Models/OBJ format/detail_rocks.obj"
+dest_files=[ "res://.import/detail_rocks.obj-a4bfcc7a8e6a8fb6a257373102fa5cdd.mesh", "res://.import/detail_rocks.obj-a4bfcc7a8e6a8fb6a257373102fa5cdd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

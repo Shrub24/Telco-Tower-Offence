@@ -1,0 +1,29 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Shop.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Towers/Tower3g.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Towers/Tower4g.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Towers/Tower5g.tscn" type="PackedScene" id=4]
+
+[resource]
+script = ExtResource( 1 )
+tower_3g = ExtResource( 2 )
+tower_4g = ExtResource( 3 )
+tower_5g = ExtResource( 4 )
+advertising_cost = 1
+cyber_attack_cost = 1
+tower_3g_upgrade_costs = {
+"bandwidth": [ 1, 2, 3, 4 ],
+"reach": [ 1, 2, 3, 4 ],
+"speed": [ 1, 2, 3, 4 ]
+}
+tower_4g_upgrade_costs = {
+"bandwidth": [ 1, 2, 3, 4 ],
+"reach": [ 1, 2, 3, 4 ],
+"speed": [ 1, 2, 3, 4 ]
+}
+tower_5g_upgrade_costs = {
+"bandwidth": [ 1, 2, 3, 4 ],
+"reach": [ 1, 2, 3, 4 ],
+"speed": [ 1, 2, 3, 4 ]
+}

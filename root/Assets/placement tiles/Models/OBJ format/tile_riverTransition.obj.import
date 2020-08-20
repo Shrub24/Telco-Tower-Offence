@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tile_riverTransition.obj-094318d86f0ed7c2eea513dfb67b5fab.mesh"
+
+[deps]
+
+files=[ "res://.import/tile_riverTransition.obj-094318d86f0ed7c2eea513dfb67b5fab.mesh" ]
+
+source_file="res://Assets/placement tiles/Models/OBJ format/tile_riverTransition.obj"
+dest_files=[ "res://.import/tile_riverTransition.obj-094318d86f0ed7c2eea513dfb67b5fab.mesh", "res://.import/tile_riverTransition.obj-094318d86f0ed7c2eea513dfb67b5fab.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
