@@ -69,10 +69,13 @@ func get_town_tower(town):
 func build_tower(town, type):
 	var temp_tower = get_tower(type)
 	town.get_ISP_town_info(self).build_tower(temp_tower)
+	propagate_brand_image(town, temp_tower)
 	
 func upgrade_tower(town, type):
 	var tower = get_town_tower(town)
 	tower.upgrade_tower(type)
+	if type == "reach":
+		propagate_brand_image(town, tower)
 	
 func get_tower_upgrade_level(town, type):
 	var tower = get_town_tower(town)
