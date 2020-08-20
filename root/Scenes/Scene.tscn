@@ -20,9 +20,8 @@ __meta__ = {
 player_ISP_scenes = [ ExtResource( 6 ) ]
 player = NodePath("Player")
 map = NodePath("map")
+UI_controller = NodePath("UI Layer")
 AI_paths = [ NodePath("ElonMaskAI"), NodePath("PanCoganAI"), NodePath("TedstraAI"), NodePath("VodacloneAI") ]
-
-[node name="Camera" parent="." instance=ExtResource( 2 )]
 
 [node name="ElonMaskAI" parent="." instance=ExtResource( 1 )]
 
@@ -37,5 +36,7 @@ position = Vector2( 1.5874, 1.5874 )
 
 [node name="Player" type="Node" parent="."]
 script = ExtResource( 10 )
+
+[node name="Camera" parent="." instance=ExtResource( 2 )]
 
 [node name="UI Layer" parent="." instance=ExtResource( 4 )]

@@ -8,6 +8,7 @@ export(Dictionary) var sprites = {"Tedstra": {"3g": 0, "4g": 0, "5g": 0}, "Vodac
 export var starter_town = false
 export(String) var town_name
 export(PackedScene) var ISPTownInfo_scene
+var neighbour_towns = []
 var ISPs = {}
 var Player_ISPTownInfo
 export(float) var affluency
@@ -15,6 +16,7 @@ export(NodePath) onready var bound
 export(NodePath) onready var border
 export var unselected_opacity = 0.4
 export var selected_opacity = 3
+var selected = false
 
 signal clicked(town)
 signal town_mouse_entered
@@ -114,14 +116,14 @@ func propagate_brand_image(tower, ISP, dist):
 	ISPs[ISP].update_aoe_image(tower, base_aoe_image * (dist + 1))
 	if dist > 0:
 		# neighbours list of town objects
-		for town in neighbours:
+		for town in neighbour_towns:
 			town.propagate_brand_image(tower, ISP, dist - 1)
 			
 func depropagate_brand_image(tower, ISP, dist):
 	if ISPs.has(ISP):
 		ISPs[ISP].remove_aoe_image(tower)
 	if dist > 0:
-		for town in neighbours:
+		for town in neighbour_towns:
 			town.depropagate_brand_image(tower, ISP, dist - 1)
 			
 func normalise_affluency_delta():
@@ -156,13 +158,15 @@ func select():
 
 
 func _on_Collider_mouse_entered():
-	border.modulate.a = selected_opacity
-
+	if !selected:
+		border.modulate.a = selected_opacity
 
 func _on_Collider_mouse_exited():
+	if !selected:
 		border.modulate.a = unselected_opacity
 
 func _on_Collider_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("ui_click"):
 		emit_signal("clicked", self)
+		selected = !selected
 

@@ -12,6 +12,7 @@ export(Array, PackedScene) var AI_scenes
 var ISPs = []
 var AIs = []
 export(NodePath) onready var map = get_node(map) if map else null
+export(NodePath) onready var UI_controller = get_node(UI_controller) if UI_controller else null
 var towns = []
 var selected_town
 
@@ -24,11 +25,13 @@ func town_clicked(town):
 	if selected_town == town:
 		town.deselect()
 		selected_town = null
+		UI_controller.hide_town_UI()
 	else:
 		if selected_town:
 			selected_town.deselect()
 		selected_town = town
 		town.select()
+		UI_controller.show_town_UI(town)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -55,6 +58,10 @@ func game_start():
 		
 	for town in towns:
 		town.init_town_ISPs(AIs, player)
+		for neighbour in town.neighbours:
+			for town2 in towns:
+				if town2.town_name in town.neighbours:
+					town.neighbour_towns.append(town2)
 
 func on_NextTurn_button_down():
 	if player.ISP.get_available_money() < 0:
