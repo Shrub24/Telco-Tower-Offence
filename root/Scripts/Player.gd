@@ -10,27 +10,37 @@ var ISP
 var tech_tree_learnt = {"advertising_double": false}
 var techs_remaining = 3
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+signal query_sell_tower(tower_type)
+signal query_change_tower(tower_type)
+signal ui_update_tower(tower_type)
+signal not_enough_money
+signal at_max_level
+signal at_min_level
+signal ui_update_advertising(value)
+signal ui_update_cyber_attack
+signal ui_update_delta_price(price)
+
 
 # todo connect signals to functions
 #todo emit signals
 func _on_TowerBuyButton_buy_tower(town, tower_type):
 	if ISP.get_town_tower(town).tower:
 		if ISP.get_town_tower(town).tower.tower_type == "tower_type":
-			emit_signal("query_sell_tower")
+			emit_signal("query_sell_tower", tower_type)
 		else:
-			emit_signal("query_change_tower")
+			emit_signal("query_change_tower", tower_type)
 	else:
 		var price = ISP.get_tower_price(tower_type)
 		if ISP.spend_money(price):
 			ISP.build_tower(town, tower_type)
-			emit_signal("ui_update_tower", town)
+			emit_signal("ui_update_tower", tower_type)
 		else:
 			emit_signal("not_enough_money")
 
+func _on_TowerSell(town, tower_type):	
+	var price = ISP.get_tower_price(tower_type)
 	
+
 func _on_TowerUpgradeButton_upgrade_tower(town, type):
 	var curr_level = ISP.get_tower_upgrade_level(town, type)
 	var max_level = ISP.get_tower_max_upgrade_level(town)
@@ -76,23 +86,23 @@ func _on_CyberAttack_target(town, target):
 	if !prev_target:
 		if ISP.reserve_money(price):
 			ISP.do_cyber_attack(town, target)
-			emit_signal("ui_target_cyber_attack", target)
+			emit_signal("ui_update_cyber_attack")
 	else:
 		ISP.cancel_cyber_attack(town, prev_target)
-		emit_signal("ui_untarget_cyber_attack", prev_target)
+		emit_signal("ui_update_cyber_attack")
 		if prev_target == target:
 			ISP.unreserve_money(price)
 		else:
 			ISP.do_cyber_attack(town, target)
-			emit_signal("ui_target_cyber_attack", target)
+			emit_signal("ui_update_cyber_attack")
 
-
-# redo based on price ui
 func _on_PriceButtonUp_change_price(town):
 	ISP.change_price(town, 0.5)
+	emit_signal("ui_update_delta_price", ISP.get_delta_price())
 
 func _on_PriceButtonDown_change_price(town):
 	ISP.change_price(town, -0.5)
+	emit_signal("ui_update_delta_price", ISP.get_delta_price())
 
 func _on_TechTreeButton_new_tech(tech):
 	if techs_remaining > 0 and learn_tech(tech):
@@ -113,3 +123,9 @@ func learn_tech(effect):
 	tech_tree_learnt[effect] = true
 	apply_tech_tree(effect)
 	return true
+
+func turn_update():
+	
+	ISP.force_reserve_money(ISP.get_total_operation_cost())
+	emit_signal("update_money", ISP.money, ISP.get_reserved_money())
+	emit_signal("update_connections", ISP.update_connections())

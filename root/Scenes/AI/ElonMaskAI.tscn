@@ -1,8 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/ISP_AI.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Enemy ISPs/ElonMaskISP.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/ISP.tscn" type="PackedScene" id=3]
 
 [node name="ElonMaskAI" type="Node"]
 script = ExtResource( 1 )
-ISP_scene = ExtResource( 2 )
+
+[node name="ISP" parent="." instance=ExtResource( 3 )]
+ISP_name = "ElonMask Co"
