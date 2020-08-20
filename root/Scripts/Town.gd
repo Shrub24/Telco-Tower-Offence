@@ -102,16 +102,6 @@ func update_turn():
 		towninfo.update_turn()
 		if towninfo.tower:
 			no_ISP_pop -= towninfo.update_affluency_conns(affluency_connection_delta[towninfo])
-			
-
-func update_turn():
-	var ISPTownInfos = get_ISPs()
-	for towninfo in ISPTownInfos:
-		towninfo.get_connections_loss(ISPTownInfos, affluency)
-	for towninfo in ISPTownInfos:
-		towninfo.get_connections_delta()
-	for towninfo in ISPTownInfos:
-		towninfo.update_turn()
 
 func create_ISPTownInfo(ISP):
 	var ISPTownInfo = ISPTownInfo_scene.instance()
@@ -154,6 +144,7 @@ func affluency_convert_pos_share_to_pop():
 		var share_delta = affluency_connection_delta[ISP]
 		if share_delta > 0:
 			affluency_connection_delta[ISP] = int(no_ISP_pop * share_delta)
+
 func upgrade_tower(ISP, type):
 	get_ISP_town_info(ISP).upgrade_tower(type)
 
