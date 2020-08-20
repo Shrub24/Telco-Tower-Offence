@@ -32,8 +32,14 @@ var max_affluency_pricing = max_price - 100
 var min_affluency_pricing = min_price + 100
 const affluency_dampening_factor = 1
 
+export var base_starting_price = -5
+export var max_share_factor = 12
+
+var rng = RandomNumberGenerator.new()
+
 func _ready():
 	shop = load("res://Resources/Shop.tres")
+	rng.randomize()
 
 func initialise(new_ISP, town):
 	ISP = new_ISP
@@ -58,8 +64,12 @@ func generate(share, population, affluency):
 	
 	update_brand_image()
 	update_brand_loyalty()
-	price = affluency * share/100 * brand_loyalty
-
+	
+	# initial price for ISPs
+	var affluency_pricing = (float(affluency-min_affluency)/(max_affluency-min_affluency))*(max_price-min_price) + min_price
+	price = base_starting_price + affluency_pricing + (rng.randf_range(0, max_share_factor) * share/100)
+	price = stepify(clamp(price, min_price, max_price), 0.5)
+	
 func get_bandwidth_used():
 	return float(connections)/tower.get_bandwidth()
 	

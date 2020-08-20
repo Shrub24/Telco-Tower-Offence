@@ -25,7 +25,11 @@ var affluency_connection_delta = {}
 
 
 #put this somewhere else?
-const base_aoe_image = 10
+export var base_aoe_image = 10
+
+export var min_no_ISP = 2
+export var max_no_ISP = 10
+var rng = RandomNumberGenerator.new()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -43,6 +47,10 @@ func _ready():
 			max_ISP = ISP
 		elif ashares[ISP] > ashares[max_ISP]:
 			max_ISP = ISP
+			
+	# set initial pop with no ISP
+	rng.randomize()
+	no_ISP_pop = int(rng.randf_range(min_no_ISP, max_no_ISP) * population/100)
 	
 #	border.self_modulate = max_ISP.colour
 
@@ -52,12 +60,12 @@ func init_town_ISPs(AIs, player):
 		var ISP = AI.ISP
 		if shares[ISP.ISP_name]:
 			var ISPTownInfo = create_ISPTownInfo(ISP)
-			ISPTownInfo.generate(shares[ISP.ISP_name], population, affluency)
+			ISPTownInfo.generate(shares[ISP.ISP_name], population - no_ISP_pop, affluency)
 			ISPs[ISP] = ISPTownInfo
 	
 	if starter_town:
 		Player_ISPTownInfo = create_ISPTownInfo(player.ISP)
-		Player_ISPTownInfo.generate_starter(population)
+		Player_ISPTownInfo.generate_starter(population - no_ISP_pop)
 		emit_signal("clicked")
 		
 		
