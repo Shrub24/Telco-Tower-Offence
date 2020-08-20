@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/weapon_ballista.glb-c0a28dd22521529066662845d2c2946c.scn"
+path="res://.import/weapon_ballista.glb-5e5b4228ecc0003b7924b0084a1aacad.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/GLTF format/weapon_ballista.glb"
-dest_files=[ "res://.import/weapon_ballista.glb-c0a28dd22521529066662845d2c2946c.scn" ]
+source_file="res://Assets/placement tiles/Models/GLTF format/weapon_ballista.glb"
+dest_files=[ "res://.import/weapon_ballista.glb-5e5b4228ecc0003b7924b0084a1aacad.scn" ]
 
 [params]
 

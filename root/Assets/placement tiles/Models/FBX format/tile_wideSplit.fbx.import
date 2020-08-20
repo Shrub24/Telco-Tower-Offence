@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_wideSplit.fbx-3f65c1e962d34abe5bcc2d79baba8784.scn"
+path="res://.import/tile_wideSplit.fbx-275f290c62548f368f296b161827c3d8.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/FBX format/tile_wideSplit.fbx"
-dest_files=[ "res://.import/tile_wideSplit.fbx-3f65c1e962d34abe5bcc2d79baba8784.scn" ]
+source_file="res://Assets/placement tiles/Models/FBX format/tile_wideSplit.fbx"
+dest_files=[ "res://.import/tile_wideSplit.fbx-275f290c62548f368f296b161827c3d8.scn" ]
 
 [params]
 

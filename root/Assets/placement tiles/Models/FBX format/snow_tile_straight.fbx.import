@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snow_tile_straight.fbx-9291f2427424c37d1aa975a15399a716.scn"
+path="res://.import/snow_tile_straight.fbx-f4bc933230ffe75d4967d3a8f7692c09.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/FBX format/snow_tile_straight.fbx"
-dest_files=[ "res://.import/snow_tile_straight.fbx-9291f2427424c37d1aa975a15399a716.scn" ]
+source_file="res://Assets/placement tiles/Models/FBX format/snow_tile_straight.fbx"
+dest_files=[ "res://.import/snow_tile_straight.fbx-f4bc933230ffe75d4967d3a8f7692c09.scn" ]
 
 [params]
 

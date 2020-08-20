@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_slope.glb-8603c5e98d4a951ad85c9b23d571cca0.scn"
+path="res://.import/tile_slope.glb-62abf2c4327a64b58b59c777c9914f1d.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/GLTF format/tile_slope.glb"
-dest_files=[ "res://.import/tile_slope.glb-8603c5e98d4a951ad85c9b23d571cca0.scn" ]
+source_file="res://Assets/placement tiles/Models/GLTF format/tile_slope.glb"
+dest_files=[ "res://.import/tile_slope.glb-62abf2c4327a64b58b59c777c9914f1d.scn" ]
 
 [params]
 

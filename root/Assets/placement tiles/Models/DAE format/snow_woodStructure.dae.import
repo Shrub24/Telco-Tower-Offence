@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snow_woodStructure.dae-1000457bc0760073e218706ff44e85b7.scn"
+path="res://.import/snow_woodStructure.dae-782e6051ee5aa5e44996b97873ef5a3a.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/DAE format/snow_woodStructure.dae"
-dest_files=[ "res://.import/snow_woodStructure.dae-1000457bc0760073e218706ff44e85b7.scn" ]
+source_file="res://Assets/placement tiles/Models/DAE format/snow_woodStructure.dae"
+dest_files=[ "res://.import/snow_woodStructure.dae-782e6051ee5aa5e44996b97873ef5a3a.scn" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_endRound.png-3befc4be6451586db99811d7225930aa.stex"
+path="res://.import/tile_endRound.png-2bd73260fabd0e3bb7e04cd4e01f9336.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placement tiles/Side/tile_endRound.png"
-dest_files=[ "res://.import/tile_endRound.png-3befc4be6451586db99811d7225930aa.stex" ]
+source_file="res://Assets/placement tiles/Side/tile_endRound.png"
+dest_files=[ "res://.import/tile_endRound.png-2bd73260fabd0e3bb7e04cd4e01f9336.stex" ]
 
 [params]
 

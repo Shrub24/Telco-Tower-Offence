@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snow_tile_slope.glb-0bbc446d7e37d2822c4e433f5ac9e7a7.scn"
+path="res://.import/snow_tile_slope.glb-c208ef07bea2c5c9beec4d963c99ef28.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/GLTF format/snow_tile_slope.glb"
-dest_files=[ "res://.import/snow_tile_slope.glb-0bbc446d7e37d2822c4e433f5ac9e7a7.scn" ]
+source_file="res://Assets/placement tiles/Models/GLTF format/snow_tile_slope.glb"
+dest_files=[ "res://.import/snow_tile_slope.glb-c208ef07bea2c5c9beec4d963c99ef28.scn" ]
 
 [params]
 

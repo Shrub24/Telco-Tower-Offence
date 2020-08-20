@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snow_tile_spawn.dae-fc4e3c2caf694933170932e5e704c2f5.scn"
+path="res://.import/snow_tile_spawn.dae-715ec942a511af0178ff3c7667bf4386.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/DAE format/snow_tile_spawn.dae"
-dest_files=[ "res://.import/snow_tile_spawn.dae-fc4e3c2caf694933170932e5e704c2f5.scn" ]
+source_file="res://Assets/placement tiles/Models/DAE format/snow_tile_spawn.dae"
+dest_files=[ "res://.import/snow_tile_spawn.dae-715ec942a511af0178ff3c7667bf4386.scn" ]
 
 [params]
 

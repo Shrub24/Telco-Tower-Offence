@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_riverSlopeLarge.fbx-7006035f38441b34be3de69cd9c948fc.scn"
+path="res://.import/tile_riverSlopeLarge.fbx-49a658159ec4ba4e69868ed80d5385c5.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/FBX format/tile_riverSlopeLarge.fbx"
-dest_files=[ "res://.import/tile_riverSlopeLarge.fbx-7006035f38441b34be3de69cd9c948fc.scn" ]
+source_file="res://Assets/placement tiles/Models/FBX format/tile_riverSlopeLarge.fbx"
+dest_files=[ "res://.import/tile_riverSlopeLarge.fbx-49a658159ec4ba4e69868ed80d5385c5.scn" ]
 
 [params]
 

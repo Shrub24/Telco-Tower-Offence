@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_dirtHigh.fbx-8d209eaa05440379bafe5c329742d181.scn"
+path="res://.import/tile_dirtHigh.fbx-27d5992c30801c6adda1f4135a7a3ae1.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/FBX format/tile_dirtHigh.fbx"
-dest_files=[ "res://.import/tile_dirtHigh.fbx-8d209eaa05440379bafe5c329742d181.scn" ]
+source_file="res://Assets/placement tiles/Models/FBX format/tile_dirtHigh.fbx"
+dest_files=[ "res://.import/tile_dirtHigh.fbx-27d5992c30801c6adda1f4135a7a3ae1.scn" ]
 
 [params]
 

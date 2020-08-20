@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_transition.fbx-13085e783dfc6495a9a8fe5b309beb9a.scn"
+path="res://.import/tile_transition.fbx-907a87700e87935b6c0bb68139f08655.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/FBX format/tile_transition.fbx"
-dest_files=[ "res://.import/tile_transition.fbx-13085e783dfc6495a9a8fe5b309beb9a.scn" ]
+source_file="res://Assets/placement tiles/Models/FBX format/tile_transition.fbx"
+dest_files=[ "res://.import/tile_transition.fbx-907a87700e87935b6c0bb68139f08655.scn" ]
 
 [params]
 

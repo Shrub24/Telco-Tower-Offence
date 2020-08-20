@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/towerRound_crystals.fbx-570a5919dbd8247b14f742b3d487897d.scn"
+path="res://.import/towerRound_crystals.fbx-297a48a51fcdd180d4c61619003e05b9.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/FBX format/towerRound_crystals.fbx"
-dest_files=[ "res://.import/towerRound_crystals.fbx-570a5919dbd8247b14f742b3d487897d.scn" ]
+source_file="res://Assets/placement tiles/Models/FBX format/towerRound_crystals.fbx"
+dest_files=[ "res://.import/towerRound_crystals.fbx-297a48a51fcdd180d4c61619003e05b9.scn" ]
 
 [params]
 

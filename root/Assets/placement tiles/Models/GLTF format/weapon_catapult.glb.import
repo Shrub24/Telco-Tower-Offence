@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/weapon_catapult.glb-0104080c8126efcc4577125aa57dacab.scn"
+path="res://.import/weapon_catapult.glb-d8949a134122f8fe9f856e05964905d3.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/GLTF format/weapon_catapult.glb"
-dest_files=[ "res://.import/weapon_catapult.glb-0104080c8126efcc4577125aa57dacab.scn" ]
+source_file="res://Assets/placement tiles/Models/GLTF format/weapon_catapult.glb"
+dest_files=[ "res://.import/weapon_catapult.glb-d8949a134122f8fe9f856e05964905d3.scn" ]
 
 [params]
 

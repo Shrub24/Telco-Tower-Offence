@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snow_tile_riverSlope.dae-17c40089cce4b3abb06f24dfed42e470.scn"
+path="res://.import/snow_tile_riverSlope.dae-4a7e7b3acdf4a658495cbb235f56dce8.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/DAE format/snow_tile_riverSlope.dae"
-dest_files=[ "res://.import/snow_tile_riverSlope.dae-17c40089cce4b3abb06f24dfed42e470.scn" ]
+source_file="res://Assets/placement tiles/Models/DAE format/snow_tile_riverSlope.dae"
+dest_files=[ "res://.import/snow_tile_riverSlope.dae-4a7e7b3acdf4a658495cbb235f56dce8.scn" ]
 
 [params]
 

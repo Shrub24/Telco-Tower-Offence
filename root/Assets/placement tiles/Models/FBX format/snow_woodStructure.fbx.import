@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snow_woodStructure.fbx-1eb9156c996e6f961601eac7bcd5c5bb.scn"
+path="res://.import/snow_woodStructure.fbx-10321b30ce038b4404967b700cd67c2c.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/FBX format/snow_woodStructure.fbx"
-dest_files=[ "res://.import/snow_woodStructure.fbx-1eb9156c996e6f961601eac7bcd5c5bb.scn" ]
+source_file="res://Assets/placement tiles/Models/FBX format/snow_woodStructure.fbx"
+dest_files=[ "res://.import/snow_woodStructure.fbx-10321b30ce038b4404967b700cd67c2c.scn" ]
 
 [params]
 

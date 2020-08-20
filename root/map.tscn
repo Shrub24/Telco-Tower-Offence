@@ -85,7 +85,7 @@ affluency = 90.0
 
 [node name="Riverside" parent="." instance=ExtResource( 4 )]
 position = Vector2( 393.944, 69.6407 )
-polygon = PoolVector2Array( -65.6667, -129.845, -197.143, -67.6649, -134.589, -33.2038, -194.896, -1.73935, -133.84, 30.4742, -259.323, 92.2794, -133.465, 159.703, -67.165, 126.741, -2.36319, 158.954, 190.918, 64.1862, 124.618, 30.0997, 189.42, -1.73935, 124.618, -35.0767, 190.918, -63.5445, 59.0674, -131.343, -1.61401, -97.631 )
+polygon = PoolVector2Array( -65.6667, -129.845, -197.143, -67.6649, -134.589, -33.2038, -194.896, -1.73935, -133.84, 30.4742, -259.323, 92.2794, -133.465, 159.703, -67.165, 126.741, -2.36319, 158.954, 190.918, 64.1862, 124.618, 30.0997, 189.42, -1.73935, 125.798, -34.616, 190.918, -63.5445, 59.0674, -131.343, -1.61401, -97.631 )
 population = 2500000
 neighbours = [ "Berwick", "Villepark", "Jhineral", "Moigic" ]
 shares = {
@@ -127,6 +127,7 @@ affluency = 45.0
 
 [node name="Manndenong Ranges" parent="." instance=ExtResource( 4 )]
 position = Vector2( 8.76032, 779.354 )
+polygon = PoolVector2Array( -706.069, -198.492, -642.501, -231.336, -386.641, -103.141, -320.33, -134.664, -130.045, -39.1473, -63.7449, -70.9863, -2.68886, -38.96, 64.9222, -70.4246, 126.353, -38.5855, 190.031, -70.2372, 255.395, -38.2108, 383.687, -102.451, 446.241, -70.2372, 639.165, -166.759, 701.391, -134.939, 446.832, -2.70996, 382.839, -38.4188, 253.792, 26.2813, 191.567, -6.24554, 63.5804, 59.8688, -64.4059, -6.95276, -129.46, 28.4026, -257.446, -38.4189, -320.025, -5.89203 )
 population = 1200000
 neighbours = [ "Minefool", "Norwood", "Whitesmith", "Desmos", "Kudizio", "Mysteri", "Hidden Plains", "Rocky Pass", "" ]
 shares = {
@@ -140,6 +141,7 @@ affluency = 80.0
 
 [node name="Jhineral" parent="." instance=ExtResource( 4 )]
 position = Vector2( 690.131, 114.875 )
+polygon = PoolVector2Array( 22.5051, -109.542, -42.9023, -78.4296, -105.128, -108.835, -169.631, -78.875, -106.457, -46.6766, -169.573, -15.2122, -105.631, 17.875, -298.633, 114.487, -171.277, 177.791, -41.6731, 113.364, 19.3829, 144.828, 276.717, 17.472 )
 population = 444000
 neighbours = [ "Riverside", "Moigic", "Evergarden", "West Egg" ]
 shares = {
@@ -181,6 +183,7 @@ affluency = 65.0
 
 [node name="Moigic" parent="." instance=ExtResource( 4 )]
 position = Vector2( 253.47, 306.354 )
+polygon = PoolVector2Array( 71.8119, -109.287, -246.027, 50.1623, -182.459, 82.476, -244.438, 113.73, -182.989, 146.573, -52.1453, 81.9462, 9.30359, 114.26, 138.558, 50.1623, 201.596, 81.9462, 329.791, 18.3784 )
 population = 200000
 neighbours = [ "Riverside", "Villepark", "Jhineral", "Minefool", "Whitesmith", "Desmos", "Evergarden", "Kudizio" ]
 shares = {
@@ -194,6 +197,7 @@ affluency = 30.0
 
 [node name="Minefool" parent="." instance=ExtResource( 4 )]
 position = Vector2( 8.04062, 586.402 )
+polygon = PoolVector2Array( 1.12546, -166.175, -192.121, -69.2551, -64.2809, -5.0379, -127.903, 25.8815, -64.2809, 58.5847, -191.526, 122.207, -129.093, 153.721, -63.0917, 120.423, -1.84757, 153.721, 64.748, 122.207, 126.587, 153.127, 191.399, 122.207, 127.181, 90.0986, 192.588, 58.5847, 129.56, 26.4761, 191.399, -5.63251, 126.587, -38.9303, 189.408, -69.4321 )
 population = 80000
 neighbours = [ "Moigic", "Manndenong", "Norwood", "Whitesmith", "Desmos" ]
 shares = {
@@ -207,6 +211,7 @@ affluency = 30.0
 
 [node name="Norwood" parent="." instance=ExtResource( 4 )]
 position = Vector2( -275.564, 566.467 )
+polygon = PoolVector2Array( 28.564, -81.467, 218.064, 15.533, 154.564, 45.533, 218.064, 78.533, 91.064, 142.533, -35.936, 77.533, -100.936, 109.533, -228.936, 45.033, -163.936, 14.533, -229.436, -17.967, -99.436, -81.967, -37.436, -49.967 )
 population = 90000
 neighbours = [ "Minefool", "Manndenong", "Whitesmith" ]
 shares = {
@@ -220,6 +225,7 @@ affluency = 25.0
 
 [node name="West Egg" parent="." instance=ExtResource( 4 )]
 position = Vector2( 980.067, 263.611 )
+polygon = PoolVector2Array( -269.324, -4.15137, 51.1389, -162.419, 241.958, -65.8868, 181.906, -35.5803, 241.396, -3.59015, 50.5778, 92.9416, -12.2802, 61.5126, -76.2605, 92.9416 )
 population = 1500000
 neighbours = [ "Jhineral", "Evergarden", "Valley of Cashes", "Bootarm", "East Egg" ]
 shares = {
@@ -233,6 +239,7 @@ affluency = 90.0
 
 [node name="East Egg" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1356.37, -64.6677 )
+polygon = PoolVector2Array( -390.678, 7.80412, -262.099, -58.8667, -199.397, -26.325, -3.35254, -122.363, 250.632, 6.21671, 186.342, 37.171, 249.044, 68.919, 59.3497, 168.925, -128.757, 70.5064, -195.801, 105.149 )
 population = 1500000
 neighbours = [ "West Egg", "Sonnit", "Juliest", "Verticool", "Machi" ]
 shares = {
@@ -246,6 +253,7 @@ affluency = 90.0
 
 [node name="Whitesmith" parent="." instance=ExtResource( 4 )]
 position = Vector2( -240.401, 417.662 )
+polygon = PoolVector2Array( 119.055, -124.329, -391.43, 130.468, -264.031, 193.722, -200.778, 164.323, -264.922, 129.577, -133.96, 66.3236, -75.1609, 99.2869, -6.56165, 66.3236, 54.0195, 99.2869, 309.707, -29.0025 )
 population = 110000
 neighbours = [ "Norwood", "Manndenong Ranges", "Pogwarts", "Villepark", "Moigic", "Hidden Plains" ]
 shares = {
@@ -259,6 +267,7 @@ affluency = 50.0
 
 [node name="Desmos" parent="." instance=ExtResource( 4 )]
 position = Vector2( 278.689, 533.999 )
+polygon = PoolVector2Array( -206.001, -81.8618, -77.3439, -144.929, 111.858, -49.0668, 50.4724, -17.1127, 176.607, 47.6363, 116.062, 77.0677, 177.448, 108.181, -15.1176, 206.566, -141.252, 140.976, -75.662, 111.544, -138.729, 78.7495, -79.0256, 46.7954, -142.093, 13.1595, -83.2302, -17.9536 )
 population = 100000
 neighbours = [ "Manndenong Ranges", "Minefool", "Moigic", "Kudizio" ]
 shares = {
@@ -272,6 +281,7 @@ affluency = 40.0
 
 [node name="Evergarden" parent="." instance=ExtResource( 4 )]
 position = Vector2( 666.431, 340.011 )
+polygon = PoolVector2Array( -146.633, -47.8682, -17.9754, -110.935, 235.134, 16.8808, 173.749, 47.1531, 235.134, 79.1071, 44.251, 176.651, -210.541, 47.1531, -82.7244, -14.2324 )
 population = 1000000
 neighbours = [ "Jhineral", "West Egg", "Kudizio", "Mysteri", "Moigic", "Bootarm" ]
 shares = {
@@ -285,6 +295,7 @@ affluency = 80.0
 
 [node name="Kudizio" parent="." instance=ExtResource( 4 )]
 position = Vector2( 494.701, 508.565 )
+polygon = PoolVector2Array( -230.868, -87.684, -102.723, -152.424, 153.566, -23.6116, 90.1614, 7.08966, 151.564, 40.4606, 89.494, 71.8294, 152.363, 103.851, -39.1805, 200.068, -102.434, 165.323, -39.1805, 134.142, -97.0889, 102.96, -37.3987, 73.5607, -163.906, 8.52509, -104.216, -22.6564 )
 population = 800000
 neighbours = [ "Manndenong", "Evergarden", "Desmos", "Moigic", "Mysteri" ]
 shares = {
@@ -298,6 +309,7 @@ affluency = 66.0
 
 [node name="Mysteri" parent="." instance=ExtResource( 4 )]
 position = Vector2( 807.666, 572.713 )
+polygon = PoolVector2Array( -97.9366, -55.5298, 33.2432, -121.961, 94.6287, -89.1657, 31.5614, -55.5298, 158.537, 6.69647, 96.3104, 37.8096, 160.219, 71.4455, 31.5614, 137.035, -222.247, 7.47327, -161.141, -23.3948, -221.617, -56.7827, -159.251, -87.0208 )
 population = 80000
 neighbours = [ "Manndenong Ranges", "Kudizio", "Evergarden", "Bootarm", "Xylia" ]
 shares = {
@@ -311,6 +323,7 @@ affluency = 30.0
 
 [node name="Hidden Plains" parent="." instance=ExtResource( 4 )]
 position = Vector2( -641.51, 482.975 )
+polygon = PoolVector2Array( 73.8041, -94.0658, -183.51, 36.2732, -57.3757, 97.6587, 199.098, -29.3167 )
 population = 200000
 neighbours = [ "Manndenong Ranges", "Pogwarts", "Whitesmith", "Rolling Ricks" ]
 town_name = "Hidden Plains"
@@ -318,6 +331,7 @@ affluency = 99.0
 
 [node name="Valley of Cashes" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1314.83, 261.796 )
+polygon = PoolVector2Array( -219.485, 61.0302, -93.2085, -1.26642, -152.138, -34.379, -27.5444, -97.2369, 99.2938, -33.2566, 164.958, -64.6855, 290.673, -1.82764, 36.9971, 130.623, -26.9833, 98.0715, -89.8411, 128.378 )
 population = 1000000
 neighbours = [ "West Egg", "Bootarm", "Keepitat Bay" ]
 shares = {
@@ -331,6 +345,7 @@ affluency = 30.0
 
 [node name="Bootarm" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1014.31, 449.352 )
+polygon = PoolVector2Array( -172.259, -62.1815, -46.3938, -124.407, 15.8316, -92.587, 82.2996, -125.114, 208.872, -60.0601, 144.525, -28.9474, 208.872, 3.57947, 145.232, 35.3993, 209.579, 67.9262, -46.3938, 193.791, -108.619, 160.557, -47.1009, 129.445, -173.673, 67.2191, -112.155, 34.6922, -172.966, 0.751038, -110.033, -29.6545 )
 population = 600000
 neighbours = [ "West Egg", "Valley of Cashes", "Mysteri", "Evergarden", "Xylia", "Zyguard" ]
 shares = {
@@ -344,6 +359,7 @@ affluency = 85.0
 
 [node name="Deltora" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1473.45, -564.578 )
+polygon = PoolVector2Array( -310.545, 25.5165, 74.1213, -166.109, 201.401, -102.47, 137.761, -69.9429, 202.108, -38.8302, 137.761, -5.59619, 265.747, 58.7505, 137.054, 122.39, 72, 88.449, 8.36035, 123.097, -54.5721, 88.449, -118.212, 123.804 )
 population = 10000
 neighbours = [ "Colourful woods", "Old Zealand", "Penguin Harbour", "Waterfront", "Port Buglas", "Milotik" ]
 starter_town = true
@@ -366,6 +382,7 @@ affluency = 95.0
 
 [node name="Rolling Ricks" parent="." instance=ExtResource( 4 )]
 position = Vector2( -763.046, 283.32 )
+polygon = PoolVector2Array( -128.15, -118.906, -187.84, -85.9426, -126.368, -55.6521, -188.731, -23.5797, -125.477, 6.71085, -189.622, 40.565, 59.8295, 169.745, 195.246, 104.71, 130.211, 71.7465, 189.901, 40.565, 129.32, 7.60175, 190.792, -22.6888, -0.751587, -118.015, -60.4418, -87.7244 )
 population = 85000
 neighbours = [ "Hidden Plains", "Bob", "Pogwarts", "Stardream", "Covidian Forest" ]
 shares = {
@@ -379,6 +396,7 @@ affluency = 50.0
 
 [node name="Waterfront" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1537.76, -254.032 )
+polygon = PoolVector2Array( 136.965, -93.2522, 72.6184, -62.1395, 8.97876, -93.9593, -55.3679, -61.4324, -118.3, -93.2522, -246.287, -29.6126, 8.27173, 99.0809, 74.0326, 65.8468, 137.672, 98.3737, 197.776, 65.8468, 134.137, 35.4412, 199.898, 2.91431, 134.844, -31.7339, 194.948, -60.7253 )
 population = 400000
 neighbours = [ "Penguin Harbour", "Calissim", "Forgeville", "Deltora", "Forgeville North" ]
 shares = {
@@ -406,6 +424,7 @@ affluency = 65.0
 
 [node name="Pallet City" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1195.73, 16.4728 )
+polygon = PoolVector2Array( -11.875, -138.061, -76.1648, -107.9, -14.2561, -76.1524, -76.1648, -43.6106, -13.4624, -10.2752, -268.24, 115.923, -77.7522, 211.167, 51.621, 147.671, -12.6687, 115.923, 177.819, 20.6791, 114.323, -11.8626, 176.232, -46.7854 )
 population = 300000
 neighbours = [ "Penguin Harbour", "Stardream", "Calissim", "Covidian Forest", "Forgeville", "Lakeside Reserve" ]
 shares = {
@@ -419,6 +438,7 @@ affluency = 60.0
 
 [node name="Calissim" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1403.45, -73.7237 )
+polygon = PoolVector2Array( 61.9272, -114.292, 193.107, -48.7021, 132.563, -18.4299, 193.107, 14.3651, 131.722, 45.4783, 192.266, 79.1141, 3.9054, 174.135, -186.978, 76.5914, -123.07, 44.6374, -189.501, 14.3651, -64.2073, -50.3839, -123.07, -80.6562, -60.0027, -113.451, 2.22363, -82.338 )
 population = 200000
 neighbours = [ "Penguin Harbour", "Pallet City", "Waterfront", "Forgeville" ]
 shares = {
@@ -432,6 +452,7 @@ affluency = 55.0
 
 [node name="Covidian Forest" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1057.97, 173.735 )
+polygon = PoolVector2Array( -214.005, 53.013, 109.031, 214.928, 169.352, 183.18, 105.856, 149.844, 166.971, 116.509, 106.65, 86.3484, 165.384, 53.8067, 107.444, 22.8524, 167.765, -10.483, -22.723, -105.727, -149.715, -42.231, -86.219, -10.483 )
 population = 70000
 neighbours = [ "Pallet City", "Stardream", "Rolling Ricks", "Lakeside Reserve", "Celeste" ]
 shares = {
@@ -445,6 +466,7 @@ affluency = 40.0
 
 [node name="Forgeville" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1657.82, -24.3069 )
+polygon = PoolVector2Array( 64.9003, -161.813, -127.969, -67.3625, -62.8855, -34.0271, -126.381, -3.07274, -63.6792, 29.469, -125.588, 61.217, 127.566, 188.497, 256.82, 123.87, 68.236, 27.4585, 128.625, -3.26588, 66.1171, -33.9903, 187.955, -99.677 )
 population = 70000
 neighbours = [ "Calissim", "Pallet City", "Waterfront", "Forgeville North", "Teel Estate", "Lakeside Reserve" ]
 shares = {
@@ -458,6 +480,7 @@ affluency = 50.0
 
 [node name="Old Zealand" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1754.05, -714.771 )
+polygon = PoolVector2Array( -287.559, 47.339, -27.7224, -80.4773, 96.7302, -17.41, 227.069, -82.1591, 351.522, -16.5691, 32.8221, 143.201, -159.743, 47.339, -223.651, 80.1339 )
 population = 7000
 neighbours = [ "Colourful Woods", "Deltora", "Port Buglas" ]
 town_name = "Old Zealand"
@@ -465,6 +488,7 @@ affluency = 15.0
 
 [node name="Colourful Woods" parent="." instance=ExtResource( 4 )]
 position = Vector2( -2002.81, -553.509 )
+polygon = PoolVector2Array( -293.921, 143.19, -167.111, 206.595, 26.0601, 110.509, 90.5601, 144.009, 156.06, 113.509, 218.56, 144.509, 345.81, 79.759, 218.56, 14.259, 281.56, -17.741, 89.0601, -113.741, 25.8101, -81.241, -39.1899, -114.741, 26.5601, -146.241, -36.4399, -178.241, -103.19, -145.741, -164.44, -177.991, -229.94, -145.991, -170.69, -112.991, -229.44, -82.991, -169.44, -48.491, -230.44, -17.991, -171.44, 15.509, -229.44, 46.009, -171.44, 79.509 )
 population = 6000
 neighbours = [ "Deltora", "Old Zealand", "Diamond Pier", "Forgeville North" ]
 town_name = "Colourful Woods"
@@ -472,6 +496,7 @@ affluency = 10.0
 
 [node name="Facade Coast" parent="." instance=ExtResource( 4 )]
 position = Vector2( -2192.89, 58.3444 )
+polygon = PoolVector2Array( -102.903, -213.321, 23.6689, -150.388, -39.2634, -118.568, 344.696, 74.4717, 280.349, 106.291, 216.709, 73.7646, 87.3088, 140.233, -166.542, 10.8321, -104.909, -20.9468, -167.647, -53.6504, -106.912, -85.3528, -166.98, -116.722, -105.577, -148.424, -167.314, -181.128 )
 population = 25000
 neighbours = [ "Diamond Pier", "Teel Estate", "Coastal Connect" ]
 shares = {
@@ -485,6 +510,7 @@ affluency = 35.0
 
 [node name="Diamond Pier" parent="." instance=ExtResource( 4 )]
 position = Vector2( -2138.61, -199.908 )
+polygon = PoolVector2Array( -222.543, 13.1942, -29.5894, -83.3363, 33.219, -51.264, 98.7002, -83.3363, 160.618, -51.264, 96.9183, -19.6371, 289.798, 77.0254, 161.509, 140.725, 34.5557, 76.1345, -30.9253, 107.761 )
 population = 20000
 neighbours = [ "Colourful Woods", "Forgeville North", "Teel Estate", "Facade Coast" ]
 shares = {
@@ -498,6 +524,7 @@ affluency = 30.0
 
 [node name="Forgeville North" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1841.45, -239.894 )
+polygon = PoolVector2Array( -199.282, -44.5806, -69.5104, -107.577, -8.0177, -75.6197, 57.0179, -107.247, 120.272, -75.8424, 57.2406, -43.7701, 248.529, 53.2341, 55.5552, 148.01, -200.289, 20.1728, -136.105, -11.447 )
 population = 50000
 neighbours = [ "Forgeville", "Waterfront", "Diamond Pier", "Colourful Woods", "Teel Estate" ]
 shares = {
@@ -511,6 +538,7 @@ affluency = 45.0
 
 [node name="Teel Estate" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1913.13, -2.03845 )
+polygon = PoolVector2Array( -64.0498, -56.7205, 64.6073, -120.629, 191.583, -56.7205, 128.095, -25.1869, 191.472, 7.06979, 129.221, 38.6858, 191.465, 70.4697, 64.9912, 134.7, -319.021, -58.0758, -190.735, -121.401 )
 population = 80000
 neighbours = [ "Forgeville North", "Forgeville", "Diamond Pier", "Facade Coast" ]
 town_name = "Teel Estate"
@@ -518,6 +546,7 @@ affluency = 60.0
 
 [node name="Coastal Connect" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1815, 277.656 )
+polygon = PoolVector2Array( -33.4077, -145.345, 94.2723, -80.523, 33.9401, -47.691, 159.094, 15.7281, 97.6396, 48.2795, 158.533, 79.4278, 98.4816, 112.26, 157.13, 142.847, -34.2495, 239.379, -97.6686, 206.827, -35.0913, 175.959, -98.5098, 143.127, -35.0906, 112.54, -97.3867, 78.5858, -35.3704, 47.4376, -161.928, -16.5428, -101.486, -48.0543, -225.53, -112.882, -161.637, -145.622, -97.1489, -112.684 )
 population = 950000
 neighbours = [ "Facade Coast", "Dar Mac" ]
 shares = {
@@ -531,6 +560,7 @@ affluency = 80.0
 
 [node name="Lakeside Reserve" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1406.58, 300.534 )
+polygon = PoolVector2Array( -57.7291, -168.477, 198.247, -40.043, 69.2185, 23.5796, 133.138, 56.2827, 5.89331, 119.608, 70.1107, 152.014, 5.89355, 183.825, -185.866, 87.4995, -122.838, 56.2828, -186.163, 23.8769, -59.5127, -38.8539, -122.243, -71.8544, -58.6206, -103.666, -121.649, -136.072 )
 population = 90000
 neighbours = [ "Pallet City", "Forgeville", "Covidian Forest", "DarMac", "Ardan", "Celeste" ]
 shares = {
@@ -544,6 +574,7 @@ affluency = 50.0
 
 [node name="Sholto Farm" parent="." instance=ExtResource( 4 )]
 position = Vector2( 128.508, 1393.96 )
+polygon = PoolVector2Array( -377.457, -12.2494, -121.247, -141.853, 5.36014, -75.9274, 71.2857, -108.89, 263.069, -13.7477, 7.60764, 115.107, -246.355, -10.751, -312.281, 22.9609 )
 population = 7000
 neighbours = [ "Edrington", "Foggy Plains" ]
 starter_town = true
@@ -552,6 +583,7 @@ affluency = 25.0
 
 [node name="Edrington" parent="." instance=ExtResource( 4 )]
 position = Vector2( -297.882, 1218.85 )
+polygon = PoolVector2Array( -78.0709, -158.98, 304.315, 33.1578, 47.9212, 163.56, -207.213, 33.7878, -144.217, 2.9198, -270.839, -62.5962 )
 population = 10000
 neighbours = [ "Sholto Farms", "Rocky Pass" ]
 shares = {
@@ -565,6 +597,7 @@ affluency = 15.0
 
 [node name="Foggy Plains" parent="." instance=ExtResource( 4 )]
 position = Vector2( 452.261, 1220.4 )
+polygon = PoolVector2Array( -252.33, 63.8636, -60.8221, 159.618, 259.198, -0.392334, 131.946, -64.6484, 195.572, -96.1464, 2.8038, -191.271, -62.0821, -159.772, 0.91391, -127.644, -188.704, -31.2605, -127.382, 0.671265 )
 population = 6000
 neighbours = [ "Sholto Farms", "Benrino", "Foresty Pass" ]
 shares = {
@@ -578,6 +611,7 @@ affluency = 20.0
 
 [node name="Rocky Valley" parent="." instance=ExtResource( 4 )]
 position = Vector2( -592.705, 933.532 )
+polygon = PoolVector2Array( -232.434, 31.6754, 216.184, -192.844, 280.513, -159.629, 89.2088, -65.4482, 216.605, 0.141724, 153.117, 30.414, 217.415, 63.4525, 152.844, 95.5804, 215.629, 126.469, 84.2718, 192.347, 24.149, 159.408, -40.3392, 193.537, -168.125, 126.866, -104.862, 95.5078 )
 population = 12000
 neighbours = [ "Manndeong Ranges", "Edrington", "Sworarton" ]
 shares = {
@@ -591,6 +625,7 @@ affluency = 25.0
 
 [node name="Foresty Pass" parent="." instance=ExtResource( 4 )]
 position = Vector2( 572.229, 1043.39 )
+polygon = PoolVector2Array( 75.6761, 80.769, 267.733, -14.9622, 203.219, -47.3682, 139.001, -14.9623, 12.3508, -79.1794, -52.461, -46.7735, -177.328, -109.504, -51.8665, -173.722, -244.815, -270.642, -309.627, -238.533, -184.463, -174.019, -308.735, -111.288 )
 population = 11000
 neighbours = [ "Foggy Plains", "Manndenong Ranges", "Benrino", "Nichidai" ]
 shares = {
@@ -604,6 +639,7 @@ affluency = 23.0
 
 [node name="DarMac" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1601.36, 476.523 )
+polygon = PoolVector2Array( 9.00671, -87.702, 199.874, 7.73187, 136.549, 39.5432, 200.171, 71.6517, 72.9264, 137.95, -55.118, 71.5931, -118.408, 106.608, -247.645, 40.8983 )
 population = 120000
 neighbours = [ "Coastal Connect", "Lakeside Reserve", "Ardan" ]
 shares = {
@@ -617,6 +653,7 @@ affluency = 55.0
 
 [node name="Vox" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1037.63, 657.782 )
+polygon = PoolVector2Array( -171.278, -12.9293, 21.809, -108.546, 213.307, -12.6644, 150.82, 19.2252, 213.346, 51.0212, -107.731, 211.03, -171.207, 178.513, -108.203, 147.4, -235.514, 82.8416, -105.806, 18.7233 )
 population = 50000
 neighbours = [ "Sworarton", "Ardan", "Celeste" ]
 shares = {
@@ -630,6 +667,7 @@ affluency = 40.0
 
 [node name="Celeste" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1145.25, 424.986 )
+polygon = PoolVector2Array( -255, -4.48599, 63.5129, 155.387, 257.573, 60.5395, 192.827, 27.5221, 257.25, -3.48599, -63.0381, -164.723, -190.253, -101.296, -129.009, -68.593 )
 population = 55000
 neighbours = [ "Ardan", "Vox", "Lakeside Reserve", "Covidian Reserve" ]
 shares = {
@@ -643,6 +681,7 @@ affluency = 40.0
 
 [node name="Ardan" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1304.49, 576.489 )
+polygon = PoolVector2Array( -31.8698, -123.956, 222.976, 4.88306, 95.0811, 67.6506, 160.68, 99.2704, -32.0872, 197.672, -160.232, 132.098, -33.5886, 69.0263, -160.398, 4.95398, -96.545, -28.2534, -160.021, -60.5811 )
 population = 60000
 neighbours = [ "Vox", "Celeste", "DarMac", "Lakeside Reserve" ]
 shares = {
@@ -656,6 +695,7 @@ affluency = 40.0
 
 [node name="Sworarton" parent="." instance=ExtResource( 4 )]
 position = Vector2( -860.399, 804.54 )
+polygon = PoolVector2Array( -285.074, 64.2871, 36.8113, -95.6265, 227.779, -0.0656738, 291.687, -32.4402, 355.175, -0.486084, 34.7933, 160.546, -27.4331, 128.171, -91.433, 162.941 )
 population = 15000
 neighbours = [ "Vox", "Rocky Valley" ]
 shares = {
@@ -669,6 +709,7 @@ affluency = 28.0
 
 [node name="Benrino" parent="." instance=ExtResource( 4 )]
 position = Vector2( 847.45, 1124.62 )
+polygon = PoolVector2Array( -262.358, 30.674, -71.793, 127.548, 249.233, -31.9048, 119.126, -96.2515, 56.1934, -64.0781, -7.79974, -96.605 )
 population = 120000
 neighbours = [ "Foggy Plains", "Foresty Pass", "Nichidai", "Lankyair" ]
 shares = {
@@ -682,6 +723,7 @@ affluency = 60.0
 
 [node name="Nichidai" parent="." instance=ExtResource( 4 )]
 position = Vector2( 900.537, 905.843 )
+polygon = PoolVector2Array( -252.225, 90.3239, -189.579, 122.383, -125.04, 90.1138, 2.7464, 154.575, 130.891, 90.6693, 66.9857, 58.4661, 130.336, 26.7386, 66.4883, -5.5387, 130.744, -37.4998, 2.9624, -101.52, 67.2024, -133.359, 3.14972, -165.573, -125.143, -101.333, -62.3335, -68.8297, -124.747, -37.3279, -61.7437, -4.76422 )
 population = 20000
 neighbours = [ "Benrino", "Foresty Pass", "Lankyair", "Xylia" ]
 shares = {
@@ -695,6 +737,7 @@ affluency = 24.0
 
 [node name="Lankyair" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1152.45, 918.206 )
+polygon = PoolVector2Array( -183.811, 45.9775, 7.07446, -50.0603, -56.8185, -81.8083, 7.47119, -113.556, -57.2153, -146.098, 8.26489, -177.449, 134.463, -113.16, 70.5704, -81.8084, 135.257, -49.2667, 72.1578, -17.5186, 135.654, 16.2137, 8.26489, 78.9161, 70.9673, 110.664, -56.0249, 174.16, -185.001, 110.267, -120.711, 78.1224 )
 population = 40000
 neighbours = [ "Nichidai", "Benrino", "Xylia", "Zyguard" ]
 shares = {
@@ -708,6 +751,7 @@ affluency = 30.0
 
 [node name="Xylia" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1041.81, 716.843 )
+polygon = PoolVector2Array( -202.31, -6.84302, 55.6899, -136.843, 180.69, -71.843, 54.1899, -7.84302, 117.19, 23.657, 52.6899, 55.657, 117.69, 87.657, 53.1899, 119.657, 116.69, 151.157, -10.3101, 215.657, -72.8101, 182.657, -11.3101, 151.657, -137.31, 87.157, -74.3101, 56.157 )
 population = 60000
 neighbours = [ "Lankyair", "Nichidai", "Bootarm", "Mysteri", "Zyguard" ]
 shares = {
@@ -721,6 +765,7 @@ affluency = 34.0
 
 [node name="Zyguard" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1337.84, 711.641 )
+polygon = PoolVector2Array( -176.125, -162.841, 270.41, 62.109, 143.16, 128.109, 80.41, 94.109, -49.59, 157.109, -114.34, 124.359, -50.34, 93.609, -240.84, -2.89099, -114.59, -67.391, -240.09, -132.391 )
 population = 95000
 neighbours = [ "Lankyair", "Bootarm", "Xylia", "Mousse" ]
 shares = {
@@ -734,6 +779,7 @@ affluency = 38.0
 
 [node name="Mousse" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1537.45, 588.602 )
+polygon = PoolVector2Array( -250.43, 23.0414, 69.467, 184.774, 263.308, 89.637, 69.4672, -8.4726, 134.782, -40.041, 4.80444, -104.843 )
 population = 70000
 neighbours = [ "Matchase", "Zyguard", "Litafier" ]
 shares = {
@@ -746,7 +792,8 @@ town_name = "Mousse"
 affluency = 35.0
 
 [node name="Matchase" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1866.99, 451.701 )
+position = Vector2( 1867.25, 451.701 )
+polygon = PoolVector2Array( -130.752, 193.953, 188.711, 34.0226, 63.2111, -31.1701, 189.287, -93.1487, 128.368, -125.462, 188.893, -157.836, 124.796, -191.209, -3.88953, -127.488, 60.2753, -94.8207, -131.326, 0.768982, -67.703, 32.729, -259.672, 128.347 )
 population = 80000
 neighbours = [ "Mousse", "Litafier" ]
 shares = {
@@ -760,6 +807,7 @@ affluency = 40.0
 
 [node name="Litafier" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1732.89, 373.359 )
+polygon = PoolVector2Array( -61.4594, 174.669, -190.449, 109.777, -125.822, 79.0527, -190.184, 47.004, 130.833, -112.445, 66.7358, -144.759, 131.363, -176.808, 258.499, -113.24, 130.304, -49.4071, 193.744, -16.5784, 2.37317, 79.0527, 64.8934, 110.926 )
 population = 60000
 neighbours = [ "Mousse", "Matchase", "Keepitat Bay" ]
 shares = {
@@ -773,6 +821,7 @@ affluency = 30.0
 
 [node name="Keepitat Bay" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1715.59, 221.912 )
+polygon = PoolVector2Array( -236.144, 103.967, -111.335, 167.661, 147.806, 38.8834, 83.7151, 6.73849, 148.997, -25.8032, 214.08, 6.9369, 341.285, -56.1381, 276.011, -89.5607, 212.091, -57.7494, 148.374, -89.5555, 19.285, -25.287, -43.715, -57.412, -172.936, 6.2807, -109.633, 37.7452 )
 population = 50000
 neighbours = [ "Valley of Cashes", "Litafier", "Currentsea", "" ]
 shares = {
@@ -786,6 +835,7 @@ affluency = 27.0
 
 [node name="Port Buglas" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1073.17, -835.505 )
+polygon = PoolVector2Array( -71.7369, -151.992, 184.289, -24.3335, 120.342, 7.9942, 184.525, 40.3218, 120.342, 71.9415, 184.401, 104.286, 56.3208, 168.017, 120.74, 200.108, 56.5568, 231.964, -71.5741, 168.017, -8.09863, 136.161, -71.5743, 103.597, -7.15491, 72.2136, -135.05, 8.03021, -70.866, -23.8256, -135.521, -56.1532, -72.0459, -87.773, -135.521, -120.573 )
 population = 25000
 neighbours = [ "Deltora ", "Old Zealand", "Mechania", "Milotik", "Krul" ]
 shares = {
@@ -799,6 +849,7 @@ affluency = 32.0
 
 [node name="Milotik" parent="." instance=ExtResource( 4 )]
 position = Vector2( -908.131, -539.156 )
+polygon = PoolVector2Array( -44.7031, -96.6816, 211.577, 31.8805, 147.387, 63.3134, 274.867, 127.623, 212.815, 162.586, 85.091, 97.5423, 20.0476, 129.985, -172.405, 31.7113, -109.619, 0.156006, -236.869, -64.344, -171.869, -95.594, -108.869, -64.094 )
 population = 800000
 neighbours = [ "Deltora", "Mechania", "Port Buglas", "Noctopol", "Odun Bayside" ]
 shares = {
@@ -812,6 +863,7 @@ affluency = 65.0
 
 [node name="Mechania" parent="." instance=ExtResource( 4 )]
 position = Vector2( -836.636, -745.493 )
+polygon = PoolVector2Array( -179.553, 78.4576, 11.9902, 173.784, 140.28, 110.53, 75.244, 77.1214, 140.725, 45.9399, 75.6895, 12.9767, 141.17, -18.2048, 77.4714, -50.7224, 141.171, -82.3493, -50.8178, -178.121, -114.517, -146.048, -52.5996, -113.976, -115.408, -82.3492, -51.2637, -50.2769, -114.518, -18.2046, -52.6001, 13.8677 )
 population = 1250000
 neighbours = [ "Port Buglas", "Milotik", "Krul", "Crystall", "Noctopol" ]
 shares = {
@@ -825,6 +877,7 @@ affluency = 82.0
 
 [node name="Krul" parent="." instance=ExtResource( 4 )]
 position = Vector2( -867.408, -1000.07 )
+polygon = PoolVector2Array( -276.917, 12.2824, -84.367, -83.0489, -22.0712, -51.9011, 43.528, -83.5208, 234.191, 11.8105, 43.9999, 108.086, -19.9713, 76.2795, -84.8389, 108.558 )
 population = 50000
 neighbours = [ "Mechania", "Port Buglas", "Crystall" ]
 shares = {
@@ -838,6 +891,7 @@ affluency = 32.0
 
 [node name="Crystall" parent="." instance=ExtResource( 4 )]
 position = Vector2( -641.453, -832.45 )
+polygon = PoolVector2Array( -180.993, -59.6097, 9.04645, -155.417, 72.8791, -122.573, 8.78156, -91.0544, 136.182, -26.692, 73.144, 5.0921, 200.544, 68.9247, 8.72229, 165.134, -118.354, 99.6491, -54.2571, 68.7601, -117.36, 36.1519, -54.2443, 4.50024 )
 population = 60000
 neighbours = [ "Mechania", "Krul", "Noctopol", "Runicmelb", "Isotopia" ]
 shares = {
@@ -851,6 +905,7 @@ affluency = 40.0
 
 [node name="Noctopol" parent="." instance=ExtResource( 4 )]
 position = Vector2( -648.569, -599.347 )
+polygon = PoolVector2Array( 143.909, -132.008, 208.256, -100.189, 79.916, -36.549, 144.616, -4.02216, 15.5694, 60.3248, 80.2697, 92.1446, -47.7167, 155.784, -110.649, 123.611, -48.0702, 92.1445, -176.763, 27.7979, -47.0094, -36.1952, -112.063, -69.0757, -46.6558, -100.188, 15.9231, -67.6614 )
 population = 300000
 neighbours = [ "Mechania", "Milotik", "Crystall", "Isotopia", "Wundal", "Odun Bayside" ]
 shares = {
@@ -864,6 +919,7 @@ affluency = 67.0
 
 [node name="Runicmelb" parent="." instance=ExtResource( 4 )]
 position = Vector2( -449.09, -1001.41 )
+polygon = PoolVector2Array( -119.392, 46.223, -182.96, 77.742, -119.922, 110.056, 8.80264, 45.9581, 136.203, 109.526, 264.398, 45.9579, 8.80649, -82.0451, -54.9321, -49.6752, -118.671, -81.7116, -182.743, -50.0092, -119.672, -17.6393, -182.743, 13.0621 )
 population = 1300000
 neighbours = [ "Frostnova", "Crystall", "Isotopia" ]
 shares = {
@@ -876,8 +932,8 @@ town_name = "Runicmelb"
 affluency = 87.0
 
 [node name="Isotopia" parent="." instance=ExtResource( 4 )]
-position = Vector2( -82.5413, -845.993 )
-offset = Vector2( -344.019, 34.2402 )
+position = Vector2( -406.828, -819.611 )
+polygon = PoolVector2Array( -33.9528, -136.541, 93.4467, -72.5604, 29.4663, -41.1314, 221.969, 55.4003, 92.3242, 119.942, 30.0276, 87.9517, -34.514, 119.381, -97.9331, 86.8293, -34.514, 54.8391, -160.791, -8.58002, -99.0556, -40.009, -161.913, -72.5604 )
 population = 900000
 neighbours = [ "Frostnova", "Crystall", "Noctopol", "Runicmelb", "Wundal", "Lampant" ]
 shares = {
@@ -891,6 +947,7 @@ affluency = 85.0
 
 [node name="Wundal" parent="." instance=ExtResource( 4 )]
 position = Vector2( -410.062, -638.135 )
+polygon = PoolVector2Array( -158.113, 2.29181, 33.1025, -93.4829, 161.581, -29.7441, 97.8423, 2.62573, 225.653, 67.0317, 97.8423, 130.437, 33.77, 98.7344, -94.3748, 162.473, -222.519, 99.0682, -93.7076, 34.3282 )
 population = 120000
 neighbours = [ "Noctopol", "Isotopia", "Odun Bayside", "District14", "Lampant" ]
 shares = {
@@ -904,6 +961,7 @@ affluency = 52.0
 
 [node name="Odun Bayside" parent="." instance=ExtResource( 4 )]
 position = Vector2( -391.651, -475.359 )
+polygon = PoolVector2Array( -304.089, 32.1544, -176.69, 100.063, -110.745, 65.5477, 15.6521, 129.497, 80.8693, 97.9413, 206.931, 162.086, 270.185, 128.232, 143.232, 63.6417, 208.713, 31.1239, 15.3882, -63.7567, -112.456, 0.388062, -176.6, -30.7934 )
 population = 40000
 neighbours = [ "Milotik", "Noctopol", "Wundal", "District14", "Phlight" ]
 shares = {
@@ -917,6 +975,7 @@ affluency = 34.0
 
 [node name="Phlight" parent="." instance=ExtResource( 4 )]
 position = Vector2( 175.835, -407.617 )
+polygon = PoolVector2Array( -423.909, -4.13452, -231.586, 95.1442, -168.283, 60.1819, -103.921, 94.6144, -40.0882, 60.1818, 23.4795, 92.4954, -40.0883, 123.485, 87.8649, 189.558, 151.698, 156.185, 88.1298, 124.136, 152.492, 92.087, 215.166, 124.165, 279.512, 92.4333, 215.521, 59.8878, 279.502, 28.3186, 22.8056, -100.344, -168.919, -3.85095, -295.474, -67.9693 )
 population = 10000
 neighbours = [ "Odun Bayside", "District14", "Merlink", "Kingsland", "Earah", "Toxus" ]
 starter_town = true
@@ -925,6 +984,7 @@ affluency = 40.0
 
 [node name="District14" parent="." instance=ExtResource( 4 )]
 position = Vector2( -105, -530 )
+polygon = PoolVector2Array( -142.932, -73.1997, -77.6858, -106.649, 239.094, 54.3889, 112.488, 117.957, -13.5884, 53.8592, -77.1562, 85.1133, -205.983, 22.5302, -79.099, -41.151 )
 population = 60000
 neighbours = [ "Wundal", "Odun Bayside", "Phlight", "Lampant", "Merlink" ]
 shares = {
@@ -938,6 +998,7 @@ affluency = 42.0
 
 [node name="Lampant" parent="." instance=ExtResource( 4 )]
 position = Vector2( -74.7257, -682.741 )
+polygon = PoolVector2Array( -108.411, -80.8741, -237.909, -16.966, -173.58, 14.988, -237.068, 46.9421, -172.74, 79.3167, -107.15, 45.6808, 18.9848, 110.43, 211.13, 15.4084, 146.801, -16.5457, 211.101, -47.9871, 82.4438, -112.736, -45.4681, -48.9633 )
 population = 700000
 neighbours = [ "Frostnova", "Isotopia", "Wundal", "District14", "Merlink" ]
 shares = {
@@ -951,6 +1012,7 @@ affluency = 70.0
 
 [node name="Merlink" parent="." instance=ExtResource( 4 )]
 position = Vector2( 196.178, -563.119 )
+polygon = PoolVector2Array( -60.3323, -104.361, 258.164, 55.5547, 194.91, 87.6271, 259.055, 120.145, 195.356, 151.772, 3.36697, 55.1094, -61.6686, 87.1818, -251.43, -8.58972 )
 population = 80000
 neighbours = [ "District14", "Phlight", "Lampant", "Earah" ]
 shares = {
@@ -964,6 +1026,7 @@ affluency = 45.0
 
 [node name="Frostnova" parent="." instance=ExtResource( 4 )]
 position = Vector2( -132.934, -851.558 )
+polygon = PoolVector2Array( -241.814, -8.52924, 12.6767, 119.905, 267.762, -7.34003, 12.6767, -134.585 )
 population = 3000000
 neighbours = [ "Runicmelb", "Isotopia", "Lampant", "Astarim" ]
 shares = {
@@ -977,6 +1040,7 @@ affluency = 97.0
 
 [node name="Astarim" parent="." instance=ExtResource( 4 )]
 position = Vector2( 172.962, -949.01 )
+polygon = PoolVector2Array( -230.625, -6.70428, -37.131, -102.508, 25.1647, -70.8878, 91.7078, -102.036, 218.187, -38.3241, 90.7639, 24.9155, 154.004, 58.423, 27.9963, 122.606 )
 population = 1800000
 neighbours = [ "Frostnova", "Undercloud" ]
 shares = {
@@ -989,7 +1053,8 @@ town_name = "Astarim"
 affluency = 89.0
 
 [node name="Undercloud" parent="." instance=ExtResource( 4 )]
-position = Vector2( 437.944, -837.95 )
+position = Vector2( 437.812, -837.685 )
+polygon = PoolVector2Array( -46.0659, -149.959, -173.633, -86.0182, -111.582, -53.2603, -173.948, -20.1873, -47.0109, 42.4937, -110.637, 74.9367, 76.1465, 173.211, 208.438, 106.435, 81.1861, 42.4937, 144.916, 10.5512, 81.1985, -21.9126, 145.317, -53.4462 )
 population = 500000
 neighbours = [ "Astarim", "Earah", "Crownslayer" ]
 shares = {
@@ -1002,7 +1067,8 @@ town_name = "Undercloud"
 affluency = 60.0
 
 [node name="Earah" parent="." instance=ExtResource( 4 )]
-position = Vector2( 515.026, -558.65 )
+position = Vector2( 515.026, -558.965 )
+polygon = PoolVector2Array( 68.9662, -140.351, -124.097, -45.5032, -187.516, -77.4933, -252.058, -45.5032, -61.2393, 51.0286, -123.536, 83.58, -60.1169, 116.131, -123.276, 147.275, -59.651, 179.025, 196.869, 51.0922, 132.047, 18.8215, 196.297, -12.5844, 132.109, -44.8762, 196.098, -76.9122 )
 population = 35000
 neighbours = [ "Phlight", "Merlink", "N", "Undercloud", "Toxus", "Crownslayer" ]
 shares = {
@@ -1015,7 +1081,8 @@ town_name = "Earah"
 affluency = 35.0
 
 [node name="Toxus" parent="." instance=ExtResource( 4 )]
-position = Vector2( 582.672, -324.535 )
+position = Vector2( 582.672, -323.59 )
+polygon = PoolVector2Array( 0.907532, -119.169, -190.642, -23.7283, -127.904, 9.30899, -191.977, 40.6777, 127.384, 201.526, 193.458, 169.156, 128.385, 137.12, 193.458, 104.75, 128.385, 72.3801, 193.124, 41.345, 64.1755, -23.3462, 129.08, -54.8179 )
 population = 20000
 neighbours = [ "Phlight", "Earah", "Sonnit", "N" ]
 shares = {
@@ -1028,7 +1095,8 @@ town_name = "Toxus"
 affluency = 30.0
 
 [node name="N" parent="." instance=ExtResource( 4 )]
-position = Vector2( 791.821, -445.776 )
+position = Vector2( 791.821, -446.248 )
+polygon = PoolVector2Array( -144.321, -93.849, -15.821, -157.724, 175.512, -61.8185, 111.272, -29.9795, 239.565, 34.4478, 175.138, 66.0995, 239.378, 98.5004, 175.325, 130.152, 112.771, 97.9385, -16.6457, 162.553, -144.751, 97.7513, -79.9492, 66.2869, -207.867, 1.85971, -79.949, -61.6311 )
 population = 990000
 neighbours = [ "Earah", "Toxus", "Crownslayer", "Hailstorm", "Sonnit", "Stillspeare", "Promeo" ]
 shares = {
@@ -1042,6 +1110,7 @@ affluency = 70.0
 
 [node name="Crownslayer" parent="." instance=ExtResource( 4 )]
 position = Vector2( 771.888, -744.682 )
+polygon = PoolVector2Array( -60.0452, -146.859, 195.574, -19.2261, 131.934, 12.9473, 195.574, 45.4742, 131.934, 76.9405, 196.281, 108.76, 68.6485, 173.107, 3.94818, 140.934, -60.6309, 173.061, -124.592, 141.065, -60.388, 108.932, -188.388, 45.182, -125.263, 13.057, -252.505, -50.7274, -188.998, -82.6356, -252.455, -115.353, -188.334, -146.782, -124.354, -114.792 )
 population = 88000
 neighbours = [ "N", "Undercloud", "Earah", "Hailstorm" ]
 shares = {
@@ -1055,6 +1124,7 @@ affluency = 48.0
 
 [node name="Hailstorm" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1038.78, -664.841 )
+polygon = PoolVector2Array( -71.1433, -162.1, -135.063, -130.586, -71.4406, -99.6669, -134.469, -66.6664, -72.0353, -34.855, -134.171, -3.0437, -69.9542, 29.0649, -198.091, 92.6876, -71.738, 156.31, 184.536, 29.6596, 120.616, -2.4491, 185.131, -34.2603 )
 population = 188000
 neighbours = [ "N", "Crownslayer", "Stillspeare" ]
 shares = {
@@ -1068,6 +1138,7 @@ affluency = 58.0
 
 [node name="Sonnit" parent="." instance=ExtResource( 4 )]
 position = Vector2( 893.551, -207.719 )
+polygon = PoolVector2Array( 11.1523, -140.074, -181.755, -44.5572, -117.328, -11.7817, -181.755, 20.2446, -117.515, 52.0836, -182.878, 84.8591, -117.515, 119.32, -53.6493, 84.2972, 72.0696, 150.686, 200.912, 84.1149, 137.759, 52.1444, 201.542, 20.0165, 137.759, -12.1115, 201.857, -43.6095 )
 population = 70000
 neighbours = [ "N", "Toxus", "Promeo", "Juliest", "East Egg" ]
 shares = {
@@ -1081,6 +1152,7 @@ affluency = 40.0
 
 [node name="Stillspeare" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1220.75, -592.318 )
+polygon = PoolVector2Array( 3.49988, -106.648, 259.553, 21.1686, 130.475, 84.6563, 68.6694, 52.2817, -189.065, 180.939, -316.461, 116.61, 2.23853, -42.7396, -60.8635, -74.8165 )
 population = 490000
 neighbours = [ "N", "Hailstorm", "Promeo", "Dawnset" ]
 shares = {
@@ -1094,6 +1166,7 @@ affluency = 60.0
 
 [node name="Promeo" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1154.22, -370.554 )
+polygon = PoolVector2Array( 70.0652, -136.668, -186.736, -9.49213, -123.133, 22.9677, -186.444, 54.6232, -59.0349, 119.037, 69.9299, 54.9731, 197.066, 118.806, 324.996, 54.9731, 132.968, -41.1731, 197.065, -72.4272 )
 population = 100000
 neighbours = [ "N", "Sonnit", "Stillspeare", "Juliest", "Dawnset", "Verticool" ]
 shares = {
@@ -1106,6 +1179,7 @@ town_name = "Promeo"
 
 [node name="Juliest" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1173.22, -218.722 )
+polygon = PoolVector2Array( 51.5447, -96.3334, 304.756, 30.8022, 242.778, 62.5861, 179.686, 31.2603, -15.6016, 126.699, -140.964, 63.0733, -77.9529, 30.9417, -141.453, -1.01494 )
 population = 100000
 neighbours = [ "Sonnit", "Promeo", "Verticool", "East Egg" ]
 shares = {
@@ -1118,6 +1192,7 @@ town_name = "Juliest"
 
 [node name="Dawnset" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1517, -404.741 )
+polygon = PoolVector2Array( -100.118, -134.749, -166.045, -102.676, -228.407, -135.194, -292.552, -102.676, -165.599, -38.9772, -228.853, -7.35031, 25.9438, 120.939, 219.269, 25.613 )
 population = 70000
 neighbours = [ "Stillspeare", "Promeo", "Verticool", "Qwercian" ]
 shares = {
@@ -1131,6 +1206,7 @@ affluency = 40.0
 
 [node name="Verticool" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1567.83, -219.41 )
+polygon = PoolVector2Array( -24.5059, -64.4719, -87.7596, -96.0988, -216.495, -32.3995, -90.4324, 30.8543, -151.459, 62.9266, 39.6385, 159.589, 296.218, 31.2997, 37.8569, -95.6533 )
 population = 1100000
 neighbours = [ "Promeo", "Juliest", "Dawnset", "East Egg", "Machi", "Qwercian" ]
 shares = {
@@ -1143,7 +1219,8 @@ town_name = "Verticool"
 affluency = 78.0
 
 [node name="Machi" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1831, -190.37 )
+position = Vector2( 1880.35, -199.289 )
+polygon = PoolVector2Array( -16.3372, -116.256, -145.164, -51.9998, -15.3922, 11.6263, -336.357, 171.951, -209.31, 236.754, -16.337, 139.823, -81.1035, 107.347, 111.398, 11.7891, 46.3979, -19.9609, 110.957, -52.4319 )
 population = 13000
 neighbours = [ "Currentsea", "Verticool", "East Egg", "Qwercian", "Primoden" ]
 shares = {
@@ -1157,6 +1234,7 @@ affluency = 27.0
 
 [node name="Currentsea" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1988.94, -82 )
+polygon = PoolVector2Array( -251.44, 86.5, -126.44, 23, -188.94, -10.5, 67.0601, -138, 195.06, -72, 130.06, -41.5, 195.56, -9, -61.9399, 120.5, -124.94, 87, -188.94, 122 )
 population = 25000
 neighbours = [ "Machi", "Primoden", "Keepitat Bay" ]
 shares = {
@@ -1170,6 +1248,7 @@ affluency = 40.0
 
 [node name="Qwercian" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1807.17, -417.947 )
+polygon = PoolVector2Array( -7.01648, -121.257, 247.775, 6.55881, -71.3451, 166.329, -199.582, 102.421, -70.0836, 38.5129, -198.741, -26.2361 )
 population = 10000
 neighbours = [ "Dawnset", "Verticool", "Machi", "Primoden", "Smorkin" ]
 shares = {
@@ -1183,6 +1262,7 @@ affluency = 25.0
 
 [node name="Primoden" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2082.21, -300.832 )
+polygon = PoolVector2Array( -26.6277, -110.004, -216.633, -14.8459, -91.4786, 49.1343, -153.775, 81.6857, -90.3562, 113.676, -26.376, 80.5632, 102.146, 146.227, 230.107, 81.1245, 165.004, 49.1342, 228.423, 17.1441 )
 population = 6000
 neighbours = [ "Currentsea", "Machi", "Qwercian", "Smorkin", "Kyanim" ]
 shares = {
@@ -1196,6 +1276,7 @@ affluency = 22.0
 
 [node name="Lost Passage" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1848.04, -734.61 )
+polygon = PoolVector2Array( -239.94, -91.8484, -175.684, -123.976, 271.588, 99.0296, 202.292, 133.047 )
 population = 1
 neighbours = [ "Wiami Escape" ]
 town_name = "Lost Forest"
@@ -1203,6 +1284,7 @@ affluency = 1.0
 
 [node name="Smorkin" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2069.39, -528.231 )
+polygon = PoolVector2Array( -206.105, 20.6191, 113.303, 180.355, 179.021, 148.52, 50.4988, 84.5401, 242.44, -11.4304, 49.9382, -106.84 )
 population = 250000
 neighbours = [ "Qwercian", "Primoden", "Lost Passage", "Kyanim" ]
 shares = {
@@ -1216,6 +1298,7 @@ affluency = 60.0
 
 [node name="Kyanim" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2396.11, -396.019 )
+polygon = PoolVector2Array( -83.6101, -143.981, -275.61, -48.481, -147.61, 16.519, -212.61, 48.019, -85.1101, 112.519, -147.11, 144.019, -84.1101, 174.519, 236.39, 17.519 )
 population = 6000
 neighbours = [ "Primoden", "Smorkin" ]
 starter_town = true
@@ -1224,6 +1307,7 @@ affluency = 20.0
 
 [node name="Wiami Escape" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1544.89, -941.57 )
+polygon = PoolVector2Array( -257.362, 18.1893, -0.02771, -109.916, 255.059, 18.5639, -1.90063, 148.917 )
 population = 20000000
 neighbours = [ "Lost Passage" ]
 shares = {

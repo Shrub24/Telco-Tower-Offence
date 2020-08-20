@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemy_ufoGreenWeapon_S.png-2a1b344ec48d55ca264b3b14d8036adc.stex"
+path="res://.import/enemy_ufoGreenWeapon_S.png-00d8413c1e0fe6c47b642c669d5e43af.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placement tiles/Isometric/enemy_ufoGreenWeapon_S.png"
-dest_files=[ "res://.import/enemy_ufoGreenWeapon_S.png-2a1b344ec48d55ca264b3b14d8036adc.stex" ]
+source_file="res://Assets/placement tiles/Isometric/enemy_ufoGreenWeapon_S.png"
+dest_files=[ "res://.import/enemy_ufoGreenWeapon_S.png-00d8413c1e0fe6c47b642c669d5e43af.stex" ]
 
 [params]
 

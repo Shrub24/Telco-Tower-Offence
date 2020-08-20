@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_riverTransition_S.png-891f31ff99cec5191112317e0032cce7.stex"
+path="res://.import/tile_riverTransition_S.png-3d86c9c7e7e2a49571250f4372aeaf69.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placement tiles/Isometric/tile_riverTransition_S.png"
-dest_files=[ "res://.import/tile_riverTransition_S.png-891f31ff99cec5191112317e0032cce7.stex" ]
+source_file="res://Assets/placement tiles/Isometric/tile_riverTransition_S.png"
+dest_files=[ "res://.import/tile_riverTransition_S.png-3d86c9c7e7e2a49571250f4372aeaf69.stex" ]
 
 [params]
 

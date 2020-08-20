@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/weapon_ballista_S.png-0478499150ac14a41e7bf80e32ec64d1.stex"
+path="res://.import/weapon_ballista_S.png-cbe333fd3af79d592f08059e44b39fc3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placement tiles/Isometric/weapon_ballista_S.png"
-dest_files=[ "res://.import/weapon_ballista_S.png-0478499150ac14a41e7bf80e32ec64d1.stex" ]
+source_file="res://Assets/placement tiles/Isometric/weapon_ballista_S.png"
+dest_files=[ "res://.import/weapon_ballista_S.png-cbe333fd3af79d592f08059e44b39fc3.stex" ]
 
 [params]
 

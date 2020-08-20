@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/weapon_blaster.glb-786173585e8f644367d09ee44fd9bb91.scn"
+path="res://.import/weapon_blaster.glb-7d06beddae52b12f853d55d203e25790.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/GLTF format/weapon_blaster.glb"
-dest_files=[ "res://.import/weapon_blaster.glb-786173585e8f644367d09ee44fd9bb91.scn" ]
+source_file="res://Assets/placement tiles/Models/GLTF format/weapon_blaster.glb"
+dest_files=[ "res://.import/weapon_blaster.glb-7d06beddae52b12f853d55d203e25790.scn" ]
 
 [params]
 

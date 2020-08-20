@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/snow_tile_slope.obj-5a2764c631f300d21c1ce0f9eeabab4e.mesh"
+path="res://.import/snow_tile_slope.obj-44fce33e59aa8edce1d953d61e8dc9c7.mesh"
 
 [deps]
 
-files=[ "res://.import/snow_tile_slope.obj-5a2764c631f300d21c1ce0f9eeabab4e.mesh" ]
+files=[ "res://.import/snow_tile_slope.obj-44fce33e59aa8edce1d953d61e8dc9c7.mesh" ]
 
-source_file="res://assets/placement tiles/Models/OBJ format/snow_tile_slope.obj"
-dest_files=[ "res://.import/snow_tile_slope.obj-5a2764c631f300d21c1ce0f9eeabab4e.mesh", "res://.import/snow_tile_slope.obj-5a2764c631f300d21c1ce0f9eeabab4e.mesh" ]
+source_file="res://Assets/placement tiles/Models/OBJ format/snow_tile_slope.obj"
+dest_files=[ "res://.import/snow_tile_slope.obj-44fce33e59aa8edce1d953d61e8dc9c7.mesh", "res://.import/snow_tile_slope.obj-44fce33e59aa8edce1d953d61e8dc9c7.mesh" ]
 
 [params]
 

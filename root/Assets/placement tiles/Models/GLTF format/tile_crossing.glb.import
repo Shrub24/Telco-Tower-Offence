@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_crossing.glb-df90cfd5f340093617319a806f5b6a1f.scn"
+path="res://.import/tile_crossing.glb-d73393852a6004a08cdb730f756ab7be.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/GLTF format/tile_crossing.glb"
-dest_files=[ "res://.import/tile_crossing.glb-df90cfd5f340093617319a806f5b6a1f.scn" ]
+source_file="res://Assets/placement tiles/Models/GLTF format/tile_crossing.glb"
+dest_files=[ "res://.import/tile_crossing.glb-d73393852a6004a08cdb730f756ab7be.scn" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_straightHillLarge.png-4b8cb4eaed999a89e967123398d07de3.stex"
+path="res://.import/tile_straightHillLarge.png-57c24662d792d957cb288d0125b2f39b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placement tiles/Side/tile_straightHillLarge.png"
-dest_files=[ "res://.import/tile_straightHillLarge.png-4b8cb4eaed999a89e967123398d07de3.stex" ]
+source_file="res://Assets/placement tiles/Side/tile_straightHillLarge.png"
+dest_files=[ "res://.import/tile_straightHillLarge.png-57c24662d792d957cb288d0125b2f39b.stex" ]
 
 [params]
 

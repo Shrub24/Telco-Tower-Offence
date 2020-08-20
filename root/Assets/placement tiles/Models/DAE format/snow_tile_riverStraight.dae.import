@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snow_tile_riverStraight.dae-6454065bfd8f75c784d124d6954300a1.scn"
+path="res://.import/snow_tile_riverStraight.dae-c9736c9ee5c2910b9fbb4b543c92021b.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/DAE format/snow_tile_riverStraight.dae"
-dest_files=[ "res://.import/snow_tile_riverStraight.dae-6454065bfd8f75c784d124d6954300a1.scn" ]
+source_file="res://Assets/placement tiles/Models/DAE format/snow_tile_riverStraight.dae"
+dest_files=[ "res://.import/snow_tile_riverStraight.dae-c9736c9ee5c2910b9fbb4b543c92021b.scn" ]
 
 [params]
 

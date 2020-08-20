@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/weapon_blaster.fbx-4d3e0bfe11baa75189fb8d0b2c90b519.scn"
+path="res://.import/weapon_blaster.fbx-f656cac9fae905caf468c7523c88a7d5.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/FBX format/weapon_blaster.fbx"
-dest_files=[ "res://.import/weapon_blaster.fbx-4d3e0bfe11baa75189fb8d0b2c90b519.scn" ]
+source_file="res://Assets/placement tiles/Models/FBX format/weapon_blaster.fbx"
+dest_files=[ "res://.import/weapon_blaster.fbx-f656cac9fae905caf468c7523c88a7d5.scn" ]
 
 [params]
 

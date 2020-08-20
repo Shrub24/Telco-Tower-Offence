@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_riverBridge_N.png-d4180efd7a2497c4a3487d2303cca089.stex"
+path="res://.import/tile_riverBridge_N.png-a361a29274d8b6fc20887d774ee821c5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placement tiles/Isometric/tile_riverBridge_N.png"
-dest_files=[ "res://.import/tile_riverBridge_N.png-d4180efd7a2497c4a3487d2303cca089.stex" ]
+source_file="res://Assets/placement tiles/Isometric/tile_riverBridge_N.png"
+dest_files=[ "res://.import/tile_riverBridge_N.png-a361a29274d8b6fc20887d774ee821c5.stex" ]
 
 [params]
 
