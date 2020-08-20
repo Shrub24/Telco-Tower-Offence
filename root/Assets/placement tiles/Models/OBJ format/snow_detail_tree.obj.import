@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/snow_detail_tree.obj-f5d3cfc88aaf8686d55c23e900fb54ec.mesh"
+path="res://.import/snow_detail_tree.obj-1ff9af2da1b532fbabbe1908cd0705f5.mesh"
 
 [deps]
 
-files=[ "res://.import/snow_detail_tree.obj-f5d3cfc88aaf8686d55c23e900fb54ec.mesh" ]
+files=[ "res://.import/snow_detail_tree.obj-1ff9af2da1b532fbabbe1908cd0705f5.mesh" ]
 
-source_file="res://Assets/placement tiles/Models/OBJ format/snow_detail_tree.obj"
-dest_files=[ "res://.import/snow_detail_tree.obj-f5d3cfc88aaf8686d55c23e900fb54ec.mesh", "res://.import/snow_detail_tree.obj-f5d3cfc88aaf8686d55c23e900fb54ec.mesh" ]
+source_file="res://assets/placement tiles/Models/OBJ format/snow_detail_tree.obj"
+dest_files=[ "res://.import/snow_detail_tree.obj-1ff9af2da1b532fbabbe1908cd0705f5.mesh", "res://.import/snow_detail_tree.obj-1ff9af2da1b532fbabbe1908cd0705f5.mesh" ]
 
 [params]
 

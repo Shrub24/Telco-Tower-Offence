@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/snow_detail_rocksLarge_S.png-1303fb4188698ef981332ffef9dcbea0.stex"
+path="res://.import/snow_detail_rocksLarge_S.png-130ca1064d2e086d9642b3cd982b2f54.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placement tiles/Isometric/snow_detail_rocksLarge_S.png"
-dest_files=[ "res://.import/snow_detail_rocksLarge_S.png-1303fb4188698ef981332ffef9dcbea0.stex" ]
+source_file="res://assets/placement tiles/Isometric/snow_detail_rocksLarge_S.png"
+dest_files=[ "res://.import/snow_detail_rocksLarge_S.png-130ca1064d2e086d9642b3cd982b2f54.stex" ]
 
 [params]
 

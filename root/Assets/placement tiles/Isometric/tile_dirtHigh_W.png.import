@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_dirtHigh_W.png-ff775dc80aa19bc8dca9e0e2a7a8d564.stex"
+path="res://.import/tile_dirtHigh_W.png-3833d3ed17732f057f494c157c4f8e72.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placement tiles/Isometric/tile_dirtHigh_W.png"
-dest_files=[ "res://.import/tile_dirtHigh_W.png-ff775dc80aa19bc8dca9e0e2a7a8d564.stex" ]
+source_file="res://assets/placement tiles/Isometric/tile_dirtHigh_W.png"
+dest_files=[ "res://.import/tile_dirtHigh_W.png-3833d3ed17732f057f494c157c4f8e72.stex" ]
 
 [params]
 

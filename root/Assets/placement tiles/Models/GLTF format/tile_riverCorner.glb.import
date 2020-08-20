@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_riverCorner.glb-5843c1f8fa6bf4b2c3c6ab0c9af20c95.scn"
+path="res://.import/tile_riverCorner.glb-61ac75d3520059261abe821536217da2.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/GLTF format/tile_riverCorner.glb"
-dest_files=[ "res://.import/tile_riverCorner.glb-5843c1f8fa6bf4b2c3c6ab0c9af20c95.scn" ]
+source_file="res://assets/placement tiles/Models/GLTF format/tile_riverCorner.glb"
+dest_files=[ "res://.import/tile_riverCorner.glb-61ac75d3520059261abe821536217da2.scn" ]
 
 [params]
 

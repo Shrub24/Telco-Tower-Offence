@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/woodStructure.fbx-6e419fdd6470338f9d5e8b30cdb1f223.scn"
+path="res://.import/woodStructure.fbx-8f51b47025dc6e86e00f69c8f1b2f0a4.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/FBX format/woodStructure.fbx"
-dest_files=[ "res://.import/woodStructure.fbx-6e419fdd6470338f9d5e8b30cdb1f223.scn" ]
+source_file="res://assets/placement tiles/Models/FBX format/woodStructure.fbx"
+dest_files=[ "res://.import/woodStructure.fbx-8f51b47025dc6e86e00f69c8f1b2f0a4.scn" ]
 
 [params]
 

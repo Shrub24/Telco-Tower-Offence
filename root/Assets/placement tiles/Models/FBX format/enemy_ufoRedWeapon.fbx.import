@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/enemy_ufoRedWeapon.fbx-aa06f7d9f8b816fc35454d544b43cb72.scn"
+path="res://.import/enemy_ufoRedWeapon.fbx-9626df12def9ea2f206e906363fb6511.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/FBX format/enemy_ufoRedWeapon.fbx"
-dest_files=[ "res://.import/enemy_ufoRedWeapon.fbx-aa06f7d9f8b816fc35454d544b43cb72.scn" ]
+source_file="res://assets/placement tiles/Models/FBX format/enemy_ufoRedWeapon.fbx"
+dest_files=[ "res://.import/enemy_ufoRedWeapon.fbx-9626df12def9ea2f206e906363fb6511.scn" ]
 
 [params]
 

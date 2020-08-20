@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snow_tile_riverCorner.fbx-79162de993b35ec9aa701327e01ee312.scn"
+path="res://.import/snow_tile_riverCorner.fbx-d43a6af942c1bcbd55040e2720db81ac.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/FBX format/snow_tile_riverCorner.fbx"
-dest_files=[ "res://.import/snow_tile_riverCorner.fbx-79162de993b35ec9aa701327e01ee312.scn" ]
+source_file="res://assets/placement tiles/Models/FBX format/snow_tile_riverCorner.fbx"
+dest_files=[ "res://.import/snow_tile_riverCorner.fbx-d43a6af942c1bcbd55040e2720db81ac.scn" ]
 
 [params]
 

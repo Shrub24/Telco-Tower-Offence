@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/enemy_ufoGreen.glb-a7c44898aa38f231e249cad90e892982.scn"
+path="res://.import/enemy_ufoGreen.glb-644893b77e97a1ae4b41e5f4996a3ab7.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/GLTF format/enemy_ufoGreen.glb"
-dest_files=[ "res://.import/enemy_ufoGreen.glb-a7c44898aa38f231e249cad90e892982.scn" ]
+source_file="res://assets/placement tiles/Models/GLTF format/enemy_ufoGreen.glb"
+dest_files=[ "res://.import/enemy_ufoGreen.glb-644893b77e97a1ae4b41e5f4996a3ab7.scn" ]
 
 [params]
 

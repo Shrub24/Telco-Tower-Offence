@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_endSpawn_W.png-c333331fc604dec53e811a6f5f84e822.stex"
+path="res://.import/tile_endSpawn_W.png-f25622e316fa396b85a94639c8db84e4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placement tiles/Isometric/tile_endSpawn_W.png"
-dest_files=[ "res://.import/tile_endSpawn_W.png-c333331fc604dec53e811a6f5f84e822.stex" ]
+source_file="res://assets/placement tiles/Isometric/tile_endSpawn_W.png"
+dest_files=[ "res://.import/tile_endSpawn_W.png-f25622e316fa396b85a94639c8db84e4.stex" ]
 
 [params]
 

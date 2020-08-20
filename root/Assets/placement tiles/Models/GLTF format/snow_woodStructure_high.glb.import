@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snow_woodStructure_high.glb-2fcd36cad34a70dff93740b70b554f8f.scn"
+path="res://.import/snow_woodStructure_high.glb-3c76d68d25403983423711f35d5ba93a.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/GLTF format/snow_woodStructure_high.glb"
-dest_files=[ "res://.import/snow_woodStructure_high.glb-2fcd36cad34a70dff93740b70b554f8f.scn" ]
+source_file="res://assets/placement tiles/Models/GLTF format/snow_woodStructure_high.glb"
+dest_files=[ "res://.import/snow_woodStructure_high.glb-3c76d68d25403983423711f35d5ba93a.scn" ]
 
 [params]
 

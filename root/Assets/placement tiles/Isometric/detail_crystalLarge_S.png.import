@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/detail_crystalLarge_S.png-5c79cfd3bdf928eff8ee72066953af73.stex"
+path="res://.import/detail_crystalLarge_S.png-fb683c53d454354ca98e104ee5b344f8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placement tiles/Isometric/detail_crystalLarge_S.png"
-dest_files=[ "res://.import/detail_crystalLarge_S.png-5c79cfd3bdf928eff8ee72066953af73.stex" ]
+source_file="res://assets/placement tiles/Isometric/detail_crystalLarge_S.png"
+dest_files=[ "res://.import/detail_crystalLarge_S.png-fb683c53d454354ca98e104ee5b344f8.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/snow_tile_endRound.png-4207477c43219993ea10a05bf1d3252d.stex"
+path="res://.import/snow_tile_endRound.png-363987bdd51f7639b8393cce4137fe92.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placement tiles/Side/snow_tile_endRound.png"
-dest_files=[ "res://.import/snow_tile_endRound.png-4207477c43219993ea10a05bf1d3252d.stex" ]
+source_file="res://assets/placement tiles/Side/snow_tile_endRound.png"
+dest_files=[ "res://.import/snow_tile_endRound.png-363987bdd51f7639b8393cce4137fe92.stex" ]
 
 [params]
 

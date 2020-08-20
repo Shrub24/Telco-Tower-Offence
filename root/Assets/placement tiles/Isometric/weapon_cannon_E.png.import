@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/weapon_cannon_E.png-409bc995b6e2a1c287121b6acb919696.stex"
+path="res://.import/weapon_cannon_E.png-169f69ea9356a4934a458ed35154ae74.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placement tiles/Isometric/weapon_cannon_E.png"
-dest_files=[ "res://.import/weapon_cannon_E.png-409bc995b6e2a1c287121b6acb919696.stex" ]
+source_file="res://assets/placement tiles/Isometric/weapon_cannon_E.png"
+dest_files=[ "res://.import/weapon_cannon_E.png-169f69ea9356a4934a458ed35154ae74.stex" ]
 
 [params]
 

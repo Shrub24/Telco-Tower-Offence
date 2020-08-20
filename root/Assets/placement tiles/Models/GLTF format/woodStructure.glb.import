@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/woodStructure.glb-9347e9424ba2dd061e533a81aa393913.scn"
+path="res://.import/woodStructure.glb-3ecc18bf2f4b7414dd8bd4c44a75c2e7.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/GLTF format/woodStructure.glb"
-dest_files=[ "res://.import/woodStructure.glb-9347e9424ba2dd061e533a81aa393913.scn" ]
+source_file="res://assets/placement tiles/Models/GLTF format/woodStructure.glb"
+dest_files=[ "res://.import/woodStructure.glb-3ecc18bf2f4b7414dd8bd4c44a75c2e7.scn" ]
 
 [params]
 

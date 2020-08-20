@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_wideStraight_W.png-6e212158f07df8ac2783c3df6da20966.stex"
+path="res://.import/tile_wideStraight_W.png-60546621add2180589a7f87094e9d1e4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placement tiles/Isometric/tile_wideStraight_W.png"
-dest_files=[ "res://.import/tile_wideStraight_W.png-6e212158f07df8ac2783c3df6da20966.stex" ]
+source_file="res://assets/placement tiles/Isometric/tile_wideStraight_W.png"
+dest_files=[ "res://.import/tile_wideStraight_W.png-60546621add2180589a7f87094e9d1e4.stex" ]
 
 [params]
 

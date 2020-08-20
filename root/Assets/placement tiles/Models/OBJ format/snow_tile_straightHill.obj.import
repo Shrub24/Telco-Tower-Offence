@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/snow_tile_straightHill.obj-c29891a3a5e010f16e1a00281d119978.mesh"
+path="res://.import/snow_tile_straightHill.obj-89b29d166798912d8b00ea262141ee0e.mesh"
 
 [deps]
 
-files=[ "res://.import/snow_tile_straightHill.obj-c29891a3a5e010f16e1a00281d119978.mesh" ]
+files=[ "res://.import/snow_tile_straightHill.obj-89b29d166798912d8b00ea262141ee0e.mesh" ]
 
-source_file="res://Assets/placement tiles/Models/OBJ format/snow_tile_straightHill.obj"
-dest_files=[ "res://.import/snow_tile_straightHill.obj-c29891a3a5e010f16e1a00281d119978.mesh", "res://.import/snow_tile_straightHill.obj-c29891a3a5e010f16e1a00281d119978.mesh" ]
+source_file="res://assets/placement tiles/Models/OBJ format/snow_tile_straightHill.obj"
+dest_files=[ "res://.import/snow_tile_straightHill.obj-89b29d166798912d8b00ea262141ee0e.mesh", "res://.import/snow_tile_straightHill.obj-89b29d166798912d8b00ea262141ee0e.mesh" ]
 
 [params]
 

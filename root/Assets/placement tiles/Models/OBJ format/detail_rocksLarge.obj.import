@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/detail_rocksLarge.obj-245430d9f05cdfee1b2ac09e625ce650.mesh"
+path="res://.import/detail_rocksLarge.obj-d0885d05ccecb6b2855bc73be9e548f0.mesh"
 
 [deps]
 
-files=[ "res://.import/detail_rocksLarge.obj-245430d9f05cdfee1b2ac09e625ce650.mesh" ]
+files=[ "res://.import/detail_rocksLarge.obj-d0885d05ccecb6b2855bc73be9e548f0.mesh" ]
 
-source_file="res://Assets/placement tiles/Models/OBJ format/detail_rocksLarge.obj"
-dest_files=[ "res://.import/detail_rocksLarge.obj-245430d9f05cdfee1b2ac09e625ce650.mesh", "res://.import/detail_rocksLarge.obj-245430d9f05cdfee1b2ac09e625ce650.mesh" ]
+source_file="res://assets/placement tiles/Models/OBJ format/detail_rocksLarge.obj"
+dest_files=[ "res://.import/detail_rocksLarge.obj-d0885d05ccecb6b2855bc73be9e548f0.mesh", "res://.import/detail_rocksLarge.obj-d0885d05ccecb6b2855bc73be9e548f0.mesh" ]
 
 [params]
 

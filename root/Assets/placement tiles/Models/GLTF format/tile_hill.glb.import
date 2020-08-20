@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_hill.glb-4eeceaff899e0bd13aa1f941f0fa02a9.scn"
+path="res://.import/tile_hill.glb-6c5fdf8d87852070169c51ea09c35bb3.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/GLTF format/tile_hill.glb"
-dest_files=[ "res://.import/tile_hill.glb-4eeceaff899e0bd13aa1f941f0fa02a9.scn" ]
+source_file="res://assets/placement tiles/Models/GLTF format/tile_hill.glb"
+dest_files=[ "res://.import/tile_hill.glb-6c5fdf8d87852070169c51ea09c35bb3.scn" ]
 
 [params]
 

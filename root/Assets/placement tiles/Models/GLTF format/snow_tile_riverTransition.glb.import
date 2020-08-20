@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snow_tile_riverTransition.glb-fb819f657a40229edca3c4b7552e4957.scn"
+path="res://.import/snow_tile_riverTransition.glb-c00f6064dc22b7934d729d93ccf517be.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/GLTF format/snow_tile_riverTransition.glb"
-dest_files=[ "res://.import/snow_tile_riverTransition.glb-fb819f657a40229edca3c4b7552e4957.scn" ]
+source_file="res://assets/placement tiles/Models/GLTF format/snow_tile_riverTransition.glb"
+dest_files=[ "res://.import/snow_tile_riverTransition.glb-c00f6064dc22b7934d729d93ccf517be.scn" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snow_tile_cornerRound.dae-986f1a3645c5e3a624288ecc22b9366a.scn"
+path="res://.import/snow_tile_cornerRound.dae-feb09b926cd470de461625e69b6536ee.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/snow_tile_cornerRound.dae"
-dest_files=[ "res://.import/snow_tile_cornerRound.dae-986f1a3645c5e3a624288ecc22b9366a.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/snow_tile_cornerRound.dae"
+dest_files=[ "res://.import/snow_tile_cornerRound.dae-feb09b926cd470de461625e69b6536ee.scn" ]
 
 [params]
 

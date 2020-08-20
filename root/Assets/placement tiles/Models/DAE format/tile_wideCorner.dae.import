@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_wideCorner.dae-aeacd5d8867c89b3728b4e3e378603db.scn"
+path="res://.import/tile_wideCorner.dae-046d8e693dcda5c008d5cb86323b26cb.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/tile_wideCorner.dae"
-dest_files=[ "res://.import/tile_wideCorner.dae-aeacd5d8867c89b3728b4e3e378603db.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/tile_wideCorner.dae"
+dest_files=[ "res://.import/tile_wideCorner.dae-046d8e693dcda5c008d5cb86323b26cb.scn" ]
 
 [params]
 

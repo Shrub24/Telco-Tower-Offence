@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/towerRound_sampleB.dae-721a60492a880f0d8089ace492fc5c15.scn"
+path="res://.import/towerRound_sampleB.dae-98b6fe5efa6d2ffc12648b567671d72d.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/towerRound_sampleB.dae"
-dest_files=[ "res://.import/towerRound_sampleB.dae-721a60492a880f0d8089ace492fc5c15.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/towerRound_sampleB.dae"
+dest_files=[ "res://.import/towerRound_sampleB.dae-98b6fe5efa6d2ffc12648b567671d72d.scn" ]
 
 [params]
 
