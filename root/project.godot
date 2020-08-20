@@ -18,10 +18,22 @@ _global_script_classes=[ {
 "class": "Town",
 "language": "GDScript",
 "path": "res://Scripts/Town.gd"
+}, {
+"base": "Polygon2D",
+"class": "abstract_bordered_polygon_2d",
+"language": "GDScript",
+"path": "res://Assets/bordered-polygon-2d/abstract_bordered_polygon_2d.gd"
+}, {
+"base": "",
+"class": "bordered_polygon_2d",
+"language": "GDScript",
+"path": "res://Assets/bordered-polygon-2d/bordered_polygon_2d.gd"
 } ]
 _global_script_class_icons={
 "Tower": "",
-"Town": ""
+"Town": "",
+"abstract_bordered_polygon_2d": "",
+"bordered_polygon_2d": ""
 }
 
 [application]

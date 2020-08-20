@@ -7,3 +7,4 @@
 script = ExtResource( 1 )
 
 [node name="ISP" parent="." instance=ExtResource( 2 )]
+ISP_name = "PanCogan Mobile"

@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Scenes/Town_Node.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Camera.tscn" type="PackedScene" id=5]
 
 [node name="map" type="Node2D"]
 
@@ -136,6 +135,7 @@ affluency = 80.0
 
 [node name="Jhineral" parent="." instance=ExtResource( 4 )]
 position = Vector2( 690.131, 118.053 )
+polygon = PoolVector2Array( 118.895, -83.9649, 124.895, -5.96487, 150.895, 62.0351, -27.1052, 102.035, -151.105, 156.035, -95.1052, -61.9649, 18.8948, -63.9649 )
 population = 444000
 neighbours = [ "Riverside", "Moigic", "Evergarden", "West Egg" ]
 shares = {
@@ -214,6 +214,7 @@ affluency = 25.0
 
 [node name="East Egg" parent="." instance=ExtResource( 4 )]
 position = Vector2( 980.067, 263.611 )
+polygon = PoolVector2Array( -133.041, -71.5229, -107.041, 108.477, 124.959, 76.4771, 66.9587, -143.523 )
 population = 1500000
 neighbours = [ "Jhineral", "Evergarden", "Valley of Cashes", "Bootarm" ]
 shares = {
@@ -265,7 +266,8 @@ town_name = "Desmos"
 affluency = 40.0
 
 [node name="Evergarden" parent="." instance=ExtResource( 4 )]
-position = Vector2( 668.676, 344.038 )
+position = Vector2( 668.676, 342.038 )
+polygon = PoolVector2Array( 206.35, 30.0501, 180.35, -159.95, 8.34973, -127.95, -125.65, -75.9499, -89.6503, 58.0501 )
 population = 1000000
 neighbours = [ "Jhineral", "West Egg", "Kudizio", "Mysteri", "Moigic", "Bootarm" ]
 shares = {
@@ -455,9 +457,3 @@ population = 6000
 neighbours = [ "Deltora", "Old Zealand" ]
 town_name = "Colourful Woods"
 affluency = 10.0
-
-[node name="Camera2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 508.034, 221.937 )
-zoom_speed = 5.0
-zoom_min = 0.6
-zoom_max = 1.5

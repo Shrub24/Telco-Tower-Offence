@@ -13,22 +13,40 @@ var ISPs = []
 var AIs = []
 export(NodePath) onready var map = get_node(map) if map else null
 var towns = []
+var selected_town
 
 export(Array, NodePath) var AI_paths
+
+func connect_town(town):
+	town.connect("clicked", self, "town_clicked")
+
+func town_clicked(town):
+	if selected_town == town:
+		town.deselect()
+		selected_town = null
+	else:
+		if selected_town:
+			selected_town.deselect()
+		selected_town = town
+		town.select()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for town in map.get_children():
-		towns.append(town)
+		if !(town is TileMap): 
+			towns.append(town)
+			connect_town(town)
 	for path in AI_paths:
 		var AI = get_node(path)
 		AIs.append(AI)
 		ISPs.append(AI.ISP)
 	ISPs.append(player.ISP)
-
+	choose_player_ISP("Who-awei")
+	game_start()
+	
 func choose_player_ISP(ISP):
-	var player_ISP = player_ISP_scenes[player_ISP_options[ISP].instance()]
-	player.init_ISP(player_ISP)
+	var player_ISP = player_ISP_scenes[player_ISP_options[ISP]].instance()
+	player.ISP = player_ISP
 
 func game_start():
 	for scene in AI_scenes:

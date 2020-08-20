@@ -27,7 +27,7 @@ var cyber_attack_target
 var connection_loss = {}
 
 func _ready():
-	shop = load("res://Resources//Shop.tres")
+	shop = preload("res://Resources/Shop.tres")
 
 func initialise(new_ISP, town):
 	ISP = new_ISP
@@ -102,12 +102,14 @@ func update_turn():
 	update_brand_image()
 
 func calculate_starting_tower(affluency):
+	shop = preload("res://Resources/Shop.tres")
 	if connections > 1000000 and affluency > 75:
-		tower = shop.get_tower_5g()
+		return shop.get_tower_5g()
 	elif connections > 75000 or affluency > 40:
-		tower = shop.get_tower_4g()
+		return shop.get_tower_4g()
 	else:
-		tower = shop.get_tower_3g()
+		return shop.get_tower_3g()
+
 
 func update_price(amount):
 	price += amount

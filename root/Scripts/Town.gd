@@ -12,30 +12,45 @@ var ISPs = {}
 var Player_ISPTownInfo
 export(float) var affluency
 export(NodePath) onready var bound
-export var selected = false
+export(NodePath) onready var border
+export var unselected_opacity = 0.4
+export var selected_opacity = 3
 
-signal clicked
+signal clicked(town)
 signal town_mouse_entered
 signal town_mouse_exited
 
 
 func _ready():
 	get_node(bound).set_polygon(polygon)
-	modulate.a = 1
+	border = get_node(border)
+	border.set_polygon(polygon)
+	self_modulate.a = 0
+	border.modulate.a = unselected_opacity
+
+	var ashares = get_ISP_shares()
+	var max_ISP = null
+	for ISP in ashares.keys():
+		if !max_ISP:
+			max_ISP = ISP
+		elif ashares[ISP] > ashares[max_ISP]:
+			max_ISP = ISP
+	
+#	border.self_modulate = max_ISP.colour
+
 
 func init_town_ISPs(AIs, player):
 	for AI in AIs:
 		var ISP = AI.ISP
-		if shares[ISP.name]:
+		if shares[ISP.ISP_name]:
 			var ISPTownInfo = create_ISPTownInfo(ISP)
-			ISPTownInfo.generate(shares[ISP.name], population, affluency)
+			ISPTownInfo.generate(shares[ISP.ISP_name], population, affluency)
 			ISPs[ISP] = ISPTownInfo
 	
 	if starter_town:
 		Player_ISPTownInfo = create_ISPTownInfo(player.ISP)
 		Player_ISPTownInfo.generate_starter(population)
 		emit_signal("clicked")
-		selected = true
 		
 		
 func get_ISP_town_info(ISP):
@@ -86,7 +101,11 @@ func build_tower(ISP, tower):
 func upgrade_tower(ISP, type):
 	get_ISP_town_info(ISP).upgrade_tower(type)
 
-
+func deselect():
+	border.modulate.a = unselected_opacity
+	
+func select():
+	border.modulate.a = selected_opacity
 
 func _on_Collider_mouse_entered():
 	emit_signal("town_mouse_entered")
@@ -97,5 +116,5 @@ func _on_Collider_mouse_exited():
 
 func _on_Collider_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("ui_click"):
-		emit_signal("clicked")
+		emit_signal("clicked", self)
 
