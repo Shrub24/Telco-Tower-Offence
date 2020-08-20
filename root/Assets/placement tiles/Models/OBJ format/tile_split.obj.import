@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tile_split.obj-561662550e7442beb2c10c71ccb9a520.mesh"
+
+[deps]
+
+files=[ "res://.import/tile_split.obj-561662550e7442beb2c10c71ccb9a520.mesh" ]
+
+source_file="res://Assets/placement tiles/Models/OBJ format/tile_split.obj"
+dest_files=[ "res://.import/tile_split.obj-561662550e7442beb2c10c71ccb9a520.mesh", "res://.import/tile_split.obj-561662550e7442beb2c10c71ccb9a520.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

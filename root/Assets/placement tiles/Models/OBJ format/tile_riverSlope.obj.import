@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tile_riverSlope.obj-b9c224f88c08c736c62d10a7ba7d1aae.mesh"
+
+[deps]
+
+files=[ "res://.import/tile_riverSlope.obj-b9c224f88c08c736c62d10a7ba7d1aae.mesh" ]
+
+source_file="res://Assets/placement tiles/Models/OBJ format/tile_riverSlope.obj"
+dest_files=[ "res://.import/tile_riverSlope.obj-b9c224f88c08c736c62d10a7ba7d1aae.mesh", "res://.import/tile_riverSlope.obj-b9c224f88c08c736c62d10a7ba7d1aae.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

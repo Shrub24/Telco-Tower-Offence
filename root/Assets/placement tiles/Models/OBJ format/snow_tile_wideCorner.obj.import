@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/snow_tile_wideCorner.obj-abf664b4139c2fd2a6239ed8592dacc2.mesh"
+
+[deps]
+
+files=[ "res://.import/snow_tile_wideCorner.obj-abf664b4139c2fd2a6239ed8592dacc2.mesh" ]
+
+source_file="res://Assets/placement tiles/Models/OBJ format/snow_tile_wideCorner.obj"
+dest_files=[ "res://.import/snow_tile_wideCorner.obj-abf664b4139c2fd2a6239ed8592dacc2.mesh", "res://.import/snow_tile_wideCorner.obj-abf664b4139c2fd2a6239ed8592dacc2.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

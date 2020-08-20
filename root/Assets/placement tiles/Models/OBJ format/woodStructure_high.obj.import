@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/woodStructure_high.obj-4709132d91c47e4785ae2acf66be0f69.mesh"
+
+[deps]
+
+files=[ "res://.import/woodStructure_high.obj-4709132d91c47e4785ae2acf66be0f69.mesh" ]
+
+source_file="res://Assets/placement tiles/Models/OBJ format/woodStructure_high.obj"
+dest_files=[ "res://.import/woodStructure_high.obj-4709132d91c47e4785ae2acf66be0f69.mesh", "res://.import/woodStructure_high.obj-4709132d91c47e4785ae2acf66be0f69.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

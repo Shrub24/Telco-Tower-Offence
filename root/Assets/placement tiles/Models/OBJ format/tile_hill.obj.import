@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tile_hill.obj-3553a5b0e98db388bd61fc8c034c9cff.mesh"
+
+[deps]
+
+files=[ "res://.import/tile_hill.obj-3553a5b0e98db388bd61fc8c034c9cff.mesh" ]
+
+source_file="res://Assets/placement tiles/Models/OBJ format/tile_hill.obj"
+dest_files=[ "res://.import/tile_hill.obj-3553a5b0e98db388bd61fc8c034c9cff.mesh", "res://.import/tile_hill.obj-3553a5b0e98db388bd61fc8c034c9cff.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

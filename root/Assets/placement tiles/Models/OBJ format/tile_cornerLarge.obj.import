@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tile_cornerLarge.obj-ab7ca9e01ae85921116b220e14f11382.mesh"
+
+[deps]
+
+files=[ "res://.import/tile_cornerLarge.obj-ab7ca9e01ae85921116b220e14f11382.mesh" ]
+
+source_file="res://Assets/placement tiles/Models/OBJ format/tile_cornerLarge.obj"
+dest_files=[ "res://.import/tile_cornerLarge.obj-ab7ca9e01ae85921116b220e14f11382.mesh", "res://.import/tile_cornerLarge.obj-ab7ca9e01ae85921116b220e14f11382.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tile_riverBridge.obj-4cc01e4874b1efde237f49964296c192.mesh"
+
+[deps]
+
+files=[ "res://.import/tile_riverBridge.obj-4cc01e4874b1efde237f49964296c192.mesh" ]
+
+source_file="res://Assets/placement tiles/Models/OBJ format/tile_riverBridge.obj"
+dest_files=[ "res://.import/tile_riverBridge.obj-4cc01e4874b1efde237f49964296c192.mesh", "res://.import/tile_riverBridge.obj-4cc01e4874b1efde237f49964296c192.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

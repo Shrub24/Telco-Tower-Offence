@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/towerSquare_bottomA.obj-52b5918845d06b9689534cf60b821d68.mesh"
+
+[deps]
+
+files=[ "res://.import/towerSquare_bottomA.obj-52b5918845d06b9689534cf60b821d68.mesh" ]
+
+source_file="res://Assets/placement tiles/Models/OBJ format/towerSquare_bottomA.obj"
+dest_files=[ "res://.import/towerSquare_bottomA.obj-52b5918845d06b9689534cf60b821d68.mesh", "res://.import/towerSquare_bottomA.obj-52b5918845d06b9689534cf60b821d68.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

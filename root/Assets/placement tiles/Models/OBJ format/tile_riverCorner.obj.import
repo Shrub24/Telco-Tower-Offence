@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tile_riverCorner.obj-5ba03ac394385e0c6107497ce3a437ed.mesh"
+
+[deps]
+
+files=[ "res://.import/tile_riverCorner.obj-5ba03ac394385e0c6107497ce3a437ed.mesh" ]
+
+source_file="res://Assets/placement tiles/Models/OBJ format/tile_riverCorner.obj"
+dest_files=[ "res://.import/tile_riverCorner.obj-5ba03ac394385e0c6107497ce3a437ed.mesh", "res://.import/tile_riverCorner.obj-5ba03ac394385e0c6107497ce3a437ed.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

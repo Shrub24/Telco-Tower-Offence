@@ -33,13 +33,14 @@ var min_affluency_pricing = min_price + 100
 const affluency_dampening_factor = 1
 
 func _ready():
-	shop = preload("res://Resources/Shop.tres")
+	shop = load("res://Resources/Shop.tres")
 
 func initialise(new_ISP, town):
 	ISP = new_ISP
 	ISP.add_town(town)
 
 func generate_starter(population):
+	shop = load("res://Resources/Shop.tres")
 	town_population = population
 	connections = town_population
 	
