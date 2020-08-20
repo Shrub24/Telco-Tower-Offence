@@ -29,6 +29,12 @@ export var tower_max_speed = 5000
 var town_population = 0
 var cyber_attack_target
 
+const min_affluency = 1
+const max_affluency = 99
+var max_affluency_pricing = max_price - 100
+var min_affluency_pricing = min_price + 100
+const affluency_dampening_factor = 1
+
 func _ready():
 	shop = load("res://Resources//Shop.tres")
 
@@ -71,6 +77,11 @@ func get_connections_delta(ISPTownInfos):
 		var considering_switch = int(brand_image * (1 - other.brand_loyalty) * other.connections *  1/(1 + exp(-2 * ((other.price/price) - 1.25))))
 		other.delta_connections -= considering_switch
 
+func get_affluency_delta(affluency):
+	var affluency_pricing = (float(affluency-min_affluency)/(max_affluency-min_affluency))*(max_price-min_price) + min_price
+	var x = affluency_pricing/price
+	return affluency_dampening_factor * tanh(x-1)
+
 func calculate_aoe_image():
 	var aoe_image = 0
 	for aoe_image_val in aoe_neighbouring_towers.values():
@@ -96,7 +107,8 @@ func update_turn():
 	update_brand_loyalty()
 	connections += delta_connections
 	price += delta_price
-
+	
+	
 func calculate_starting_tower(affluency):
 	if connections > 1000000 and affluency > 75:
 		tower = shop.get_tower_5g()
@@ -162,7 +174,15 @@ func remove_aoe_image(aoe_tower):
 	if aoe_neighbouring_towers.has(aoe_tower):
 		aoe_neighbouring_towers.erase(aoe_tower)
 
-# todo affluency?
+func update_affluency_conns(affluency_delta):
+	if affluency_delta >= 0:
+		connections += affluency_delta
+		return affluency_delta
+	else:
+		var delta = int(affluency_delta * connections)
+		connections += affluency_delta
+		return delta
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

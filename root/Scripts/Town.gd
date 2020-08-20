@@ -10,6 +10,11 @@ var ISPs = {}
 var Player_ISPTownInfo
 export(float) var affluency
 
+
+var no_ISP_pop = 0
+var affluency_connection_delta = {}
+
+
 #put this somewhere else?
 const base_aoe_image = 10
 
@@ -23,6 +28,7 @@ func _ready():
 func _process(delta):
 	pass
 
+# population - noISPs in generates
 func init_town_ISPs(AIs, player):
 	for AI in AIs:
 		var ISP = AI.ISP
@@ -62,11 +68,22 @@ func get_ISPs():
 func get_share(ISP):
 	return float(ISPs[ISP].connections)/population
 	
-func turn_update():
-	var ISPTownInfos = ISPs.values()
-	ISPTownInfos.append(Player_ISPTownInfo)
-	for ISP in ISPTownInfos:
-		ISP.update_connections(ISPTownInfos)
+func update_turn():
+	var ISPTownInfos = get_ISPs()
+	for towninfo in ISPTownInfos:
+		towninfo.get_connections_loss(ISPTownInfos, affluency)
+		affluency_connection_delta[towninfo] = towninfo.get_affluency_delta(affluency)
+		
+	normalise_affluency_delta()
+	affluency_convert_pos_share_to_pop()
+	
+	for towninfo in ISPTownInfos:
+		towninfo.get_connections_delta()
+	for towninfo in ISPTownInfos:
+		towninfo.update_turn()
+		if towninfo.tower:
+			no_ISP_pop -= towninfo.update_affluency_conns(affluency_connection_delta[towninfo])
+			
 
 func create_ISPTownInfo(ISP):
 	var ISPTownInfo = ISPTownInfo_scene.instance()
@@ -74,6 +91,8 @@ func create_ISPTownInfo(ISP):
 	return ISPTownInfo
 	
 func propagate_brand_image(tower, ISP, dist):
+	if !ISPs.has(ISP):
+		ISPs[ISP] = create_ISPTownInfo(ISP)
 	ISPs[ISP].update_aoe_image(tower, base_aoe_image * (dist + 1))
 	if dist > 0:
 		# neighbours list of town objects
@@ -81,10 +100,28 @@ func propagate_brand_image(tower, ISP, dist):
 			town.propagate_brand_image(tower, ISP, dist - 1)
 			
 func depropagate_brand_image(tower, ISP, dist):
-	ISPs[ISP].remove_aoe_image(tower)
+	if ISPs.has(ISP):
+		ISPs[ISP].remove_aoe_image(tower)
 	if dist > 0:
 		for town in neighbours:
 			town.depropagate_brand_image(tower, ISP, dist - 1)
+			
+func normalise_affluency_delta():
+	var pos_sum = 0.0
+	for delta in affluency_connection_delta.values():
+		if delta > 0:
+			pos_sum += delta
+	for ISP in affluency_connection_delta.keys():
+		if pos_sum > 1:
+			affluency_connection_delta[ISP] /= pos_sum
+
+# converts pos shares in get_affluency_delta to pops
+func affluency_convert_pos_share_to_pop():
+	var pop_sum = 0
+	for ISP in affluency_connection_delta.keys():
+		var share_delta = affluency_connection_delta[ISP]
+		if share_delta > 0:
+			affluency_connection_delta[ISP] = int(no_ISP_pop * share_delta)
 	
 
 	
