@@ -98,7 +98,7 @@ func update_brand_loyalty():
 	var bandwidth_used = get_bandwidth_used()
 	brand_loyalty = loyalty_scale_factor * ISP.modifiers["brand_loyalty"] * (float(tower.get_speed())/tower_max_speed) * 1/(1 + exp(6 * (2 * bandwidth_used - 1.9)))
 	brand_loyalty = clamp(brand_loyalty, 0.0, 1.0)
-
+ 
 func get_income():
 	return connections * price
 
