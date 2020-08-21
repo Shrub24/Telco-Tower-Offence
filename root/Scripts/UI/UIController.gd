@@ -8,9 +8,16 @@ export(NodePath) onready var delta_price_label = get_node(delta_price_label)
 export(NodePath) onready var player_loyalty_label = get_node(player_loyalty_label)
 export(NodePath) onready var player_image_label = get_node(player_image_label)
 export(NodePath) onready var advertising_label = get_node(advertising_label)
+export(NodePath) onready var speed_label = get_node(speed_label)
+export(NodePath) onready var bandwidth_label = get_node(bandwidth_label)
+export(NodePath) onready var reach_label = get_node(reach_label)
+export(NodePath) onready var money_label = get_node(money_label)
+export(NodePath) onready var reserved_money_label = get_node(reserved_money_label)
 export var cyber_attack_button_paths = {"Tedstra":0, "Vodaclone":0, "ElonMask Co":0, "PanCogan Mobile":0}
 export(NodePath) onready var share_graphic = get_node(share_graphic)
 var cyber_attack_buttons = {}
+export var ISP_info_paths = {"Tedstra":0, "Vodaclone":0, "ElonMask Co":0, "PanCogan Mobile":0}
+var ISP_infos = {}
 
 signal cyber_attack_pressed(target_name)
 signal advertising_sell_pressed
@@ -19,11 +26,14 @@ signal buy_tower_pressed(type)
 signal price_up_pressed
 signal price_down_pressed
 signal next_turn_pressed
+signal upgrade_tower_pressed(type)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for ISP in cyber_attack_button_paths.keys():
 		cyber_attack_buttons[ISP] = get_node(cyber_attack_button_paths[ISP])
+	for ISP in ISP_info_paths.keys():
+		ISP_infos[ISP] = get_node(ISP_info_paths[ISP])
 	position = $Bottom.rect_position
 	off_screen_position = Vector2(position.x, position.y+400)
 	$Bottom.rect_position = off_screen_position
@@ -37,6 +47,27 @@ func hide_town_UI():
 	var curr_position = $Bottom.rect_position 
 	$Tween.interpolate_property($Bottom, "rect_position", curr_position, off_screen_position, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	$Tween.start()
+
+func update_money(money):
+	money_label.text = str(money)
+
+func update_reserved_money(money):
+	reserved_money_label.text = str(money)
+
+func update_ISP_info(loyalty, image, price, ISP):
+	var ISP_info = ISP_infos[ISP]
+	ISP_info.update_price(price)
+	ISP_info.update_image(image)
+	ISP_info.update_loyalty(loyalty)
+	
+func update_tower_upgrade(reach, bandwidth, speed):
+	
+	reach_label.text = str(reach)
+	bandwidth_label.text = str(bandwidth)
+	speed_label.text = str(speed)
+
+func update_tower_buy(tower_type):
+	pass
 
 func update_shares(share_dict, colour_dict):
 	share_graphic.update_graphic(share_dict, colour_dict)
@@ -106,3 +137,15 @@ func _on_ElonMaskCoAttack_gui_input(event):
 func _on_PanCoganMobileAttack_gui_input(event):
 	if event.is_action_pressed("ui_click"):
 		emit_signal("cyber_attack_pressed", "PanCogan Mobile")
+
+
+func _on_BandwidthUpgradeButton_pressed():
+	emit_signal("upgrade_tower_pressed", "bandwidth")
+
+
+func _on_ReachUpgradeButton_pressed():
+	emit_signal("upgrade_tower_pressed", "reach")
+
+
+func _on_SpeedUpgradeButton_pressed():
+	emit_signal("upgrade_tower_pressed", "speed")

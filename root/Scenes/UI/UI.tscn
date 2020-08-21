@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/UI/UIController.gd" type="Script" id=1]
 [ext_resource path="res://Assets/UI/down.png" type="Texture" id=2]
@@ -15,14 +15,21 @@
 [ext_resource path="res://Assets/UI/5g_icon.png" type="Texture" id=13]
 [ext_resource path="res://Assets/UI/up.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/UI/ShareGraphic.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/UI/ISP_tab.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/UI/tedstra.png" type="Texture" id=17]
 
 [node name="UI Layer" type="CanvasLayer"]
 script = ExtResource( 1 )
 price_label = NodePath("Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer/MarginContainer/HBoxContainer/MarginContainer/PriceLabel")
 delta_price_label = NodePath("Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/DeltaPriceLabel")
-player_loyalty_label = NodePath("Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer2/Text")
-player_image_label = NodePath("Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer3/Text")
+player_loyalty_label = NodePath("Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer2/loyalty")
+player_image_label = NodePath("Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer3/image")
 advertising_label = NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/HBoxContainer/Label")
+speed_label = NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/HBoxContainer2/speed_level")
+bandwidth_label = NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/HBoxContainer/bandwidth_level")
+reach_label = NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/HBoxContainer3/reach_level")
+money_label = NodePath("PanelContainer/Panel/HBoxContainer/money_label")
+reserved_money_label = NodePath("PanelContainer/Panel/HBoxContainer/reserved_money_level")
 cyber_attack_button_paths = {
 "ElonMask Co": NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/ElonMaskCoAttack"),
 "PanCogan Mobile": NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/PanCoganMobileAttack"),
@@ -30,6 +37,12 @@ cyber_attack_button_paths = {
 "Vodaclone": NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/VodacloneAttack")
 }
 share_graphic = NodePath("Bottom/Bottom Panel/HBoxContainer/ShareGraphic")
+ISP_info_paths = {
+"ElonMask Co": NodePath("Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/ElonMask Co"),
+"PanCogan Mobile": NodePath("Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/PanCogan Mobile"),
+"Tedstra": NodePath("Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Tedstra"),
+"Vodaclone": NodePath("Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Vodaclone")
+}
 
 [node name="Next Turn" type="TextureButton" parent="."]
 margin_left = 1442.38
@@ -78,12 +91,12 @@ __meta__ = {
 margin_right = 225.0
 margin_bottom = 364.0
 rect_min_size = Vector2( 225, 200 )
+tab_align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Your ISP" type="VBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -182,18 +195,15 @@ margin_bottom = 216.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer2"]
 margin_right = 35.0
 margin_bottom = 106.0
-
-[node name="TextureRect" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer2/VBoxContainer"]
-margin_right = 35.0
-margin_bottom = 35.0
 rect_min_size = Vector2( 35, 35 )
-texture = ExtResource( 4 )
+texture = ExtResource( 17 )
 expand = true
+stretch_mode = 6
 
-[node name="Text" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer2"]
+[node name="loyalty" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer2"]
 margin_left = 39.0
 margin_top = 46.0
 margin_right = 217.0
@@ -207,104 +217,7 @@ margin_bottom = 328.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer3"]
-margin_right = 35.0
-margin_bottom = 108.0
-
-[node name="TextureRect" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer3/VBoxContainer"]
-margin_right = 35.0
-margin_bottom = 35.0
-rect_min_size = Vector2( 35, 35 )
-texture = ExtResource( 4 )
-expand = true
-
-[node name="Text" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer3"]
-margin_left = 39.0
-margin_top = 47.0
-margin_right = 217.0
-margin_bottom = 61.0
-size_flags_horizontal = 3
-
-[node name="AI ISP" type="VBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP"]
-margin_right = 217.0
-margin_bottom = 106.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP/HBoxContainer"]
-margin_right = 35.0
-margin_bottom = 106.0
-rect_min_size = Vector2( 35, 35 )
-texture = ExtResource( 10 )
-expand = true
-stretch_mode = 6
-
-[node name="MarginContainer" type="MarginContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP/HBoxContainer"]
-margin_left = 39.0
-margin_right = 217.0
-margin_bottom = 106.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP/HBoxContainer/MarginContainer"]
-margin_right = 178.0
-margin_bottom = 106.0
-
-[node name="MarginContainer" type="CenterContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP/HBoxContainer/MarginContainer/HBoxContainer"]
-margin_right = 178.0
-margin_bottom = 106.0
-size_flags_horizontal = 3
-
-[node name="PriceLabel" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP/HBoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
-margin_left = 85.0
-margin_top = 37.0
-margin_right = 93.0
-margin_bottom = 68.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-custom_colors/font_color = Color( 0.929412, 0.827451, 0, 1 )
-text = "0
-"
-valign = 1
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP"]
-margin_top = 110.0
-margin_right = 217.0
-margin_bottom = 216.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP/HBoxContainer2"]
-margin_right = 35.0
-margin_bottom = 106.0
-rect_min_size = Vector2( 35, 35 )
-texture = ExtResource( 4 )
-expand = true
-stretch_mode = 6
-
-[node name="brand_loyalty" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP/HBoxContainer2"]
-margin_left = 39.0
-margin_top = 46.0
-margin_right = 217.0
-margin_bottom = 60.0
-size_flags_horizontal = 3
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP"]
-margin_top = 220.0
-margin_right = 217.0
-margin_bottom = 328.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP/HBoxContainer3"]
+[node name="TextureRect" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer3"]
 margin_right = 35.0
 margin_bottom = 108.0
 rect_min_size = Vector2( 35, 35 )
@@ -312,12 +225,24 @@ texture = ExtResource( 4 )
 expand = true
 stretch_mode = 6
 
-[node name="brand_image" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP/HBoxContainer3"]
+[node name="image" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer3"]
 margin_left = 39.0
 margin_top = 47.0
 margin_right = 217.0
 margin_bottom = 61.0
 size_flags_horizontal = 3
+
+[node name="Tedstra" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs" instance=ExtResource( 16 )]
+visible = false
+
+[node name="PanCogan Mobile" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs" instance=ExtResource( 16 )]
+visible = false
+
+[node name="Vodaclone" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs" instance=ExtResource( 16 )]
+visible = false
+
+[node name="ElonMask Co" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs" instance=ExtResource( 16 )]
+visible = false
 
 [node name="ShareGraphic" parent="Bottom/Bottom Panel/HBoxContainer" instance=ExtResource( 15 )]
 margin_left = 229.0
@@ -399,14 +324,23 @@ margin_bottom = 180.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureButton2" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/HBoxContainer"]
-margin_right = 106.0
+[node name="BandwidthUpgradeButton" type="TextureButton" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/HBoxContainer"]
+margin_right = 82.0
 margin_bottom = 180.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 7 )
+texture_normal = ExtResource( 7 )
 expand = true
-stretch_mode = 6
+stretch_mode = 5
+
+[node name="bandwidth_level" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/HBoxContainer"]
+margin_left = 86.0
+margin_top = 74.0
+margin_right = 106.0
+margin_bottom = 105.0
+rect_min_size = Vector2( 20, 0 )
+text = "0
+"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer"]
 margin_left = 110.0
@@ -415,14 +349,23 @@ margin_bottom = 180.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureButton2" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/HBoxContainer3"]
-margin_right = 106.0
+[node name="ReachUpgradeButton" type="TextureButton" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/HBoxContainer3"]
+margin_right = 82.0
 margin_bottom = 180.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 12 )
+texture_normal = ExtResource( 12 )
 expand = true
-stretch_mode = 6
+stretch_mode = 5
+
+[node name="reach_level" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/HBoxContainer3"]
+margin_left = 86.0
+margin_top = 74.0
+margin_right = 106.0
+margin_bottom = 105.0
+rect_min_size = Vector2( 20, 0 )
+text = "0
+"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer"]
 margin_left = 220.0
@@ -431,14 +374,23 @@ margin_bottom = 180.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureButton2" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/HBoxContainer2"]
-margin_right = 106.0
+[node name="SpeedUpgradeButton" type="TextureButton" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/HBoxContainer2"]
+margin_right = 82.0
 margin_bottom = 180.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 9 )
+texture_normal = ExtResource( 9 )
 expand = true
-stretch_mode = 6
+stretch_mode = 5
+
+[node name="speed_level" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/HBoxContainer2"]
+margin_left = 86.0
+margin_top = 74.0
+margin_right = 106.0
+margin_bottom = 105.0
+rect_min_size = Vector2( 20, 0 )
+text = "0
+"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer"]
 margin_left = 638.0
@@ -531,11 +483,62 @@ margin_bottom = 180.0
 margin_left = 189.0
 margin_right = 250.0
 margin_bottom = 180.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 1928.0
+margin_bottom = 71.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1921.0
+margin_bottom = 64.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/Panel"]
+margin_right = 1922.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanelContainer/Panel/HBoxContainer"]
+margin_top = 25.0
+margin_right = 48.0
+margin_bottom = 39.0
+text = "money:"
+
+[node name="money_label" type="Label" parent="PanelContainer/Panel/HBoxContainer"]
+margin_left = 52.0
+margin_top = 25.0
+margin_right = 102.0
+margin_bottom = 39.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="label" type="Label" parent="PanelContainer/Panel/HBoxContainer"]
+margin_left = 106.0
+margin_top = 25.0
+margin_right = 214.0
+margin_bottom = 39.0
+text = "reserved money:"
+
+[node name="reserved_money_level" type="Label" parent="PanelContainer/Panel/HBoxContainer"]
+margin_left = 218.0
+margin_top = 25.0
+margin_right = 218.0
+margin_bottom = 39.0
 [connection signal="pressed" from="Next Turn" to="." method="_on_Next_Turn_pressed"]
 [connection signal="pressed" from="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/TextureButton" to="." method="_on_PriceUp_pressed"]
 [connection signal="pressed" from="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/TextureButton2" to="." method="_on_PriceDown_pressed"]
 [connection signal="pressed" from="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/3gTowerBuy" to="." method="_on_3gTowerBuy_pressed"]
 [connection signal="pressed" from="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/4gTowerBuy" to="." method="_on_4gTowerBuy_pressed"]
+[connection signal="pressed" from="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/HBoxContainer/BandwidthUpgradeButton" to="." method="_on_BandwidthUpgradeButton_pressed"]
+[connection signal="pressed" from="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/HBoxContainer3/ReachUpgradeButton" to="." method="_on_ReachUpgradeButton_pressed"]
+[connection signal="pressed" from="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/HBoxContainer2/SpeedUpgradeButton" to="." method="_on_SpeedUpgradeButton_pressed"]
 [connection signal="pressed" from="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/HBoxContainer/MarginContainer/VBoxContainer/TextureButton" to="." method="_on_AdvertisingBuy_pressed"]
 [connection signal="pressed" from="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/HBoxContainer/MarginContainer/VBoxContainer/TextureButton2" to="." method="_on_AdvertisingSell_pressed"]
 [connection signal="gui_input" from="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/TedstraAttack" to="." method="_on_TedstraAttack_gui_input"]

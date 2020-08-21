@@ -86,32 +86,27 @@ func build_tower(town, type):
 	town.build_tower(self, temp_tower)
 	
 func upgrade_tower(town, type):
-	town.upgrade_tower(self, town, type)
+	town.upgrade_tower(self, type)
 	var tower = get_town_tower(town)
 	
 func get_tower_upgrade_level(town, type):
 	var tower = get_town_tower(town)
-	if type == "speed":
-		return tower.speed_level
-	elif type == "bandwidth":
-		return tower.bandwidth_level
-	elif type == "reach":
-		return tower.reach_level
+	return tower.get_level(type)
 
 func get_tower_max_upgrade_level(town):
 	var tower = get_town_tower(town)
 	return tower.max_level
 
-func get_tower_upgrade_price(town, type, level):
+func get_tower_upgrade_price(town, type):
 	var shop = load(shop_path)
 	var tower = get_town_tower(town)
 	var tower_type = tower.tower_type
-	if type == "3g":
-		return shop.get_tower_3g_upgrade_price(type, level)
-	elif type == "4g":
-		return shop.get_tower_4g_upgrade_price(type, level)
-	elif type == "5g":
-		return shop.get_tower_5g_upgrade_price(type, level)
+	if tower_type == "3g":
+		return shop.get_tower_3g_upgrade_price(type, tower.get_level(type))
+	elif tower_type == "4g":
+		return shop.get_tower_4g_upgrade_price(type, tower.get_level(type))
+	elif tower_type == "5g":
+		return shop.get_tower_5g_upgrade_price(type, tower.get_level(type))
 
 func get_advertising_price(town):
 	var shop = load(shop_path)

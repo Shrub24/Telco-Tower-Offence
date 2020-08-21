@@ -39,12 +39,8 @@ _global_script_class_icons={
 [application]
 
 config/name="Telco: Tower Offence"
-run/main_scene="res://Scenes/Menu/MainMenu.tscn"
+run/main_scene="res://Scenes/Scene.tscn"
 config/icon="res://icon.png"
-
-[autoload]
-
-GlobalData="*res://Scripts/global_data.gd"
 
 [display]
 

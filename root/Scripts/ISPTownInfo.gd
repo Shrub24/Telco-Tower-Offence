@@ -116,13 +116,14 @@ func normalise_connection_loss():
 
 func update_turn():
 	if tower:
-		update_advertising(0)
-		cancel_cyber_attack()
 		update_brand_loyalty()
 		update_connections()
 		price += delta_price
 		delta_price = 0
 	update_brand_image()
+	cancel_all_cyber_attacks()
+	update_advertising(0)
+
 
 func calculate_starting_tower(affluency):
 	shop = preload("res://Resources/Shop.tres")
@@ -133,6 +134,11 @@ func calculate_starting_tower(affluency):
 	else:
 		return shop.get_tower_3g()
 
+func cancel_all_cyber_attacks():
+	if cyber_attack_target:
+		cyber_attack_target = null
+	cyber_attack = 0
+	cyber_attack_mod = 0
 
 func update_price(amount):
 	price += amount

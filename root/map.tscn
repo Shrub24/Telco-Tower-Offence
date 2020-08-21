@@ -1211,7 +1211,7 @@ town_name = "Dawnset"
 affluency = 40.0
 
 [node name="Verticool" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1567.83, -219.41 )
+position = Vector2( 1567.83, -223.9 )
 polygon = PoolVector2Array( -24.5059, -64.4719, -87.7596, -96.0988, -216.495, -32.3995, -90.4324, 30.8543, -151.459, 62.9266, 39.6385, 159.589, 296.218, 31.2997, 37.8569, -95.6533 )
 population = 1100000
 neighbours = [ "Promeo", "Juliest", "Dawnset", "East Egg", "Machi", "Qwercian" ]
@@ -1267,7 +1267,7 @@ town_name = "Qwercian"
 affluency = 25.0
 
 [node name="Primoden" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2082.21, -300.832 )
+position = Vector2( 2086.7, -300.832 )
 polygon = PoolVector2Array( -26.6277, -110.004, -216.633, -14.8459, -91.4786, 49.1343, -153.775, 81.6857, -90.3562, 113.676, -26.376, 80.5632, 102.146, 146.227, 230.107, 81.1245, 165.004, 49.1342, 228.423, 17.1441 )
 population = 6000
 neighbours = [ "Currentsea", "Machi", "Qwercian", "Smorkin", "Kyanim" ]
@@ -1280,19 +1280,11 @@ shares = {
 town_name = "Primoden"
 affluency = 22.0
 
-[node name="Lost Passage" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1848.04, -734.61 )
-polygon = PoolVector2Array( -239.94, -91.8484, -175.684, -123.976, 271.588, 99.0296, 202.292, 133.047 )
-population = 1
-neighbours = [ "Wiami Escape" ]
-town_name = "Lost Forest"
-affluency = 1.0
-
 [node name="Smorkin" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2069.39, -528.231 )
 polygon = PoolVector2Array( -206.105, 20.6191, 113.303, 180.355, 179.021, 148.52, 50.4988, 84.5401, 242.44, -11.4304, 49.9382, -106.84 )
 population = 250000
-neighbours = [ "Qwercian", "Primoden", "Lost Passage", "Kyanim" ]
+neighbours = [ "Qwercian", "Primoden", "Kyanim" ]
 shares = {
 "ElonMask Co": 20,
 "PanCogan Mobile": 20,
@@ -1310,17 +1302,3 @@ neighbours = [ "Primoden", "Smorkin" ]
 starter_town = true
 town_name = "Kyanim"
 affluency = 20.0
-
-[node name="Wiami Escape" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1544.89, -941.57 )
-polygon = PoolVector2Array( -257.362, 18.1893, -0.02771, -109.916, 255.059, 18.5639, -1.90063, 148.917 )
-population = 20000000
-neighbours = [ "Lost Passage" ]
-shares = {
-"ElonMask Co": 0,
-"PanCogan Mobile": 0,
-"Tedstra": 100,
-"Vodaclone": 0
-}
-town_name = "Wiami Escape"
-affluency = 99.0

@@ -20,17 +20,17 @@ func _ready():
 	pass # Replace with function body.
 	
 func upgrade_tower(type):
-	if type == "speeds":
+	if type == "speed":
 		if speed_level < max_level:
 			speed_level += 1
-	elif type == "bandwidths":
+	elif type == "bandwidth":
 		if bandwidth_level < max_level:
 			bandwidth_level += 1
 	elif type == "reach":
 		if reach_level < max_level:
 			reach_level += 1
 
-func get_range():
+func get_reach():
 	return reach[reach_level]
 		
 func get_bandwidth():
@@ -38,6 +38,14 @@ func get_bandwidth():
 	
 func get_speed():
 	return speeds[speed_level]
+
+func get_level(type):
+	if type == "speed":
+		return speed_level
+	elif type == "bandwidth":
+		return bandwidth_level
+	elif type == "reach":
+		return reach_level
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

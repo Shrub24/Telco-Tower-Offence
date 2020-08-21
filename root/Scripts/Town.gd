@@ -57,13 +57,13 @@ func init_town_ISPs(AIs, player):
 			var ISPTownInfo = create_ISPTownInfo(ISP)
 			ISPTownInfo.generate(shares[ISP.ISP_name], no_ISP_pop, affluency)
 			var tower = ISPTownInfo.tower
-			propagate_brand_image(tower, ISPTownInfo.ISP, tower.get_range())
+			propagate_brand_image(tower, ISPTownInfo.ISP, tower.get_reach())
 	
 	if starter_town:
 		create_ISPTownInfo(player.ISP)
 		Player_ISPTownInfo.generate_starter(no_ISP_pop)
 		var tower = Player_ISPTownInfo.tower
-		propagate_brand_image(tower, Player_ISPTownInfo.ISP, tower.get_range())
+		propagate_brand_image(tower, Player_ISPTownInfo.ISP, tower.get_reach())
 	
 	var ashares = get_ISP_shares()
 	var max_ISP = null
@@ -158,7 +158,7 @@ func normalise_affluency_delta():
 
 func build_tower(ISP, tower):
 	get_ISP_town_info(ISP).build_tower(tower)
-	propagate_brand_image(tower, ISP, tower.get_range())
+	propagate_brand_image(tower, ISP, tower.get_reach())
 	#todo sprite changing
 	var sprite = sprites[ISP][tower.type()]
 
@@ -174,7 +174,7 @@ func upgrade_tower(ISP, type):
 	get_ISP_town_info(ISP).upgrade_tower(type)
 	var tower = get_ISP_town_info(ISP).tower
 	if type == "reach":
-		propagate_brand_image(tower, ISP, tower.get_range())
+		propagate_brand_image(tower, ISP, tower.get_reach())
 
 func deselect():
 	selected = false

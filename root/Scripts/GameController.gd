@@ -31,6 +31,10 @@ func _ready():
 	ISPs.append(player.ISP)
 	game_start()
 
+func ui_update_money():
+	UI_controller.update_money(player.ISP.money)
+	UI_controller.update_reserved_money(player.ISP.get_reserved_money())
+
 func choose_player_ISP(ISP):
 	var player_ISP = player_ISP_scenes[player_ISP_options[ISP]].instance()
 	player.ISP = player_ISP
@@ -42,6 +46,7 @@ func game_start():
 				town.neighbour_towns.append(town2)
 	for town in towns:
 		town.init_town_ISPs(AIs, player)
+	ui_update_money()
 
 func next_turn():
 	for AI in AIs:
@@ -51,9 +56,10 @@ func next_turn():
 
 	for town in towns:
 		town.update_turn()
+
+	player.update_turn()
 	if selected_town:
 		update_town_UI(selected_town)
-	player.update_turn()
 
 func connect_town(town):
 	town.connect("clicked", self, "town_clicked")
@@ -73,14 +79,14 @@ func town_clicked(town):
 
 		
 func update_town_UI(town):
+	for ISP in town.get_ISPs():
+		ui_update_ISP(ISP, town.get_ISP_town_info(ISP))
 	ui_update_shares(town)
+	ui_update_tower()
 	if town.Player_ISPTownInfo:
 		ui_update_delta_price(town.Player_ISPTownInfo.get_delta_price())
-		ui_update_price(town.Player_ISPTownInfo.price)
 		ui_update_advertising(town.Player_ISPTownInfo.get_advertising())
 		ui_update_cyber_attack(false, false)
-		if town.Player_ISPTownInfo.get_cyber_attack():
-			ui_update_cyber_attack(town.Player_ISPTownInfo.get_cyber_attack(), 1)
 
 
 func ui_update_shares(town):
@@ -102,17 +108,22 @@ func ui_update_delta_price(delta_price):
 func ui_update_price(price):
 	UI_controller.update_price(price)
 	
-func ui_update_ISP(loyalty, image, price, ISP):
+func ui_update_ISP(ISP, town_info):
 	if ISP == player.ISP:
-		UI_controller.update_player_image(image)
-		UI_controller.update_player_loyalty(loyalty)
-		ui_update_price(price)
+		ui_update_player_loyalty(town_info.brand_loyalty)
+		ui_update_player_image(town_info.brand_image)
+		ui_update_price(town_info.price)
 	else:
-		pass
+		UI_controller.update_ISP_info(town_info.brand_loyalty, town_info.brand_image, town_info.price, ISP.ISP_name)
 
 func ui_update_tower():
-	UI_controller.update_tower_buy()
-	UI_controller.update_tower_upgrade()
+	var tower = player.ISP.get_town_tower(selected_town)
+	if tower:
+		UI_controller.update_tower_buy(tower.tower_type)
+		UI_controller.update_tower_upgrade(tower.reach_level, tower.bandwidth_level, tower.speed_level)
+	else:
+		UI_controller.update_tower_buy(0)
+		UI_controller.update_tower_upgrade(0, 0, 0)
 
 func ui_update_advertising(value):
 	UI_controller.update_advertising(value)
@@ -122,9 +133,12 @@ func ui_update_cyber_attack(ISP, value):
 		UI_controller.update_cyber_attack(ISP.ISP_name, value)
 	else:
 		UI_controller.update_cyber_attack(ISP, value)
+		
+func ui_update_player_loyalty(loyalty):
+	UI_controller.update_player_loyalty(loyalty)
 
-
-
+func ui_update_player_image(image):
+	UI_controller.update_player_image(image) 	
 
 func _on_UI_advertising_buy_pressed():
 	player.buy_advertising(selected_town)
@@ -155,3 +169,7 @@ func _on_UI_next_turn_pressed():
 		emit_signal("bankruptcy_query")
 	else:
 		next_turn() 
+
+
+func _on_UI_upgrade_tower_pressed(type):
+	player.upgrade_tower(selected_town, type)
