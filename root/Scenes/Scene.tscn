@@ -17,11 +17,12 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
-player_ISP_scenes = [ ExtResource( 6 ) ]
+player_ISP_scenes = [ ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ) ]
 player = NodePath("Player")
 map = NodePath("map")
 UI_controller = NodePath("UI")
 AI_paths = [ NodePath("ElonMaskAI"), NodePath("PanCoganAI"), NodePath("TedstraAI"), NodePath("VodacloneAI") ]
+camera = NodePath("Camera")
 
 [node name="ElonMaskAI" parent="." instance=ExtResource( 1 )]
 

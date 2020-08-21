@@ -14,6 +14,12 @@ var towns = []
 var selected_town
 
 export(Array, NodePath) var AI_paths
+export (NodePath) onready var camera = get_node(camera) if camera else null
+export (NodePath) var global_data_path = "/root/GlobalData"
+var global_data
+var starting_ISP
+
+export var initial_camera_locations = {"Who-awei": [-1460, -448], "Xiaomy": [130, 1472], "Alidada": [2440, -320], "Knockia": [200, -290]}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,10 +32,21 @@ func _ready():
 		ISP_name_dict[AI.ISP.ISP_name] = AI.ISP
 		AIs.append(AI)
 		ISPs.append(AI.ISP)
-	choose_player_ISP("Who-awei")
+		
+	
+	global_data = get_node(global_data_path)
+	starting_ISP = get_starting_ISP()
+	choose_player_ISP(starting_ISP)
 	player.ISP.is_player = true
 	ISPs.append(player.ISP)
+	
 	game_start()
+
+func get_starting_ISP():
+	return global_data.starting_ISP
+	
+func get_starting_camera_loc():
+	return [global_data.camera_x, global_data.camera_y]
 
 func choose_player_ISP(ISP):
 	var player_ISP = player_ISP_scenes[player_ISP_options[ISP]].instance()
@@ -42,6 +59,10 @@ func game_start():
 				town.neighbour_towns.append(town2)
 	for town in towns:
 		town.init_town_ISPs(AIs, player)
+		
+	# init camera locations
+	var loc = initial_camera_locations[starting_ISP]
+	camera.set_camera_loc(loc[0], loc[1])
 
 func next_turn():
 	for AI in AIs:
