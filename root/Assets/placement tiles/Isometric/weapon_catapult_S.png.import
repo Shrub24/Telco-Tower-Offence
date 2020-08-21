@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/weapon_catapult_S.png-51dbf72b6dc47f442eab4396f00950eb.stex"
+path="res://.import/weapon_catapult_S.png-afbf818223954ecef6416e81729aa755.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placement tiles/Isometric/weapon_catapult_S.png"
-dest_files=[ "res://.import/weapon_catapult_S.png-51dbf72b6dc47f442eab4396f00950eb.stex" ]
+source_file="res://assets/placement tiles/Isometric/weapon_catapult_S.png"
+dest_files=[ "res://.import/weapon_catapult_S.png-afbf818223954ecef6416e81729aa755.stex" ]
 
 [params]
 

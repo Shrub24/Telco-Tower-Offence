@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_slope.dae-42e234bb4a309dd4204e9983f7ee4ff4.scn"
+path="res://.import/tile_slope.dae-afdbde2f00d2e91595e9b7f4f061207e.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/tile_slope.dae"
-dest_files=[ "res://.import/tile_slope.dae-42e234bb4a309dd4204e9983f7ee4ff4.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/tile_slope.dae"
+dest_files=[ "res://.import/tile_slope.dae-afdbde2f00d2e91595e9b7f4f061207e.scn" ]
 
 [params]
 

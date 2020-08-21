@@ -6,6 +6,7 @@
 
 [node name="Town" type="Polygon2D"]
 position = Vector2( 224.254, 140.158 )
+color = Color( 0.219608, 0.87451, 0.368627, 0.368627 )
 script = ExtResource( 1 )
 ISPTownInfo_scene = ExtResource( 3 )
 bound = NodePath("Collider/Bound")

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemy_ufoYellow_S.png-5e186a4b9e7e0c8d794758153b02da1a.stex"
+path="res://.import/enemy_ufoYellow_S.png-4ca891fe2a9a6f3c0b9bea59f3edc7a8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placement tiles/Isometric/enemy_ufoYellow_S.png"
-dest_files=[ "res://.import/enemy_ufoYellow_S.png-5e186a4b9e7e0c8d794758153b02da1a.stex" ]
+source_file="res://assets/placement tiles/Isometric/enemy_ufoYellow_S.png"
+dest_files=[ "res://.import/enemy_ufoYellow_S.png-4ca891fe2a9a6f3c0b9bea59f3edc7a8.stex" ]
 
 [params]
 

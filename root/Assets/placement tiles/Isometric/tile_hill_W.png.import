@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_hill_W.png-feb0847e8e75545974da6e06ba9b5c90.stex"
+path="res://.import/tile_hill_W.png-53c14926f82e1670f215ac0bf03906e6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placement tiles/Isometric/tile_hill_W.png"
-dest_files=[ "res://.import/tile_hill_W.png-feb0847e8e75545974da6e06ba9b5c90.stex" ]
+source_file="res://assets/placement tiles/Isometric/tile_hill_W.png"
+dest_files=[ "res://.import/tile_hill_W.png-53c14926f82e1670f215ac0bf03906e6.stex" ]
 
 [params]
 

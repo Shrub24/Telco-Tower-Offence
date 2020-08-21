@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/towerSquare_roofB.fbx-8b1fc505f3379416506f431261cc2e7f.scn"
+path="res://.import/towerSquare_roofB.fbx-3a02fa4afe8d6572d3006372ff9e77e7.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/FBX format/towerSquare_roofB.fbx"
-dest_files=[ "res://.import/towerSquare_roofB.fbx-8b1fc505f3379416506f431261cc2e7f.scn" ]
+source_file="res://assets/placement tiles/Models/FBX format/towerSquare_roofB.fbx"
+dest_files=[ "res://.import/towerSquare_roofB.fbx-3a02fa4afe8d6572d3006372ff9e77e7.scn" ]
 
 [params]
 

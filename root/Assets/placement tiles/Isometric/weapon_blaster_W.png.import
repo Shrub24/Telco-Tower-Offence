@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/weapon_blaster_W.png-bc60d21083e674db1453f8a73ab3639f.stex"
+path="res://.import/weapon_blaster_W.png-5f92784cbe18f07c010581a3b0a53201.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placement tiles/Isometric/weapon_blaster_W.png"
-dest_files=[ "res://.import/weapon_blaster_W.png-bc60d21083e674db1453f8a73ab3639f.stex" ]
+source_file="res://assets/placement tiles/Isometric/weapon_blaster_W.png"
+dest_files=[ "res://.import/weapon_blaster_W.png-5f92784cbe18f07c010581a3b0a53201.stex" ]
 
 [params]
 

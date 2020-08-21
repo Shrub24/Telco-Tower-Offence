@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_riverBridge.fbx-2141e0f8610c5fb55304edac823146c9.scn"
+path="res://.import/tile_riverBridge.fbx-76d617a6248c0a4fa4a631250257c5c6.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/FBX format/tile_riverBridge.fbx"
-dest_files=[ "res://.import/tile_riverBridge.fbx-2141e0f8610c5fb55304edac823146c9.scn" ]
+source_file="res://assets/placement tiles/Models/FBX format/tile_riverBridge.fbx"
+dest_files=[ "res://.import/tile_riverBridge.fbx-76d617a6248c0a4fa4a631250257c5c6.scn" ]
 
 [params]
 

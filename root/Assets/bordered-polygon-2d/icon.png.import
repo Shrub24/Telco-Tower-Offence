@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-471e3eb63ae3e79552fb85104b2c7d60.stex"
+path="res://.import/icon.png-af56ebf6aa1ef09922379468963421e6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/bordered-polygon-2d/icon.png"
-dest_files=[ "res://.import/icon.png-471e3eb63ae3e79552fb85104b2c7d60.stex" ]
+source_file="res://assets/bordered-polygon-2d/icon.png"
+dest_files=[ "res://.import/icon.png-af56ebf6aa1ef09922379468963421e6.stex" ]
 
 [params]
 

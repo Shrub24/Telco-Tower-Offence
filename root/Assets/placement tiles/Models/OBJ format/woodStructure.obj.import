@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/woodStructure.obj-9fce13e1b4b20d209df5f2fa53c7176f.mesh"
+path="res://.import/woodStructure.obj-0f6cc05f917ba7ae3a9f8582523585f7.mesh"
 
 [deps]
 
-files=[ "res://.import/woodStructure.obj-9fce13e1b4b20d209df5f2fa53c7176f.mesh" ]
+files=[ "res://.import/woodStructure.obj-0f6cc05f917ba7ae3a9f8582523585f7.mesh" ]
 
-source_file="res://Assets/placement tiles/Models/OBJ format/woodStructure.obj"
-dest_files=[ "res://.import/woodStructure.obj-9fce13e1b4b20d209df5f2fa53c7176f.mesh", "res://.import/woodStructure.obj-9fce13e1b4b20d209df5f2fa53c7176f.mesh" ]
+source_file="res://assets/placement tiles/Models/OBJ format/woodStructure.obj"
+dest_files=[ "res://.import/woodStructure.obj-0f6cc05f917ba7ae3a9f8582523585f7.mesh", "res://.import/woodStructure.obj-0f6cc05f917ba7ae3a9f8582523585f7.mesh" ]
 
 [params]
 

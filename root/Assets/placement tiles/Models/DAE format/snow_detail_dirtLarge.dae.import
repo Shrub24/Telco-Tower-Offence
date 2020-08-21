@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snow_detail_dirtLarge.dae-247879c4a9af887a67d10c2d81c43f69.scn"
+path="res://.import/snow_detail_dirtLarge.dae-08191004496bfb7926464e505dbbd1c5.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/snow_detail_dirtLarge.dae"
-dest_files=[ "res://.import/snow_detail_dirtLarge.dae-247879c4a9af887a67d10c2d81c43f69.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/snow_detail_dirtLarge.dae"
+dest_files=[ "res://.import/snow_detail_dirtLarge.dae-08191004496bfb7926464e505dbbd1c5.scn" ]
 
 [params]
 

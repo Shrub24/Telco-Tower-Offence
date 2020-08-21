@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_cornerSquare.dae-948465efd09aeb6fc7c83e8836370c55.scn"
+path="res://.import/tile_cornerSquare.dae-020eba33291455849cff1e57c332abf7.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/tile_cornerSquare.dae"
-dest_files=[ "res://.import/tile_cornerSquare.dae-948465efd09aeb6fc7c83e8836370c55.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/tile_cornerSquare.dae"
+dest_files=[ "res://.import/tile_cornerSquare.dae-020eba33291455849cff1e57c332abf7.scn" ]
 
 [params]
 

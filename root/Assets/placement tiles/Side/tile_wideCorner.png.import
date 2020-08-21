@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_wideCorner.png-41227c1922b755d75432e9e3449e1c19.stex"
+path="res://.import/tile_wideCorner.png-4c4c60599a5a0471175acf3dea37285f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placement tiles/Side/tile_wideCorner.png"
-dest_files=[ "res://.import/tile_wideCorner.png-41227c1922b755d75432e9e3449e1c19.stex" ]
+source_file="res://assets/placement tiles/Side/tile_wideCorner.png"
+dest_files=[ "res://.import/tile_wideCorner.png-4c4c60599a5a0471175acf3dea37285f.stex" ]
 
 [params]
 

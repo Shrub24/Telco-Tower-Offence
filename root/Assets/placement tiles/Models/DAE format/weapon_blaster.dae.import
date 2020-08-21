@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/weapon_blaster.dae-6e3a0d58bc84e086b892ebf0c39032a9.scn"
+path="res://.import/weapon_blaster.dae-9918bd9ca81647899bc4ea5bc1083959.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/weapon_blaster.dae"
-dest_files=[ "res://.import/weapon_blaster.dae-6e3a0d58bc84e086b892ebf0c39032a9.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/weapon_blaster.dae"
+dest_files=[ "res://.import/weapon_blaster.dae-9918bd9ca81647899bc4ea5bc1083959.scn" ]
 
 [params]
 

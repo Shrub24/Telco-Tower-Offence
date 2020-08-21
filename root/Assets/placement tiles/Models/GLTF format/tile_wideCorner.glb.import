@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_wideCorner.glb-6149f60bdafea4301037c8acfe04c8bf.scn"
+path="res://.import/tile_wideCorner.glb-13e735de95dc972a1961e6bd547f47f7.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/GLTF format/tile_wideCorner.glb"
-dest_files=[ "res://.import/tile_wideCorner.glb-6149f60bdafea4301037c8acfe04c8bf.scn" ]
+source_file="res://assets/placement tiles/Models/GLTF format/tile_wideCorner.glb"
+dest_files=[ "res://.import/tile_wideCorner.glb-13e735de95dc972a1961e6bd547f47f7.scn" ]
 
 [params]
 

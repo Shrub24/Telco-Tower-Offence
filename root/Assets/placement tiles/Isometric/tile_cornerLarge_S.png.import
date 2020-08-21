@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_cornerLarge_S.png-473a86c40922a21e18994050ca4e5817.stex"
+path="res://.import/tile_cornerLarge_S.png-168f2de7320280a4ef0723d25a053c0a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placement tiles/Isometric/tile_cornerLarge_S.png"
-dest_files=[ "res://.import/tile_cornerLarge_S.png-473a86c40922a21e18994050ca4e5817.stex" ]
+source_file="res://assets/placement tiles/Isometric/tile_cornerLarge_S.png"
+dest_files=[ "res://.import/tile_cornerLarge_S.png-168f2de7320280a4ef0723d25a053c0a.stex" ]
 
 [params]
 

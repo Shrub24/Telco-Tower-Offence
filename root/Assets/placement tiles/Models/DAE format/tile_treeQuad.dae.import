@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_treeQuad.dae-325c3896ea70dd8eab92cfa7db4ac6c4.scn"
+path="res://.import/tile_treeQuad.dae-af99978b1e6fea972534bcda9fa5f218.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/tile_treeQuad.dae"
-dest_files=[ "res://.import/tile_treeQuad.dae-325c3896ea70dd8eab92cfa7db4ac6c4.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/tile_treeQuad.dae"
+dest_files=[ "res://.import/tile_treeQuad.dae-af99978b1e6fea972534bcda9fa5f218.scn" ]
 
 [params]
 

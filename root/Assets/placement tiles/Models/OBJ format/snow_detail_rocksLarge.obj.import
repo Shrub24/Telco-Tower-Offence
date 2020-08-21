@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/snow_detail_rocksLarge.obj-057a821b0b684dac220d9e73af20801b.mesh"
+path="res://.import/snow_detail_rocksLarge.obj-439fdb222a0b0ea554e09a3ab23dea72.mesh"
 
 [deps]
 
-files=[ "res://.import/snow_detail_rocksLarge.obj-057a821b0b684dac220d9e73af20801b.mesh" ]
+files=[ "res://.import/snow_detail_rocksLarge.obj-439fdb222a0b0ea554e09a3ab23dea72.mesh" ]
 
-source_file="res://Assets/placement tiles/Models/OBJ format/snow_detail_rocksLarge.obj"
-dest_files=[ "res://.import/snow_detail_rocksLarge.obj-057a821b0b684dac220d9e73af20801b.mesh", "res://.import/snow_detail_rocksLarge.obj-057a821b0b684dac220d9e73af20801b.mesh" ]
+source_file="res://assets/placement tiles/Models/OBJ format/snow_detail_rocksLarge.obj"
+dest_files=[ "res://.import/snow_detail_rocksLarge.obj-439fdb222a0b0ea554e09a3ab23dea72.mesh", "res://.import/snow_detail_rocksLarge.obj-439fdb222a0b0ea554e09a3ab23dea72.mesh" ]
 
 [params]
 

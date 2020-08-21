@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_riverCorner.fbx-428ac68e3849750d892f7b8a7fc804d9.scn"
+path="res://.import/tile_riverCorner.fbx-adffaee79687b6a1afaca3210f6d2fff.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/FBX format/tile_riverCorner.fbx"
-dest_files=[ "res://.import/tile_riverCorner.fbx-428ac68e3849750d892f7b8a7fc804d9.scn" ]
+source_file="res://assets/placement tiles/Models/FBX format/tile_riverCorner.fbx"
+dest_files=[ "res://.import/tile_riverCorner.fbx-adffaee79687b6a1afaca3210f6d2fff.scn" ]
 
 [params]
 

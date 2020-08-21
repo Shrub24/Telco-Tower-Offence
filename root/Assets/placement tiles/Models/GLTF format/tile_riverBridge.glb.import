@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_riverBridge.glb-d017a0ad2bf9a86bd7740e1c254d462f.scn"
+path="res://.import/tile_riverBridge.glb-fa953b7991d01de8de84ec57ce4f9653.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/GLTF format/tile_riverBridge.glb"
-dest_files=[ "res://.import/tile_riverBridge.glb-d017a0ad2bf9a86bd7740e1c254d462f.scn" ]
+source_file="res://assets/placement tiles/Models/GLTF format/tile_riverBridge.glb"
+dest_files=[ "res://.import/tile_riverBridge.glb-fa953b7991d01de8de84ec57ce4f9653.scn" ]
 
 [params]
 

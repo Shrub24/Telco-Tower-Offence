@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/snow_tile_transition.obj-db5afeb78f151944c6a756fc6d035384.mesh"
+path="res://.import/snow_tile_transition.obj-fc8917f9b1e8f3637f64ce257a785910.mesh"
 
 [deps]
 
-files=[ "res://.import/snow_tile_transition.obj-db5afeb78f151944c6a756fc6d035384.mesh" ]
+files=[ "res://.import/snow_tile_transition.obj-fc8917f9b1e8f3637f64ce257a785910.mesh" ]
 
-source_file="res://Assets/placement tiles/Models/OBJ format/snow_tile_transition.obj"
-dest_files=[ "res://.import/snow_tile_transition.obj-db5afeb78f151944c6a756fc6d035384.mesh", "res://.import/snow_tile_transition.obj-db5afeb78f151944c6a756fc6d035384.mesh" ]
+source_file="res://assets/placement tiles/Models/OBJ format/snow_tile_transition.obj"
+dest_files=[ "res://.import/snow_tile_transition.obj-fc8917f9b1e8f3637f64ce257a785910.mesh", "res://.import/snow_tile_transition.obj-fc8917f9b1e8f3637f64ce257a785910.mesh" ]
 
 [params]
 

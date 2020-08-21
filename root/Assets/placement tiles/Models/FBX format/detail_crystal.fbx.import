@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/detail_crystal.fbx-dad1d4d7ea4a048dcfedc87c7f875221.scn"
+path="res://.import/detail_crystal.fbx-9e5ffd1d325a2ec9f5f8d1a57930daaa.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/FBX format/detail_crystal.fbx"
-dest_files=[ "res://.import/detail_crystal.fbx-dad1d4d7ea4a048dcfedc87c7f875221.scn" ]
+source_file="res://assets/placement tiles/Models/FBX format/detail_crystal.fbx"
+dest_files=[ "res://.import/detail_crystal.fbx-9e5ffd1d325a2ec9f5f8d1a57930daaa.scn" ]
 
 [params]
 
