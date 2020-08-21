@@ -107,7 +107,7 @@ func do_advertising(action_budget, town):
 		return false
 
 func do_tower_upgrade(action_budget, town):
-	var bandwidth_used = town.ISPs[ISP].get_bandwidth_used
+	var bandwidth_used = town.ISPs[ISP].get_bandwidth_used()
 	var max_level = ISP.get_tower_max_upgrade_levels(town)
 	var bandwidth_level = ISP.tower_upgrade_level(town, "bandwidth")
 	var speed_level = ISP.tower_upgrade_level(town, "speed")

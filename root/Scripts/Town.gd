@@ -160,7 +160,7 @@ func build_tower(ISP, tower):
 	get_ISP_town_info(ISP).build_tower(tower)
 	propagate_brand_image(tower, ISP, tower.get_reach())
 	#todo sprite changing
-	var sprite = sprites[ISP][tower.type()]
+	#var sprite = sprites[ISP][tower.type()]
 
 # converts pos shares in get_affluency_delta to pops
 func affluency_convert_pos_share_to_pop():
