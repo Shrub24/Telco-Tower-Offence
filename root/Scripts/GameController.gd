@@ -117,13 +117,14 @@ func ui_update_ISP(ISP, town_info):
 		UI_controller.update_ISP_info(town_info.brand_loyalty, town_info.brand_image, town_info.price, ISP.ISP_name)
 
 func ui_update_tower():
-	var tower = player.ISP.get_town_tower(selected_town)
-	if tower:
-		UI_controller.update_tower_buy(tower.tower_type)
-		UI_controller.update_tower_upgrade(tower.reach_level, tower.bandwidth_level, tower.speed_level)
-	else:
-		UI_controller.update_tower_buy(0)
-		UI_controller.update_tower_upgrade(0, 0, 0)
+	if selected_town.Player_ISPTownInfo:
+		var tower = player.ISP.get_town_tower(selected_town)
+		if tower:
+			UI_controller.update_tower_buy(tower.tower_type)
+			UI_controller.update_tower_upgrade(tower.reach_level, tower.bandwidth_level, tower.speed_level)
+			return true
+	UI_controller.update_tower_buy(0)
+	UI_controller.update_tower_upgrade(0, 0, 0)
 
 func ui_update_advertising(value):
 	UI_controller.update_advertising(value)
@@ -141,11 +142,12 @@ func ui_update_player_image(image):
 	UI_controller.update_player_image(image) 	
 
 func _on_UI_advertising_buy_pressed():
-	player.buy_advertising(selected_town)
-
+	if selected_town.Player_ISPTownInfo and selected_town.Player_ISPTownInfo.tower:
+		player.buy_advertising(selected_town)
 
 func _on_UI_advertising_sell_pressed():
-	player.sell_advertising(selected_town)
+	if selected_town.Player_ISPTownInfo and selected_town.Player_ISPTownInfo.tower:
+		player.sell_advertising(selected_town)
 
 
 func _on_UI_buy_tower_pressed(type):
@@ -153,15 +155,18 @@ func _on_UI_buy_tower_pressed(type):
 
 
 func _on_UI_cyber_attack_pressed(target_name):
-	player.cyber_attack_target(selected_town, ISP_name_dict[target_name])
+	if selected_town.Player_ISPTownInfo:
+		player.cyber_attack_target(selected_town, ISP_name_dict[target_name])
 
 
 func _on_UI_price_down_pressed():
-	player.price_down(selected_town)
+	if selected_town.Player_ISPTownInfo and selected_town.Player_ISPTownInfo.tower:
+		player.price_down(selected_town)
 
 
 func _on_UI_price_up_pressed():
-	player.price_up(selected_town)
+	if selected_town.Player_ISPTownInfo and selected_town.Player_ISPTownInfo.tower:
+		player.price_up(selected_town)
 
 
 func _on_UI_next_turn_pressed():
@@ -172,4 +177,5 @@ func _on_UI_next_turn_pressed():
 
 
 func _on_UI_upgrade_tower_pressed(type):
-	player.upgrade_tower(selected_town, type)
+	if selected_town.Player_ISPTownInfo and selected_town.Player_ISPTownInfo.tower:
+		player.upgrade_tower(selected_town, type)
