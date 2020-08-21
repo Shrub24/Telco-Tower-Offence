@@ -14,7 +14,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 menu_scene_path = "res://Scenes/Menu/MainMenu.tscn"
-map_path = "res://map.tscn"
+map_path = "res://Scenes/Scene.tscn"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 1920.0
