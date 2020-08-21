@@ -8,7 +8,7 @@ export var player_ISP_options = {"Who-awei":0, "Xiaomy":1, "Alidada":2, "Knockia
 export(Array, PackedScene) var player_ISP_scenes
 export(NodePath) onready var player = get_node(player) if player else null
 
-export(Array, PackedScene) var AI_scenes
+var ISP_name_dict = {}
 var ISPs = []
 var AIs = []
 export(NodePath) onready var map = get_node(map) if map else null
@@ -32,6 +32,34 @@ func town_clicked(town):
 		selected_town = town
 		town.select()
 		UI_controller.show_town_UI(town)
+		update_town_UI(town)
+		
+func update_town_UI(town):
+	pass
+	
+func ui_update_delta_price(delta_price):
+	UI_controller.update_delta_price(delta_price)
+
+func ui_update_price(price):
+	UI_controller.update_price(price)
+	
+func ui_update_ISP(loyalty, image, price, ISP):
+	if ISP == player.ISP:
+		UI_controller.update_player_image(image)
+		UI_controller.update_player_loyalty(loyalty)
+		ui_update_price(price)
+	else:
+		pass
+
+func ui_update_tower():
+	UI_controller.update_tower_buy()
+	UI_controller.update_tower_upgrade()
+
+func ui_update_advertising(value):
+	UI_controller.update_advertising(value)
+	
+func ui_update_cyber_attack(ISP, value):
+	UI_controller.update_cyber_attack(ISP, value)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,21 +69,18 @@ func _ready():
 			connect_town(town)
 	for path in AI_paths:
 		var AI = get_node(path)
+		ISP_name_dict[AI.ISP.ISP_name] = AI.ISP
 		AIs.append(AI)
 		ISPs.append(AI.ISP)
-	ISPs.append(player.ISP)
 	choose_player_ISP("Who-awei")
+	ISPs.append(player.ISP)
 	game_start()
-	
+
 func choose_player_ISP(ISP):
 	var player_ISP = player_ISP_scenes[player_ISP_options[ISP]].instance()
 	player.ISP = player_ISP
 
 func game_start():
-	for scene in AI_scenes:
-		var instance = scene.instance()
-		AIs.append(instance)
-		
 	for town in towns:
 		town.init_town_ISPs(AIs, player)
 		for neighbour in town.neighbours:
@@ -63,19 +88,47 @@ func game_start():
 				if town2.town_name in town.neighbours:
 					town.neighbour_towns.append(town2)
 
-func on_NextTurn_button_down():
-	if player.ISP.get_available_money() < 0:
-		emit_signal("bankruptcy_query")
-	else:
-		next_turn() 
-
 func next_turn():
 	for AI in AIs:
 		AI.update_actions()
 	for ISP in ISPs:
+		if selected_town and selected_town.Player_ISPTownInfo:
+			ui_update_cyber_attack(selected_town.Player_ISPTownInfo.get_cyber_attack(), false)
+			ui_update_advertising(selected_town.Player_ISPTownInfo.get_advertising())
 		ISP.update_turn()
-		emit_signal("update_advertising", 0)
-		emit_signal("untarget_cyber_attack", null)
+
+
 	for town in towns:
 		town.update_turn()
 	player.update_turn()
+
+
+func _on_UI_advertising_buy_pressed():
+	player.buy_advertising(selected_town)
+
+
+func _on_UI_advertising_sell_pressed():
+	player.sell_advertising(selected_town)
+
+
+func _on_UI_buy_tower_pressed(type):
+	player.buy_tower(selected_town, type)
+
+
+func _on_UI_cyber_attack_pressed(target_name):
+	player.cyber_attack_target(selected_town, ISP_name_dict[target_name])
+
+
+func _on_UI_price_down_pressed():
+	player.price_down(selected_town)
+
+
+func _on_UI_price_up_pressed():
+	player.price_up(selected_town)
+
+
+func _on_UI_next_turn_pressed():
+	if player.ISP.get_available_money() < 0:
+		emit_signal("bankruptcy_query")
+	else:
+		next_turn() 

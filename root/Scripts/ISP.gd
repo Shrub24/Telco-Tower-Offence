@@ -6,7 +6,7 @@ export(Color) var colour
 
 onready var shop = load("res://Resources//Shop.tres")
 export var modifiers = {"advertising":1.0, "cyber_attack_offense":1.0, "cyber_attack_defense":1.0, "brand_loyalty":1.0, "brand_image":1.0, "price":1.0}
-export var money = 0
+export var money = 10000
 var towns = []
 var reserved_money = 0
 export var money_round = 0.5
@@ -57,9 +57,12 @@ func add_town(town):
 func change_price(town, amount):
 	amount = stepify(amount, 0.5)
 	return town.get_ISP_town_info(self).update_delta_price(amount)
-	
-func get_price(town):
+
+func get_delta_price(town):
 	return town.get_ISP_town_info(self).get_delta_price()
+
+func get_price(town):
+	return town.get_ISP_town_info(self).price
 	
 func get_tower(type):
 	if type == "3g":
@@ -135,7 +138,7 @@ func get_max_advertising(town):
 	return town.get_ISP_town_info(self).advertising_max
 	
 func get_operation_cost(town):
-	town.get_ISP_town_info(self).tower.operation_cost
+	return town.get_ISP_town_info(self).tower.operation_cost
 	
 #todo update when tower destroyed
 # called when tower is build in town or range is upgraded - searches neighbours and calls update aoe image
@@ -150,5 +153,8 @@ func depropagate_brand_image(town, tower):
 	
 
 func get_total_operation_cost():
+	var total = 0.0
 	for town in towns:
-		get_operation_cost(town)
+		if get_town_tower(town):
+			total += get_operation_cost(town)
+	return total

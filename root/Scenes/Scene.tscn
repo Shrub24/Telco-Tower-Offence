@@ -20,7 +20,7 @@ __meta__ = {
 player_ISP_scenes = [ ExtResource( 6 ) ]
 player = NodePath("Player")
 map = NodePath("map")
-UI_controller = NodePath("UI Layer")
+UI_controller = NodePath("UI")
 AI_paths = [ NodePath("ElonMaskAI"), NodePath("PanCoganAI"), NodePath("TedstraAI"), NodePath("VodacloneAI") ]
 
 [node name="ElonMaskAI" parent="." instance=ExtResource( 1 )]
@@ -32,11 +32,18 @@ AI_paths = [ NodePath("ElonMaskAI"), NodePath("PanCoganAI"), NodePath("TedstraAI
 [node name="VodacloneAI" parent="." instance=ExtResource( 8 )]
 
 [node name="map" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1.5874, 1.5874 )
+position = Vector2( 2.3811, 1.5874 )
 
 [node name="Player" type="Node" parent="."]
 script = ExtResource( 10 )
 
 [node name="Camera" parent="." instance=ExtResource( 2 )]
 
-[node name="UI Layer" parent="." instance=ExtResource( 4 )]
+[node name="UI" parent="." instance=ExtResource( 4 )]
+[connection signal="advertising_buy_pressed" from="UI" to="." method="_on_UI_Layer_advertising_buy_pressed"]
+[connection signal="advertising_sell_pressed" from="UI" to="." method="_on_UI_advertising_sell_pressed"]
+[connection signal="buy_tower_pressed" from="UI" to="." method="_on_UI_buy_tower_pressed"]
+[connection signal="cyber_attack_pressed" from="UI" to="." method="_on_UI_cyber_attack_pressed"]
+[connection signal="next_turn_pressed" from="UI" to="." method="_on_UI_next_turn_pressed"]
+[connection signal="price_down_pressed" from="UI" to="." method="_on_UI_price_down_pressed"]
+[connection signal="price_up_pressed" from="UI" to="." method="_on_UI_price_up_pressed"]

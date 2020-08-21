@@ -23,9 +23,10 @@ signal ui_update_delta_price(price)
 
 # todo connect signals to functions
 #todo emit signals
-func _on_TowerBuyButton_buy_tower(town, tower_type):
-	if ISP.get_town_tower(town).tower:
-		if ISP.get_town_tower(town).tower.tower_type == "tower_type":
+
+func buy_tower(town, tower_type):
+	if ISP.get_town_tower(town):
+		if ISP.get_town_tower(town).tower_type == "tower_type":
 			emit_signal("query_sell_tower", tower_type)
 		else:
 			emit_signal("query_change_tower", tower_type)
@@ -37,11 +38,11 @@ func _on_TowerBuyButton_buy_tower(town, tower_type):
 		else:
 			emit_signal("not_enough_money")
 
-func _on_TowerSell(town, tower_type):	
+func sell_tower(town, tower_type):	
 	var price = ISP.get_tower_price(tower_type)
 	
 
-func _on_TowerUpgradeButton_upgrade_tower(town, type):
+func upgrade_tower(town, type):
 	var curr_level = ISP.get_tower_upgrade_level(town, type)
 	var max_level = ISP.get_tower_max_upgrade_level(town)
 
@@ -56,7 +57,7 @@ func _on_TowerUpgradeButton_upgrade_tower(town, type):
 			emit_signal("at_max_level")
 
 
-func _on_AdvertisingButtonUp_buy_advertising(town):
+func buy_advertising(town):
 	var max_advertising = ISP.get_max_advertising(town)
 	var advertising = ISP.get_advertising(town)
 	if advertising < max_advertising:
@@ -69,7 +70,7 @@ func _on_AdvertisingButtonUp_buy_advertising(town):
 	else:
 		emit_signal("at_max_level")
 
-func _on_AdvertisingButtonDown_buy_advertising(town):
+func sell_advertising(town):
 	var min_advertising = 0
 	var advertising = ISP.get_advertising(town)
 	if advertising > min_advertising:
@@ -80,7 +81,7 @@ func _on_AdvertisingButtonDown_buy_advertising(town):
 	else:
 		emit_signal("at_min_level")
 
-func _on_CyberAttack_target(town, target):
+func cyber_attack_target(town, target):
 	var prev_target = ISP.get_cyber_attack_target(town)
 	var price = ISP.get_cyber_attack_price(town)
 	if !prev_target:
@@ -96,13 +97,13 @@ func _on_CyberAttack_target(town, target):
 			ISP.do_cyber_attack(town, target)
 			emit_signal("ui_update_cyber_attack")
 
-func _on_PriceButtonUp_change_price(town):
+func price_up(town):
 	ISP.change_price(town, 0.5)
-	emit_signal("ui_update_delta_price", ISP.get_delta_price())
+	emit_signal("ui_update_delta_price", ISP.get_delta_price(town))
 
-func _on_PriceButtonDown_change_price(town):
+func price_down(town):
 	ISP.change_price(town, -0.5)
-	emit_signal("ui_update_delta_price", ISP.get_delta_price())
+	emit_signal("ui_update_delta_price", ISP.get_delta_price(town))
 
 func _on_TechTreeButton_new_tech(tech):
 	if techs_remaining > 0 and learn_tech(tech):
@@ -124,8 +125,8 @@ func learn_tech(effect):
 	apply_tech_tree(effect)
 	return true
 
-func turn_update():
-	
-	ISP.force_reserve_money(ISP.get_total_operation_cost())
+func update_turn():
+	var cost = ISP.get_total_operation_cost()
+	ISP.force_reserve_money(cost)
 	emit_signal("update_money", ISP.money, ISP.get_reserved_money())
 	emit_signal("update_connections", ISP.update_connections())

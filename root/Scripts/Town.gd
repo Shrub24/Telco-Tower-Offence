@@ -14,8 +14,9 @@ var Player_ISPTownInfo
 export(float) var affluency
 export(NodePath) onready var bound
 export(NodePath) onready var border
-export var unselected_opacity = 0.4
-export var selected_opacity = 3
+export var unselected_opacity = 0.5
+export var hover_opacity = 1
+export var selected_opacity = 2
 var selected = false
 
 signal clicked(town)
@@ -45,7 +46,6 @@ func _ready():
 			max_ISP = ISP
 		elif ashares[ISP] > ashares[max_ISP]:
 			max_ISP = ISP
-	
 #	border.self_modulate = max_ISP.colour
 
 # population - noISPs in generates
@@ -61,8 +61,7 @@ func init_town_ISPs(AIs, player):
 		Player_ISPTownInfo = create_ISPTownInfo(player.ISP)
 		Player_ISPTownInfo.generate_starter(population)
 		emit_signal("clicked")
-		
-		
+
 func get_ISP_town_info(ISP):
 	if ISPs.keys().has(ISP):
 		return ISPs[ISP]
@@ -70,7 +69,7 @@ func get_ISP_town_info(ISP):
 		if ISP == Player_ISPTownInfo.ISP:
 			return Player_ISPTownInfo
 	return false
-	
+
 func get_ISP_shares():
 	var ISP_shares = {}
 	for ISP in get_ISPs():
@@ -79,6 +78,12 @@ func get_ISP_shares():
 			ISP_shares[ISP] = get_share(ISP)
 		
 	return ISP_shares
+
+func get_ISP_town_infos():
+	var town_infos = ISPs.values()
+	if Player_ISPTownInfo:
+		town_infos.append(Player_ISPTownInfo)
+	return town_infos
 
 func get_ISPs():
 	var ISP_list = ISPs.keys()
@@ -90,14 +95,15 @@ func get_share(ISP):
 	return float(ISPs[ISP].connections)/population
 	
 func update_turn():
-	var ISPTownInfos = get_ISPs()
-	for towninfo in ISPTownInfos:
-		towninfo.get_connections_loss(ISPTownInfos, affluency)
-		affluency_connection_delta[towninfo] = towninfo.get_affluency_delta(affluency)
+	var ISPTownInfos = get_ISP_town_infos()
+	for town_info in ISPTownInfos:
+
+		town_info.get_connections_loss(ISPTownInfos)
+		affluency_connection_delta[town_info] = town_info.get_affluency_delta(affluency)
 		
 	normalise_affluency_delta()
 	affluency_convert_pos_share_to_pop()
-	
+
 	for towninfo in ISPTownInfos:
 		towninfo.get_connections_delta()
 	for towninfo in ISPTownInfos:
@@ -118,7 +124,7 @@ func propagate_brand_image(tower, ISP, dist):
 		# neighbours list of town objects
 		for town in neighbour_towns:
 			town.propagate_brand_image(tower, ISP, dist - 1)
-			
+
 func depropagate_brand_image(tower, ISP, dist):
 	if ISPs.has(ISP):
 		ISPs[ISP].remove_aoe_image(tower)
@@ -134,6 +140,7 @@ func normalise_affluency_delta():
 	for ISP in affluency_connection_delta.keys():
 		if pos_sum > 1:
 			affluency_connection_delta[ISP] /= pos_sum
+
 func build_tower(ISP, tower):
 	get_ISP_town_info(ISP).build_tower(tower)
 	#todo sprite changing
@@ -151,15 +158,16 @@ func upgrade_tower(ISP, type):
 	get_ISP_town_info(ISP).upgrade_tower(type)
 
 func deselect():
+	selected = false
 	border.modulate.a = unselected_opacity
 	
 func select():
+	selected = true
 	border.modulate.a = selected_opacity
-
 
 func _on_Collider_mouse_entered():
 	if !selected:
-		border.modulate.a = selected_opacity
+		border.modulate.a = hover_opacity
 
 func _on_Collider_mouse_exited():
 	if !selected:
@@ -168,5 +176,4 @@ func _on_Collider_mouse_exited():
 func _on_Collider_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("ui_click"):
 		emit_signal("clicked", self)
-		selected = !selected
 

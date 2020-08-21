@@ -24,8 +24,8 @@ func _ready():
 	#move to init if doesn't work
 	rng.randomize()
 
-func update_choices():
-	var money = ISP.get_avaliable_money()
+func update_actions():
+	var money = ISP.get_available_money()
 	var revenue = 0
 	var operational_costs = 0
 	# scales with current money
@@ -47,7 +47,7 @@ func set_town_prices(action_budget, revenue, operational_costs):
 	var town_inc = 0
 	for town in ISP.towns:
 		var town_info = town.ISPs[ISP]
-		price_changes[town] = get_price_change(float(town_info.delta_connections)/town.population)
+		price_changes[town] = get_price_change(float(town_info.connections_delta)/town.population)
 	
 	var deficit = (revenue - operational_costs - action_budget - saftey_range) * -1
 	if deficit > 0:
@@ -65,7 +65,7 @@ func do_actions(action_budget):
 	for town in ISP.towns:
 		#refactor to use getter
 		var town_info = town.ISPs[ISP]
-		delta_conns.append([town_info.delta_connections, town])
+		delta_conns.append([town_info.connections_delta, town])
 		
 	delta_conns.sort_custom(self, "first_element_sorter")
 		

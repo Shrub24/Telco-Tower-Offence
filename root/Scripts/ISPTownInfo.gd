@@ -1,6 +1,6 @@
 extends Node
 
-var connections_delta
+var connections_delta = 0
 export var min_price = 1
 export var max_price = 250
 var connections = 0
@@ -8,7 +8,7 @@ var brand_loyalty = 0.0
 var brand_image = 0.0
 var tower
 var aoe_neighbouring_towers = {}
-var price = 0.0
+var price = 10.0
 var delta_price = 0.0
 export(float) var base_advertising_mod
 var advertising = 0.0
@@ -58,7 +58,6 @@ func generate(share, population, affluency):
 	
 	update_brand_image()
 	update_brand_loyalty()
-	price = affluency * share/100 * brand_loyalty
 
 func get_bandwidth_used():
 	return float(connections)/tower.get_bandwidth()
@@ -93,7 +92,7 @@ func update_brand_loyalty():
 func get_income():
 	return connections * price
 
-func get_connection_deltas():
+func get_connections_delta():
 	normalise_connection_loss()
 	update_connection_deltas()
 	
