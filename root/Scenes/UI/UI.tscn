@@ -83,6 +83,7 @@ __meta__ = {
 }
 
 [node name="Your ISP" type="VBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -218,6 +219,100 @@ texture = ExtResource( 4 )
 expand = true
 
 [node name="Text" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer3"]
+margin_left = 39.0
+margin_top = 47.0
+margin_right = 217.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+
+[node name="AI ISP" type="VBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP"]
+margin_right = 217.0
+margin_bottom = 106.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP/HBoxContainer"]
+margin_right = 35.0
+margin_bottom = 106.0
+rect_min_size = Vector2( 35, 35 )
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP/HBoxContainer"]
+margin_left = 39.0
+margin_right = 217.0
+margin_bottom = 106.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP/HBoxContainer/MarginContainer"]
+margin_right = 178.0
+margin_bottom = 106.0
+
+[node name="MarginContainer" type="CenterContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP/HBoxContainer/MarginContainer/HBoxContainer"]
+margin_right = 178.0
+margin_bottom = 106.0
+size_flags_horizontal = 3
+
+[node name="PriceLabel" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP/HBoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
+margin_left = 85.0
+margin_top = 37.0
+margin_right = 93.0
+margin_bottom = 68.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0.929412, 0.827451, 0, 1 )
+text = "0
+"
+valign = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP"]
+margin_top = 110.0
+margin_right = 217.0
+margin_bottom = 216.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP/HBoxContainer2"]
+margin_right = 35.0
+margin_bottom = 106.0
+rect_min_size = Vector2( 35, 35 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="brand_loyalty" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP/HBoxContainer2"]
+margin_left = 39.0
+margin_top = 46.0
+margin_right = 217.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP"]
+margin_top = 220.0
+margin_right = 217.0
+margin_bottom = 328.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP/HBoxContainer3"]
+margin_right = 35.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 35, 35 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="brand_image" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/AI ISP/HBoxContainer3"]
 margin_left = 39.0
 margin_top = 47.0
 margin_right = 217.0
