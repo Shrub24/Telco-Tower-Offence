@@ -5,8 +5,8 @@ export (float) var greedy_factor = 0.0
 onready var ISP = $"ISP"
 onready var shop = load("res://Resources//Shop.tres")
 
-const max_price_change = 3
-const jerk_factor = 3
+const max_price_change = 10
+const jerk_factor = 2
 
 const advertising_offset = 1000
 const advertising_proportion = 4
@@ -23,8 +23,11 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	#move to init if doesn't work
 	rng.randomize()
-
+#	greedy_factor = 0.5
+	
 func update_actions():
+#	greedy_factor = rng.randf_range(-0.5, 0.5)
+	
 	var money = ISP.get_available_money()
 	var revenue = 0
 	var operational_costs = 0
@@ -47,12 +50,19 @@ func set_town_prices(action_budget, revenue, operational_costs):
 	var town_inc = 0
 	for town in ISP.towns:
 		var town_info = town.ISPs[ISP]
-		price_changes[town] = get_price_change(float(town_info.connections_delta)/town.population)
+		var delta = town_info.prev_connections_delta + town_info.prev_affluency_delta
+		
+		var percentage_change
+		if town_info.connections != 0:
+			percentage_change = float(delta)/town_info.connections
+		else:
+			percentage_change = 0
+		price_changes[town] = get_price_change(percentage_change)
 	
-	var deficit = (revenue - operational_costs - action_budget - saftey_range) * -1
-	if deficit > 0:
-		# check is float
-		town_inc = float(deficit)/len(ISP.towns)
+#	var deficit = (revenue - operational_costs - action_budget - saftey_range) * -1
+#	if deficit > 0:
+#		# check is float
+#		town_inc = float(deficit)/len(ISP.towns)
 	
 	for town in price_changes.keys():
 		change_prices(town, price_changes[town] + town_inc)
@@ -108,16 +118,16 @@ func do_advertising(action_budget, town):
 
 func do_tower_upgrade(action_budget, town):
 	var bandwidth_used = town.ISPs[ISP].get_bandwidth_used()
-	var max_level = ISP.get_tower_max_upgrade_levels(town)
-	var bandwidth_level = ISP.tower_upgrade_level(town, "bandwidth")
-	var speed_level = ISP.tower_upgrade_level(town, "speed")
+	var max_level = ISP.get_tower_max_upgrade_level(town)
+	var bandwidth_level = ISP.get_tower_upgrade_level(town, "bandwidth")
+	var speed_level = ISP.get_tower_upgrade_level(town, "speed")
 	var price
 	var upgrade
 	if bandwidth_used >= bandwidth_cutoff and bandwidth_level < max_level:
-		price = ISP.get_tower_upgrade_price(town, "bandwidth", bandwidth_level + 1)
+		price = ISP.get_tower_upgrade_price(town, "bandwidth")
 		upgrade = "bandwidth"
 	elif speed_level < max_level:
-		price = ISP.get_tower_upgrade_price(town, "speed", speed_level + 1)
+		price = ISP.get_tower_upgrade_price(town, "speed")
 		upgrade = "speed"
 	else:
 		return false
