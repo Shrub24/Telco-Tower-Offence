@@ -541,6 +541,12 @@ position = Vector2( -1913.13, -2.03845 )
 polygon = PoolVector2Array( -64.0498, -56.7205, 64.6073, -120.629, 191.583, -56.7205, 128.095, -25.1869, 191.472, 7.06979, 129.221, 38.6858, 191.465, 70.4697, 64.9912, 134.7, -319.021, -58.0758, -190.735, -121.401 )
 population = 80000
 neighbours = [ "Forgeville North", "Forgeville", "Diamond Pier", "Facade Coast" ]
+shares = {
+"ElonMask Co": 40,
+"PanCogan Mobile": 40,
+"Tedstra": 20,
+"Vodaclone": 0
+}
 town_name = "Teel Estate"
 affluency = 60.0
 

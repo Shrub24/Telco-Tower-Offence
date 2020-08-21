@@ -32,7 +32,7 @@ AI_paths = [ NodePath("ElonMaskAI"), NodePath("PanCoganAI"), NodePath("TedstraAI
 [node name="VodacloneAI" parent="." instance=ExtResource( 8 )]
 
 [node name="map" parent="." instance=ExtResource( 9 )]
-position = Vector2( 2.3811, 1.5874 )
+position = Vector2( 6.74878, 104.007 )
 
 [node name="Player" type="Node" parent="."]
 script = ExtResource( 10 )
@@ -40,7 +40,16 @@ script = ExtResource( 10 )
 [node name="Camera" parent="." instance=ExtResource( 2 )]
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
-[connection signal="advertising_buy_pressed" from="UI" to="." method="_on_UI_Layer_advertising_buy_pressed"]
+cyber_attack_button_paths = {
+"ElonMask Co": NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/ElonMaskCoAttack"),
+"PanCogan Mobile": NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/PanCoganMobileAttack"),
+"Tedstra": NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/TedstraAttack"),
+"Vodaclone": NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/VodacloneAttack")
+}
+[connection signal="ui_update_advertising" from="Player" to="." method="ui_update_advertising"]
+[connection signal="ui_update_cyber_attack" from="Player" to="." method="ui_update_cyber_attack"]
+[connection signal="ui_update_delta_price" from="Player" to="." method="ui_update_delta_price"]
+[connection signal="advertising_buy_pressed" from="UI" to="." method="_on_UI_advertising_buy_pressed"]
 [connection signal="advertising_sell_pressed" from="UI" to="." method="_on_UI_advertising_sell_pressed"]
 [connection signal="buy_tower_pressed" from="UI" to="." method="_on_UI_buy_tower_pressed"]
 [connection signal="cyber_attack_pressed" from="UI" to="." method="_on_UI_cyber_attack_pressed"]

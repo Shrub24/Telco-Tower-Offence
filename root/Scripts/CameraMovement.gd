@@ -66,3 +66,5 @@ func _input(event):
 	#get mouse pos on move			
 	if event is InputEventMouseMotion:
 		mouse_position = event.position
+
+

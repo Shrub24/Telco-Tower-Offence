@@ -86,16 +86,16 @@ func cyber_attack_target(town, target):
 	var price = ISP.get_cyber_attack_price(town)
 	if !prev_target:
 		if ISP.reserve_money(price):
-			ISP.do_cyber_attack(town, target)
-			emit_signal("ui_update_cyber_attack")
+			if ISP.do_cyber_attack(town, target):
+				emit_signal("ui_update_cyber_attack", target, true)
 	else:
 		ISP.cancel_cyber_attack(town, prev_target)
-		emit_signal("ui_update_cyber_attack")
+		emit_signal("ui_update_cyber_attack", prev_target, false)
 		if prev_target == target:
 			ISP.unreserve_money(price)
 		else:
 			ISP.do_cyber_attack(town, target)
-			emit_signal("ui_update_cyber_attack")
+			emit_signal("ui_update_cyber_attack", target, true)
 
 func price_up(town):
 	ISP.change_price(town, 0.5)
