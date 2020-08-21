@@ -2,15 +2,17 @@ extends Node
 
 
 export(String) var ISP_name
-export(Color) var colour
+export(Color) var primary_colour
+export(Color) var secondary_colour
 
-onready var shop = load("res://Resources//Shop.tres")
+var shop_path = "res://Resources/Shop.tres"
 export var modifiers = {"advertising":1.0, "cyber_attack_offense":1.0, "cyber_attack_defense":1.0, "brand_loyalty":1.0, "brand_image":1.0, "price":1.0}
-export var money = 0
+export var money = 100000000000
 var towns = []
 var reserved_money = 0
 export var money_round = 0.5
 var connections = 0
+export var is_player = false
 	
 func update_turn():
 	money -= reserved_money
@@ -57,11 +59,15 @@ func add_town(town):
 func change_price(town, amount):
 	amount = stepify(amount, 0.5)
 	return town.get_ISP_town_info(self).update_delta_price(amount)
-	
-func get_price(town):
+
+func get_delta_price(town):
 	return town.get_ISP_town_info(self).get_delta_price()
+
+func get_price(town):
+	return town.get_ISP_town_info(self).price
 	
 func get_tower(type):
+	var shop = load(shop_path)
 	if type == "3g":
 		return shop.get_tower_3g()
 	elif type == "4g":
@@ -78,13 +84,10 @@ func get_town_tower(town):
 func build_tower(town, type):
 	var temp_tower = get_tower(type)
 	town.build_tower(self, temp_tower)
-	propagate_brand_image(town, temp_tower)
 	
 func upgrade_tower(town, type):
 	town.upgrade_tower(self, town, type)
 	var tower = get_town_tower(town)
-	if type == "reach":
-		propagate_brand_image(town, tower)
 	
 func get_tower_upgrade_level(town, type):
 	var tower = get_town_tower(town)
@@ -100,6 +103,7 @@ func get_tower_max_upgrade_level(town):
 	return tower.max_level
 
 func get_tower_upgrade_price(town, type, level):
+	var shop = load(shop_path)
 	var tower = get_town_tower(town)
 	var tower_type = tower.tower_type
 	if type == "3g":
@@ -110,45 +114,44 @@ func get_tower_upgrade_price(town, type, level):
 		return shop.get_tower_5g_upgrade_price(type, level)
 
 func get_advertising_price(town):
+	var shop = load(shop_path)
 	return shop.get_advertising_price(town.population)
 
 func set_advertising(town, value):
 	return town.get_ISP_town_info(self).update_advertising(value)
 
 func get_advertising(town):
-	return town.get_ISP_town_info(self).advertising
+	return town.get_ISP_town_info(self).get_advertising()
 
 func get_cyber_attack_price(town):
+	var shop = load(shop_path)
 	return shop.get_cyber_attack_price(town.population)
 
 func do_cyber_attack(town, ISP):
+	if !town.get_ISP_town_info(ISP):
+		return false
 	town.get_ISP_town_info(self).cyber_attack_target = ISP
-	return town.get_ISP_town_info(ISP).do_cyber_attack(modifiers["cyber_attack_offense"])
+	town.get_ISP_town_info(ISP).do_cyber_attack(modifiers["cyber_attack_offense"])
+	return true
 
 func cancel_cyber_attack(town, ISP):
+	if !town.get_ISP_town_info(ISP):
+		return false
+	town.get_ISP_town_info(self).cyber_attack_target = null
 	return town.get_ISP_town_info(ISP).cancel_cyber_attack()
 
 func get_cyber_attack_target(town):
-	return town.get_ISP_town_info(self).get_cyber_attack_target()
+	return town.get_ISP_town_info(self).cyber_attack_target
 
 func get_max_advertising(town):
-	return town.get_ISP_town_info(self).advertising_max
+	return town.get_ISP_town_info(self).max_advertising
 	
 func get_operation_cost(town):
-	town.get_ISP_town_info(self).tower.operation_cost
-	
-#todo update when tower destroyed
-# called when tower is build in town or range is upgraded - searches neighbours and calls update aoe image
-func propagate_brand_image(town, tower):
-	#scaling loyalty with remaining range
-	var tower_range = tower.get_range()
-	town.propagate_brand_image(tower, self, tower_range)
-	
-func depropagate_brand_image(town, tower):
-	var tower_range = tower.get_range()
-	town.depropagate_brand_image(tower, self, tower_range)
-	
+	return town.get_ISP_town_info(self).tower.operation_cost
 
 func get_total_operation_cost():
+	var total = 0.0
 	for town in towns:
-		get_operation_cost(town)
+		if get_town_tower(town):
+			total += get_operation_cost(town)
+	return total

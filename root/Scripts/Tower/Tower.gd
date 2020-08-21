@@ -4,7 +4,7 @@ class_name Tower
 export var speeds = [1, 2, 3, 4]
 export var bandwidths = [10000, 100000, 1000000, 5000000]
 export var reach = [0, 1, 2, 3]
-export var operation_cost = 100000
+export var operation_cost = 100000.0
 export var price = 1000
 export var upgrade_cost = [100, 200, 400, 800]
 export var tower_type = "3g"

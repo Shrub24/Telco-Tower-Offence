@@ -1,14 +1,449 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Scripts/UIController.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/UI/UIController.gd" type="Script" id=1]
+[ext_resource path="res://Assets/UI/down.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/next_turn.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/brand_loyalty.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/billboardtile.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/UI/CyberAttackButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/UI/bandwith_upgrade.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/3g_icon.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/speed_upgrade.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/coin.png" type="Texture" id=10]
+[ext_resource path="res://Assets/UI/4g_icon.png" type="Texture" id=11]
+[ext_resource path="res://Assets/UI/range_upgrade.png" type="Texture" id=12]
+[ext_resource path="res://Assets/UI/5g_icon.png" type="Texture" id=13]
+[ext_resource path="res://Assets/UI/up.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/UI/ShareGraphic.tscn" type="PackedScene" id=15]
 
 [node name="UI Layer" type="CanvasLayer"]
 script = ExtResource( 1 )
+price_label = NodePath("Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer/MarginContainer/HBoxContainer/MarginContainer/PriceLabel")
+delta_price_label = NodePath("Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/DeltaPriceLabel")
+player_loyalty_label = NodePath("Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer2/Text")
+player_image_label = NodePath("Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer3/Text")
+advertising_label = NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/HBoxContainer/Label")
+cyber_attack_button_paths = {
+"ElonMask Co": NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/ElonMaskCoAttack"),
+"PanCogan Mobile": NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/PanCoganMobileAttack"),
+"Tedstra": NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/TedstraAttack"),
+"Vodaclone": NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/VodacloneAttack")
+}
+share_graphic = NodePath("Bottom/Bottom Panel/HBoxContainer/ShareGraphic")
 
-[node name="GUI" type="VBoxContainer" parent="."]
-margin_right = 1024.0
-margin_bottom = 597.0
-mouse_filter = 2
+[node name="Next Turn" type="TextureButton" parent="."]
+margin_left = 1442.38
+margin_top = 765.0
+margin_right = 1901.38
+margin_bottom = 1012.0
+texture_normal = ExtResource( 3 )
+expand = true
+stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Bottom" type="PanelContainer" parent="."]
+margin_left = 433.296
+margin_top = 704.271
+margin_right = 1343.3
+margin_bottom = 1083.27
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bottom Panel" type="Panel" parent="Bottom"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 903.004
+margin_bottom = 371.999
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel"]
+margin_left = 5.0
+margin_top = -4.0
+margin_right = 893.0
+margin_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ISPInfoTabs" type="TabContainer" parent="Bottom/Bottom Panel/HBoxContainer"]
+margin_right = 225.0
+margin_bottom = 364.0
+rect_min_size = Vector2( 225, 200 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Your ISP" type="VBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP"]
+margin_right = 217.0
+margin_bottom = 106.0
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer"]
+margin_right = 35.0
+margin_bottom = 106.0
+rect_min_size = Vector2( 35, 35 )
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer"]
+margin_left = 39.0
+margin_right = 217.0
+margin_bottom = 106.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer/MarginContainer"]
+margin_right = 178.0
+margin_bottom = 106.0
+
+[node name="MarginContainer" type="CenterContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer/MarginContainer/HBoxContainer"]
+margin_right = 56.0
+margin_bottom = 106.0
+size_flags_horizontal = 3
+
+[node name="PriceLabel" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
+margin_left = 24.0
+margin_top = 37.0
+margin_right = 32.0
+margin_bottom = 68.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0.929412, 0.827451, 0, 1 )
+text = "0
+"
+valign = 1
+
+[node name="MarginContainer2" type="CenterContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 60.0
+margin_right = 116.0
+margin_bottom = 106.0
+size_flags_horizontal = 3
+
+[node name="DeltaPriceLabel" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer/MarginContainer/HBoxContainer/MarginContainer2"]
+margin_left = 24.0
+margin_top = 37.0
+margin_right = 32.0
+margin_bottom = 68.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0.929412, 0.0431373, 0, 1 )
+text = "0
+"
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 120.0
+margin_right = 178.0
+margin_bottom = 106.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureButton" type="TextureButton" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_right = 58.0
+margin_bottom = 51.0
+size_flags_vertical = 3
+texture_normal = ExtResource( 14 )
+expand = true
+stretch_mode = 5
+
+[node name="TextureButton2" type="TextureButton" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 55.0
+margin_right = 58.0
+margin_bottom = 106.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP"]
+margin_top = 110.0
+margin_right = 217.0
+margin_bottom = 216.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer2"]
+margin_right = 35.0
+margin_bottom = 106.0
+
+[node name="TextureRect" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer2/VBoxContainer"]
+margin_right = 35.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Text" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer2"]
+margin_left = 39.0
+margin_top = 46.0
+margin_right = 217.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP"]
+margin_top = 220.0
+margin_right = 217.0
+margin_bottom = 328.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer3"]
+margin_right = 35.0
+margin_bottom = 108.0
+
+[node name="TextureRect" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer3/VBoxContainer"]
+margin_right = 35.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 35 )
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Text" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer3"]
+margin_left = 39.0
+margin_top = 47.0
+margin_right = 217.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+
+[node name="ShareGraphic" parent="Bottom/Bottom Panel/HBoxContainer" instance=ExtResource( 15 )]
+margin_left = 229.0
+margin_top = 2.0
+margin_right = 304.0
+margin_bottom = 362.0
+rect_min_size = Vector2( 70, 100 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer"]
+margin_left = 308.0
+margin_right = 634.0
+margin_bottom = 364.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer"]
+margin_right = 326.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer"]
+margin_right = 326.0
+margin_bottom = 180.0
+alignment = 1
+
+[node name="3gTowerBuy" type="TextureButton" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+margin_right = 106.0
+margin_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+hint_tooltip = "Build 3g Tower
+This will sell any existing tower"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 8 )
+expand = true
+stretch_mode = 5
+
+[node name="4gTowerBuy" type="TextureButton" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 110.0
+margin_right = 216.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 11 )
+expand = true
+stretch_mode = 5
+
+[node name="5gTowerBuy" type="TextureButton" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 220.0
+margin_right = 326.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 13 )
+expand = true
+stretch_mode = 5
+
+[node name="MarginContainer3" type="MarginContainer" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer"]
+margin_top = 184.0
+margin_right = 326.0
+margin_bottom = 364.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3"]
+margin_right = 326.0
+margin_bottom = 180.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer"]
+margin_right = 106.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureButton2" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/HBoxContainer"]
+margin_right = 106.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer"]
+margin_left = 110.0
+margin_right = 216.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureButton2" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/HBoxContainer3"]
+margin_right = 106.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 6
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer"]
+margin_left = 220.0
+margin_right = 326.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureButton2" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/HBoxContainer2"]
+margin_right = 106.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer"]
+margin_left = 638.0
+margin_right = 888.0
+margin_bottom = 364.0
+rect_min_size = Vector2( 250, 0 )
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2"]
+margin_right = 250.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/HBoxContainer"]
+margin_right = 80.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/HBoxContainer"]
+margin_left = 84.0
+margin_top = 83.0
+margin_right = 164.0
+margin_bottom = 97.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/HBoxContainer"]
+margin_left = 168.0
+margin_right = 250.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/HBoxContainer/MarginContainer"]
+margin_right = 82.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureButton" type="TextureButton" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/HBoxContainer/MarginContainer/VBoxContainer"]
+margin_right = 82.0
+margin_bottom = 88.0
+size_flags_vertical = 3
+texture_normal = ExtResource( 14 )
+expand = true
+stretch_mode = 5
+
+[node name="TextureButton2" type="TextureButton" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 92.0
+margin_right = 82.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2"]
+margin_top = 184.0
+margin_right = 250.0
+margin_bottom = 364.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer"]
+margin_right = 250.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TedstraAttack" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2" instance=ExtResource( 6 )]
+margin_right = 59.0
+margin_bottom = 180.0
+
+[node name="VodacloneAttack" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2" instance=ExtResource( 6 )]
+margin_left = 63.0
+margin_right = 122.0
+margin_bottom = 180.0
+
+[node name="ElonMaskCoAttack" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2" instance=ExtResource( 6 )]
+margin_left = 126.0
+margin_right = 185.0
+margin_bottom = 180.0
+
+[node name="PanCoganMobileAttack" parent="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2" instance=ExtResource( 6 )]
+margin_left = 189.0
+margin_right = 250.0
+margin_bottom = 180.0
+[connection signal="pressed" from="Next Turn" to="." method="_on_Next_Turn_pressed"]
+[connection signal="pressed" from="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/TextureButton" to="." method="_on_PriceUp_pressed"]
+[connection signal="pressed" from="Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Your ISP/HBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/TextureButton2" to="." method="_on_PriceDown_pressed"]
+[connection signal="pressed" from="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/3gTowerBuy" to="." method="_on_3gTowerBuy_pressed"]
+[connection signal="pressed" from="Bottom/Bottom Panel/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/4gTowerBuy" to="." method="_on_4gTowerBuy_pressed"]
+[connection signal="pressed" from="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/HBoxContainer/MarginContainer/VBoxContainer/TextureButton" to="." method="_on_AdvertisingBuy_pressed"]
+[connection signal="pressed" from="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/HBoxContainer/MarginContainer/VBoxContainer/TextureButton2" to="." method="_on_AdvertisingSell_pressed"]
+[connection signal="gui_input" from="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/TedstraAttack" to="." method="_on_TedstraAttack_gui_input"]
+[connection signal="gui_input" from="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/VodacloneAttack" to="." method="_on_VodacloneAttack_gui_input"]
+[connection signal="gui_input" from="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/ElonMaskCoAttack" to="." method="_on_ElonMaskCoAttack_gui_input"]
+[connection signal="gui_input" from="Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/PanCoganMobileAttack" to="." method="_on_PanCoganMobileAttack_gui_input"]

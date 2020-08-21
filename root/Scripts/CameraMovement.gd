@@ -9,8 +9,9 @@ export var zoom_speed = 10.0
 var zooming = false
 export var zoom_min = 0.25
 export var zoom_max = 5.0
-export var margin_x = 170
-export var margin_y = 170
+export var margin_x = 100
+export var margin_y = 100
+export var margin_y_ui = 25
 var mouse_position = Vector2()
 export var camera_speed = 25.0
 
@@ -37,8 +38,8 @@ func _process(delta):
 		position.x = lerp(position.x, position.x + abs(mouse_position.x - get_viewport_rect().size.x + margin_x)/margin_x * camera_speed * zoom.x, camera_speed * delta)
 	if mouse_position.y < margin_y:
 		position.y = lerp(position.y, position.y - abs(mouse_position.y - margin_y)/margin_y * camera_speed * zoom.y, camera_speed * delta)
-	elif mouse_position.y > get_viewport_rect().size.y - margin_y:
-		position.y = lerp(position.y, position.y + abs(mouse_position.y - get_viewport_rect().size.y + margin_y)/margin_y * camera_speed * zoom.y, camera_speed * delta)
+	elif mouse_position.y > get_viewport_rect().size.y - margin_y_ui:
+		position.y = lerp(position.y, position.y + abs(mouse_position.y - get_viewport_rect().size.y + margin_y_ui)/margin_y_ui * camera_speed * zoom.y, camera_speed * delta)
 	
 	#process zoom
 	zoom.x = lerp(zoom.x, zoom.x * zoom_factor, zoom_speed * delta)
@@ -65,3 +66,5 @@ func _input(event):
 	#get mouse pos on move			
 	if event is InputEventMouseMotion:
 		mouse_position = event.position
+
+

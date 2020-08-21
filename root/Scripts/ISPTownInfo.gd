@@ -1,6 +1,6 @@
 extends Node
 
-var connections_delta
+var connections_delta = 0
 export var min_price = 1
 export var max_price = 250
 var connections = 0
@@ -8,7 +8,7 @@ var brand_loyalty = 0.0
 var brand_image = 0.0
 var tower
 var aoe_neighbouring_towers = {}
-var price = 0.0
+var price = 10.0
 var delta_price = 0.0
 export(float) var base_advertising_mod
 var advertising = 0.0
@@ -20,7 +20,7 @@ var max_cyber_attack = 1
 var ISP
 var costs = 0
 var shop
-export var loyalty_scale_factor = 1
+export var loyalty_scale_factor = 100
 export var tower_max_speed = 5000
 var town_population = 0
 var cyber_attack_target
@@ -30,35 +30,44 @@ const min_affluency = 1
 const max_affluency = 99
 var max_affluency_pricing = max_price - 100
 var min_affluency_pricing = min_price + 100
-const affluency_dampening_factor = 1
+const affluency_dampening_factor = 5
+
+export var base_starting_price = -5
+export var max_share_factor = 12
+
+var rng = RandomNumberGenerator.new()
 
 func _ready():
 	shop = load("res://Resources/Shop.tres")
+	rng.randomize()
 
-func initialise(new_ISP, town):
+func initialise(new_ISP, town, population):
 	ISP = new_ISP
 	ISP.add_town(town)
-
-func generate_starter(population):
-	shop = load("res://Resources/Shop.tres")
 	town_population = population
-	connections = town_population
+
+func generate_starter(no_isp_pop):
+	shop = load("res://Resources/Shop.tres")
+	connections = town_population - no_isp_pop
 	
-	tower = shop.get_tower_3g()
+	build_tower(shop.get_tower_3g())
 	price = min_price * 5
 	
 	update_brand_image()
 	update_brand_loyalty()
 
-func generate(share, population, affluency):
-	town_population = population
-	connections = int(share * town_population/100)
-
+func generate(share, no_isp_pop, affluency):
+	connections = int(share * (town_population - no_isp_pop)/100)
+	
 	build_tower(calculate_starting_tower(affluency))
 	
 	update_brand_image()
 	update_brand_loyalty()
-	price = affluency * share/100 * brand_loyalty
+	
+	# initial price for ISPs
+	var affluency_pricing = (float(affluency-min_affluency)/(max_affluency-min_affluency))*(max_price-min_price) + min_price
+	price = base_starting_price + affluency_pricing + (rng.randf_range(0, max_share_factor) * share/100)
+	price = stepify(clamp(price, min_price, max_price), 0.5)
 
 func get_bandwidth_used():
 	return float(connections)/tower.get_bandwidth()
@@ -69,7 +78,7 @@ func get_connections_loss(ISPTownInfos):
 		other.connection_loss[self] = considering_switch
 
 func get_affluency_delta(affluency):
-	var affluency_pricing = (float(affluency-min_affluency)/(max_affluency-min_affluency))*(max_price-min_price) + min_price
+	var affluency_pricing = (float(affluency-min_affluency)/(max_affluency-min_affluency))*(max_price * min_price) + min_price
 	var x = affluency_pricing/price
 	return affluency_dampening_factor * tanh(x-1)
 
@@ -93,7 +102,7 @@ func update_brand_loyalty():
 func get_income():
 	return connections * price
 
-func get_connection_deltas():
+func get_connections_delta():
 	normalise_connection_loss()
 	update_connection_deltas()
 	
@@ -156,15 +165,14 @@ func get_cyber_attack_mod(mod):
 func do_cyber_attack(mod):
 	if get_cyber_attack_mod(mod) > cyber_attack_mod:
 		cyber_attack_mod = get_cyber_attack_mod(mod)
-		return true
-	return false
+		cyber_attack += 1
 
 func get_cyber_attack():
 	return cyber_attack_target
 
 func cancel_cyber_attack():
 	if cyber_attack != 0:
-		cyber_attack = 0
+		cyber_attack -= 1
 		return true
 	return false
 
@@ -181,9 +189,6 @@ func build_tower(new_tower):
 
 func get_delta_price():
 	return delta_price
-func update():
-	pass
-# Called when the node enters the scene tree for the first time.
 	
 # add neighbouring towers and aoe to aoe_neighbouring_towers
 func update_aoe_image(aoe_tower, aoe_image):

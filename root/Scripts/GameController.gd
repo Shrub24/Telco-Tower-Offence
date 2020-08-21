@@ -1,34 +1,19 @@
 extends Node
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 export var player_ISP_options = {"Who-awei":0, "Xiaomy":1, "Alidada":2, "Knockia":3}
 export(Array, PackedScene) var player_ISP_scenes
 export(NodePath) onready var player = get_node(player) if player else null
 
-export(Array, PackedScene) var AI_scenes
+var ISP_name_dict = {}
 var ISPs = []
 var AIs = []
 export(NodePath) onready var map = get_node(map) if map else null
+export(NodePath) onready var UI_controller = get_node(UI_controller) if UI_controller else null
 var towns = []
 var selected_town
 
 export(Array, NodePath) var AI_paths
-
-func connect_town(town):
-	town.connect("clicked", self, "town_clicked")
-
-func town_clicked(town):
-	if selected_town == town:
-		town.deselect()
-		selected_town = null
-	else:
-		if selected_town:
-			selected_town.deselect()
-		selected_town = town
-		town.select()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,37 +23,135 @@ func _ready():
 			connect_town(town)
 	for path in AI_paths:
 		var AI = get_node(path)
+		ISP_name_dict[AI.ISP.ISP_name] = AI.ISP
 		AIs.append(AI)
 		ISPs.append(AI.ISP)
-	ISPs.append(player.ISP)
 	choose_player_ISP("Who-awei")
+	player.ISP.is_player = true
+	ISPs.append(player.ISP)
 	game_start()
-	
+
 func choose_player_ISP(ISP):
 	var player_ISP = player_ISP_scenes[player_ISP_options[ISP]].instance()
 	player.ISP = player_ISP
 
 func game_start():
-	for scene in AI_scenes:
-		var instance = scene.instance()
-		AIs.append(instance)
-		
+	for town in towns:
+		for town2 in towns:
+			if town2.town_name in town.neighbours:
+				town.neighbour_towns.append(town2)
 	for town in towns:
 		town.init_town_ISPs(AIs, player)
-
-func on_NextTurn_button_down():
-	if player.ISP.get_available_money() < 0:
-		emit_signal("bankruptcy_query")
-	else:
-		next_turn() 
 
 func next_turn():
 	for AI in AIs:
 		AI.update_actions()
 	for ISP in ISPs:
 		ISP.update_turn()
-		emit_signal("update_advertising", 0)
-		emit_signal("untarget_cyber_attack", null)
+
 	for town in towns:
 		town.update_turn()
+	if selected_town:
+		update_town_UI(selected_town)
 	player.update_turn()
+
+func connect_town(town):
+	town.connect("clicked", self, "town_clicked")
+
+func town_clicked(town):
+	if selected_town == town:
+		town.deselect()
+		selected_town = null
+		UI_controller.hide_town_UI()
+	else:
+		if selected_town:
+			selected_town.deselect()
+		selected_town = town
+		town.select()
+		update_town_UI(town)
+		UI_controller.show_town_UI(town)
+
+		
+func update_town_UI(town):
+	ui_update_shares(town)
+	if town.Player_ISPTownInfo:
+		ui_update_delta_price(town.Player_ISPTownInfo.get_delta_price())
+		ui_update_price(town.Player_ISPTownInfo.price)
+		ui_update_advertising(town.Player_ISPTownInfo.get_advertising())
+		ui_update_cyber_attack(false, false)
+		if town.Player_ISPTownInfo.get_cyber_attack():
+			ui_update_cyber_attack(town.Player_ISPTownInfo.get_cyber_attack(), 1)
+
+
+func ui_update_shares(town):
+	var shares = town.get_ISP_shares()
+	var share_dict = {}
+	var colour_dict = {}
+	for ISP in shares.keys():
+		if ISP.is_player:
+			share_dict["Player"] = shares[ISP]
+			colour_dict["Player"] = ISP.primary_colour
+		else:
+			share_dict[ISP.ISP_name] = shares[ISP]
+			colour_dict[ISP.ISP_name] = ISP.primary_colour
+	UI_controller.update_shares(share_dict, colour_dict)
+
+func ui_update_delta_price(delta_price):
+	UI_controller.update_delta_price(delta_price)
+
+func ui_update_price(price):
+	UI_controller.update_price(price)
+	
+func ui_update_ISP(loyalty, image, price, ISP):
+	if ISP == player.ISP:
+		UI_controller.update_player_image(image)
+		UI_controller.update_player_loyalty(loyalty)
+		ui_update_price(price)
+	else:
+		pass
+
+func ui_update_tower():
+	UI_controller.update_tower_buy()
+	UI_controller.update_tower_upgrade()
+
+func ui_update_advertising(value):
+	UI_controller.update_advertising(value)
+	
+func ui_update_cyber_attack(ISP, value):
+	if ISP:
+		UI_controller.update_cyber_attack(ISP.ISP_name, value)
+	else:
+		UI_controller.update_cyber_attack(ISP, value)
+
+
+
+
+func _on_UI_advertising_buy_pressed():
+	player.buy_advertising(selected_town)
+
+
+func _on_UI_advertising_sell_pressed():
+	player.sell_advertising(selected_town)
+
+
+func _on_UI_buy_tower_pressed(type):
+	player.buy_tower(selected_town, type)
+
+
+func _on_UI_cyber_attack_pressed(target_name):
+	player.cyber_attack_target(selected_town, ISP_name_dict[target_name])
+
+
+func _on_UI_price_down_pressed():
+	player.price_down(selected_town)
+
+
+func _on_UI_price_up_pressed():
+	player.price_up(selected_town)
+
+
+func _on_UI_next_turn_pressed():
+	if player.ISP.get_available_money() < 0:
+		emit_signal("bankruptcy_query")
+	else:
+		next_turn() 
