@@ -1,6 +1,6 @@
 extends Node
 
-
+export(Texture) var ISP_logo
 export(String) var ISP_name
 export(Color) var primary_colour
 export(Color) var secondary_colour
@@ -10,7 +10,7 @@ export var modifiers = {"advertising":1.0, "cyber_attack_offense":1.0, "cyber_at
 export var money = 100000000000
 var towns = []
 var reserved_money = 0
-export var money_round = 0.5
+export var money_round = 1
 var connections = 0
 export var is_player = false
 	
@@ -102,11 +102,11 @@ func get_tower_upgrade_price(town, type):
 	var tower = get_town_tower(town)
 	var tower_type = tower.tower_type
 	if tower_type == "3g":
-		return shop.get_tower_3g_upgrade_price(type, tower.get_level(type))
+		return shop.get_tower_3g_upgrade_price(type, tower.get_level(type) + 1)
 	elif tower_type == "4g":
-		return shop.get_tower_4g_upgrade_price(type, tower.get_level(type))
+		return shop.get_tower_4g_upgrade_price(type, tower.get_level(type) + 1)
 	elif tower_type == "5g":
-		return shop.get_tower_5g_upgrade_price(type, tower.get_level(type))
+		return shop.get_tower_5g_upgrade_price(type, tower.get_level(type) + 1)
 
 func get_advertising_price(town):
 	var shop = load(shop_path)

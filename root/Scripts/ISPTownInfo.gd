@@ -8,7 +8,7 @@ var brand_loyalty = 0.0
 var brand_image = 0.0
 var tower
 var aoe_neighbouring_towers = {}
-var price = 10.0
+var price = 5.0
 var delta_price = 0.0
 export(float) var base_advertising_mod
 var advertising = 0.0
@@ -49,15 +49,15 @@ func initialise(new_ISP, town, population):
 	ISP.add_town(town)
 	town_population = population
 
-func generate_starter():
+func generate_starter(no_ISP_pop):
 	shop = load("res://Resources/Shop.tres")
-	connections = town_population
+	connections = town_population - no_ISP_pop
 	build_tower(shop.get_tower_3g())
 	price = min_price * 5
 
 
-func generate(share, affluency):
-	connections = int(share * (town_population)/100)
+func generate(share, no_ISP_pop, affluency):
+	connections = int(share * (town_population - no_ISP_pop)/100)
 	
 	build_tower(calculate_starting_tower(affluency))
 	

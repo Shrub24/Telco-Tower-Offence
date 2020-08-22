@@ -13,11 +13,15 @@ export(NodePath) onready var UI_controller = get_node(UI_controller) if UI_contr
 var towns = []
 var selected_town
 
+var shop_path = "res://Resources/shop.tres"
 export(Array, NodePath) var AI_paths
 export (NodePath) onready var camera = get_node(camera) if camera else null
 export (NodePath) var global_data_path = "/root/GlobalData"
 var global_data
 var starting_ISP
+var progress_6g = 0
+var progress_max_6g = 100
+var query = false
 
 export var initial_camera_locations = {"Who-awei": [-1460, -448], "Xiaomy": [130, 1472], "Alidada": [2440, -320], "Knockia": [200, -290]}
 
@@ -56,6 +60,18 @@ func choose_player_ISP(ISP):
 	var player_ISP = player_ISP_scenes[player_ISP_options[ISP]].instance()
 	player.ISP = player_ISP
 
+func update_6g_progress():
+	progress_6g += 1
+	
+func game_lose():
+	get_tree().change_scene("res://Scenes/Menu/MainMenu.tscn")
+
+func _on_UI_accept_bankruptcy():
+	game_lose()
+
+func query_sell_tower(tower):
+	UI_controller.query_sell_tower(selected_town.town_name, tower)
+
 func game_start():
 	for town in towns:
 		for town2 in towns:
@@ -68,6 +84,8 @@ func game_start():
 	# init camera locations
 	var loc = initial_camera_locations[starting_ISP]
 	camera.set_camera_loc(loc[0], loc[1])
+	ui_init_tabs()
+
 
 func next_turn():
 	for AI in AIs:
@@ -81,34 +99,44 @@ func next_turn():
 	player.update_turn()
 	if selected_town:
 		update_town_UI(selected_town)
+	
+	update_6g_progress()
+	if progress_6g == progress_max_6g:
+		game_lose()
 
 func connect_town(town):
 	town.connect("clicked", self, "town_clicked")
 
 func town_clicked(town):
-	if selected_town == town:
-		town.deselect()
-		selected_town = null
-		UI_controller.hide_town_UI()
-	else:
-		if selected_town:
-			selected_town.deselect()
-		selected_town = town
-		town.select()
-		update_town_UI(town)
-		UI_controller.show_town_UI(town)
+	if !query:
+		if selected_town == town:
+			town.deselect()
+			selected_town = null
+			UI_controller.hide_town_UI()
+		else:
+			if selected_town:
+				selected_town.deselect()
+			selected_town = town
+			town.select()
+			update_town_UI(town)
+			UI_controller.show_town_UI(town)
 
 		
 func update_town_UI(town):
-	for ISP in town.get_ISPs():
-		ui_update_ISP(ISP, town.get_ISP_town_info(ISP))
+	for AI in AIs:
+		var ISP = AI.ISP
+		if ISP in town.get_ISPs():
+			ui_update_ISP(ISP, town.get_ISP_town_info(ISP))
+		else:
+			ui_update_ISP(ISP, false)
 	ui_update_shares(town)
 	ui_update_tower()
+	ui_update_player_ISP(town.Player_ISPTownInfo)
 	if town.Player_ISPTownInfo:
-		ui_update_delta_price(town.Player_ISPTownInfo.get_delta_price())
 		ui_update_advertising(town.Player_ISPTownInfo.get_advertising())
 		ui_update_cyber_attack(false, false)
-
+		if town.Player_ISPTownInfo.get_cyber_attack():
+			ui_update_cyber_attack(town.Player_ISPTownInfo.get_cyber_attack(), true)
 
 func ui_update_shares(town):
 	var shares = town.get_ISP_shares()
@@ -131,21 +159,129 @@ func ui_update_price(price):
 	
 func ui_update_ISP(ISP, town_info):
 	if ISP == player.ISP:
-		ui_update_player_loyalty(town_info.brand_loyalty)
-		ui_update_player_image(town_info.brand_image)
-		ui_update_price(town_info.price)
+		ui_update_player_ISP(town_info)
 	else:
-		UI_controller.update_ISP_info(town_info.brand_loyalty, town_info.brand_image, town_info.price, ISP.ISP_name)
+		if town_info:
+			if town_info.tower:
+				UI_controller.update_ISP_info(town_info.brand_loyalty, town_info.brand_image, town_info.price, ISP.ISP_name)
+			else:
+				UI_controller.update_ISP_info("", town_info.brand_image, "", ISP.ISP_name)
+		else:
+			UI_controller.update_ISP_info("", "", "", ISP.ISP_name)
+
+func ui_update_player_ISP(town_info):
+	if town_info:
+		if town_info.tower:
+			ui_update_delta_price(town_info.get_delta_price())
+			ui_update_player_loyalty(town_info.brand_loyalty)
+			ui_update_price(town_info.price)
+		else:
+			ui_update_delta_price("")
+			ui_update_player_loyalty("")
+			ui_update_price("")
+		ui_update_player_image(town_info.brand_image)
+	else:
+		ui_update_delta_price("")
+		ui_update_player_loyalty("")
+		ui_update_player_image("")
+		ui_update_price("")
+
+func ui_init_tabs():
+	var logo_dict = {}
+	for AI in AIs:
+		logo_dict[AI.ISP.ISP_name] = AI.ISP.primary_colour
+	logo_dict["Player"] = player.ISP.primary_colour
+	UI_controller.init_tabs(logo_dict)
+
+func ui_update_all_tower_tooltip():
+	var tower
+	var built_tower
+	if selected_town.Player_ISPTownInfo:
+		built_tower = player.ISP.get_town_tower(selected_town)
+
+	for type in ["3g", "4g", "5g"]:
+		var bought = false
+		if built_tower:
+			if built_tower.tower_type == type:
+				bought = true
+		ui_update_tower_tooltip(get_tower(type), bought)
+		
+
+func get_tower(type):
+	var shop = load(shop_path)
+	if type == "3g":
+		return shop.get_tower_3g()
+	elif type == "4g":
+		return shop.get_tower_4g()
+	elif type == "5g":
+		return shop.get_tower_5g()
+		
+		
+func ui_update_tower_tooltip(tower, bought):
+	var sell_price = tower.price * tower.sell_factor
+	UI_controller.update_tower_tooltip(tower.tower_type, tower.price, sell_price, tower.operation_cost, tower.get_bandwidth(), tower.get_reach(), tower.get_speed(), bought)
+
 
 func ui_update_tower():
 	if selected_town.Player_ISPTownInfo:
 		var tower = player.ISP.get_town_tower(selected_town)
+		ui_update_bandwidth_tooltip(tower)
+		ui_update_speed_tooltip(tower)
+		ui_update_reach_tooltip(tower)
+		ui_update_all_tower_tooltip()
 		if tower:
-			UI_controller.update_tower_buy(tower.tower_type)
+			UI_controller.update_tower(tower.tower_type)
 			UI_controller.update_tower_upgrade(tower.reach_level, tower.bandwidth_level, tower.speed_level)
+			UI_controller.update_price(selected_town.Player_ISPTownInfo.price)
+			UI_controller.update_delta_price(selected_town.Player_ISPTownInfo.get_delta_price())
 			return true
-	UI_controller.update_tower_buy(0)
-	UI_controller.update_tower_upgrade(0, 0, 0)
+	UI_controller.update_tower(0)
+	UI_controller.update_tower_upgrade("", "", "")
+
+func ui_update_speed_tooltip(tower):
+	if !tower: 
+		UI_controller.update_speed_upgrade_tooltip(tower, 0, 0, 0, 0, 0)
+		return
+	var shop = load(shop_path)
+	var next_level = false
+	var upgrade_price = 0
+	var level = tower.get_level("speed")
+	if level < tower.max_level:
+		next_level = level + 1
+		upgrade_price = shop.get_tower_3g_upgrade_price("speed", next_level)
+	else:
+		level = "Max"
+	UI_controller.update_speed_upgrade_tooltip(tower, level, tower.get_speed(), next_level, upgrade_price, tower.get_next_speed())
+
+func ui_update_reach_tooltip(tower):
+	if !tower: 
+		UI_controller.update_speed_upgrade_tooltip(tower, 0, 0, 0, 0, 0)
+		return
+	var shop = load(shop_path)
+	var next_level = false
+	var upgrade_price = 0
+	var level = tower.get_level("reach")
+	if level < tower.max_level:
+		next_level = level + 1
+		upgrade_price = shop.get_tower_3g_upgrade_price("reach", next_level)
+	else:
+		level = "Max"
+	UI_controller.update_reach_upgrade_tooltip(tower, level, tower.get_reach(), next_level, upgrade_price, tower.get_next_reach())
+
+func ui_update_bandwidth_tooltip(tower):
+	if !tower: 
+		UI_controller.update_speed_upgrade_tooltip(tower, 0, 0, 0, 0, 0)
+		return
+	var shop = load(shop_path)
+	var next_level = false
+	var upgrade_price = 0
+	var level = tower.get_level("bandwidth")
+	if level < tower.max_level:
+		next_level = level + 1
+		upgrade_price = shop.get_tower_3g_upgrade_price("bandwidth", next_level)
+	else:
+		level = "Max"
+	UI_controller.update_bandwidth_upgrade_tooltip(tower, level, tower.get_bandwidth(), next_level, upgrade_price, tower.get_next_bandwidth())
 
 func ui_update_advertising(value):
 	UI_controller.update_advertising(value)
@@ -172,7 +308,8 @@ func _on_UI_advertising_sell_pressed():
 
 
 func _on_UI_buy_tower_pressed(type):
-	player.buy_tower(selected_town, type)
+	if selected_town.Player_ISPTownInfo:
+		player.buy_tower(selected_town, type)
 
 
 func _on_UI_cyber_attack_pressed(target_name):
@@ -192,7 +329,7 @@ func _on_UI_price_up_pressed():
 
 func _on_UI_next_turn_pressed():
 	if player.ISP.get_available_money() < 0:
-		emit_signal("bankruptcy_query")
+		emit_signal("query_bankruptcy", player.ISP.get_available_money())
 	else:
 		next_turn() 
 
@@ -200,3 +337,6 @@ func _on_UI_next_turn_pressed():
 func _on_UI_upgrade_tower_pressed(type):
 	if selected_town.Player_ISPTownInfo and selected_town.Player_ISPTownInfo.tower:
 		player.upgrade_tower(selected_town, type)
+
+func _on_UI_accept_sell_tower():
+	player.sell_tower(selected_town)

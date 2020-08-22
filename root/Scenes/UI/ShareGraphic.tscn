@@ -11,6 +11,9 @@ margin_right = 188.0
 margin_bottom = 360.0
 rect_min_size = Vector2( 30, 221 )
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 progress_paths = [ NodePath("0"), NodePath("1"), NodePath("2"), NodePath("3"), NodePath("4") ]
 
 [node name="No_ISP" type="TextureProgress" parent="."]

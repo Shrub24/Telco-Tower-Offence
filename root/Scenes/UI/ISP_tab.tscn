@@ -52,15 +52,14 @@ margin_bottom = 345.0
 size_flags_horizontal = 3
 
 [node name="PriceLabel" type="Label" parent="HBoxContainer/MarginContainer/HBoxContainer/MarginContainer2"]
-margin_left = 914.0
+margin_left = 936.0
 margin_top = 153.0
-margin_right = 958.0
+margin_right = 936.0
 margin_bottom = 192.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.929412, 0.827451, 0, 1 )
-text = "10"
 valign = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
@@ -85,16 +84,14 @@ margin_bottom = 345.0
 size_flags_horizontal = 3
 
 [node name="brand_loyalty" type="Label" parent="HBoxContainer2/MarginContainer"]
-margin_left = 925.0
-margin_top = 132.0
-margin_right = 947.0
-margin_bottom = 213.0
+margin_left = 936.0
+margin_top = 153.0
+margin_right = 936.0
+margin_bottom = 192.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "0
-"
 valign = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="."]
@@ -119,14 +116,12 @@ margin_bottom = 346.0
 size_flags_horizontal = 3
 
 [node name="brand_image" type="Label" parent="HBoxContainer3/MarginContainer2"]
-margin_left = 925.0
-margin_top = 132.0
-margin_right = 947.0
-margin_bottom = 213.0
+margin_left = 936.0
+margin_top = 153.0
+margin_right = 936.0
+margin_bottom = 192.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "0
-"
 valign = 1

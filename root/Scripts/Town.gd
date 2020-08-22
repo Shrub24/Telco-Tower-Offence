@@ -14,9 +14,9 @@ var Player_ISPTownInfo
 export(float) var affluency
 export(NodePath) onready var bound
 export(NodePath) onready var border
-export var unselected_opacity = 0.65
+export var unselected_opacity = 0.4
 export var hover_opacity = 1
-export var selected_opacity = 2.2
+export var selected_opacity = 2.5
 var selected = false
 
 signal clicked(town)
@@ -53,20 +53,18 @@ func _ready():
 func init_town_ISPs(AIs, player):
 	for AI in AIs:
 		var ISP = AI.ISP
-		if shares[ISP.ISP_name]:
+		if shares[ISP.ISP_name] != 0:
 			var ISPTownInfo = create_ISPTownInfo(ISP)
-			ISPTownInfo.generate(shares[ISP.ISP_name], affluency)
+			ISPTownInfo.generate(shares[ISP.ISP_name], no_ISP_pop, affluency)
 			var tower = ISPTownInfo.tower
 			propagate_brand_image(tower, ISPTownInfo.ISP, tower.get_reach())
 	
 	if starter_town:
 		create_ISPTownInfo(player.ISP)
-		Player_ISPTownInfo.generate_starter()
+		Player_ISPTownInfo.generate_starter(no_ISP_pop)
 		var tower = Player_ISPTownInfo.tower
 		propagate_brand_image(tower, Player_ISPTownInfo.ISP, tower.get_reach())
-	
-	update_turn()
-	
+
 	var ashares = get_ISP_shares()
 	var max_ISP = null
 	for ISP in ashares.keys():
@@ -75,7 +73,8 @@ func init_town_ISPs(AIs, player):
 		elif ashares[ISP] > ashares[max_ISP]:
 			max_ISP = ISP
 	if max_ISP:
-		border.modulate = max_ISP.primary_colour
+		border.set_color(max_ISP.primary_colour)
+		border.border_color = max_ISP.secondary_colour
 	border.modulate.a = unselected_opacity
 
 func get_ISP_town_info(ISP):
@@ -199,10 +198,12 @@ func upgrade_tower(ISP, type):
 		propagate_brand_image(tower, ISP, tower.get_reach())
 
 func deselect():
+	hovered=true
 	selected = false
 	border.modulate.a = unselected_opacity
 	
 func select():
+	hovered = false
 	selected = true
 	border.modulate.a = selected_opacity
 

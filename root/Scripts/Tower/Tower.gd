@@ -8,6 +8,7 @@ export var operation_cost = 100000.0
 export var price = 1000
 export var upgrade_cost = [100, 200, 400, 800]
 export var tower_type = "3g"
+export var sell_factor = 0.3
 
 var speed_level = 0
 var bandwidth_level = 0
@@ -38,6 +39,30 @@ func get_bandwidth():
 	
 func get_speed():
 	return speeds[speed_level]
+
+func get_next_bandwidth():
+	if bandwidth_level < max_level:
+		return bandwidths[bandwidth_level + 1]
+	return false
+
+func get_next_speed():
+	if speed_level < max_level:
+		return speeds[speed_level + 1]
+	return false
+
+func get_next_reach():
+	if reach_level < max_level:
+		return reach[reach_level + 1]
+	return false
+
+func get_upgrade_price(type):
+	if type == "speed":
+		return upgrade_cost[speed_level + 1]
+	elif type == "bandwidth":
+		return upgrade_cost[bandwidth_level + 1]
+	elif type == "reach":
+		return upgrade_cost[reach_level + 1]
+	
 
 func get_level(type):
 	if type == "speed":
