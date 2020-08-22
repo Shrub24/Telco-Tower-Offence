@@ -1,19 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Menu/menu_script.gd" type="Script" id=1]
 [ext_resource path="res://Assets/mainmenu/title.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Theme/Menu.tres" type="Theme" id=3]
+[ext_resource path="res://real assets/background.png" type="Texture" id=4]
 [ext_resource path="res://Assets/mainmenu/image.png" type="Texture" id=7]
 
-[node name="MainMenu" type="MarginContainer"]
+[node name="MainMenu" type="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 150.0
-margin_top = 20.0
-margin_right = -120.0
-margin_bottom = -40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+texture = ExtResource( 4 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -21,84 +19,96 @@ __meta__ = {
 instructions_scene_path = "res://Scenes/Menu/Instructions.tscn"
 ISP_select_scene_path = "res://Scenes/Menu/ISPSelect.tscn"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 1650.0
-margin_bottom = 1020.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 120.0
+margin_right = 1800.0
+margin_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 1650.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 1680.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 1680.0
 margin_bottom = 140.0
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Title" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
-margin_right = 1650.0
+[node name="Title" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 1680.0
 margin_bottom = 140.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 
-[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer"]
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/VBoxContainer"]
 margin_top = 144.0
-margin_right = 1650.0
-margin_bottom = 1020.0
+margin_right = 1680.0
+margin_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 split_offset = 30
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HSplitContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HSplitContainer"]
 margin_right = 586.0
-margin_bottom = 876.0
+margin_bottom = 936.0
 custom_constants/separation = 40
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HSplitContainer/HBoxContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HSplitContainer/HBoxContainer2"]
 margin_right = 586.0
-margin_bottom = 876.0
+margin_bottom = 936.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
 custom_constants/separation = 40
 alignment = 1
 
-[node name="Continue" type="Button" parent="VBoxContainer/HSplitContainer/HBoxContainer2/VBoxContainer"]
-margin_top = 182.0
+[node name="Continue" type="Button" parent="MarginContainer/VBoxContainer/HSplitContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 212.0
 margin_right = 586.0
-margin_bottom = 280.0
-theme = ExtResource( 3 )
+margin_bottom = 310.0
 text = "Continue"
 
-[node name="NewGame" type="Button" parent="VBoxContainer/HSplitContainer/HBoxContainer2/VBoxContainer"]
-margin_top = 320.0
+[node name="NewGame" type="Button" parent="MarginContainer/VBoxContainer/HSplitContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 350.0
 margin_right = 586.0
-margin_bottom = 418.0
+margin_bottom = 448.0
 text = "New Game"
 
-[node name="Instructions" type="Button" parent="VBoxContainer/HSplitContainer/HBoxContainer2/VBoxContainer"]
-margin_top = 458.0
+[node name="Instructions" type="Button" parent="MarginContainer/VBoxContainer/HSplitContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 488.0
 margin_right = 586.0
-margin_bottom = 556.0
+margin_bottom = 586.0
 text = "Instructions"
 
-[node name="Quit" type="Button" parent="VBoxContainer/HSplitContainer/HBoxContainer2/VBoxContainer"]
-margin_top = 596.0
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/HSplitContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 626.0
 margin_right = 586.0
-margin_bottom = 694.0
+margin_bottom = 724.0
 text = "Quit"
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HSplitContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/HSplitContainer"]
 margin_left = 598.0
-margin_right = 1650.0
-margin_bottom = 876.0
+margin_right = 1680.0
+margin_bottom = 936.0
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HSplitContainer/CenterContainer"]
-margin_left = 259.0
-margin_top = 268.0
-margin_right = 792.0
-margin_bottom = 607.0
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HSplitContainer/CenterContainer"]
+margin_left = 274.0
+margin_top = 298.0
+margin_right = 807.0
+margin_bottom = 637.0
 texture = ExtResource( 7 )
-[connection signal="pressed" from="VBoxContainer/HSplitContainer/HBoxContainer2/VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
-[connection signal="pressed" from="VBoxContainer/HSplitContainer/HBoxContainer2/VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
-[connection signal="pressed" from="VBoxContainer/HSplitContainer/HBoxContainer2/VBoxContainer/Instructions" to="." method="_on_Instructions_pressed"]
-[connection signal="pressed" from="VBoxContainer/HSplitContainer/HBoxContainer2/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HSplitContainer/HBoxContainer2/VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HSplitContainer/HBoxContainer2/VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HSplitContainer/HBoxContainer2/VBoxContainer/Instructions" to="." method="_on_Instructions_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HSplitContainer/HBoxContainer2/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
