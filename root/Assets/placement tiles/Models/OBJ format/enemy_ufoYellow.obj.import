@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/enemy_ufoYellow.obj-fb4f60b166dace961a6785795fb6a50b.mesh"
+path="res://.import/enemy_ufoYellow.obj-647de125b367997e16b3a003ba675001.mesh"
 
 [deps]
 
-files=[ "res://.import/enemy_ufoYellow.obj-fb4f60b166dace961a6785795fb6a50b.mesh" ]
+files=[ "res://.import/enemy_ufoYellow.obj-647de125b367997e16b3a003ba675001.mesh" ]
 
-source_file="res://Assets/placement tiles/Models/OBJ format/enemy_ufoYellow.obj"
-dest_files=[ "res://.import/enemy_ufoYellow.obj-fb4f60b166dace961a6785795fb6a50b.mesh", "res://.import/enemy_ufoYellow.obj-fb4f60b166dace961a6785795fb6a50b.mesh" ]
+source_file="res://assets/placement tiles/Models/OBJ format/enemy_ufoYellow.obj"
+dest_files=[ "res://.import/enemy_ufoYellow.obj-647de125b367997e16b3a003ba675001.mesh", "res://.import/enemy_ufoYellow.obj-647de125b367997e16b3a003ba675001.mesh" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/enemy_ufoRedWeapon.glb-75105f4cba735637716b893170642953.scn"
+path="res://.import/enemy_ufoRedWeapon.glb-79438a4f5f7b3da556ebcbfdf04672ad.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/GLTF format/enemy_ufoRedWeapon.glb"
-dest_files=[ "res://.import/enemy_ufoRedWeapon.glb-75105f4cba735637716b893170642953.scn" ]
+source_file="res://assets/placement tiles/Models/GLTF format/enemy_ufoRedWeapon.glb"
+dest_files=[ "res://.import/enemy_ufoRedWeapon.glb-79438a4f5f7b3da556ebcbfdf04672ad.scn" ]
 
 [params]
 

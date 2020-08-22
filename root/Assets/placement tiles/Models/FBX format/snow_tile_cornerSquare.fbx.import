@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snow_tile_cornerSquare.fbx-3233f9df747ea56a5eb03a571236fe79.scn"
+path="res://.import/snow_tile_cornerSquare.fbx-62c3cb64ba086f04977bf805ce26ff70.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/FBX format/snow_tile_cornerSquare.fbx"
-dest_files=[ "res://.import/snow_tile_cornerSquare.fbx-3233f9df747ea56a5eb03a571236fe79.scn" ]
+source_file="res://assets/placement tiles/Models/FBX format/snow_tile_cornerSquare.fbx"
+dest_files=[ "res://.import/snow_tile_cornerSquare.fbx-62c3cb64ba086f04977bf805ce26ff70.scn" ]
 
 [params]
 

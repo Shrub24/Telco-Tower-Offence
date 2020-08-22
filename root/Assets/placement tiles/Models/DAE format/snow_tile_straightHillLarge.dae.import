@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snow_tile_straightHillLarge.dae-8dc93afc4549748a1975763780db415f.scn"
+path="res://.import/snow_tile_straightHillLarge.dae-aa6b5039ceedcec0efcc3d25917105ea.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/snow_tile_straightHillLarge.dae"
-dest_files=[ "res://.import/snow_tile_straightHillLarge.dae-8dc93afc4549748a1975763780db415f.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/snow_tile_straightHillLarge.dae"
+dest_files=[ "res://.import/snow_tile_straightHillLarge.dae-aa6b5039ceedcec0efcc3d25917105ea.scn" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_endSpawn.fbx-6c76b26e8c8daab245e4094a4dbf2393.scn"
+path="res://.import/tile_endSpawn.fbx-0ddb983e59c542fc61a685869d607d7a.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/FBX format/tile_endSpawn.fbx"
-dest_files=[ "res://.import/tile_endSpawn.fbx-6c76b26e8c8daab245e4094a4dbf2393.scn" ]
+source_file="res://assets/placement tiles/Models/FBX format/tile_endSpawn.fbx"
+dest_files=[ "res://.import/tile_endSpawn.fbx-0ddb983e59c542fc61a685869d607d7a.scn" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/share_bar_over.png-77c6280945231a9f3591a6e1240ce9ff.stex"
+path="res://.import/share_bar_over.png-4699c89b6b620b280339d5102129cc49.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/share_bar_over.png"
-dest_files=[ "res://.import/share_bar_over.png-77c6280945231a9f3591a6e1240ce9ff.stex" ]
+source_file="res://assets/UI/share_bar_over.png"
+dest_files=[ "res://.import/share_bar_over.png-4699c89b6b620b280339d5102129cc49.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/telco_placeholder.png-94f3fa396a326273ec336a4fdc76d7b7.stex"
+path="res://.import/telco_placeholder.png-a3541cf1d8963594b3902313a096de4a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/mainmenu/telco_placeholder.png"
-dest_files=[ "res://.import/telco_placeholder.png-94f3fa396a326273ec336a4fdc76d7b7.stex" ]
+source_file="res://assets/mainmenu/telco_placeholder.png"
+dest_files=[ "res://.import/telco_placeholder.png-a3541cf1d8963594b3902313a096de4a.stex" ]
 
 [params]
 

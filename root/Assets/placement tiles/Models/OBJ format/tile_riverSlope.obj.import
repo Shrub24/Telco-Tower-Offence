@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/tile_riverSlope.obj-b9c224f88c08c736c62d10a7ba7d1aae.mesh"
+path="res://.import/tile_riverSlope.obj-4dad171bbd256ffd5b99013a4024559f.mesh"
 
 [deps]
 
-files=[ "res://.import/tile_riverSlope.obj-b9c224f88c08c736c62d10a7ba7d1aae.mesh" ]
+files=[ "res://.import/tile_riverSlope.obj-4dad171bbd256ffd5b99013a4024559f.mesh" ]
 
-source_file="res://Assets/placement tiles/Models/OBJ format/tile_riverSlope.obj"
-dest_files=[ "res://.import/tile_riverSlope.obj-b9c224f88c08c736c62d10a7ba7d1aae.mesh", "res://.import/tile_riverSlope.obj-b9c224f88c08c736c62d10a7ba7d1aae.mesh" ]
+source_file="res://assets/placement tiles/Models/OBJ format/tile_riverSlope.obj"
+dest_files=[ "res://.import/tile_riverSlope.obj-4dad171bbd256ffd5b99013a4024559f.mesh", "res://.import/tile_riverSlope.obj-4dad171bbd256ffd5b99013a4024559f.mesh" ]
 
 [params]
 

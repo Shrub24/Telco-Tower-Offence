@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/enemy_ufoRed.dae-444231d55cd6ada68b7b92a2f98a6034.scn"
+path="res://.import/enemy_ufoRed.dae-df9a26863ab072949f051ceddad84a1b.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/enemy_ufoRed.dae"
-dest_files=[ "res://.import/enemy_ufoRed.dae-444231d55cd6ada68b7b92a2f98a6034.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/enemy_ufoRed.dae"
+dest_files=[ "res://.import/enemy_ufoRed.dae-df9a26863ab072949f051ceddad84a1b.scn" ]
 
 [params]
 

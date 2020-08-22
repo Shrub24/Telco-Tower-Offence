@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_slope_S.png-8eab753602b28b81cb0f1ac4998af442.stex"
+path="res://.import/tile_slope_S.png-52ab28198f9f88fd90efa2cf5a4a3b70.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placement tiles/Isometric/tile_slope_S.png"
-dest_files=[ "res://.import/tile_slope_S.png-8eab753602b28b81cb0f1ac4998af442.stex" ]
+source_file="res://assets/placement tiles/Isometric/tile_slope_S.png"
+dest_files=[ "res://.import/tile_slope_S.png-52ab28198f9f88fd90efa2cf5a4a3b70.stex" ]
 
 [params]
 

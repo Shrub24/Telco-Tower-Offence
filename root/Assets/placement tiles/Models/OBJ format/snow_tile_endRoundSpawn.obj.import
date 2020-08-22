@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/snow_tile_endRoundSpawn.obj-f561a1123f2d1f1d4add3c0c70e8a6ea.mesh"
+path="res://.import/snow_tile_endRoundSpawn.obj-a26b82486fd91b0cfe9cb25e9675bd05.mesh"
 
 [deps]
 
-files=[ "res://.import/snow_tile_endRoundSpawn.obj-f561a1123f2d1f1d4add3c0c70e8a6ea.mesh" ]
+files=[ "res://.import/snow_tile_endRoundSpawn.obj-a26b82486fd91b0cfe9cb25e9675bd05.mesh" ]
 
-source_file="res://Assets/placement tiles/Models/OBJ format/snow_tile_endRoundSpawn.obj"
-dest_files=[ "res://.import/snow_tile_endRoundSpawn.obj-f561a1123f2d1f1d4add3c0c70e8a6ea.mesh", "res://.import/snow_tile_endRoundSpawn.obj-f561a1123f2d1f1d4add3c0c70e8a6ea.mesh" ]
+source_file="res://assets/placement tiles/Models/OBJ format/snow_tile_endRoundSpawn.obj"
+dest_files=[ "res://.import/snow_tile_endRoundSpawn.obj-a26b82486fd91b0cfe9cb25e9675bd05.mesh", "res://.import/snow_tile_endRoundSpawn.obj-a26b82486fd91b0cfe9cb25e9675bd05.mesh" ]
 
 [params]
 

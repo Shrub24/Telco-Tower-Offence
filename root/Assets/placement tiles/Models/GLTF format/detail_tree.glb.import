@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/detail_tree.glb-e803d949cf5e89ad0dd965458d01fedf.scn"
+path="res://.import/detail_tree.glb-ca77a96c53f23c9885a6d7fc68492972.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/GLTF format/detail_tree.glb"
-dest_files=[ "res://.import/detail_tree.glb-e803d949cf5e89ad0dd965458d01fedf.scn" ]
+source_file="res://assets/placement tiles/Models/GLTF format/detail_tree.glb"
+dest_files=[ "res://.import/detail_tree.glb-ca77a96c53f23c9885a6d7fc68492972.scn" ]
 
 [params]
 

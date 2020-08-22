@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snow_detail_crystal.dae-765dff01b2080b69d201bec77b3bbe16.scn"
+path="res://.import/snow_detail_crystal.dae-01cce02fa3e6c0a1facc453e915bb748.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/snow_detail_crystal.dae"
-dest_files=[ "res://.import/snow_detail_crystal.dae-765dff01b2080b69d201bec77b3bbe16.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/snow_detail_crystal.dae"
+dest_files=[ "res://.import/snow_detail_crystal.dae-01cce02fa3e6c0a1facc453e915bb748.scn" ]
 
 [params]
 

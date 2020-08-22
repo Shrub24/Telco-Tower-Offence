@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/towerRound_crystals.dae-046223990ea80bfcc456fc97dc8b75d8.scn"
+path="res://.import/towerRound_crystals.dae-6e934276e79a1615ea5a5461d549976d.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/towerRound_crystals.dae"
-dest_files=[ "res://.import/towerRound_crystals.dae-046223990ea80bfcc456fc97dc8b75d8.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/towerRound_crystals.dae"
+dest_files=[ "res://.import/towerRound_crystals.dae-6e934276e79a1615ea5a5461d549976d.scn" ]
 
 [params]
 

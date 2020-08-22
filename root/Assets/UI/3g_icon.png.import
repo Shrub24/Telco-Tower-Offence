@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/3g_icon.png-664c1da037b8fe15ecc83b304b58da54.stex"
+path="res://.import/3g_icon.png-26f98844262ebe8862471090c0cb839b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/3g_icon.png"
-dest_files=[ "res://.import/3g_icon.png-664c1da037b8fe15ecc83b304b58da54.stex" ]
+source_file="res://assets/UI/3g_icon.png"
+dest_files=[ "res://.import/3g_icon.png-26f98844262ebe8862471090c0cb839b.stex" ]
 
 [params]
 
