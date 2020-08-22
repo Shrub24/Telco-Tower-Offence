@@ -12,3 +12,18 @@ tower_4g = ExtResource( 3 )
 tower_5g = ExtResource( 4 )
 advertising_cost = 1
 cyber_attack_cost = 1
+tower_3g_upgrade_costs = {
+"bandwidth": [ 10000, 20000, 30000, 40000 ],
+"reach": [ 100000, 200000, 300000, 400000 ],
+"speed": [ 1000, 2000, 3000, 4000 ]
+}
+tower_4g_upgrade_costs = {
+"bandwidth": [ 10000, 20000, 30000, 40000 ],
+"reach": [ 10000, 20000, 30000, 40000 ],
+"speed": [ 10000, 20000, 30000, 40000 ]
+}
+tower_5g_upgrade_costs = {
+"bandwidth": [ 100000, 200000, 300000, 400000 ],
+"reach": [ 100000, 200000, 300000, 400000 ],
+"speed": [ 100000, 200000, 300000, 400000 ]
+}

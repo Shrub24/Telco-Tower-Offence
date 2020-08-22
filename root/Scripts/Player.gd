@@ -9,7 +9,6 @@ const tech_tree_effect = {"advertising_double": ["advertising", "*", 2]}
 var ISP
 var tech_tree_learnt = {"advertising_double": false}
 var techs_remaining = 3
-export var sell_factor = 0.3
 
 signal query_sell_tower(tower_type)
 signal query_change_tower(tower_type)
@@ -44,7 +43,7 @@ func buy_tower(town, tower_type):
 
 func sell_tower(town):
 	var tower = ISP.get_town_tower(town)
-	var refund = int(ISP.get_tower_price(tower.tower_type) * sell_factor)
+	var refund = int(ISP.get_tower_price(tower.tower_type) * tower.sell_factor)
 	ISP.increase_money(refund)
 	emit_signal("ui_update_money")
 	ISP.sell_tower(town)
