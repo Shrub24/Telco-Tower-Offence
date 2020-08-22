@@ -12,6 +12,7 @@ export(NodePath) onready var map = get_node(map) if map else null
 export(NodePath) onready var UI_controller = get_node(UI_controller) if UI_controller else null
 var towns = []
 var selected_town
+var starter_town
 
 export(Array, NodePath) var AI_paths
 export (NodePath) onready var camera = get_node(camera) if camera else null
@@ -62,7 +63,9 @@ func game_start():
 			if town2.town_name in town.neighbours:
 				town.neighbour_towns.append(town2)
 	for town in towns:
-		town.init_town_ISPs(AIs, player)
+		town.init_town_ISPs(AIs)
+		if town == starter_town:
+			town.init_starter_town(player)
 	ui_update_money()
 		
 	# init camera locations

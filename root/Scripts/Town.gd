@@ -48,9 +48,14 @@ func _ready():
 	no_ISP_pop = int(rng.randf_range(min_no_ISP, max_no_ISP) * population/100)
 	
 
+func init_starter_town(player):
+	create_ISPTownInfo(player.ISP)
+	Player_ISPTownInfo.generate_starter(no_ISP_pop)
+	var tower = Player_ISPTownInfo.tower
+	propagate_brand_image(tower, Player_ISPTownInfo.ISP, tower.get_reach())
 
 # population - noISPs in generates
-func init_town_ISPs(AIs, player):
+func init_town_ISPs(AIs):
 	for AI in AIs:
 		var ISP = AI.ISP
 		if shares[ISP.ISP_name]:
@@ -58,14 +63,6 @@ func init_town_ISPs(AIs, player):
 			ISPTownInfo.generate(shares[ISP.ISP_name], affluency)
 			var tower = ISPTownInfo.tower
 			propagate_brand_image(tower, ISPTownInfo.ISP, tower.get_reach())
-	
-	if starter_town:
-		create_ISPTownInfo(player.ISP)
-		Player_ISPTownInfo.generate_starter()
-		var tower = Player_ISPTownInfo.tower
-		propagate_brand_image(tower, Player_ISPTownInfo.ISP, tower.get_reach())
-	
-	update_turn()
 	
 	var ashares = get_ISP_shares()
 	var max_ISP = null
