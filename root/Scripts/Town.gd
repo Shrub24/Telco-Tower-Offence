@@ -120,11 +120,11 @@ func update_turn():
 	for town_info in ISPTownInfos:
 		if town_info.tower:
 			town_info.get_connections_delta()
-	if town_name == "Juliest":
-		for isp in ISPs.keys():
-			print(isp.ISP_name + ": " + str(ISPs[isp].connections))
-		print("No ISPpop: " + str(no_ISP_pop))
-		print("\n")
+#	if town_name == "Juliest":
+#		for isp in ISPs.keys():
+#			print(isp.ISP_name + ": " + str(ISPs[isp].connections))
+#		print("No ISPpop: " + str(no_ISP_pop))
+#		print("\n")
 #	print(affluency_connection_delta)
 	for town_info in ISPTownInfos:
 		if town_info.tower:
