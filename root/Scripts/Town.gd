@@ -50,7 +50,7 @@ func _ready():
 
 func init_starter_town(player):
 	create_ISPTownInfo(player.ISP)
-	Player_ISPTownInfo.generate_starter(no_ISP_pop)
+	Player_ISPTownInfo.generate_starter()
 	var tower = Player_ISPTownInfo.tower
 	propagate_brand_image(tower, Player_ISPTownInfo.ISP, tower.get_reach())
 
@@ -63,7 +63,8 @@ func init_town_ISPs(AIs):
 			ISPTownInfo.generate(shares[ISP.ISP_name], affluency)
 			var tower = ISPTownInfo.tower
 			propagate_brand_image(tower, ISPTownInfo.ISP, tower.get_reach())
-	
+
+func set_town_colour():
 	var ashares = get_ISP_shares()
 	var max_ISP = null
 	for ISP in ashares.keys():
@@ -138,6 +139,8 @@ func update_turn():
 		if town_info.tower:
 			town_info.update_turn(get_max_speed())
 			no_ISP_pop -= town_info.update_affluency_conns(affluency_connection_delta[town_info])
+			
+	set_town_colour()
 
 func create_ISPTownInfo(ISP):
 	var ISPTownInfo = ISPTownInfo_scene.instance()

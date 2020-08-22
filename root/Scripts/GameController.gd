@@ -21,6 +21,7 @@ var global_data
 var starting_ISP
 
 export var initial_camera_locations = {"Who-awei": [-1460, -448], "Xiaomy": [130, 1472], "Alidada": [2440, -320], "Knockia": [200, -290]}
+export var initial_starting_towns = {"Who-awei": "Deltora", "Xiaomy": "Sholto Farms", "Alidada": "Kyanim", "Knockia": "Phlight"}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,6 +41,8 @@ func _ready():
 	choose_player_ISP(starting_ISP)
 	player.ISP.is_player = true
 	ISPs.append(player.ISP)
+	
+	starter_town = initial_starting_towns[starting_ISP]
 	
 	game_start()
 
@@ -64,8 +67,9 @@ func game_start():
 				town.neighbour_towns.append(town2)
 	for town in towns:
 		town.init_town_ISPs(AIs)
-		if town == starter_town:
+		if town.town_name == starter_town:
 			town.init_starter_town(player)
+		town.update_turn()
 	ui_update_money()
 		
 	# init camera locations
