@@ -30,10 +30,13 @@ const min_affluency = 1
 const max_affluency = 99
 var max_affluency_pricing = max_price - 100
 var min_affluency_pricing = min_price + 100
-const affluency_dampening_factor = 5
+const affluency_dampening_factor = 15
 
-export var base_starting_price = -5
+export var base_starting_price = -15
 export var max_share_factor = 12
+
+var prev_connections_delta = 0
+var prev_affluency_delta = 0
 
 var rng = RandomNumberGenerator.new()
 
@@ -78,7 +81,7 @@ func get_connections_loss(ISPTownInfos):
 		other.connection_loss[self] = considering_switch
 
 func get_affluency_delta(affluency):
-	var affluency_pricing = (float(affluency-min_affluency)/(max_affluency-min_affluency))*(max_price * min_price) + min_price
+	var affluency_pricing = (float(affluency-min_affluency)/(max_affluency-min_affluency)) * (max_price - min_price) + min_price
 	var x = affluency_pricing/price
 	return affluency_dampening_factor * tanh(x-1)
 
@@ -91,7 +94,7 @@ func calculate_aoe_image():
 func update_brand_image():
 	var share = float(connections)/town_population
 	var aoe_image = calculate_aoe_image()
-	brand_image = float(share)/100 + ((1 - float(share)/100) * get_advertising_mod()) * cyber_attack_mod + aoe_image
+	brand_image = float(share) + ((1 - float(share)/100) * get_advertising_mod()) * cyber_attack_mod + aoe_image
 	brand_image = clamp(brand_image, 0.0, 1.0)
 
 func update_brand_loyalty():
@@ -145,6 +148,9 @@ func update_price(amount):
 
 func update_connections():
 	connections += connections_delta
+	
+	prev_connections_delta = connections_delta
+	
 	connections_delta = 0
 
 func update_connection_deltas():
@@ -209,10 +215,14 @@ func remove_aoe_image(aoe_tower):
 func update_affluency_conns(affluency_delta):
 	if affluency_delta >= 0:
 		connections += affluency_delta
+		
+		prev_affluency_delta = affluency_delta
 		return affluency_delta
 	else:
-		var delta = int(affluency_delta * connections)
-		connections += affluency_delta
+		var delta = int(affluency_delta/100 * connections)
+		connections += delta
+		
+		prev_affluency_delta = delta
 		return delta
 	
 

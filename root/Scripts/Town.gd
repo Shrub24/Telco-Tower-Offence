@@ -29,7 +29,7 @@ var hovered = false
 
 
 #put this somewhere else?
-export var base_aoe_image = 10
+export var base_aoe_image = 0.1
 
 export var min_no_ISP = 2
 export var max_no_ISP = 10
@@ -102,6 +102,12 @@ func get_share(ISP):
 	return float(ISPs[ISP].connections)/population
 	
 func update_turn():
+#	if town_name == "Juliest":
+#		var pop = 0
+#		for town_info in ISPs.values():
+#			pop += town_info.connections
+#		pop += no_ISP_pop
+#		print(pop)
 	var ISPTownInfos = get_ISP_town_infos()
 	for town_info in ISPTownInfos:
 		if town_info.tower:
@@ -114,11 +120,16 @@ func update_turn():
 	for town_info in ISPTownInfos:
 		if town_info.tower:
 			town_info.get_connections_delta()
+#	if town_name == "Juliest":
+#		for isp in ISPs.keys():
+#			print(isp.ISP_name + ": " + str(ISPs[isp].connections))
+#		print("No ISPpop: " + str(no_ISP_pop))
+#		print("\n")
+#	print(affluency_connection_delta)
 	for town_info in ISPTownInfos:
 		if town_info.tower:
 			town_info.update_turn()
-			if town_info.tower:
-				no_ISP_pop -= town_info.update_affluency_conns(affluency_connection_delta[town_info])
+			no_ISP_pop -= town_info.update_affluency_conns(affluency_connection_delta[town_info])
 
 func create_ISPTownInfo(ISP):
 	var ISPTownInfo = ISPTownInfo_scene.instance()
@@ -168,7 +179,7 @@ func affluency_convert_pos_share_to_pop():
 	for ISP in affluency_connection_delta.keys():
 		var share_delta = affluency_connection_delta[ISP]
 		if share_delta > 0:
-			affluency_connection_delta[ISP] = int(no_ISP_pop * share_delta)
+			affluency_connection_delta[ISP] = int(no_ISP_pop * share_delta/100)
 
 func upgrade_tower(ISP, type):
 	get_ISP_town_info(ISP).upgrade_tower(type)

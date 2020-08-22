@@ -1171,7 +1171,7 @@ town_name = "Stillspeare"
 affluency = 60.0
 
 [node name="Promeo" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1154.22, -370.554 )
+position = Vector2( 1154.22, -372.442 )
 polygon = PoolVector2Array( 70.0652, -136.668, -186.736, -9.49213, -123.133, 22.9677, -186.444, 54.6232, -59.0349, 119.037, 69.9299, 54.9731, 197.066, 118.806, 324.996, 54.9731, 132.968, -41.1731, 197.065, -72.4272 )
 population = 100000
 neighbours = [ "N", "Sonnit", "Stillspeare", "Juliest", "Dawnset", "Verticool" ]
@@ -1182,6 +1182,7 @@ shares = {
 "Vodaclone": 1
 }
 town_name = "Promeo"
+affluency = 60.0
 
 [node name="Juliest" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1173.22, -218.722 )
@@ -1195,6 +1196,7 @@ shares = {
 "Vodaclone": 0
 }
 town_name = "Juliest"
+affluency = 60.0
 
 [node name="Dawnset" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1517, -404.741 )
