@@ -187,6 +187,15 @@ func build_tower(ISP, tower):
 	#var sprite = sprites[ISP][tower.type()]
 	get_tree().call_group("tower_sprite_changers", "add_tower_sprite", ISP.ISP_name, tower.tower_type, tower_loc)
 	
+func sell_tower(ISP):
+	var town_info = get_ISP_town_info(ISP)
+	var tower = town_info.tower
+	depropagate_brand_image(tower, ISP, tower.get_reach())
+	get_ISP_town_info(ISP).remove_tower()
+	# remove all remaining pops from player ISP
+	no_ISP_pop += town_info.update_affluency_conns(-100)
+	
+	get_tree().call_group("tower_sprite_changers", "remove_tower_sprite", tower_loc)
 
 # converts pos shares in get_affluency_delta to pops
 func affluency_convert_pos_share_to_pop():
