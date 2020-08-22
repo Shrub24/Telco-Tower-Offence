@@ -1,18 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/mainmenu/return_text.png" type="Texture" id=1]
 [ext_resource path="res://Assets/mainmenu/telco_placeholder.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Menu/ISP_select_script.gd" type="Script" id=3]
+[ext_resource path="res://real assets/background.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Theme/Menu.tres" type="Theme" id=5]
 
-[node name="MarginContainer" type="MarginContainer"]
+[node name="MarginContainer" type="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+texture = ExtResource( 4 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 menu_scene_path = "res://Scenes/Menu/MainMenu.tscn"
 map_path = "res://Scenes/Scene.tscn"
 
@@ -34,40 +34,77 @@ size_flags_vertical = 3
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
-margin_top = 411.0
+margin_top = 409.0
 margin_right = 1920.0
-margin_bottom = 605.0
+margin_bottom = 607.0
+theme = ExtResource( 5 )
 custom_constants/separation = 80
 alignment = 1
 
-[node name="Who-awei" type="TextureButton" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 386.0
 margin_right = 613.0
-margin_bottom = 194.0
+margin_bottom = 198.0
+
+[node name="Label" type="RichTextLabel" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 227.0
+text = "Who-awei"
+
+[node name="Who-awei" type="TextureButton" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 4.0
+margin_right = 227.0
+margin_bottom = 198.0
 size_flags_vertical = 0
 texture_normal = ExtResource( 2 )
 
-[node name="Xiaomy" type="TextureButton" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 693.0
 margin_right = 920.0
-margin_bottom = 194.0
+margin_bottom = 198.0
+
+[node name="Label2" type="RichTextLabel" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 227.0
+text = "Xiaomy"
+
+[node name="Xiaomy" type="TextureButton" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 4.0
+margin_right = 227.0
+margin_bottom = 198.0
 size_flags_vertical = 0
 texture_normal = ExtResource( 2 )
 
-[node name="Alidada" type="TextureButton" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 1000.0
 margin_right = 1227.0
-margin_bottom = 194.0
+margin_bottom = 198.0
+
+[node name="Label3" type="RichTextLabel" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+margin_right = 227.0
+text = "Alidada"
+
+[node name="Alidada" type="TextureButton" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+margin_top = 4.0
+margin_right = 227.0
+margin_bottom = 198.0
 size_flags_vertical = 0
 texture_normal = ExtResource( 2 )
 
-[node name="Knockia" type="TextureButton" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 1307.0
 margin_right = 1534.0
-margin_bottom = 194.0
+margin_bottom = 198.0
+
+[node name="Label4" type="RichTextLabel" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
+margin_right = 227.0
+text = "Knockia"
+
+[node name="Knockia" type="TextureButton" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
+margin_top = 4.0
+margin_right = 227.0
+margin_bottom = 198.0
 size_flags_vertical = 0
 texture_normal = ExtResource( 2 )
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/Who-awei" to="." method="_on_Whoawei_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/Xiaomy" to="." method="_on_Xiaomy_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/Alidada" to="." method="_on_Alidada_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/Knockia" to="." method="_on_Knockia_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Who-awei" to="." method="_on_Whoawei_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Xiaomy" to="." method="_on_Xiaomy_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer3/Alidada" to="." method="_on_Alidada_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4/Knockia" to="." method="_on_Knockia_pressed"]
