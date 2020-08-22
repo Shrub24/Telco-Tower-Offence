@@ -26,6 +26,9 @@ export var max_boundary_y = 1400
 func _ready():
 	pass # Replace with function body.
 
+func set_camera_loc(x, y):
+	position.x = x
+	position.y = y
 
 func _process(delta):
 	

@@ -23,12 +23,8 @@ func _ready():
 func set_ISP(ISP):
 	global_data.starting_ISP = ISP
 	
-func set_init_camera_loc(x, y):
-	global_data.camera_x = x
-	global_data.camera_y = y
-
 func _on_Whoawei_pressed():
-	set_ISP("Whoawei")
+	set_ISP("Who-awei")
 	get_tree().change_scene(map_path)
 
 func _on_Alidada_pressed():

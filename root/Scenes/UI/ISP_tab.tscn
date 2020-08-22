@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/UI/brand_loyalty.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/coin.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/UI/ISP_tab.gd" type="Script" id=3]
 [ext_resource path="res://Assets/UI/tedstra.png" type="Texture" id=4]
+[ext_resource path="res://Assets/fonts/Money Font.tres" type="DynamicFont" id=5]
 
 [node name="AI ISP" type="VBoxContainer"]
 anchor_right = 1.0
@@ -16,9 +17,9 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-price_label = NodePath("HBoxContainer/MarginContainer/HBoxContainer/MarginContainer/PriceLabel")
-image_label = NodePath("HBoxContainer3/brand_image")
-loyalty_label = NodePath("HBoxContainer2/brand_loyalty")
+price_label = NodePath("HBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/PriceLabel")
+image_label = NodePath("HBoxContainer3/MarginContainer2/brand_image")
+loyalty_label = NodePath("HBoxContainer2/MarginContainer/brand_loyalty")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_right = 1912.0
@@ -45,21 +46,21 @@ size_flags_vertical = 3
 margin_right = 1873.0
 margin_bottom = 345.0
 
-[node name="MarginContainer" type="CenterContainer" parent="HBoxContainer/MarginContainer/HBoxContainer"]
+[node name="MarginContainer2" type="CenterContainer" parent="HBoxContainer/MarginContainer/HBoxContainer"]
 margin_right = 1873.0
 margin_bottom = 345.0
 size_flags_horizontal = 3
 
-[node name="PriceLabel" type="Label" parent="HBoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
-margin_left = 932.0
-margin_top = 157.0
-margin_right = 940.0
-margin_bottom = 188.0
+[node name="PriceLabel" type="Label" parent="HBoxContainer/MarginContainer/HBoxContainer/MarginContainer2"]
+margin_left = 914.0
+margin_top = 153.0
+margin_right = 958.0
+margin_bottom = 192.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.929412, 0.827451, 0, 1 )
-text = "0
-"
+text = "10"
 valign = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
@@ -77,12 +78,24 @@ texture = ExtResource( 4 )
 expand = true
 stretch_mode = 6
 
-[node name="brand_loyalty" type="Label" parent="HBoxContainer2"]
+[node name="MarginContainer" type="CenterContainer" parent="HBoxContainer2"]
 margin_left = 39.0
-margin_top = 165.0
 margin_right = 1912.0
-margin_bottom = 179.0
+margin_bottom = 345.0
 size_flags_horizontal = 3
+
+[node name="brand_loyalty" type="Label" parent="HBoxContainer2/MarginContainer"]
+margin_left = 925.0
+margin_top = 132.0
+margin_right = 947.0
+margin_bottom = 213.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0
+"
+valign = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="."]
 margin_top = 698.0
@@ -99,9 +112,21 @@ texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
-[node name="brand_image" type="Label" parent="HBoxContainer3"]
+[node name="MarginContainer2" type="CenterContainer" parent="HBoxContainer3"]
 margin_left = 39.0
-margin_top = 166.0
 margin_right = 1912.0
-margin_bottom = 180.0
+margin_bottom = 346.0
 size_flags_horizontal = 3
+
+[node name="brand_image" type="Label" parent="HBoxContainer3/MarginContainer2"]
+margin_left = 925.0
+margin_top = 132.0
+margin_right = 947.0
+margin_bottom = 213.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0
+"
+valign = 1

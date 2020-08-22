@@ -25,7 +25,7 @@ signal town_mouse_exited
 
 var no_ISP_pop = 0
 var affluency_connection_delta = {}
-var hovered = true
+var hovered = false
 
 
 #put this somewhere else?
@@ -55,15 +55,17 @@ func init_town_ISPs(AIs, player):
 		var ISP = AI.ISP
 		if shares[ISP.ISP_name]:
 			var ISPTownInfo = create_ISPTownInfo(ISP)
-			ISPTownInfo.generate(shares[ISP.ISP_name], no_ISP_pop, affluency)
+			ISPTownInfo.generate(shares[ISP.ISP_name], affluency)
 			var tower = ISPTownInfo.tower
 			propagate_brand_image(tower, ISPTownInfo.ISP, tower.get_reach())
 	
 	if starter_town:
 		create_ISPTownInfo(player.ISP)
-		Player_ISPTownInfo.generate_starter(no_ISP_pop)
+		Player_ISPTownInfo.generate_starter()
 		var tower = Player_ISPTownInfo.tower
 		propagate_brand_image(tower, Player_ISPTownInfo.ISP, tower.get_reach())
+	
+	update_turn()
 	
 	var ashares = get_ISP_shares()
 	var max_ISP = null
@@ -98,6 +100,15 @@ func get_ISPs():
 	var ISP_list = ISPs.keys()
 	return ISP_list
 
+func get_max_speed():
+	var max_speed = 0
+	for town_info in get_ISP_town_infos():
+		if town_info.tower:
+			var speed = town_info.tower.get_speed()
+			if  speed > max_speed:
+				max_speed = speed
+	return max_speed
+
 func get_share(ISP):
 	return float(ISPs[ISP].connections)/population
 	
@@ -128,7 +139,7 @@ func update_turn():
 #	print(affluency_connection_delta)
 	for town_info in ISPTownInfos:
 		if town_info.tower:
-			town_info.update_turn()
+			town_info.update_turn(get_max_speed())
 			no_ISP_pop -= town_info.update_affluency_conns(affluency_connection_delta[town_info])
 
 func create_ISPTownInfo(ISP):
@@ -201,7 +212,7 @@ func _on_Collider_mouse_entered():
 		border.modulate.a = hover_opacity
 
 func _on_Collider_mouse_exited():
-	if !selected and hovered:
+	if hovered:
 		hovered = false
 		border.modulate.a = unselected_opacity
 
