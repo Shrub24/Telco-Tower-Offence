@@ -179,7 +179,8 @@ func _on_UI_advertising_sell_pressed():
 
 
 func _on_UI_buy_tower_pressed(type):
-	player.buy_tower(selected_town, type)
+	if selected_town.Player_ISPTownInfo:
+		player.buy_tower(selected_town, type)
 
 
 func _on_UI_cyber_attack_pressed(target_name):

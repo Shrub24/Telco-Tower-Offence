@@ -17,5 +17,5 @@ func _ready():
 #	pass
 
 func add_tower_sprite(ISP_name, tower_type, loc):
-	var tile_pos = world_to_map(loc)
-	set_cellv(tile_pos, tileset.find_tile_by_name(ISP_name + tower_type))
+	var grid_loc = Vector2(loc[0], loc[1])
+	set_cellv(grid_loc, tileset.find_tile_by_name(ISP_name + tower_type))

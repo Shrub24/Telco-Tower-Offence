@@ -1,15 +1,18 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/AI/ElonMaskAI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Camera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/AI/TedstraAI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/UI/UI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/GameController.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/ISP.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Player ISPs/XiaomyISP.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/AI/PanCoganAI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/AI/VodacloneAI.tscn" type="PackedScene" id=8]
 [ext_resource path="res://map.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Player ISPs/AlidadaISP.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Player ISPs/WhoaweiISP.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Player ISPs/KnockiaISP.tscn" type="PackedScene" id=13]
 
 [node name="Main" type="Node2D"]
 position = Vector2( -1.33484, 1.33484 )
@@ -17,7 +20,7 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
-player_ISP_scenes = [ ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ) ]
+player_ISP_scenes = [ ExtResource( 12 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 13 ) ]
 player = NodePath("Player")
 map = NodePath("map")
 UI_controller = NodePath("UI")
