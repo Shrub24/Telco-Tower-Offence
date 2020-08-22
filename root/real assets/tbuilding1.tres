@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=35 format=2]
+[gd_resource type="TileSet" load_steps=44 format=2]
 
 [ext_resource path="res://real assets/flat1yellow1.png" type="Texture" id=1]
 [ext_resource path="res://real assets/flat1yellow2.png" type="Texture" id=2]
@@ -22,18 +22,27 @@
 [ext_resource path="res://real assets/towerpalceholder.png" type="Texture" id=20]
 [ext_resource path="res://real assets/towerpalceholder (1).png" type="Texture" id=21]
 [ext_resource path="res://real assets/towerpalceholder (2).png" type="Texture" id=22]
-[ext_resource path="res://real assets/towers/Alidada5g.png" type="Texture" id=23]
-[ext_resource path="res://real assets/towers/Knockia3g.png" type="Texture" id=24]
-[ext_resource path="res://real assets/towers/Knockia4g.png" type="Texture" id=25]
-[ext_resource path="res://real assets/towers/Who-awei5g.png" type="Texture" id=26]
-[ext_resource path="res://real assets/towers/Xiaomy3g.png" type="Texture" id=27]
-[ext_resource path="res://real assets/towers/Xiaomy4g.png" type="Texture" id=28]
-[ext_resource path="res://real assets/towers/Xiaomy5g.png" type="Texture" id=29]
-[ext_resource path="res://real assets/towers/Alidada3g.png" type="Texture" id=30]
-[ext_resource path="res://real assets/towers/Who-awei3g.png" type="Texture" id=31]
-[ext_resource path="res://real assets/towers/Knockia5g.png" type="Texture" id=32]
-[ext_resource path="res://real assets/towers/Alidada4g.png" type="Texture" id=33]
-[ext_resource path="res://real assets/towers/Who-awei4g.png" type="Texture" id=34]
+[ext_resource path="res://real assets/barn2.png" type="Texture" id=23]
+[ext_resource path="res://real assets/barn.png" type="Texture" id=24]
+[ext_resource path="res://real assets/tree1.png" type="Texture" id=25]
+[ext_resource path="res://real assets/tree2.png" type="Texture" id=26]
+[ext_resource path="res://real assets/haystack2.png" type="Texture" id=27]
+[ext_resource path="res://real assets/haystack1.png" type="Texture" id=28]
+[ext_resource path="res://real assets/ruralhouse.png" type="Texture" id=29]
+[ext_resource path="res://real assets/rural2.png" type="Texture" id=30]
+[ext_resource path="res://real assets/rural3.png" type="Texture" id=31]
+[ext_resource path="res://real assets/towers/Alidada3g.png" type="Texture" id=32]
+[ext_resource path="res://real assets/towers/Alidada5g.png" type="Texture" id=33]
+[ext_resource path="res://real assets/towers/Alidada4g.png" type="Texture" id=34]
+[ext_resource path="res://real assets/towers/Knockia3g.png" type="Texture" id=35]
+[ext_resource path="res://real assets/towers/Knockia4g.png" type="Texture" id=36]
+[ext_resource path="res://real assets/towers/Xiaomy4g.png" type="Texture" id=37]
+[ext_resource path="res://real assets/towers/Knockia5g.png" type="Texture" id=38]
+[ext_resource path="res://real assets/towers/Who-awei4g.png" type="Texture" id=39]
+[ext_resource path="res://real assets/towers/Who-awei5g.png" type="Texture" id=40]
+[ext_resource path="res://real assets/towers/Xiaomy3g.png" type="Texture" id=41]
+[ext_resource path="res://real assets/towers/Who-awei3g.png" type="Texture" id=42]
+[ext_resource path="res://real assets/towers/Xiaomy5g.png" type="Texture" id=43]
 
 [resource]
 0/name = "flat1yellow1"
@@ -358,8 +367,8 @@
 22/shape_one_way_margin = 0.0
 22/shapes = [  ]
 22/z_index = 0
-23/name = "Alidada3g"
-23/texture = ExtResource( 30 )
+23/name = "barn2"
+23/texture = ExtResource( 23 )
 23/tex_offset = Vector2( 0, 0 )
 23/modulate = Color( 1, 1, 1, 1 )
 23/region = Rect2( 0, 0, 512, 512 )
@@ -372,8 +381,8 @@
 23/shape_one_way_margin = 0.0
 23/shapes = [  ]
 23/z_index = 0
-24/name = "Alidada4g"
-24/texture = ExtResource( 33 )
+24/name = "barn"
+24/texture = ExtResource( 24 )
 24/tex_offset = Vector2( 0, 0 )
 24/modulate = Color( 1, 1, 1, 1 )
 24/region = Rect2( 0, 0, 512, 512 )
@@ -386,8 +395,8 @@
 24/shape_one_way_margin = 0.0
 24/shapes = [  ]
 24/z_index = 0
-25/name = "Alidada5g"
-25/texture = ExtResource( 23 )
+25/name = "tree1"
+25/texture = ExtResource( 25 )
 25/tex_offset = Vector2( 0, 0 )
 25/modulate = Color( 1, 1, 1, 1 )
 25/region = Rect2( 0, 0, 512, 512 )
@@ -400,8 +409,8 @@
 25/shape_one_way_margin = 0.0
 25/shapes = [  ]
 25/z_index = 0
-26/name = "Knockia3g"
-26/texture = ExtResource( 24 )
+26/name = "tree2"
+26/texture = ExtResource( 26 )
 26/tex_offset = Vector2( 0, 0 )
 26/modulate = Color( 1, 1, 1, 1 )
 26/region = Rect2( 0, 0, 512, 512 )
@@ -414,8 +423,8 @@
 26/shape_one_way_margin = 0.0
 26/shapes = [  ]
 26/z_index = 0
-27/name = "Knockia4g"
-27/texture = ExtResource( 25 )
+27/name = "haystack1"
+27/texture = ExtResource( 28 )
 27/tex_offset = Vector2( 0, 0 )
 27/modulate = Color( 1, 1, 1, 1 )
 27/region = Rect2( 0, 0, 512, 512 )
@@ -428,8 +437,8 @@
 27/shape_one_way_margin = 0.0
 27/shapes = [  ]
 27/z_index = 0
-28/name = "Knockia5g"
-28/texture = ExtResource( 32 )
+28/name = "haystack2"
+28/texture = ExtResource( 27 )
 28/tex_offset = Vector2( 0, 0 )
 28/modulate = Color( 1, 1, 1, 1 )
 28/region = Rect2( 0, 0, 512, 512 )
@@ -442,8 +451,8 @@
 28/shape_one_way_margin = 0.0
 28/shapes = [  ]
 28/z_index = 0
-29/name = "Who-awei3g"
-29/texture = ExtResource( 31 )
+29/name = "rural2"
+29/texture = ExtResource( 30 )
 29/tex_offset = Vector2( 0, 0 )
 29/modulate = Color( 1, 1, 1, 1 )
 29/region = Rect2( 0, 0, 512, 512 )
@@ -456,8 +465,8 @@
 29/shape_one_way_margin = 0.0
 29/shapes = [  ]
 29/z_index = 0
-30/name = "Who-awei4g"
-30/texture = ExtResource( 34 )
+30/name = "rural3"
+30/texture = ExtResource( 31 )
 30/tex_offset = Vector2( 0, 0 )
 30/modulate = Color( 1, 1, 1, 1 )
 30/region = Rect2( 0, 0, 512, 512 )
@@ -470,8 +479,8 @@
 30/shape_one_way_margin = 0.0
 30/shapes = [  ]
 30/z_index = 0
-31/name = "Who-awei5g"
-31/texture = ExtResource( 26 )
+31/name = "ruralhouse"
+31/texture = ExtResource( 29 )
 31/tex_offset = Vector2( 0, 0 )
 31/modulate = Color( 1, 1, 1, 1 )
 31/region = Rect2( 0, 0, 512, 512 )
@@ -484,8 +493,8 @@
 31/shape_one_way_margin = 0.0
 31/shapes = [  ]
 31/z_index = 0
-32/name = "Xiaomy3g"
-32/texture = ExtResource( 27 )
+32/name = "Alidada3g"
+32/texture = ExtResource( 32 )
 32/tex_offset = Vector2( 0, 0 )
 32/modulate = Color( 1, 1, 1, 1 )
 32/region = Rect2( 0, 0, 512, 512 )
@@ -498,8 +507,8 @@
 32/shape_one_way_margin = 0.0
 32/shapes = [  ]
 32/z_index = 0
-33/name = "Xiaomy4g"
-33/texture = ExtResource( 28 )
+33/name = "Alidada4g"
+33/texture = ExtResource( 34 )
 33/tex_offset = Vector2( 0, 0 )
 33/modulate = Color( 1, 1, 1, 1 )
 33/region = Rect2( 0, 0, 512, 512 )
@@ -512,8 +521,8 @@
 33/shape_one_way_margin = 0.0
 33/shapes = [  ]
 33/z_index = 0
-34/name = "Xiaomy5g"
-34/texture = ExtResource( 29 )
+34/name = "Alidada5g"
+34/texture = ExtResource( 33 )
 34/tex_offset = Vector2( 0, 0 )
 34/modulate = Color( 1, 1, 1, 1 )
 34/region = Rect2( 0, 0, 512, 512 )
@@ -526,3 +535,129 @@
 34/shape_one_way_margin = 0.0
 34/shapes = [  ]
 34/z_index = 0
+35/name = "Knockia3g"
+35/texture = ExtResource( 35 )
+35/tex_offset = Vector2( 0, 0 )
+35/modulate = Color( 1, 1, 1, 1 )
+35/region = Rect2( 0, 0, 512, 512 )
+35/tile_mode = 0
+35/occluder_offset = Vector2( 256, 256 )
+35/navigation_offset = Vector2( 256, 256 )
+35/shape_offset = Vector2( 0, 0 )
+35/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+35/shape_one_way = false
+35/shape_one_way_margin = 0.0
+35/shapes = [  ]
+35/z_index = 0
+36/name = "Knockia4g"
+36/texture = ExtResource( 36 )
+36/tex_offset = Vector2( 0, 0 )
+36/modulate = Color( 1, 1, 1, 1 )
+36/region = Rect2( 0, 0, 512, 512 )
+36/tile_mode = 0
+36/occluder_offset = Vector2( 256, 256 )
+36/navigation_offset = Vector2( 256, 256 )
+36/shape_offset = Vector2( 0, 0 )
+36/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+36/shape_one_way = false
+36/shape_one_way_margin = 0.0
+36/shapes = [  ]
+36/z_index = 0
+37/name = "Knockia5g"
+37/texture = ExtResource( 38 )
+37/tex_offset = Vector2( 0, 0 )
+37/modulate = Color( 1, 1, 1, 1 )
+37/region = Rect2( 0, 0, 512, 512 )
+37/tile_mode = 0
+37/occluder_offset = Vector2( 256, 256 )
+37/navigation_offset = Vector2( 256, 256 )
+37/shape_offset = Vector2( 0, 0 )
+37/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+37/shape_one_way = false
+37/shape_one_way_margin = 0.0
+37/shapes = [  ]
+37/z_index = 0
+38/name = "Who-awei3g"
+38/texture = ExtResource( 42 )
+38/tex_offset = Vector2( 0, 0 )
+38/modulate = Color( 1, 1, 1, 1 )
+38/region = Rect2( 0, 0, 512, 512 )
+38/tile_mode = 0
+38/occluder_offset = Vector2( 256, 256 )
+38/navigation_offset = Vector2( 256, 256 )
+38/shape_offset = Vector2( 0, 0 )
+38/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+38/shape_one_way = false
+38/shape_one_way_margin = 0.0
+38/shapes = [  ]
+38/z_index = 0
+39/name = "Who-awei4g"
+39/texture = ExtResource( 39 )
+39/tex_offset = Vector2( 0, 0 )
+39/modulate = Color( 1, 1, 1, 1 )
+39/region = Rect2( 0, 0, 512, 512 )
+39/tile_mode = 0
+39/occluder_offset = Vector2( 256, 256 )
+39/navigation_offset = Vector2( 256, 256 )
+39/shape_offset = Vector2( 0, 0 )
+39/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+39/shape_one_way = false
+39/shape_one_way_margin = 0.0
+39/shapes = [  ]
+39/z_index = 0
+40/name = "Who-awei5g"
+40/texture = ExtResource( 40 )
+40/tex_offset = Vector2( 0, 0 )
+40/modulate = Color( 1, 1, 1, 1 )
+40/region = Rect2( 0, 0, 512, 512 )
+40/tile_mode = 0
+40/occluder_offset = Vector2( 256, 256 )
+40/navigation_offset = Vector2( 256, 256 )
+40/shape_offset = Vector2( 0, 0 )
+40/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+40/shape_one_way = false
+40/shape_one_way_margin = 0.0
+40/shapes = [  ]
+40/z_index = 0
+41/name = "Xiaomy3g"
+41/texture = ExtResource( 41 )
+41/tex_offset = Vector2( 0, 0 )
+41/modulate = Color( 1, 1, 1, 1 )
+41/region = Rect2( 0, 0, 512, 512 )
+41/tile_mode = 0
+41/occluder_offset = Vector2( 256, 256 )
+41/navigation_offset = Vector2( 256, 256 )
+41/shape_offset = Vector2( 0, 0 )
+41/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+41/shape_one_way = false
+41/shape_one_way_margin = 0.0
+41/shapes = [  ]
+41/z_index = 0
+42/name = "Xiaomy4g"
+42/texture = ExtResource( 37 )
+42/tex_offset = Vector2( 0, 0 )
+42/modulate = Color( 1, 1, 1, 1 )
+42/region = Rect2( 0, 0, 512, 512 )
+42/tile_mode = 0
+42/occluder_offset = Vector2( 256, 256 )
+42/navigation_offset = Vector2( 256, 256 )
+42/shape_offset = Vector2( 0, 0 )
+42/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+42/shape_one_way = false
+42/shape_one_way_margin = 0.0
+42/shapes = [  ]
+42/z_index = 0
+43/name = "Xiaomy5g"
+43/texture = ExtResource( 43 )
+43/tex_offset = Vector2( 0, 0 )
+43/modulate = Color( 1, 1, 1, 1 )
+43/region = Rect2( 0, 0, 512, 512 )
+43/tile_mode = 0
+43/occluder_offset = Vector2( 256, 256 )
+43/navigation_offset = Vector2( 256, 256 )
+43/shape_offset = Vector2( 0, 0 )
+43/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+43/shape_one_way = false
+43/shape_one_way_margin = 0.0
+43/shapes = [  ]
+43/z_index = 0

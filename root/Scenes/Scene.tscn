@@ -52,6 +52,11 @@ cyber_attack_button_paths = {
 "Tedstra": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/TedstraAttack"),
 "Vodaclone": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/VodacloneAttack")
 }
+tower_button_paths = {
+"3g": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/3gTowerBuy"),
+"4g": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/4gTowerBuy"),
+"5g": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/5gTowerBuy")
+}
 ISP_info_paths = {
 "ElonMask Co": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/E"),
 "PanCogan Mobile": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/P"),

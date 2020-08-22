@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=38 format=2]
+[gd_resource type="TileSet" load_steps=41 format=2]
 
 [ext_resource path="res://real assets/FUYUASSETS/citybase2.png" type="Texture" id=1]
 [ext_resource path="res://real assets/FUYUASSETS/graveltile.png" type="Texture" id=2]
@@ -37,6 +37,9 @@
 [ext_resource path="res://real assets/tedstratowerplaceholder.png" type="Texture" id=35]
 [ext_resource path="res://real assets/pancogantowerplaceholder.png" type="Texture" id=36]
 [ext_resource path="res://real assets/masktowerplaceholder.png" type="Texture" id=37]
+[ext_resource path="res://real assets/farmland.png" type="Texture" id=38]
+[ext_resource path="res://real assets/tree1.png" type="Texture" id=39]
+[ext_resource path="res://real assets/tree2.png" type="Texture" id=40]
 
 [resource]
 0/name = "citybase2"
@@ -557,3 +560,45 @@
 36/shape_one_way_margin = 0.0
 36/shapes = [  ]
 36/z_index = 0
+37/name = "farmland"
+37/texture = ExtResource( 38 )
+37/tex_offset = Vector2( 0, 0 )
+37/modulate = Color( 1, 1, 1, 1 )
+37/region = Rect2( 0, 0, 512, 512 )
+37/tile_mode = 0
+37/occluder_offset = Vector2( 256, 256 )
+37/navigation_offset = Vector2( 256, 256 )
+37/shape_offset = Vector2( 0, 0 )
+37/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+37/shape_one_way = false
+37/shape_one_way_margin = 0.0
+37/shapes = [  ]
+37/z_index = 0
+38/name = "tree1"
+38/texture = ExtResource( 39 )
+38/tex_offset = Vector2( 0, 0 )
+38/modulate = Color( 1, 1, 1, 1 )
+38/region = Rect2( 0, 0, 512, 512 )
+38/tile_mode = 0
+38/occluder_offset = Vector2( 256, 256 )
+38/navigation_offset = Vector2( 256, 256 )
+38/shape_offset = Vector2( 0, 0 )
+38/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+38/shape_one_way = false
+38/shape_one_way_margin = 0.0
+38/shapes = [  ]
+38/z_index = 0
+39/name = "tree2"
+39/texture = ExtResource( 40 )
+39/tex_offset = Vector2( 0, 0 )
+39/modulate = Color( 1, 1, 1, 1 )
+39/region = Rect2( 0, 0, 512, 512 )
+39/tile_mode = 0
+39/occluder_offset = Vector2( 256, 256 )
+39/navigation_offset = Vector2( 256, 256 )
+39/shape_offset = Vector2( 0, 0 )
+39/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+39/shape_one_way = false
+39/shape_one_way_margin = 0.0
+39/shapes = [  ]
+39/z_index = 0
