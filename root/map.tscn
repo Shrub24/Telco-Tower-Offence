@@ -758,7 +758,7 @@ town_name = "Lankyair"
 affluency = 30.0
 
 [node name="Xylia" parent="towns" instance=ExtResource( 4 )]
-position = Vector2( 1032.4, 704.596 )
+position = Vector2( 1031.4, 708.596 )
 polygon = PoolVector2Array( -202.31, -6.84302, 55.6899, -136.843, 180.69, -71.843, 54.1899, -7.84302, 117.19, 23.657, 52.6899, 55.657, 117.69, 87.657, 53.1899, 119.657, 116.69, 151.157, -10.3101, 215.657, -72.8101, 182.657, -11.3101, 151.657, -137.31, 87.157, -74.3101, 56.157 )
 population = 60000
 neighbours = [ "Lankyair", "Nichidai", "Bootarm", "Mysteri", "Zyguard" ]
@@ -772,7 +772,7 @@ town_name = "Xylia"
 affluency = 34.0
 
 [node name="Zyguard" parent="towns" instance=ExtResource( 4 )]
-position = Vector2( 1328.43, 699.394 )
+position = Vector2( 1325.43, 703.394 )
 polygon = PoolVector2Array( -176.125, -162.841, 270.41, 62.109, 143.16, 128.109, 80.41, 94.109, -49.59, 157.109, -114.34, 124.359, -50.34, 93.609, -240.84, -2.89099, -114.59, -67.391, -240.09, -132.391 )
 population = 95000
 neighbours = [ "Lankyair", "Bootarm", "Xylia", "Mousse" ]

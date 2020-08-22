@@ -90,6 +90,7 @@ func do_actions(action_budget):
 		
 		# todo check current adverising
 		# decisions of actions
+		# decisions of actions
 		if share <= advertising_share_proportion:
 			var ad_money = do_advertising(action_budget, town)
 			if ad_money:

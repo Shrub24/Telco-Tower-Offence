@@ -13,7 +13,10 @@ func _ready():
 	pass # Replace with function body.
 
 func update_price(price):
-	price_label.text = str(price)
+	if price:
+		price_label.text = "$" + str(price)
+	else:
+		price_label.text = str(price)
 	
 func update_image(image):
 	image_label.text = str(image)

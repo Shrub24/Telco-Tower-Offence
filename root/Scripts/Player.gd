@@ -27,8 +27,9 @@ signal ui_update_money()
 #todo emit signals
 
 func buy_tower(town, tower_type):
-	if ISP.get_town_tower(town):
-		if ISP.get_town_tower(town).tower_type == "tower_type":
+	var tower = ISP.get_town_tower(town)
+	if tower:
+		if tower.tower_type == tower_type:
 			emit_signal("query_sell_tower", tower_type)
 		else:
 			emit_signal("query_change_tower", tower_type)
@@ -111,11 +112,11 @@ func cyber_attack_target(town, target):
 			emit_signal("ui_update_cyber_attack", target, true)
 
 func price_up(town):
-	ISP.change_price(town, 0.5)
+	ISP.change_price(town, ISP.money_round)
 	emit_signal("ui_update_delta_price", ISP.get_delta_price(town))
 
 func price_down(town):
-	ISP.change_price(town, -0.5)
+	ISP.change_price(town, -ISP.money_round)
 	emit_signal("ui_update_delta_price", ISP.get_delta_price(town))
 
 func _on_TechTreeButton_new_tech(tech):

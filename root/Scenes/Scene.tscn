@@ -52,17 +52,25 @@ cyber_attack_button_paths = {
 "Tedstra": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/TedstraAttack"),
 "Vodaclone": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/VodacloneAttack")
 }
+tower_button_paths = {
+"3g": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/3gTowerBuy"),
+"4g": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/4gTowerBuy"),
+"5g": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/5gTowerBuy")
+}
 ISP_info_paths = {
 "ElonMask Co": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/E"),
 "PanCogan Mobile": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/P"),
 "Tedstra": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/T"),
 "Vodaclone": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/V")
 }
+[connection signal="query_sell_tower" from="Player" to="." method="query_sell_tower"]
 [connection signal="ui_update_advertising" from="Player" to="." method="ui_update_advertising"]
 [connection signal="ui_update_cyber_attack" from="Player" to="." method="ui_update_cyber_attack"]
 [connection signal="ui_update_delta_price" from="Player" to="." method="ui_update_delta_price"]
 [connection signal="ui_update_money" from="Player" to="." method="ui_update_money"]
 [connection signal="ui_update_tower" from="Player" to="." method="ui_update_tower"]
+[connection signal="accept_bankruptcy" from="UI" to="." method="_on_UI_accept_bankruptcy"]
+[connection signal="accept_sell_tower" from="UI" to="." method="_on_UI_accept_sell_tower"]
 [connection signal="advertising_buy_pressed" from="UI" to="." method="_on_UI_advertising_buy_pressed"]
 [connection signal="advertising_sell_pressed" from="UI" to="." method="_on_UI_advertising_sell_pressed"]
 [connection signal="buy_tower_pressed" from="UI" to="." method="_on_UI_buy_tower_pressed"]
