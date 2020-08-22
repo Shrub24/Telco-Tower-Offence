@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Scripts/UI/UIController.gd" type="Script" id=1]
 [ext_resource path="res://Assets/UI/down.png" type="Texture" id=2]
@@ -6,12 +6,12 @@
 [ext_resource path="res://Assets/UI/brand_loyalty.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UI/billboardtile.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/UI/CyberAttackButton.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/UI/bandwith_upgrade.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/buy_reach_pressed.png" type="Texture" id=7]
 [ext_resource path="res://Assets/UI/buy3gtower.png" type="Texture" id=8]
-[ext_resource path="res://Assets/UI/speed_upgrade.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/buy_bandwidth_pressed.png" type="Texture" id=9]
 [ext_resource path="res://Assets/UI/coin.png" type="Texture" id=10]
 [ext_resource path="res://Assets/UI/accept_icon.png" type="Texture" id=11]
-[ext_resource path="res://Assets/UI/range_upgrade.png" type="Texture" id=12]
+[ext_resource path="res://Assets/UI/buy_range.png" type="Texture" id=12]
 [ext_resource path="res://Assets/UI/deny_icon.png" type="Texture" id=13]
 [ext_resource path="res://Assets/UI/up.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/UI/ShareGraphic.tscn" type="PackedScene" id=15]
@@ -36,6 +36,9 @@
 [ext_resource path="res://Assets/UI/pancogan_cyberattack_pressed.png" type="Texture" id=34]
 [ext_resource path="res://Assets/UI/tedstra_cyberattack_pressed.png" type="Texture" id=35]
 [ext_resource path="res://Assets/UI/elonmask_cyberattack.png" type="Texture" id=36]
+[ext_resource path="res://Assets/UI/buy_speed.png" type="Texture" id=37]
+[ext_resource path="res://Assets/UI/buy_bandwidth.png" type="Texture" id=38]
+[ext_resource path="res://Assets/UI/buy_speed_pressed.png" type="Texture" id=39]
 
 [node name="UI Layer" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -44,9 +47,9 @@ delta_price_label = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/
 player_loyalty_label = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer2/loyalty")
 player_image_label = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer3/image")
 advertising_label = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer/MarginContainer/HBoxContainer/Label")
-speed_label = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer4/HBoxContainer/CenterContainer/speed_label")
-bandwidth_label = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer2/HBoxContainer/CenterContainer/bandwidth_level")
-reach_label = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer3/HBoxContainer/CenterContainer/reach_label")
+speed_label = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer5/HBoxContainer/CenterContainer/speed_label")
+bandwidth_label = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer3/HBoxContainer/CenterContainer/bandiwdth_label")
+reach_label = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer4/HBoxContainer/CenterContainer/reach_label")
 money_label = NodePath("Panel/MarginContainer/HBoxContainer2/HBoxContainer/money_label")
 reserved_money_label = NodePath("Panel/MarginContainer/HBoxContainer2/HBoxContainer/reserved_money_level")
 price_change_container = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/MarginContainer/PriceChange")
@@ -59,9 +62,9 @@ cyber_attack_button_paths = {
 share_graphic = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ShareGraphic")
 player_ISP_info = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U")
 ISP_info_container = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs")
-reach_button = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer3/HBoxContainer/ReachUpgradeButton")
-speed_button = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer4/HBoxContainer/SpeedUpgradeButton")
-bandwidth_button = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer2/HBoxContainer/BandwidthUpgradeButton")
+reach_button = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer4/HBoxContainer/MarginContainer/ReachUpgradeButton")
+speed_button = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer5/HBoxContainer/MarginContainer/SpeedUpgradeButton")
+bandwidth_button = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer3/HBoxContainer/MarginContainer/BandwidthUpgradeButton")
 tower_button_paths = {
 "3g": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/3gTowerBuy"),
 "4g": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/4gTowerBuy"),
@@ -93,10 +96,10 @@ __meta__ = {
 
 [node name="Bottom" type="PanelContainer" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 420.123
-margin_top = 665.651
-margin_right = 1371.12
-margin_bottom = 1092.65
+margin_left = 420.0
+margin_top = 658.0
+margin_right = 1371.0
+margin_bottom = 1088.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -104,8 +107,8 @@ __meta__ = {
 [node name="Bottom Panel" type="Panel" parent="Bottom"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 943.997
-margin_bottom = 419.999
+margin_right = 944.0
+margin_bottom = 423.0
 theme = ExtResource( 23 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -115,14 +118,14 @@ __meta__ = {
 margin_left = 11.0
 margin_top = 23.0
 margin_right = 929.0
-margin_bottom = 410.0
+margin_bottom = 417.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/MarginContainer"]
 margin_right = 918.0
-margin_bottom = 387.0
+margin_bottom = 394.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -133,7 +136,7 @@ __meta__ = {
 
 [node name="ISPInfoTabs" type="TabContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer"]
 margin_right = 225.0
-margin_bottom = 387.0
+margin_bottom = 394.0
 rect_min_size = Vector2( 225, 200 )
 theme = ExtResource( 23 )
 __meta__ = {
@@ -147,12 +150,12 @@ margin_top = 49.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U"]
 margin_right = 225.0
-margin_bottom = 110.0
+margin_bottom = 112.0
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer"]
 margin_right = 35.0
-margin_bottom = 110.0
+margin_bottom = 112.0
 rect_min_size = Vector2( 35, 35 )
 texture = ExtResource( 10 )
 expand = true
@@ -161,30 +164,30 @@ stretch_mode = 6
 [node name="MarginContainer" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer"]
 margin_left = 39.0
 margin_right = 225.0
-margin_bottom = 110.0
+margin_bottom = 112.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer/MarginContainer"]
 margin_right = 186.0
-margin_bottom = 110.0
+margin_bottom = 112.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer"]
 margin_right = 186.0
-margin_bottom = 110.0
+margin_bottom = 112.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="MarginContainer2" type="CenterContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2"]
 margin_right = 59.0
-margin_bottom = 110.0
+margin_bottom = 112.0
 size_flags_horizontal = 3
 
 [node name="PriceLabel" type="Label" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/MarginContainer2"]
 margin_left = 14.0
-margin_top = 31.0
+margin_top = 32.0
 margin_right = 44.0
-margin_bottom = 78.0
+margin_bottom = 79.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 18 )
@@ -195,14 +198,14 @@ valign = 1
 [node name="MarginContainer3" type="CenterContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2"]
 margin_left = 63.0
 margin_right = 122.0
-margin_bottom = 110.0
+margin_bottom = 112.0
 size_flags_horizontal = 3
 
 [node name="DeltaPriceLabel" type="Label" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/MarginContainer3"]
 margin_left = 17.0
-margin_top = 37.0
+margin_top = 38.0
 margin_right = 41.0
-margin_bottom = 73.0
+margin_bottom = 74.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 19 )
@@ -213,7 +216,7 @@ valign = 1
 [node name="MarginContainer" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2"]
 margin_left = 126.0
 margin_right = 186.0
-margin_bottom = 110.0
+margin_bottom = 112.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_top = 30
@@ -222,21 +225,21 @@ custom_constants/margin_bottom = 30
 [node name="PriceChange" type="VBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/MarginContainer"]
 margin_top = 30.0
 margin_right = 60.0
-margin_bottom = 80.0
+margin_bottom = 82.0
 rect_min_size = Vector2( 20, 20 )
 
 [node name="TextureButton" type="TextureButton" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/MarginContainer/PriceChange"]
 margin_right = 60.0
-margin_bottom = 23.0
+margin_bottom = 24.0
 size_flags_vertical = 3
 texture_normal = ExtResource( 14 )
 expand = true
 stretch_mode = 4
 
 [node name="TextureButton2" type="TextureButton" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/MarginContainer/PriceChange"]
-margin_top = 27.0
+margin_top = 28.0
 margin_right = 60.0
-margin_bottom = 50.0
+margin_bottom = 52.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource( 2 )
@@ -244,15 +247,15 @@ expand = true
 stretch_mode = 4
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U"]
-margin_top = 114.0
+margin_top = 116.0
 margin_right = 225.0
-margin_bottom = 224.0
+margin_bottom = 228.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer2"]
 margin_right = 35.0
-margin_bottom = 110.0
+margin_bottom = 112.0
 rect_min_size = Vector2( 35, 35 )
 texture = ExtResource( 17 )
 expand = true
@@ -260,22 +263,22 @@ stretch_mode = 6
 
 [node name="loyalty" type="Label" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer2"]
 margin_left = 39.0
-margin_top = 31.0
+margin_top = 32.0
 margin_right = 225.0
-margin_bottom = 78.0
+margin_bottom = 79.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 18 )
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U"]
-margin_top = 228.0
+margin_top = 232.0
 margin_right = 225.0
-margin_bottom = 338.0
+margin_bottom = 345.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer3"]
 margin_right = 35.0
-margin_bottom = 110.0
+margin_bottom = 113.0
 rect_min_size = Vector2( 35, 35 )
 texture = ExtResource( 4 )
 expand = true
@@ -283,9 +286,9 @@ stretch_mode = 6
 
 [node name="image" type="Label" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer3"]
 margin_left = 39.0
-margin_top = 31.0
+margin_top = 33.0
 margin_right = 225.0
-margin_bottom = 78.0
+margin_bottom = 80.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 18 )
 
@@ -327,9 +330,9 @@ loyalty_label = NodePath("../E/HBoxContainer2/MarginContainer/brand_loyalty")
 
 [node name="ShareGraphic" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer" instance=ExtResource( 15 )]
 margin_left = 229.0
-margin_top = 20.0
+margin_top = 23.0
 margin_right = 299.0
-margin_bottom = 367.0
+margin_bottom = 370.0
 rect_min_size = Vector2( 70, 100 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -337,26 +340,30 @@ size_flags_vertical = 4
 [node name="VBoxContainer" type="VBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer"]
 margin_left = 303.0
 margin_right = 664.0
-margin_bottom = 387.0
+margin_bottom = 394.0
 rect_min_size = Vector2( 150, 0 )
 size_flags_horizontal = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer"]
 margin_right = 361.0
-margin_bottom = 191.0
+margin_bottom = 145.0
 rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
-size_flags_vertical = 3
+custom_constants/margin_top = 25
+custom_constants/margin_left = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+margin_left = 10.0
+margin_top = 25.0
 margin_right = 361.0
-margin_bottom = 191.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 0, 120 )
 alignment = 1
 
 [node name="3gTowerBuy" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource( 26 )]
 margin_left = 0.0
-margin_right = 117.0
-margin_bottom = 191.0
+margin_right = 114.0
+margin_bottom = 120.0
 texture = ExtResource( 8 )
 expand = true
 stretch_mode = 6
@@ -364,9 +371,9 @@ unpressed = ExtResource( 8 )
 pressed = ExtResource( 25 )
 
 [node name="4gTowerBuy" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource( 26 )]
-margin_left = 121.0
-margin_right = 238.0
-margin_bottom = 191.0
+margin_left = 118.0
+margin_right = 232.0
+margin_bottom = 120.0
 texture = ExtResource( 30 )
 expand = true
 stretch_mode = 6
@@ -374,9 +381,9 @@ unpressed = ExtResource( 30 )
 pressed = ExtResource( 29 )
 
 [node name="5gTowerBuy" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer" instance=ExtResource( 26 )]
-margin_left = 242.0
-margin_right = 361.0
-margin_bottom = 191.0
+margin_left = 236.0
+margin_right = 351.0
+margin_bottom = 120.0
 texture = ExtResource( 27 )
 expand = true
 stretch_mode = 6
@@ -384,9 +391,9 @@ unpressed = ExtResource( 27 )
 pressed = ExtResource( 28 )
 
 [node name="MarginContainer3" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer"]
-margin_top = 195.0
+margin_top = 149.0
 margin_right = 361.0
-margin_bottom = 387.0
+margin_bottom = 394.0
 rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -397,147 +404,173 @@ custom_constants/margin_bottom = 0
 [node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3"]
 margin_left = 25.0
 margin_right = 351.0
-margin_bottom = 192.0
+margin_bottom = 245.0
 alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer"]
 margin_right = 106.0
-margin_bottom = 192.0
+margin_bottom = 245.0
 size_flags_horizontal = 3
 custom_constants/margin_right = 10
-custom_constants/margin_top = 25
 custom_constants/margin_left = 10
-custom_constants/margin_bottom = 45
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer2"]
+[node name="HBoxContainer" type="VBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer3"]
 margin_left = 10.0
-margin_top = 25.0
 margin_right = 96.0
-margin_bottom = 147.0
+margin_bottom = 245.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+alignment = 2
 
-[node name="BandwidthUpgradeButton" type="TextureButton" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer2/HBoxContainer"]
-margin_right = 52.0
-margin_bottom = 122.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture_normal = ExtResource( 7 )
-expand = true
-stretch_mode = 5
-
-[node name="CenterContainer" type="CenterContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer2/HBoxContainer"]
-margin_left = 56.0
+[node name="MarginContainer" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer3/HBoxContainer"]
 margin_right = 86.0
-margin_bottom = 122.0
+margin_bottom = 135.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_top = 50
 
-[node name="bandwidth_level" type="Label" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer2/HBoxContainer/CenterContainer"]
-margin_top = 16.0
-margin_right = 30.0
-margin_bottom = 105.0
-rect_min_size = Vector2( 30, 0 )
-custom_fonts/font = ExtResource( 18 )
+[node name="BandwidthUpgradeButton" type="TextureButton" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer3/HBoxContainer/MarginContainer"]
+margin_top = 50.0
+margin_right = 86.0
+margin_bottom = 135.0
+rect_min_size = Vector2( 0, 85 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 38 )
+texture_pressed = ExtResource( 9 )
+expand = true
+stretch_mode = 4
+
+[node name="CenterContainer" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer3/HBoxContainer"]
+margin_top = 139.0
+margin_right = 86.0
+margin_bottom = 206.0
+size_flags_vertical = 2
+custom_constants/margin_top = 0
+
+[node name="bandiwdth_label" type="Label" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer3/HBoxContainer/CenterContainer"]
+margin_right = 86.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 10, 0 )
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 19 )
 text = "0
 "
 align = 1
-valign = 1
 
-[node name="MarginContainer3" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer"]
 margin_left = 110.0
 margin_right = 216.0
-margin_bottom = 192.0
+margin_bottom = 245.0
 size_flags_horizontal = 3
 custom_constants/margin_right = 10
-custom_constants/margin_top = 25
 custom_constants/margin_left = 10
-custom_constants/margin_bottom = 45
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer3"]
+[node name="HBoxContainer" type="VBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer4"]
 margin_left = 10.0
-margin_top = 25.0
 margin_right = 96.0
-margin_bottom = 147.0
+margin_bottom = 245.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+alignment = 2
 
-[node name="ReachUpgradeButton" type="TextureButton" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer3/HBoxContainer"]
-margin_right = 52.0
-margin_bottom = 122.0
+[node name="MarginContainer" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer4/HBoxContainer"]
+margin_right = 86.0
+margin_bottom = 135.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_top = 50
+
+[node name="ReachUpgradeButton" type="TextureButton" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer4/HBoxContainer/MarginContainer"]
+margin_top = 50.0
+margin_right = 86.0
+margin_bottom = 135.0
+rect_min_size = Vector2( 85, 85 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 7 )
 expand = true
-stretch_mode = 5
+stretch_mode = 4
 
-[node name="CenterContainer" type="CenterContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer3/HBoxContainer"]
-margin_left = 56.0
+[node name="CenterContainer" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer4/HBoxContainer"]
+margin_top = 139.0
 margin_right = 86.0
-margin_bottom = 122.0
+margin_bottom = 206.0
+size_flags_vertical = 2
+custom_constants/margin_top = 0
 
-[node name="reach_label" type="Label" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer3/HBoxContainer/CenterContainer"]
-margin_top = 16.0
-margin_right = 30.0
-margin_bottom = 105.0
-rect_min_size = Vector2( 30, 0 )
-custom_fonts/font = ExtResource( 18 )
+[node name="reach_label" type="Label" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer4/HBoxContainer/CenterContainer"]
+margin_right = 86.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 10, 0 )
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 19 )
 text = "0
 "
 align = 1
-valign = 1
 
-[node name="MarginContainer4" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer"]
+[node name="MarginContainer5" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer"]
 margin_left = 220.0
 margin_right = 326.0
-margin_bottom = 192.0
+margin_bottom = 245.0
 size_flags_horizontal = 3
 custom_constants/margin_right = 10
-custom_constants/margin_top = 25
 custom_constants/margin_left = 10
-custom_constants/margin_bottom = 45
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer4"]
+[node name="HBoxContainer" type="VBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer5"]
 margin_left = 10.0
-margin_top = 25.0
 margin_right = 96.0
-margin_bottom = 147.0
+margin_bottom = 245.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+alignment = 2
 
-[node name="SpeedUpgradeButton" type="TextureButton" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer4/HBoxContainer"]
-margin_right = 52.0
-margin_bottom = 122.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture_normal = ExtResource( 9 )
-expand = true
-stretch_mode = 5
-
-[node name="CenterContainer" type="CenterContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer4/HBoxContainer"]
-margin_left = 56.0
+[node name="MarginContainer" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer5/HBoxContainer"]
 margin_right = 86.0
-margin_bottom = 122.0
+margin_bottom = 135.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_top = 50
 
-[node name="speed_label" type="Label" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer4/HBoxContainer/CenterContainer"]
-margin_top = 16.0
-margin_right = 30.0
-margin_bottom = 105.0
-rect_min_size = Vector2( 30, 0 )
-custom_fonts/font = ExtResource( 18 )
+[node name="SpeedUpgradeButton" type="TextureButton" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer5/HBoxContainer/MarginContainer"]
+margin_top = 50.0
+margin_right = 86.0
+margin_bottom = 135.0
+rect_min_size = Vector2( 0, 85 )
+size_flags_horizontal = 3
+texture_normal = ExtResource( 37 )
+texture_pressed = ExtResource( 39 )
+expand = true
+stretch_mode = 4
+
+[node name="CenterContainer" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer5/HBoxContainer"]
+margin_top = 139.0
+margin_right = 86.0
+margin_bottom = 245.0
+size_flags_vertical = 3
+custom_constants/margin_top = 0
+
+[node name="speed_label" type="Label" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer5/HBoxContainer/CenterContainer"]
+margin_right = 86.0
+margin_bottom = 106.0
+rect_min_size = Vector2( 10, 0 )
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 19 )
 text = "0
 "
 align = 1
-valign = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer"]
 margin_left = 668.0
 margin_right = 918.0
-margin_bottom = 387.0
+margin_bottom = 394.0
 rect_min_size = Vector2( 250, 0 )
 size_flags_vertical = 3
 
 [node name="MarginContainer2" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2"]
 margin_right = 250.0
-margin_bottom = 191.0
+margin_bottom = 195.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_left = 45
@@ -545,13 +578,13 @@ custom_constants/margin_left = 45
 [node name="HBoxContainer" type="HBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2"]
 margin_left = 45.0
 margin_right = 250.0
-margin_bottom = 191.0
+margin_bottom = 195.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer"]
 margin_right = 100.0
-margin_bottom = 191.0
+margin_bottom = 195.0
 size_flags_horizontal = 3
 texture = ExtResource( 5 )
 expand = true
@@ -560,7 +593,7 @@ stretch_mode = 6
 [node name="MarginContainer" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer"]
 margin_left = 104.0
 margin_right = 205.0
-margin_bottom = 191.0
+margin_bottom = 195.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 25
@@ -572,12 +605,12 @@ custom_constants/margin_bottom = 50
 margin_left = 25.0
 margin_top = 50.0
 margin_right = 76.0
-margin_bottom = 141.0
+margin_bottom = 145.0
 
 [node name="Label" type="Label" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer/MarginContainer/HBoxContainer"]
-margin_top = 22.0
+margin_top = 24.0
 margin_right = 27.0
-margin_bottom = 69.0
+margin_bottom = 71.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 custom_fonts/font = ExtResource( 18 )
@@ -585,28 +618,28 @@ custom_fonts/font = ExtResource( 18 )
 [node name="MarginContainer" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer/MarginContainer/HBoxContainer"]
 margin_left = 31.0
 margin_right = 51.0
-margin_bottom = 91.0
+margin_bottom = 95.0
 custom_constants/margin_top = 20
 custom_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
 margin_top = 20.0
 margin_right = 20.0
-margin_bottom = 71.0
+margin_bottom = 75.0
 rect_min_size = Vector2( 20, 20 )
 
 [node name="TextureButton" type="TextureButton" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 margin_right = 20.0
-margin_bottom = 23.0
+margin_bottom = 25.0
 size_flags_vertical = 3
 texture_normal = ExtResource( 14 )
 expand = true
 stretch_mode = 4
 
 [node name="TextureButton2" type="TextureButton" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
-margin_top = 27.0
+margin_top = 29.0
 margin_right = 20.0
-margin_bottom = 51.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource( 2 )
@@ -614,9 +647,9 @@ expand = true
 stretch_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2"]
-margin_top = 195.0
+margin_top = 199.0
 margin_right = 250.0
-margin_bottom = 387.0
+margin_bottom = 394.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 10
@@ -624,40 +657,42 @@ custom_constants/margin_top = 0
 custom_constants/margin_left = 10
 custom_constants/margin_bottom = 10
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
+[node name="HBoxContainer2" type="GridContainer" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
 margin_left = 10.0
 margin_right = 240.0
-margin_bottom = 182.0
+margin_bottom = 185.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+columns = 2
 
 [node name="TedstraAttack" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2" instance=ExtResource( 6 )]
-margin_right = 54.0
-margin_bottom = 182.0
+margin_right = 113.0
+margin_bottom = 90.0
 texture = ExtResource( 33 )
 unpressed = ExtResource( 33 )
 pressed = ExtResource( 35 )
 
 [node name="VodacloneAttack" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2" instance=ExtResource( 6 )]
-margin_left = 58.0
-margin_right = 112.0
-margin_bottom = 182.0
+margin_left = 117.0
+margin_right = 230.0
+margin_bottom = 90.0
 texture = ExtResource( 32 )
 unpressed = ExtResource( 32 )
 pressed = ExtResource( 22 )
 
 [node name="ElonMaskCoAttack" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2" instance=ExtResource( 6 )]
-margin_left = 116.0
-margin_right = 170.0
-margin_bottom = 182.0
+margin_top = 94.0
+margin_right = 113.0
+margin_bottom = 184.0
 texture = ExtResource( 36 )
 unpressed = ExtResource( 36 )
 pressed = ExtResource( 21 )
 
 [node name="PanCoganMobileAttack" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2" instance=ExtResource( 6 )]
-margin_left = 174.0
+margin_left = 117.0
+margin_top = 94.0
 margin_right = 230.0
-margin_bottom = 182.0
+margin_bottom = 184.0
 texture = ExtResource( 20 )
 unpressed = ExtResource( 20 )
 pressed = ExtResource( 34 )
@@ -836,9 +871,9 @@ stretch_mode = 4
 [connection signal="gui_input" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/3gTowerBuy" to="." method="_on_3gTowerBuy_gui_input"]
 [connection signal="gui_input" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/4gTowerBuy" to="." method="_on_4gTowerBuy_gui_input"]
 [connection signal="gui_input" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/5gTowerBuy" to="." method="_on_5gTowerBuy_gui_input"]
-[connection signal="pressed" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer2/HBoxContainer/BandwidthUpgradeButton" to="." method="_on_BandwidthUpgradeButton_pressed"]
-[connection signal="pressed" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer3/HBoxContainer/ReachUpgradeButton" to="." method="_on_ReachUpgradeButton_pressed"]
-[connection signal="pressed" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer4/HBoxContainer/SpeedUpgradeButton" to="." method="_on_SpeedUpgradeButton_pressed"]
+[connection signal="pressed" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer3/HBoxContainer/MarginContainer/BandwidthUpgradeButton" to="." method="_on_BandwidthUpgradeButton_pressed"]
+[connection signal="pressed" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer4/HBoxContainer/MarginContainer/ReachUpgradeButton" to="." method="_on_ReachUpgradeButton_pressed"]
+[connection signal="pressed" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer5/HBoxContainer/MarginContainer/SpeedUpgradeButton" to="." method="_on_SpeedUpgradeButton_pressed"]
 [connection signal="pressed" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/TextureButton" to="." method="_on_AdvertisingBuy_pressed"]
 [connection signal="pressed" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/TextureButton2" to="." method="_on_AdvertisingSell_pressed"]
 [connection signal="gui_input" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/TedstraAttack" to="." method="_on_TedstraAttack_gui_input"]

@@ -313,3 +313,6 @@ func _on_QueryAccept_pressed():
 			emit_signal("accept_sell_tower")
 			end_query()
 			
+
+
+
