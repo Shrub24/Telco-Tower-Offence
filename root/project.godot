@@ -22,12 +22,12 @@ _global_script_classes=[ {
 "base": "Polygon2D",
 "class": "abstract_bordered_polygon_2d",
 "language": "GDScript",
-"path": "res://assets/bordered-polygon-2d/abstract_bordered_polygon_2d.gd"
+"path": "res://Assets/bordered-polygon-2d/abstract_bordered_polygon_2d.gd"
 }, {
 "base": "",
 "class": "bordered_polygon_2d",
 "language": "GDScript",
-"path": "res://assets/bordered-polygon-2d/bordered_polygon_2d.gd"
+"path": "res://Assets/bordered-polygon-2d/bordered_polygon_2d.gd"
 } ]
 _global_script_class_icons={
 "Tower": "",

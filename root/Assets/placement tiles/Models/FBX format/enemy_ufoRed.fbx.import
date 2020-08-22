@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/enemy_ufoRed.fbx-b973a0de8e7173a6fabdaf1a2a42b20e.scn"
+path="res://.import/enemy_ufoRed.fbx-078fd2a26aaf964d63d37a834730de3c.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/FBX format/enemy_ufoRed.fbx"
-dest_files=[ "res://.import/enemy_ufoRed.fbx-b973a0de8e7173a6fabdaf1a2a42b20e.scn" ]
+source_file="res://Assets/placement tiles/Models/FBX format/enemy_ufoRed.fbx"
+dest_files=[ "res://.import/enemy_ufoRed.fbx-078fd2a26aaf964d63d37a834730de3c.scn" ]
 
 [params]
 

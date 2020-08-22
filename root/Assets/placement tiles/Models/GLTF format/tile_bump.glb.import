@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_bump.glb-2d784aec935d60f63281011a0facc804.scn"
+path="res://.import/tile_bump.glb-427d244a1d64d9f543af09c1ef0eec93.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/GLTF format/tile_bump.glb"
-dest_files=[ "res://.import/tile_bump.glb-2d784aec935d60f63281011a0facc804.scn" ]
+source_file="res://Assets/placement tiles/Models/GLTF format/tile_bump.glb"
+dest_files=[ "res://.import/tile_bump.glb-427d244a1d64d9f543af09c1ef0eec93.scn" ]
 
 [params]
 

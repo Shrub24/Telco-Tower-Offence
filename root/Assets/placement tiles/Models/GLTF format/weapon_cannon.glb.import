@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/weapon_cannon.glb-18fb992d13c3cbf30b546eb18a09bd83.scn"
+path="res://.import/weapon_cannon.glb-2470a842b8835a767a047a0e117d2393.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/GLTF format/weapon_cannon.glb"
-dest_files=[ "res://.import/weapon_cannon.glb-18fb992d13c3cbf30b546eb18a09bd83.scn" ]
+source_file="res://Assets/placement tiles/Models/GLTF format/weapon_cannon.glb"
+dest_files=[ "res://.import/weapon_cannon.glb-2470a842b8835a767a047a0e117d2393.scn" ]
 
 [params]
 

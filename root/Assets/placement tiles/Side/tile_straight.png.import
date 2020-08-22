@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_straight.png-a55befc7c8f0c156ef39166021c02993.stex"
+path="res://.import/tile_straight.png-305670dddef24f863f1173fcade296bf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placement tiles/Side/tile_straight.png"
-dest_files=[ "res://.import/tile_straight.png-a55befc7c8f0c156ef39166021c02993.stex" ]
+source_file="res://Assets/placement tiles/Side/tile_straight.png"
+dest_files=[ "res://.import/tile_straight.png-305670dddef24f863f1173fcade296bf.stex" ]
 
 [params]
 

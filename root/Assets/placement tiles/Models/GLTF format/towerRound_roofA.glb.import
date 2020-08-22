@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/towerRound_roofA.glb-484081c491ca1b90be9cc7cf6a39a883.scn"
+path="res://.import/towerRound_roofA.glb-02876eef8582caa2d3b1690faaf75053.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/GLTF format/towerRound_roofA.glb"
-dest_files=[ "res://.import/towerRound_roofA.glb-484081c491ca1b90be9cc7cf6a39a883.scn" ]
+source_file="res://Assets/placement tiles/Models/GLTF format/towerRound_roofA.glb"
+dest_files=[ "res://.import/towerRound_roofA.glb-02876eef8582caa2d3b1690faaf75053.scn" ]
 
 [params]
 

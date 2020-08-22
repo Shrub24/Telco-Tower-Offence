@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_slope.fbx-799f7f02bc49b9d2a643c2e4df50a3d1.scn"
+path="res://.import/tile_slope.fbx-144e64707ab421cae5e06059b94bd123.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/FBX format/tile_slope.fbx"
-dest_files=[ "res://.import/tile_slope.fbx-799f7f02bc49b9d2a643c2e4df50a3d1.scn" ]
+source_file="res://Assets/placement tiles/Models/FBX format/tile_slope.fbx"
+dest_files=[ "res://.import/tile_slope.fbx-144e64707ab421cae5e06059b94bd123.scn" ]
 
 [params]
 

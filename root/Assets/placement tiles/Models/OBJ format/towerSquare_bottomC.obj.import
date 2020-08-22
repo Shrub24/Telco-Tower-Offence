@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/towerSquare_bottomC.obj-1012bfed343adc662f53e361923fb69d.mesh"
+path="res://.import/towerSquare_bottomC.obj-fa048579314cf51c0b16e031dcc58133.mesh"
 
 [deps]
 
-files=[ "res://.import/towerSquare_bottomC.obj-1012bfed343adc662f53e361923fb69d.mesh" ]
+files=[ "res://.import/towerSquare_bottomC.obj-fa048579314cf51c0b16e031dcc58133.mesh" ]
 
-source_file="res://assets/placement tiles/Models/OBJ format/towerSquare_bottomC.obj"
-dest_files=[ "res://.import/towerSquare_bottomC.obj-1012bfed343adc662f53e361923fb69d.mesh", "res://.import/towerSquare_bottomC.obj-1012bfed343adc662f53e361923fb69d.mesh" ]
+source_file="res://Assets/placement tiles/Models/OBJ format/towerSquare_bottomC.obj"
+dest_files=[ "res://.import/towerSquare_bottomC.obj-fa048579314cf51c0b16e031dcc58133.mesh", "res://.import/towerSquare_bottomC.obj-fa048579314cf51c0b16e031dcc58133.mesh" ]
 
 [params]
 

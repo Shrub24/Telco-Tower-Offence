@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_straightHill_W.png-52a0ea8396ea25572c69d88d56a6f699.stex"
+path="res://.import/tile_straightHill_W.png-f8ef5f9cab4aefd876f8f80c0a027cdb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placement tiles/Isometric/tile_straightHill_W.png"
-dest_files=[ "res://.import/tile_straightHill_W.png-52a0ea8396ea25572c69d88d56a6f699.stex" ]
+source_file="res://Assets/placement tiles/Isometric/tile_straightHill_W.png"
+dest_files=[ "res://.import/tile_straightHill_W.png-f8ef5f9cab4aefd876f8f80c0a027cdb.stex" ]
 
 [params]
 

@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/tile_riverBridge.obj-0a9b3b71f9017ddbfaa2c6e87cb0b21d.mesh"
+path="res://.import/tile_riverBridge.obj-4cc01e4874b1efde237f49964296c192.mesh"
 
 [deps]
 
-files=[ "res://.import/tile_riverBridge.obj-0a9b3b71f9017ddbfaa2c6e87cb0b21d.mesh" ]
+files=[ "res://.import/tile_riverBridge.obj-4cc01e4874b1efde237f49964296c192.mesh" ]
 
-source_file="res://assets/placement tiles/Models/OBJ format/tile_riverBridge.obj"
-dest_files=[ "res://.import/tile_riverBridge.obj-0a9b3b71f9017ddbfaa2c6e87cb0b21d.mesh", "res://.import/tile_riverBridge.obj-0a9b3b71f9017ddbfaa2c6e87cb0b21d.mesh" ]
+source_file="res://Assets/placement tiles/Models/OBJ format/tile_riverBridge.obj"
+dest_files=[ "res://.import/tile_riverBridge.obj-4cc01e4874b1efde237f49964296c192.mesh", "res://.import/tile_riverBridge.obj-4cc01e4874b1efde237f49964296c192.mesh" ]
 
 [params]
 

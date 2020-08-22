@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/voxelTile_17.png-9bec86e43c616377329d67bd3e85f021.stex"
+path="res://.import/voxelTile_17.png-86ff28b1680cbc7d65701b0b6397a807.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placement tile block/PNG/Voxel tiles/voxelTile_17.png"
-dest_files=[ "res://.import/voxelTile_17.png-9bec86e43c616377329d67bd3e85f021.stex" ]
+source_file="res://Assets/placement tile block/PNG/Voxel tiles/voxelTile_17.png"
+dest_files=[ "res://.import/voxelTile_17.png-86ff28b1680cbc7d65701b0b6397a807.stex" ]
 
 [params]
 

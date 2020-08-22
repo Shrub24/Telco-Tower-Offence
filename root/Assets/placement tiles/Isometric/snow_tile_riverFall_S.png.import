@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/snow_tile_riverFall_S.png-ed7e6bbfc48a5384b8c90d34eb66118e.stex"
+path="res://.import/snow_tile_riverFall_S.png-8da60fc195027ae288add8b8f57120d4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placement tiles/Isometric/snow_tile_riverFall_S.png"
-dest_files=[ "res://.import/snow_tile_riverFall_S.png-ed7e6bbfc48a5384b8c90d34eb66118e.stex" ]
+source_file="res://Assets/placement tiles/Isometric/snow_tile_riverFall_S.png"
+dest_files=[ "res://.import/snow_tile_riverFall_S.png-8da60fc195027ae288add8b8f57120d4.stex" ]
 
 [params]
 

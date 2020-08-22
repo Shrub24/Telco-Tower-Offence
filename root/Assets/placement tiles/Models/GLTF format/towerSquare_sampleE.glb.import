@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/towerSquare_sampleE.glb-5beb08d2c596ba14449cd6f47f04f18d.scn"
+path="res://.import/towerSquare_sampleE.glb-40cdfa35bcf3ee4acba516bd6af4c1ea.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/GLTF format/towerSquare_sampleE.glb"
-dest_files=[ "res://.import/towerSquare_sampleE.glb-5beb08d2c596ba14449cd6f47f04f18d.scn" ]
+source_file="res://Assets/placement tiles/Models/GLTF format/towerSquare_sampleE.glb"
+dest_files=[ "res://.import/towerSquare_sampleE.glb-40cdfa35bcf3ee4acba516bd6af4c1ea.scn" ]
 
 [params]
 

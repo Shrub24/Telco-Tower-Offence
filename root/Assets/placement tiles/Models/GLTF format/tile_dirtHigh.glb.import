@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_dirtHigh.glb-a05837509e1c855338980e21b12a6e1a.scn"
+path="res://.import/tile_dirtHigh.glb-d5c75aaee42ea088b6d82b1ad2b11649.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/GLTF format/tile_dirtHigh.glb"
-dest_files=[ "res://.import/tile_dirtHigh.glb-a05837509e1c855338980e21b12a6e1a.scn" ]
+source_file="res://Assets/placement tiles/Models/GLTF format/tile_dirtHigh.glb"
+dest_files=[ "res://.import/tile_dirtHigh.glb-d5c75aaee42ea088b6d82b1ad2b11649.scn" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_cornerInner.fbx-f8d18d8d8a80902c2efccc6b9322a763.scn"
+path="res://.import/tile_cornerInner.fbx-0e8e092019806ff738e4b7a042785e44.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/FBX format/tile_cornerInner.fbx"
-dest_files=[ "res://.import/tile_cornerInner.fbx-f8d18d8d8a80902c2efccc6b9322a763.scn" ]
+source_file="res://Assets/placement tiles/Models/FBX format/tile_cornerInner.fbx"
+dest_files=[ "res://.import/tile_cornerInner.fbx-0e8e092019806ff738e4b7a042785e44.scn" ]
 
 [params]
 

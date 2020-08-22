@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/speed_upgrade.png-36f33694390a6307ba118946ad33195a.stex"
+path="res://.import/speed_upgrade.png-0372087d51e53c3b11b7d19ec1a6d773.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/speed_upgrade.png"
-dest_files=[ "res://.import/speed_upgrade.png-36f33694390a6307ba118946ad33195a.stex" ]
+source_file="res://Assets/UI/speed_upgrade.png"
+dest_files=[ "res://.import/speed_upgrade.png-0372087d51e53c3b11b7d19ec1a6d773.stex" ]
 
 [params]
 

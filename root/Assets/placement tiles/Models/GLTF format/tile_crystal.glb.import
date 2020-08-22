@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_crystal.glb-53bb5564661ccab18c1be5161fef6305.scn"
+path="res://.import/tile_crystal.glb-4942fb44716f85e7d86eb729a1e87440.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/GLTF format/tile_crystal.glb"
-dest_files=[ "res://.import/tile_crystal.glb-53bb5564661ccab18c1be5161fef6305.scn" ]
+source_file="res://Assets/placement tiles/Models/GLTF format/tile_crystal.glb"
+dest_files=[ "res://.import/tile_crystal.glb-4942fb44716f85e7d86eb729a1e87440.scn" ]
 
 [params]
 

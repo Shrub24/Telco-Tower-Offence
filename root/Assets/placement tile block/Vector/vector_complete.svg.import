@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/vector_complete.svg-8539ffe1959191ceee41965e208c69ec.stex"
+path="res://.import/vector_complete.svg-434b856eeaa9d21f344e8a8e1685ffc9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placement tile block/Vector/vector_complete.svg"
-dest_files=[ "res://.import/vector_complete.svg-8539ffe1959191ceee41965e208c69ec.stex" ]
+source_file="res://Assets/placement tile block/Vector/vector_complete.svg"
+dest_files=[ "res://.import/vector_complete.svg-434b856eeaa9d21f344e8a8e1685ffc9.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/snow_detail_crystal_E.png-d830baa8ea8ea4c8815903291d27203f.stex"
+path="res://.import/snow_detail_crystal_E.png-c9dd712ef75c5f8a0c712a9edae97afe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placement tiles/Isometric/snow_detail_crystal_E.png"
-dest_files=[ "res://.import/snow_detail_crystal_E.png-d830baa8ea8ea4c8815903291d27203f.stex" ]
+source_file="res://Assets/placement tiles/Isometric/snow_detail_crystal_E.png"
+dest_files=[ "res://.import/snow_detail_crystal_E.png-c9dd712ef75c5f8a0c712a9edae97afe.stex" ]
 
 [params]
 

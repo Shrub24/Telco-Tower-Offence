@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/4g_icon.png-7fa139c8c8dbe332ed6e233d3cff5c0f.stex"
+path="res://.import/4g_icon.png-5733e9319ffce30b3312d9f0e792b3bc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/4g_icon.png"
-dest_files=[ "res://.import/4g_icon.png-7fa139c8c8dbe332ed6e233d3cff5c0f.stex" ]
+source_file="res://Assets/UI/4g_icon.png"
+dest_files=[ "res://.import/4g_icon.png-5733e9319ffce30b3312d9f0e792b3bc.stex" ]
 
 [params]
 

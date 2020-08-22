@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_treeQuad_N.png-ef9c85063b1389ab99019d0b192efbce.stex"
+path="res://.import/tile_treeQuad_N.png-f03fcb7b92e0748abfc23c355646894f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placement tiles/Isometric/tile_treeQuad_N.png"
-dest_files=[ "res://.import/tile_treeQuad_N.png-ef9c85063b1389ab99019d0b192efbce.stex" ]
+source_file="res://Assets/placement tiles/Isometric/tile_treeQuad_N.png"
+dest_files=[ "res://.import/tile_treeQuad_N.png-f03fcb7b92e0748abfc23c355646894f.stex" ]
 
 [params]
 

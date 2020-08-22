@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_riverFall_S.png-0147881aff91204053484132183f1b5a.stex"
+path="res://.import/tile_riverFall_S.png-a54f31964ee485589adb5bc4134a5a14.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placement tiles/Isometric/tile_riverFall_S.png"
-dest_files=[ "res://.import/tile_riverFall_S.png-0147881aff91204053484132183f1b5a.stex" ]
+source_file="res://Assets/placement tiles/Isometric/tile_riverFall_S.png"
+dest_files=[ "res://.import/tile_riverFall_S.png-a54f31964ee485589adb5bc4134a5a14.stex" ]
 
 [params]
 

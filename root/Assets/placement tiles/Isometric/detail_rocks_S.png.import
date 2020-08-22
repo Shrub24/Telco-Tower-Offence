@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/detail_rocks_S.png-9a88122efd7d89c5d0867c95a0f7b4c5.stex"
+path="res://.import/detail_rocks_S.png-416863b97d053c26d987323264323b05.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placement tiles/Isometric/detail_rocks_S.png"
-dest_files=[ "res://.import/detail_rocks_S.png-9a88122efd7d89c5d0867c95a0f7b4c5.stex" ]
+source_file="res://Assets/placement tiles/Isometric/detail_rocks_S.png"
+dest_files=[ "res://.import/detail_rocks_S.png-416863b97d053c26d987323264323b05.stex" ]
 
 [params]
 

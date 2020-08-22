@@ -5,7 +5,6 @@
 [ext_resource path="res://Scenes/Town_Node.tscn" type="PackedScene" id=4]
 [ext_resource path="res://real assets/tbuilding1.tres" type="TileSet" id=5]
 [ext_resource path="res://real assets/tmountain1.tres" type="TileSet" id=6]
-[ext_resource path="res://create_tower_sprite.gd" type="Script" id=7]
 
 [node name="Node2D" type="Node2D"]
 __meta__ = {

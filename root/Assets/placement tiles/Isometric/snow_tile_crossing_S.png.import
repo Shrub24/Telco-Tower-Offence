@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/snow_tile_crossing_S.png-46f7b866f0166ea1e1dcd36b37da802b.stex"
+path="res://.import/snow_tile_crossing_S.png-fc59a1a1ad0274d62a902659e31c7053.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placement tiles/Isometric/snow_tile_crossing_S.png"
-dest_files=[ "res://.import/snow_tile_crossing_S.png-46f7b866f0166ea1e1dcd36b37da802b.stex" ]
+source_file="res://Assets/placement tiles/Isometric/snow_tile_crossing_S.png"
+dest_files=[ "res://.import/snow_tile_crossing_S.png-fc59a1a1ad0274d62a902659e31c7053.stex" ]
 
 [params]
 

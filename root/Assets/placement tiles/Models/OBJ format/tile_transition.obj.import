@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/tile_transition.obj-c844d14e482ad38bbda1bdf3267bb97a.mesh"
+path="res://.import/tile_transition.obj-91a7347b202449a433a6dd88dd572a6a.mesh"
 
 [deps]
 
-files=[ "res://.import/tile_transition.obj-c844d14e482ad38bbda1bdf3267bb97a.mesh" ]
+files=[ "res://.import/tile_transition.obj-91a7347b202449a433a6dd88dd572a6a.mesh" ]
 
-source_file="res://assets/placement tiles/Models/OBJ format/tile_transition.obj"
-dest_files=[ "res://.import/tile_transition.obj-c844d14e482ad38bbda1bdf3267bb97a.mesh", "res://.import/tile_transition.obj-c844d14e482ad38bbda1bdf3267bb97a.mesh" ]
+source_file="res://Assets/placement tiles/Models/OBJ format/tile_transition.obj"
+dest_files=[ "res://.import/tile_transition.obj-91a7347b202449a433a6dd88dd572a6a.mesh", "res://.import/tile_transition.obj-91a7347b202449a433a6dd88dd572a6a.mesh" ]
 
 [params]
 

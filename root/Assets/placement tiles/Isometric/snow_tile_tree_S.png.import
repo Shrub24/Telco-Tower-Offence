@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/snow_tile_tree_S.png-0cf58ce3198ba8bd76fce6098f80bc8e.stex"
+path="res://.import/snow_tile_tree_S.png-de339a1971fa3e7b14c118b9b2215dbe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placement tiles/Isometric/snow_tile_tree_S.png"
-dest_files=[ "res://.import/snow_tile_tree_S.png-0cf58ce3198ba8bd76fce6098f80bc8e.stex" ]
+source_file="res://Assets/placement tiles/Isometric/snow_tile_tree_S.png"
+dest_files=[ "res://.import/snow_tile_tree_S.png-de339a1971fa3e7b14c118b9b2215dbe.stex" ]
 
 [params]
 

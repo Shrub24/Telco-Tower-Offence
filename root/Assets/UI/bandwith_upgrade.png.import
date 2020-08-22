@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bandwith_upgrade.png-7c49fefd8c8fc15eee8e768a5b5ecb98.stex"
+path="res://.import/bandwith_upgrade.png-4ffce65e28e0773244b9efb2ad87c735.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/bandwith_upgrade.png"
-dest_files=[ "res://.import/bandwith_upgrade.png-7c49fefd8c8fc15eee8e768a5b5ecb98.stex" ]
+source_file="res://Assets/UI/bandwith_upgrade.png"
+dest_files=[ "res://.import/bandwith_upgrade.png-4ffce65e28e0773244b9efb2ad87c735.stex" ]
 
 [params]
 

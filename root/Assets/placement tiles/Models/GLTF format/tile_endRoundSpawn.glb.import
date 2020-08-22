@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_endRoundSpawn.glb-1dfae0e143f763568e6bdc63d69e49b6.scn"
+path="res://.import/tile_endRoundSpawn.glb-cdfc1f031012ed130a464201d7cecd3f.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/GLTF format/tile_endRoundSpawn.glb"
-dest_files=[ "res://.import/tile_endRoundSpawn.glb-1dfae0e143f763568e6bdc63d69e49b6.scn" ]
+source_file="res://Assets/placement tiles/Models/GLTF format/tile_endRoundSpawn.glb"
+dest_files=[ "res://.import/tile_endRoundSpawn.glb-cdfc1f031012ed130a464201d7cecd3f.scn" ]
 
 [params]
 

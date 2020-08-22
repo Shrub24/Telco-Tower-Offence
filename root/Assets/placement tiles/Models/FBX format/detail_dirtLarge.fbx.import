@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/detail_dirtLarge.fbx-b79af2234f389aef815e2191d91783b4.scn"
+path="res://.import/detail_dirtLarge.fbx-1a659503dbb8f16e1f986a9e3696629e.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/FBX format/detail_dirtLarge.fbx"
-dest_files=[ "res://.import/detail_dirtLarge.fbx-b79af2234f389aef815e2191d91783b4.scn" ]
+source_file="res://Assets/placement tiles/Models/FBX format/detail_dirtLarge.fbx"
+dest_files=[ "res://.import/detail_dirtLarge.fbx-1a659503dbb8f16e1f986a9e3696629e.scn" ]
 
 [params]
 

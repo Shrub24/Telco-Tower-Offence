@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_straightHillLarge.fbx-69fe8b05a8bbd1603f9c153c951d5a97.scn"
+path="res://.import/tile_straightHillLarge.fbx-98aaf4beed03c63a8ce90dcd1413028a.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/FBX format/tile_straightHillLarge.fbx"
-dest_files=[ "res://.import/tile_straightHillLarge.fbx-69fe8b05a8bbd1603f9c153c951d5a97.scn" ]
+source_file="res://Assets/placement tiles/Models/FBX format/tile_straightHillLarge.fbx"
+dest_files=[ "res://.import/tile_straightHillLarge.fbx-98aaf4beed03c63a8ce90dcd1413028a.scn" ]
 
 [params]
 

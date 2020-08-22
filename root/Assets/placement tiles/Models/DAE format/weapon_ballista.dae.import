@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/weapon_ballista.dae-1c1f4e3451c50ca3f50ca1996f543851.scn"
+path="res://.import/weapon_ballista.dae-78fedd4886a53b7f0a4c73a8e90e2dc8.scn"
 
 [deps]
 
-source_file="res://assets/placement tiles/Models/DAE format/weapon_ballista.dae"
-dest_files=[ "res://.import/weapon_ballista.dae-1c1f4e3451c50ca3f50ca1996f543851.scn" ]
+source_file="res://Assets/placement tiles/Models/DAE format/weapon_ballista.dae"
+dest_files=[ "res://.import/weapon_ballista.dae-78fedd4886a53b7f0a4c73a8e90e2dc8.scn" ]
 
 [params]
 
