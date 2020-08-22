@@ -19,6 +19,9 @@ const bandwidth_cutoff = 0.8
 
 var rng = RandomNumberGenerator.new()
 
+# todo greedy factor :)
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#move to init if doesn't work
@@ -26,7 +29,7 @@ func _ready():
 #	greedy_factor = 0.5
 	
 func update_actions():
-#	greedy_factor = rng.randf_range(-0.5, 0.5)
+	greedy_factor = rng.randf_range(-2, 2)
 	
 	var money = ISP.get_available_money()
 	var revenue = 0

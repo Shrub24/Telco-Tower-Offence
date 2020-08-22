@@ -30,9 +30,9 @@ const min_affluency = 1
 const max_affluency = 99
 var max_affluency_pricing = max_price - 100
 var min_affluency_pricing = min_price + 100
-const affluency_dampening_factor = 10
+const affluency_dampening_factor = 15
 
-export var base_starting_price = -5
+export var base_starting_price = -15
 export var max_share_factor = 12
 
 var prev_connections_delta = 0
