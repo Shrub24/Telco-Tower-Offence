@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snow_tile_hill.dae-1c6a267141d1b77bbfedd4e30e565eec.scn"
+path="res://.import/snow_tile_hill.dae-483e1b4507d2e5b2130f2fe9da51a512.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/snow_tile_hill.dae"
-dest_files=[ "res://.import/snow_tile_hill.dae-1c6a267141d1b77bbfedd4e30e565eec.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/snow_tile_hill.dae"
+dest_files=[ "res://.import/snow_tile_hill.dae-483e1b4507d2e5b2130f2fe9da51a512.scn" ]
 
 [params]
 

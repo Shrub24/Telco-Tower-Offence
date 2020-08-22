@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/detail_dirt.dae-599ce840d32299b6d1530090880f19f4.scn"
+path="res://.import/detail_dirt.dae-bee3d2d4b63a52f758d6dbf7411d9512.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/detail_dirt.dae"
-dest_files=[ "res://.import/detail_dirt.dae-599ce840d32299b6d1530090880f19f4.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/detail_dirt.dae"
+dest_files=[ "res://.import/detail_dirt.dae-bee3d2d4b63a52f758d6dbf7411d9512.scn" ]
 
 [params]
 

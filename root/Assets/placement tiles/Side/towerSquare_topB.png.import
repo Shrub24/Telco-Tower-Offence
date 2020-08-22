@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/towerSquare_topB.png-a30b53b2c10c3ed244d591567e71959c.stex"
+path="res://.import/towerSquare_topB.png-126d4145895e8909898ed1715796b0e3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placement tiles/Side/towerSquare_topB.png"
-dest_files=[ "res://.import/towerSquare_topB.png-a30b53b2c10c3ed244d591567e71959c.stex" ]
+source_file="res://assets/placement tiles/Side/towerSquare_topB.png"
+dest_files=[ "res://.import/towerSquare_topB.png-126d4145895e8909898ed1715796b0e3.stex" ]
 
 [params]
 

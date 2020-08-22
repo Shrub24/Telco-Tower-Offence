@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/snow_tile_riverStraight.obj-8843cc29a0661ce1f35c58f8c40a9fc4.mesh"
+path="res://.import/snow_tile_riverStraight.obj-8c1365e5855b0437d6b02cc2246ddcde.mesh"
 
 [deps]
 
-files=[ "res://.import/snow_tile_riverStraight.obj-8843cc29a0661ce1f35c58f8c40a9fc4.mesh" ]
+files=[ "res://.import/snow_tile_riverStraight.obj-8c1365e5855b0437d6b02cc2246ddcde.mesh" ]
 
-source_file="res://Assets/placement tiles/Models/OBJ format/snow_tile_riverStraight.obj"
-dest_files=[ "res://.import/snow_tile_riverStraight.obj-8843cc29a0661ce1f35c58f8c40a9fc4.mesh", "res://.import/snow_tile_riverStraight.obj-8843cc29a0661ce1f35c58f8c40a9fc4.mesh" ]
+source_file="res://assets/placement tiles/Models/OBJ format/snow_tile_riverStraight.obj"
+dest_files=[ "res://.import/snow_tile_riverStraight.obj-8c1365e5855b0437d6b02cc2246ddcde.mesh", "res://.import/snow_tile_riverStraight.obj-8c1365e5855b0437d6b02cc2246ddcde.mesh" ]
 
 [params]
 

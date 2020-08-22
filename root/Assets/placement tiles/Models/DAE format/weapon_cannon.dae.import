@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/weapon_cannon.dae-c4d6e4b07c81367cfba44fbdc7610679.scn"
+path="res://.import/weapon_cannon.dae-b5f41502065a4c42ab6d6c65af94241c.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/weapon_cannon.dae"
-dest_files=[ "res://.import/weapon_cannon.dae-c4d6e4b07c81367cfba44fbdc7610679.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/weapon_cannon.dae"
+dest_files=[ "res://.import/weapon_cannon.dae-b5f41502065a4c42ab6d6c65af94241c.scn" ]
 
 [params]
 

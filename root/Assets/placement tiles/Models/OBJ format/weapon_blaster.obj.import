@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/weapon_blaster.obj-7f11f31562abf767110529111908500d.mesh"
+path="res://.import/weapon_blaster.obj-97798e42db3163975da65f5600ce00a0.mesh"
 
 [deps]
 
-files=[ "res://.import/weapon_blaster.obj-7f11f31562abf767110529111908500d.mesh" ]
+files=[ "res://.import/weapon_blaster.obj-97798e42db3163975da65f5600ce00a0.mesh" ]
 
-source_file="res://Assets/placement tiles/Models/OBJ format/weapon_blaster.obj"
-dest_files=[ "res://.import/weapon_blaster.obj-7f11f31562abf767110529111908500d.mesh", "res://.import/weapon_blaster.obj-7f11f31562abf767110529111908500d.mesh" ]
+source_file="res://assets/placement tiles/Models/OBJ format/weapon_blaster.obj"
+dest_files=[ "res://.import/weapon_blaster.obj-97798e42db3163975da65f5600ce00a0.mesh", "res://.import/weapon_blaster.obj-97798e42db3163975da65f5600ce00a0.mesh" ]
 
 [params]
 

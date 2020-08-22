@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/platformerTile_35.png-86215a64eb46e007c937432b85e81045.stex"
+path="res://.import/platformerTile_35.png-208d3926fbe5b0dc3bb05aa8107eb2f1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placement tile block/PNG/Platformer tiles/platformerTile_35.png"
-dest_files=[ "res://.import/platformerTile_35.png-86215a64eb46e007c937432b85e81045.stex" ]
+source_file="res://assets/placement tile block/PNG/Platformer tiles/platformerTile_35.png"
+dest_files=[ "res://.import/platformerTile_35.png-208d3926fbe5b0dc3bb05aa8107eb2f1.stex" ]
 
 [params]
 

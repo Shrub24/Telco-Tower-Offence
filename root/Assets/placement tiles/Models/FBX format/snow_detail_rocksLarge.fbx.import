@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snow_detail_rocksLarge.fbx-488e62557368eb852fc39e3ea0734826.scn"
+path="res://.import/snow_detail_rocksLarge.fbx-361b7242ff49f2a1844da811622977c5.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/FBX format/snow_detail_rocksLarge.fbx"
-dest_files=[ "res://.import/snow_detail_rocksLarge.fbx-488e62557368eb852fc39e3ea0734826.scn" ]
+source_file="res://assets/placement tiles/Models/FBX format/snow_detail_rocksLarge.fbx"
+dest_files=[ "res://.import/snow_detail_rocksLarge.fbx-361b7242ff49f2a1844da811622977c5.scn" ]
 
 [params]
 

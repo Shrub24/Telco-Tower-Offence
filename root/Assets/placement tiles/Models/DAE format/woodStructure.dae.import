@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/woodStructure.dae-5af9d9d4ae1f4386bac9276762e81c42.scn"
+path="res://.import/woodStructure.dae-e21fa609e3ed861c1f86e3b0ddd45afe.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/woodStructure.dae"
-dest_files=[ "res://.import/woodStructure.dae-5af9d9d4ae1f4386bac9276762e81c42.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/woodStructure.dae"
+dest_files=[ "res://.import/woodStructure.dae-e21fa609e3ed861c1f86e3b0ddd45afe.scn" ]
 
 [params]
 

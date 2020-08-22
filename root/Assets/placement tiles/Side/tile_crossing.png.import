@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_crossing.png-95bb933a1bde9daa116f78bb6850614f.stex"
+path="res://.import/tile_crossing.png-dd8fe0ff73c4bd8a5ffc7faedf0ba80f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placement tiles/Side/tile_crossing.png"
-dest_files=[ "res://.import/tile_crossing.png-95bb933a1bde9daa116f78bb6850614f.stex" ]
+source_file="res://assets/placement tiles/Side/tile_crossing.png"
+dest_files=[ "res://.import/tile_crossing.png-dd8fe0ff73c4bd8a5ffc7faedf0ba80f.stex" ]
 
 [params]
 

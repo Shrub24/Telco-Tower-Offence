@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_crossing.dae-1b6430454a97e5c3b363bbcf1b17d9b4.scn"
+path="res://.import/tile_crossing.dae-acdd7bbb166aa560735f1b5b0f23c925.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/tile_crossing.dae"
-dest_files=[ "res://.import/tile_crossing.dae-1b6430454a97e5c3b363bbcf1b17d9b4.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/tile_crossing.dae"
+dest_files=[ "res://.import/tile_crossing.dae-acdd7bbb166aa560735f1b5b0f23c925.scn" ]
 
 [params]
 

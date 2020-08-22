@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/snow_tile_riverFall.dae-edc62a07d17eb78d4829bd1c689f4fab.scn"
+path="res://.import/snow_tile_riverFall.dae-9b807b1ff2c4574abe046de88fb52842.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/snow_tile_riverFall.dae"
-dest_files=[ "res://.import/snow_tile_riverFall.dae-edc62a07d17eb78d4829bd1c689f4fab.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/snow_tile_riverFall.dae"
+dest_files=[ "res://.import/snow_tile_riverFall.dae-9b807b1ff2c4574abe046de88fb52842.scn" ]
 
 [params]
 

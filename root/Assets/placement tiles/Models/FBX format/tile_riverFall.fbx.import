@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tile_riverFall.fbx-bac82232d0b298269f90edc6aeab3310.scn"
+path="res://.import/tile_riverFall.fbx-fc1608bf0fcc5b76be4a20552e60baa7.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/FBX format/tile_riverFall.fbx"
-dest_files=[ "res://.import/tile_riverFall.fbx-bac82232d0b298269f90edc6aeab3310.scn" ]
+source_file="res://assets/placement tiles/Models/FBX format/tile_riverFall.fbx"
+dest_files=[ "res://.import/tile_riverFall.fbx-fc1608bf0fcc5b76be4a20552e60baa7.scn" ]
 
 [params]
 

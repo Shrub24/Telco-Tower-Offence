@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_riverSlope_N.png-342341c3da46d85d82b5df051061dd87.stex"
+path="res://.import/tile_riverSlope_N.png-331df3217680d771b185a760729ec914.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placement tiles/Isometric/tile_riverSlope_N.png"
-dest_files=[ "res://.import/tile_riverSlope_N.png-342341c3da46d85d82b5df051061dd87.stex" ]
+source_file="res://assets/placement tiles/Isometric/tile_riverSlope_N.png"
+dest_files=[ "res://.import/tile_riverSlope_N.png-331df3217680d771b185a760729ec914.stex" ]
 
 [params]
 

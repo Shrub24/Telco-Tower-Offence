@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/detail_crystal.dae-ba360b276b3df8af3fd097d30eeba472.scn"
+path="res://.import/detail_crystal.dae-249263ca79680301ae0f2447a980162b.scn"
 
 [deps]
 
-source_file="res://Assets/placement tiles/Models/DAE format/detail_crystal.dae"
-dest_files=[ "res://.import/detail_crystal.dae-ba360b276b3df8af3fd097d30eeba472.scn" ]
+source_file="res://assets/placement tiles/Models/DAE format/detail_crystal.dae"
+dest_files=[ "res://.import/detail_crystal.dae-249263ca79680301ae0f2447a980162b.scn" ]
 
 [params]
 
