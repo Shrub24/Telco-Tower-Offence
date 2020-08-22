@@ -67,6 +67,7 @@ func game_lose():
 	get_tree().change_scene("res://Scenes/Menu/MainMenu.tscn")
 
 func _on_UI_accept_bankruptcy():
+	query = false
 	game_lose()
 
 func query_sell_tower(tower):
@@ -340,3 +341,4 @@ func _on_UI_upgrade_tower_pressed(type):
 
 func _on_UI_accept_sell_tower():
 	player.sell_tower(selected_town)
+	query = false

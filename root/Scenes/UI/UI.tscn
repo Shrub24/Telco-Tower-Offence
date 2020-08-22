@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Scripts/UI/UIController.gd" type="Script" id=1]
 [ext_resource path="res://Assets/UI/down.png" type="Texture" id=2]
@@ -19,9 +19,9 @@
 [ext_resource path="res://Assets/UI/tedstra.png" type="Texture" id=17]
 [ext_resource path="res://Assets/fonts/Money Font.tres" type="DynamicFont" id=18]
 [ext_resource path="res://Assets/fonts/Small Money Font.tres" type="DynamicFont" id=19]
-[ext_resource path="res://Assets/UI/elonmask.png" type="Texture" id=20]
-[ext_resource path="res://Assets/UI/PANCOGAN.png" type="Texture" id=21]
-[ext_resource path="res://Assets/UI/vodaclone.png" type="Texture" id=22]
+[ext_resource path="res://Assets/UI/pancogan_cyberattack.png" type="Texture" id=20]
+[ext_resource path="res://Assets/UI/elonmask_cyberattack_pressed.png" type="Texture" id=21]
+[ext_resource path="res://Assets/UI/vodaclone_cyberattack_pressed.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Theme/UI.tres" type="Theme" id=23]
 [ext_resource path="res://Assets/Theme/TopUI.tres" type="Theme" id=24]
 [ext_resource path="res://Assets/UI/buy3gtower_pressed.png" type="Texture" id=25]
@@ -31,6 +31,11 @@
 [ext_resource path="res://Assets/UI/buy4gtower_pressed.png" type="Texture" id=29]
 [ext_resource path="res://Assets/UI/buy4gtower.png" type="Texture" id=30]
 [ext_resource path="res://Assets/Theme/Query.tres" type="Theme" id=31]
+[ext_resource path="res://Assets/UI/vodaclone_cyberattack.png" type="Texture" id=32]
+[ext_resource path="res://Assets/UI/tedstra_cyberattack.png" type="Texture" id=33]
+[ext_resource path="res://Assets/UI/pancogan_cyberattack_pressed.png" type="Texture" id=34]
+[ext_resource path="res://Assets/UI/tedstra_cyberattack_pressed.png" type="Texture" id=35]
+[ext_resource path="res://Assets/UI/elonmask_cyberattack.png" type="Texture" id=36]
 
 [node name="UI Layer" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -73,9 +78,9 @@ query_title_label = NodePath("Query/MarginContainer/VBoxContainer/Query Title")
 query_text_label = NodePath("Query/MarginContainer/VBoxContainer/Query Text")
 
 [node name="Next Turn" type="TextureButton" parent="."]
-margin_left = 1442.38
+margin_left = 1443.64
 margin_top = 765.0
-margin_right = 1901.38
+margin_right = 1902.64
 margin_bottom = 1012.0
 texture_normal = ExtResource( 3 )
 expand = true
@@ -88,10 +93,10 @@ __meta__ = {
 
 [node name="Bottom" type="PanelContainer" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 412.563
-margin_top = 658.091
-margin_right = 1363.56
-margin_bottom = 1085.09
+margin_left = 420.123
+margin_top = 665.651
+margin_right = 1371.12
+margin_bottom = 1092.65
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -99,8 +104,8 @@ __meta__ = {
 [node name="Bottom Panel" type="Panel" parent="Bottom"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 944.0
-margin_bottom = 420.0
+margin_right = 943.997
+margin_bottom = 419.999
 theme = ExtResource( 23 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -629,27 +634,33 @@ size_flags_vertical = 3
 [node name="TedstraAttack" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2" instance=ExtResource( 6 )]
 margin_right = 54.0
 margin_bottom = 182.0
+texture = ExtResource( 33 )
+unpressed = ExtResource( 33 )
+pressed = ExtResource( 35 )
 
 [node name="VodacloneAttack" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2" instance=ExtResource( 6 )]
 margin_left = 58.0
 margin_right = 112.0
 margin_bottom = 182.0
-texture = ExtResource( 22 )
-unpressed = ExtResource( 22 )
+texture = ExtResource( 32 )
+unpressed = ExtResource( 32 )
+pressed = ExtResource( 22 )
 
 [node name="ElonMaskCoAttack" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2" instance=ExtResource( 6 )]
 margin_left = 116.0
 margin_right = 170.0
 margin_bottom = 182.0
-texture = ExtResource( 20 )
-unpressed = ExtResource( 20 )
+texture = ExtResource( 36 )
+unpressed = ExtResource( 36 )
+pressed = ExtResource( 21 )
 
 [node name="PanCoganMobileAttack" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2" instance=ExtResource( 6 )]
 margin_left = 174.0
 margin_right = 230.0
 margin_bottom = 182.0
-texture = ExtResource( 21 )
-unpressed = ExtResource( 21 )
+texture = ExtResource( 20 )
+unpressed = ExtResource( 20 )
+pressed = ExtResource( 34 )
 
 [node name="Panel" type="Panel" parent="."]
 margin_right = 1921.0
