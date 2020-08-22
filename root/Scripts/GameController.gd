@@ -231,6 +231,9 @@ func ui_update_tower_tooltip(tower, bought):
 
 
 func ui_update_tower():
+	ui_update_speed_tooltip(false)
+	ui_update_reach_tooltip(false)
+	ui_update_all_tower_tooltip()
 	if selected_town.Player_ISPTownInfo:
 		var tower = player.ISP.get_town_tower(selected_town)
 		ui_update_bandwidth_tooltip(tower)
