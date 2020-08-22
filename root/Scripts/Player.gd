@@ -41,8 +41,13 @@ func buy_tower(town, tower_type):
 		else:
 			emit_signal("not_enough_money")
 
-func sell_tower(town, tower_type):	
-	var price = ISP.get_tower_price(tower_type)
+func sell_tower(town):
+	var tower = ISP.get_town_tower(town)
+	var refund = int(ISP.get_tower_price(tower.tower_type) * tower.sell_factor)
+	ISP.increase_money(refund)
+	emit_signal("ui_update_money")
+	ISP.sell_tower(town)
+	emit_signal("ui_update_tower")
 	
 
 func upgrade_tower(town, type):

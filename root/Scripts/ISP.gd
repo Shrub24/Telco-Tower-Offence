@@ -25,6 +25,9 @@ func spend_money(amount):
 		money -= amount
 		return true
 	return false
+	
+func increase_money(amount):
+	money += amount
 
 func force_reserve_money(amount):
 	reserved_money += amount
@@ -84,6 +87,9 @@ func get_town_tower(town):
 func build_tower(town, type):
 	var temp_tower = get_tower(type)
 	town.build_tower(self, temp_tower)
+	
+func sell_tower(town):
+	town.sell_tower(self)
 	
 func upgrade_tower(town, type):
 	town.upgrade_tower(self, type)

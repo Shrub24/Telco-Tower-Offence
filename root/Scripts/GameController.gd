@@ -12,6 +12,7 @@ export(NodePath) onready var map = get_node(map) if map else null
 export(NodePath) onready var UI_controller = get_node(UI_controller) if UI_controller else null
 var towns = []
 var selected_town
+var starter_town
 
 var shop_path = "res://Resources/shop.tres"
 export(Array, NodePath) var AI_paths
@@ -24,6 +25,7 @@ var progress_max_6g = 100
 var query = false
 
 export var initial_camera_locations = {"Who-awei": [-1460, -448], "Xiaomy": [130, 1472], "Alidada": [2440, -320], "Knockia": [200, -290]}
+export var initial_starting_towns = {"Who-awei": "Deltora", "Xiaomy": "Sholto Farms", "Alidada": "Kyanim", "Knockia": "Phlight"}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -43,6 +45,8 @@ func _ready():
 	choose_player_ISP(starting_ISP)
 	player.ISP.is_player = true
 	ISPs.append(player.ISP)
+	
+	starter_town = initial_starting_towns[starting_ISP]
 	
 	game_start()
 
@@ -79,7 +83,10 @@ func game_start():
 			if town2.town_name in town.neighbours:
 				town.neighbour_towns.append(town2)
 	for town in towns:
-		town.init_town_ISPs(AIs, player)
+		town.init_town_ISPs(AIs)
+		if town.town_name == starter_town:
+			town.init_starter_town(player)
+		town.update_turn()
 	ui_update_money()
 		
 	# init camera locations
@@ -340,5 +347,6 @@ func _on_UI_upgrade_tower_pressed(type):
 		player.upgrade_tower(selected_town, type)
 
 func _on_UI_accept_sell_tower():
+	query = false
 	player.sell_tower(selected_town)
 	query = false

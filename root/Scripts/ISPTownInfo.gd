@@ -192,6 +192,9 @@ func upgrade_tower(type):
 
 func build_tower(new_tower):
 	tower = new_tower
+	
+func remove_tower():
+	tower = null
 
 func get_delta_price():
 	return delta_price

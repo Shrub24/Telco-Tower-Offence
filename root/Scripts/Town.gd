@@ -27,6 +27,9 @@ var no_ISP_pop = 0
 var affluency_connection_delta = {}
 var hovered = false
 
+export(NodePath) onready var tower_sprite = get_node(tower_sprite) if tower_sprite else null
+
+export var tower_loc = [0, 0] 
 
 #put this somewhere else?
 export var base_aoe_image = 0.1
@@ -34,7 +37,6 @@ export var base_aoe_image = 0.1
 export var min_no_ISP = 2
 export var max_no_ISP = 10
 var rng = RandomNumberGenerator.new()
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -48,9 +50,14 @@ func _ready():
 	no_ISP_pop = int(rng.randf_range(min_no_ISP, max_no_ISP) * population/100)
 	
 
+func init_starter_town(player):
+	create_ISPTownInfo(player.ISP)
+	Player_ISPTownInfo.generate_starter(no_ISP_pop)
+	var tower = Player_ISPTownInfo.tower
+	propagate_brand_image(tower, Player_ISPTownInfo.ISP, tower.get_reach())
 
 # population - noISPs in generates
-func init_town_ISPs(AIs, player):
+func init_town_ISPs(AIs):
 	for AI in AIs:
 		var ISP = AI.ISP
 		if shares[ISP.ISP_name] != 0:
@@ -58,13 +65,8 @@ func init_town_ISPs(AIs, player):
 			ISPTownInfo.generate(shares[ISP.ISP_name], no_ISP_pop, affluency)
 			var tower = ISPTownInfo.tower
 			propagate_brand_image(tower, ISPTownInfo.ISP, tower.get_reach())
-	
-	if starter_town:
-		create_ISPTownInfo(player.ISP)
-		Player_ISPTownInfo.generate_starter(no_ISP_pop)
-		var tower = Player_ISPTownInfo.tower
-		propagate_brand_image(tower, Player_ISPTownInfo.ISP, tower.get_reach())
 
+func set_town_colour():
 	var ashares = get_ISP_shares()
 	var max_ISP = null
 	for ISP in ashares.keys():
@@ -137,9 +139,11 @@ func update_turn():
 #		print("\n")
 #	print(affluency_connection_delta)
 	for town_info in ISPTownInfos:
+		town_info.update_turn(get_max_speed())
 		if town_info.tower:
-			town_info.update_turn(get_max_speed())
 			no_ISP_pop -= town_info.update_affluency_conns(affluency_connection_delta[town_info])
+			
+	set_town_colour()
 
 func create_ISPTownInfo(ISP):
 	var ISPTownInfo = ISPTownInfo_scene.instance()
@@ -182,6 +186,17 @@ func build_tower(ISP, tower):
 	propagate_brand_image(tower, ISP, tower.get_reach())
 	#todo sprite changing
 	#var sprite = sprites[ISP][tower.type()]
+	get_tree().call_group("tower_sprite_changers", "add_tower_sprite", ISP.ISP_name, tower.tower_type, tower_loc)
+	
+func sell_tower(ISP):
+	var town_info = get_ISP_town_info(ISP)
+	var tower = town_info.tower
+	depropagate_brand_image(tower, ISP, tower.get_reach())
+	get_ISP_town_info(ISP).remove_tower()
+	# remove all remaining pops from player ISP
+	no_ISP_pop += town_info.update_affluency_conns(-100)
+	
+	get_tree().call_group("tower_sprite_changers", "remove_tower_sprite", tower_loc)
 
 # converts pos shares in get_affluency_delta to pops
 func affluency_convert_pos_share_to_pop():
