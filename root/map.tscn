@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://real assets/tower.tres" type="TileSet" id=1]
 [ext_resource path="res://real assets/real all tile.tres" type="TileSet" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/Town_Node.tscn" type="PackedScene" id=4]
 [ext_resource path="res://real assets/tbuilding1.tres" type="TileSet" id=5]
 [ext_resource path="res://real assets/tmountain1.tres" type="TileSet" id=6]
+[ext_resource path="res://create_tower_sprite.gd" type="Script" id=7]
 
 [node name="Node2D" type="Node2D"]
 __meta__ = {
@@ -1328,13 +1329,16 @@ shares = {
 town_name = "Wiami Escape"
 affluency = 99.0
 
-[node name="building" type="TileMap" parent="."]
+[node name="building" type="TileMap" parent="." groups=[
+"tower_sprite_changers",
+]]
 position = Vector2( 0, -10 )
 mode = 1
 tile_set = ExtResource( 5 )
 cell_size = Vector2( 128, 64 )
 format = 1
 tile_data = PoolIntArray( -196619, 2, 0, -196618, 8, 0, -196617, 5, 0, -196616, 3, 0, -196615, 2, 0, -196614, 8, 0, -196613, 5, 0, -196612, 3, 0, -196611, 2, 0, -196610, 8, 0, -196609, 5, 0, -262144, 3, 0, -65548, 6, 0, -65543, 4, 0, -16, 3, 0, -15, 8, 0, -14, 5, 0, -13, 3, 0, -12, 7, 0, -8, 8, 0, -7, 6, 0, 65518, 8, 0, 65519, 5, 0, 131060, 6, 0, 131065, 4, 0, 196596, 4, 0, 196601, 7, 0, 262131, 8, 0, 262132, 2, 0, 262134, 3, 0, 262135, 8, 0, 262137, 0, 0 )
+script = ExtResource( 7 )
 
 [node name="Towers" type="TileMap" parent="."]
 visible = false

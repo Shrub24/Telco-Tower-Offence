@@ -27,6 +27,9 @@ var no_ISP_pop = 0
 var affluency_connection_delta = {}
 var hovered = false
 
+export(NodePath) onready var tower_sprite = get_node(tower_sprite) if tower_sprite else null
+
+export var tower_loc = [0, 0] 
 
 #put this somewhere else?
 export var base_aoe_image = 0.1
@@ -34,7 +37,6 @@ export var base_aoe_image = 0.1
 export var min_no_ISP = 2
 export var max_no_ISP = 10
 var rng = RandomNumberGenerator.new()
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -183,6 +185,8 @@ func build_tower(ISP, tower):
 	propagate_brand_image(tower, ISP, tower.get_reach())
 	#todo sprite changing
 	#var sprite = sprites[ISP][tower.type()]
+	get_tree().call_group("tower_sprite_changers", "add_tower_sprite", ISP.ISP_name, tower.tower_type, tower_loc)
+	
 
 # converts pos shares in get_affluency_delta to pops
 func affluency_convert_pos_share_to_pop():
