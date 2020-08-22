@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scripts/ISP.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/PlayerISPs/KnockiaISP.gd" type="Script" id=1]
 
 [node name="ISP" type="Node"]
 script = ExtResource( 1 )
