@@ -41,16 +41,16 @@ script = ExtResource( 10 )
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
 cyber_attack_button_paths = {
-"ElonMask Co": NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/ElonMaskCoAttack"),
-"PanCogan Mobile": NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/PanCoganMobileAttack"),
-"Tedstra": NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/TedstraAttack"),
-"Vodaclone": NodePath("Bottom/Bottom Panel/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/VodacloneAttack")
+"ElonMask Co": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/ElonMaskCoAttack"),
+"PanCogan Mobile": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/PanCoganMobileAttack"),
+"Tedstra": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/TedstraAttack"),
+"Vodaclone": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer/HBoxContainer2/VodacloneAttack")
 }
 ISP_info_paths = {
-"ElonMask Co": NodePath("Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/ElonMask Co"),
-"PanCogan Mobile": NodePath("Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/PanCogan Mobile"),
-"Tedstra": NodePath("Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Tedstra"),
-"Vodaclone": NodePath("Bottom/Bottom Panel/HBoxContainer/ISPInfoTabs/Vodaclone")
+"ElonMask Co": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/E"),
+"PanCogan Mobile": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/P"),
+"Tedstra": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/T"),
+"Vodaclone": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/V")
 }
 [connection signal="ui_update_advertising" from="Player" to="." method="ui_update_advertising"]
 [connection signal="ui_update_cyber_attack" from="Player" to="." method="ui_update_cyber_attack"]

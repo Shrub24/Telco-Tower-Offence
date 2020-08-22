@@ -52,7 +52,7 @@ func update_money(money):
 	money_label.text = str(money)
 
 func update_reserved_money(money):
-	reserved_money_label.text = str(money)
+	reserved_money_label.text = "(-" + str(money) + ")"
 
 func update_ISP_info(loyalty, image, price, ISP):
 	var ISP_info = ISP_infos[ISP]
@@ -61,7 +61,6 @@ func update_ISP_info(loyalty, image, price, ISP):
 	ISP_info.update_loyalty(loyalty)
 	
 func update_tower_upgrade(reach, bandwidth, speed):
-	
 	reach_label.text = str(reach)
 	bandwidth_label.text = str(bandwidth)
 	speed_label.text = str(speed)

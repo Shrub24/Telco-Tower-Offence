@@ -25,7 +25,7 @@ signal town_mouse_exited
 
 var no_ISP_pop = 0
 var affluency_connection_delta = {}
-var hovered = true
+var hovered = false
 
 
 #put this somewhere else?
@@ -190,7 +190,7 @@ func _on_Collider_mouse_entered():
 		border.modulate.a = hover_opacity
 
 func _on_Collider_mouse_exited():
-	if !selected and hovered:
+	if hovered:
 		hovered = false
 		border.modulate.a = unselected_opacity
 
