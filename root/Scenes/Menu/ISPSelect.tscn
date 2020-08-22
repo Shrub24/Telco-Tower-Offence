@@ -116,9 +116,9 @@ text = "Knockia"
 align = 1
 
 [node name="Knockia" type="TextureButton" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
-margin_top = 220.0
+margin_top = 93.0
 margin_right = 400.0
-margin_bottom = 159.0
+margin_bottom = 393.0
 size_flags_vertical = 0
 texture_normal = ExtResource( 8 )
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Who-awei" to="." method="_on_Whoawei_pressed"]

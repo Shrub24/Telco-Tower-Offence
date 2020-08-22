@@ -47,7 +47,24 @@ func _ready():
 
 	# set initial pop with no ISP
 	rng.randomize()
+	randomize()
 	no_ISP_pop = int(rng.randf_range(min_no_ISP, max_no_ISP) * population/100)
+	
+	randomise_shares()
+	
+func randomise_shares():
+	var ISPs = []
+	var share_vals = []
+	for ISP in shares.keys():
+		var val = shares[ISP]
+		if val != 0:
+			ISPs.append(ISP)
+			share_vals.append(val)
+	share_vals.shuffle()
+	for i in range(0, len(ISPs)):
+		shares[ISPs[i]] = share_vals[i]
+		
+		
 	
 
 func init_starter_town(player):
@@ -65,6 +82,12 @@ func init_town_ISPs(AIs):
 			ISPTownInfo.generate(shares[ISP.ISP_name], no_ISP_pop, affluency)
 			var tower = ISPTownInfo.tower
 			propagate_brand_image(tower, ISPTownInfo.ISP, tower.get_reach())
+			
+	if town_name == "Berwick":
+		for isp in ISPs.keys():
+			print(isp.ISP_name + ": " + str(ISPs[isp].connections))
+		print("No ISPpop: " + str(no_ISP_pop))
+		print("\n")
 
 func set_town_colour():
 	var ashares = get_ISP_shares()
