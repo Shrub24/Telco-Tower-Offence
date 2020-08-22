@@ -39,6 +39,8 @@ position = Vector2( 142.097, 352.408 )
 script = ExtResource( 10 )
 
 [node name="Camera" parent="." instance=ExtResource( 2 )]
+zoom_min = 0.4
+zoom_max = 1.1
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
 cyber_attack_button_paths = {
