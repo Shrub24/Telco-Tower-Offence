@@ -17,7 +17,7 @@ export(Array, NodePath) var AI_paths
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for town in map.get_children():
+	for town in map.get_node("towns").get_children():
 		if !(town is TileMap): 
 			towns.append(town)
 			connect_town(town)

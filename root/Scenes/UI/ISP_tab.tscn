@@ -17,7 +17,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-price_label = NodePath("HBoxContainer2/MarginContainer/brand_loyalty")
+price_label = NodePath("HBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/PriceLabel")
 image_label = NodePath("HBoxContainer3/MarginContainer2/brand_image")
 loyalty_label = NodePath("HBoxContainer2/MarginContainer/brand_loyalty")
 
@@ -52,16 +52,15 @@ margin_bottom = 345.0
 size_flags_horizontal = 3
 
 [node name="PriceLabel" type="Label" parent="HBoxContainer/MarginContainer/HBoxContainer/MarginContainer2"]
-margin_left = 925.0
-margin_top = 132.0
-margin_right = 947.0
-margin_bottom = 213.0
+margin_left = 914.0
+margin_top = 153.0
+margin_right = 958.0
+margin_bottom = 192.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.929412, 0.827451, 0, 1 )
-text = "0
-"
+text = "10"
 valign = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]

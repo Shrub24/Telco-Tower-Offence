@@ -20,7 +20,7 @@ var max_cyber_attack = 1
 var ISP
 var costs = 0
 var shop
-export var loyalty_scale_factor = 100
+export var loyalty_scale_factor = 1
 export var tower_max_speed = 5000
 var town_population = 0
 var cyber_attack_target
@@ -49,23 +49,17 @@ func initialise(new_ISP, town, population):
 	ISP.add_town(town)
 	town_population = population
 
-func generate_starter(no_isp_pop):
+func generate_starter():
 	shop = load("res://Resources/Shop.tres")
-	connections = town_population - no_isp_pop
-	
+	connections = town_population
 	build_tower(shop.get_tower_3g())
 	price = min_price * 5
-	
-	update_brand_image()
-	update_brand_loyalty()
 
-func generate(share, no_isp_pop, affluency):
-	connections = int(share * (town_population - no_isp_pop)/100)
+
+func generate(share, affluency):
+	connections = int(share * (town_population)/100)
 	
 	build_tower(calculate_starting_tower(affluency))
-	
-	update_brand_image()
-	update_brand_loyalty()
 	
 	# initial price for ISPs
 	var affluency_pricing = (float(affluency-min_affluency)/(max_affluency-min_affluency))*(max_price-min_price) + min_price
@@ -97,9 +91,9 @@ func update_brand_image():
 	brand_image = float(share) + ((1 - float(share)/100) * get_advertising_mod()) * cyber_attack_mod + aoe_image
 	brand_image = clamp(brand_image, 0.0, 1.0)
 
-func update_brand_loyalty():
+func update_brand_loyalty(max_speed):
 	var bandwidth_used = get_bandwidth_used()
-	brand_loyalty = loyalty_scale_factor * ISP.modifiers["brand_loyalty"] * (float(tower.get_speed())/tower_max_speed) * 1/(1 + exp(6 * (2 * bandwidth_used - 1.9)))
+	brand_loyalty = loyalty_scale_factor * ISP.modifiers["brand_loyalty"] * (float(tower.get_speed())/max_speed) * 1/(1 + exp(6 * (2 * bandwidth_used - 1.9)))
 	brand_loyalty = clamp(brand_loyalty, 0.0, 1.0)
  
 func get_income():
@@ -117,9 +111,9 @@ func normalise_connection_loss():
 		if loss_sum > 1:
 			connection_loss[ISP] /= loss_sum
 
-func update_turn():
+func update_turn(max_speed):
 	if tower:
-		update_brand_loyalty()
+		update_brand_loyalty(max_speed)
 		update_connections()
 		price += delta_price
 		delta_price = 0
@@ -130,7 +124,7 @@ func update_turn():
 
 func calculate_starting_tower(affluency):
 	shop = preload("res://Resources/Shop.tres")
-	if connections > 1000000 and affluency > 75:
+	if connections > 150000 and affluency > 75:
 		return shop.get_tower_5g()
 	elif connections > 75000 or affluency > 40:
 		return shop.get_tower_4g()

@@ -264,25 +264,21 @@ custom_fonts/font = ExtResource( 18 )
 
 [node name="T" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs" instance=ExtResource( 16 )]
 visible = false
-price_label = NodePath("../T/HBoxContainer2/MarginContainer/brand_loyalty")
 image_label = NodePath("../T/HBoxContainer3/MarginContainer2/brand_image")
 loyalty_label = NodePath("../T/HBoxContainer2/MarginContainer/brand_loyalty")
 
 [node name="P" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs" instance=ExtResource( 16 )]
 visible = false
-price_label = NodePath("../P/HBoxContainer2/MarginContainer/brand_loyalty")
 image_label = NodePath("../P/HBoxContainer3/MarginContainer2/brand_image")
 loyalty_label = NodePath("../P/HBoxContainer2/MarginContainer/brand_loyalty")
 
 [node name="V" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs" instance=ExtResource( 16 )]
 visible = false
-price_label = NodePath("../V/HBoxContainer2/MarginContainer/brand_loyalty")
 image_label = NodePath("../V/HBoxContainer3/MarginContainer2/brand_image")
 loyalty_label = NodePath("../V/HBoxContainer2/MarginContainer/brand_loyalty")
 
 [node name="E" parent="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs" instance=ExtResource( 16 )]
 visible = false
-price_label = NodePath("../E/HBoxContainer2/MarginContainer/brand_loyalty")
 image_label = NodePath("../E/HBoxContainer3/MarginContainer2/brand_image")
 loyalty_label = NodePath("../E/HBoxContainer2/MarginContainer/brand_loyalty")
 
@@ -662,10 +658,11 @@ margin_bottom = 51.0
 custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0.635294, 0, 0, 1 )
 [connection signal="pressed" from="Next Turn" to="." method="_on_Next_Turn_pressed"]
-[connection signal="pressed" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/TextureButton" to="." method="_on_AdvertisingBuy_pressed"]
-[connection signal="pressed" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/TextureButton2" to="." method="_on_AdvertisingSell_pressed"]
+[connection signal="pressed" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/TextureButton" to="." method="_on_PriceUp_pressed"]
+[connection signal="pressed" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer/TextureButton2" to="." method="_on_PriceDown_pressed"]
 [connection signal="pressed" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/3gTowerBuy" to="." method="_on_3gTowerBuy_pressed"]
 [connection signal="pressed" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/4gTowerBuy" to="." method="_on_4gTowerBuy_pressed"]
+[connection signal="pressed" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/5gTowerBuy" to="." method="_on_5gTowerBuy_pressed"]
 [connection signal="pressed" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer2/HBoxContainer/BandwidthUpgradeButton" to="." method="_on_BandwidthUpgradeButton_pressed"]
 [connection signal="pressed" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer3/HBoxContainer/ReachUpgradeButton" to="." method="_on_ReachUpgradeButton_pressed"]
 [connection signal="pressed" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer3/HBoxContainer/MarginContainer4/HBoxContainer/SpeedUpgradeButton" to="." method="_on_SpeedUpgradeButton_pressed"]
