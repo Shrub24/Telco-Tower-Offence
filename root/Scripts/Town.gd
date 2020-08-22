@@ -72,6 +72,8 @@ func init_starter_town(player):
 	Player_ISPTownInfo.generate_starter(no_ISP_pop)
 	var tower = Player_ISPTownInfo.tower
 	propagate_brand_image(tower, Player_ISPTownInfo.ISP, tower.get_reach())
+	
+	get_tree().call_group("tower_sprite_changers", "add_tower_sprite", player.ISP.ISP_name, tower.tower_type, tower_loc)
 
 # population - noISPs in generates
 func init_town_ISPs(AIs):
