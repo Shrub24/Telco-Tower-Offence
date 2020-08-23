@@ -4,7 +4,7 @@ extends Node
 export var player_ISP_options = {"Who-awei":0, "Xiaomy":1, "Alidada":2, "Knockia":3}
 export(Array, PackedScene) var player_ISP_scenes
 export(NodePath) onready var player = get_node(player) if player else null
-
+export var win_proportion = 0.3
 var ISP_name_dict = {}
 var ISPs = []
 var AIs = []
@@ -21,7 +21,7 @@ export (NodePath) var global_data_path = "/root/GlobalData"
 var global_data
 var starting_ISP
 var progress_6g = 0
-var progress_max_6g = 100
+var progress_max_6g = 250
 var query = false
 
 export var initial_camera_locations = {"Who-awei": [-1460, -448], "Xiaomy": [130, 1472], "Alidada": [2440, -320], "Knockia": [200, -290]}
@@ -70,6 +70,9 @@ func update_6g_progress():
 func game_lose():
 	get_tree().change_scene("res://Scenes/Menu/MainMenu.tscn")
 
+func game_win():
+	get_tree().change_scene("res://Scenes/Menu/MainMenu.tscn")
+
 func _on_UI_accept_bankruptcy():
 	query = false
 	game_lose()
@@ -79,6 +82,10 @@ func query_sell_tower(tower):
 
 func query_bankruptcy(negative_money):
 	UI_controller.query_bankruptcy(negative_money)
+
+func _on_UI_win():
+	query = false
+	game_win()
 
 func game_start():
 	for town in towns:
@@ -167,7 +174,7 @@ func ui_update_cyber_attack_tooltip():
 	UI_controller.update_cyber_attack_tooltip(player.ISP.get_cyber_attack_price(selected_town))
 	
 func ui_update_advertising_tooltip():
-	UI_controller.update_advertising_tooltip(player.ISP.get_cyber_attack_price(selected_town))
+	UI_controller.update_advertising_tooltip(player.ISP.get_advertising_price(selected_town))
 
 func ui_update_shares(town):
 	var shares = town.get_ISP_shares()
@@ -279,8 +286,6 @@ func ui_update_town_connections():
 
 func ui_set_player_ISP():
 	UI_controller.set_player_ISP(player.ISP.ISP_name, player.ISP.primary_colour, player.ISP.ISP_logo)
-	
-
 		
 		
 func ui_update_tower_tooltip(tower, bought):
@@ -320,7 +325,12 @@ func ui_update_speed_tooltip(tower):
 	var level = tower.get_level("speed")
 	if level < tower.max_level:
 		next_level = level + 1
-		upgrade_price = shop.get_tower_3g_upgrade_price("speed", next_level)
+		if tower.tower_type == "3g":
+			upgrade_price = shop.get_tower_3g_upgrade_price("speed", next_level)
+		elif tower.tower_type == "4g":
+			upgrade_price = shop.get_tower_4g_upgrade_price("speed", next_level)
+		elif tower.tower_type == "5g":
+			upgrade_price = shop.get_tower_5g_upgrade_price("speed", next_level)
 	else:
 		level = "Max"
 	UI_controller.update_speed_upgrade_tooltip(tower, level, tower.get_speed(), next_level, upgrade_price, tower.get_next_speed())
@@ -335,7 +345,12 @@ func ui_update_reach_tooltip(tower):
 	var level = tower.get_level("reach")
 	if level < tower.max_level:
 		next_level = level + 1
-		upgrade_price = shop.get_tower_3g_upgrade_price("reach", next_level)
+		if tower.tower_type == "3g":
+			upgrade_price = shop.get_tower_3g_upgrade_price("reach", next_level)
+		elif tower.tower_type == "4g":
+			upgrade_price = shop.get_tower_4g_upgrade_price("reach", next_level)
+		elif tower.tower_type == "5g":
+			upgrade_price = shop.get_tower_5g_upgrade_price("reach", next_level)
 	else:
 		level = "Max"
 	UI_controller.update_reach_upgrade_tooltip(tower, level, tower.get_reach(), next_level, upgrade_price, tower.get_next_reach())
@@ -353,7 +368,12 @@ func ui_update_bandwidth_tooltip(tower):
 	var level = tower.get_level("bandwidth")
 	if level < tower.max_level:
 		next_level = level + 1
-		upgrade_price = shop.get_tower_3g_upgrade_price("bandwidth", next_level)
+		if tower.tower_type == "3g":
+			upgrade_price = shop.get_tower_3g_upgrade_price("bandwidth", next_level)
+		elif tower.tower_type == "4g":
+			upgrade_price = shop.get_tower_4g_upgrade_price("bandwidth", next_level)
+		elif tower.tower_type == "5g":
+			upgrade_price = shop.get_tower_5g_upgrade_price("bandwidth", next_level)
 	else:
 		level = "Max"
 	UI_controller.update_bandwidth_upgrade_tooltip(tower, level, tower.get_bandwidth(), next_level, upgrade_price, tower.get_next_bandwidth())
@@ -406,7 +426,23 @@ func _on_UI_next_turn_pressed():
 	if player.ISP.get_available_money() < 0:
 		query_bankruptcy(player.ISP.get_available_money())
 	else:
-		next_turn() 
+		if !check_win():
+			next_turn() 
+		else:
+			query_win()
+
+func check_win():
+	var curr = player.ISP.connections
+	var total_pop = 0
+	for town in towns:
+		total_pop += town.population
+	var proportion = float(curr)/total_pop
+	if proportion > win_proportion:
+		game_win()
+		return true
+
+func query_win():
+	UI_controller.query_win()
 
 func _on_UI_upgrade_tower_pressed(type):
 	if selected_town.Player_ISPTownInfo and selected_town.Player_ISPTownInfo.tower:

@@ -13,7 +13,7 @@
 [ext_resource path="res://Scenes/Player ISPs/AlidadaISP.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Player ISPs/WhoaweiISP.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Player ISPs/KnockiaISP.tscn" type="PackedScene" id=13]
-[ext_resource path="res://real assets/telcotoweroffence.wav" type="AudioStream" id=14]
+[ext_resource path="res://real assets/telcotoweroffence.ogg" type="AudioStream" id=14]
 
 [node name="Main" type="Node2D"]
 position = Vector2( -1.33484, 1.33484 )
@@ -67,7 +67,6 @@ ISP_info_paths = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
-volume_db = -20.0
 autoplay = true
 [connection signal="query_sell_tower" from="Player" to="." method="query_sell_tower"]
 [connection signal="ui_update_advertising" from="Player" to="." method="ui_update_advertising"]

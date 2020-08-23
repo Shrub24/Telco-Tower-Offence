@@ -202,11 +202,17 @@ func query_bankruptcy(negative_money):
 	start_query("bankruptcy")
 	query_title_label.text = "Declare Bankruptcy?"
 	var text_template = "You are in a deficit of $%s and cannot end your turn, would you like to declare bankruptcy?"
-	query_text_label.text = text_template % negative_money
+	query_text_label.text = text_template % -negative_money
+
+func query_win():
+	start_query("win")
+	query_title_label.text = "Congratulations!"
+	var text_template = "You have conquered the other ISPs and are now inducted into the CCCCP hall of fame. You have achieved your life's purpose, Ji Xinping will be proud of you."
+	query_text_label.text = text_template
 
 func query_sell_tower(town, tower):
 	start_query("sell_tower")
-	query_title_label = "Sell Tower?"
+	query_title_label.text = "Sell Tower?"
 	var text_template = "Are you sure you want to sell your %s Tower in %s? You will recieve its sale price and reduced operation costs."
 	query_text_label.text = text_template % [tower, town]
 
@@ -412,6 +418,9 @@ func _on_QueryDeny_pressed():
 		elif current_query == "sell_tower":
 			emit_signal("deny_sell_tower")
 			end_query()
+		elif current_query == "win":
+			emit_signal("deny_win")
+			end_query()
 			
 
 func _on_QueryAccept_pressed():
@@ -421,6 +430,9 @@ func _on_QueryAccept_pressed():
 			end_query()
 		elif current_query == "sell_tower":
 			emit_signal("accept_sell_tower")
+			end_query()
+		elif current_query == "win":
+			emit_signal("win")
 			end_query()
 
 func _on_TopNextTurn_gui_input(event):

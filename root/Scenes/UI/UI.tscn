@@ -114,10 +114,11 @@ query_title_label = NodePath("Query/MarginContainer/VBoxContainer/Query Title")
 query_text_label = NodePath("Query/MarginContainer/VBoxContainer/Query Text")
 
 [node name="TopNextTurn" type="TextureProgress" parent="."]
-margin_left = 1493.67
-margin_top = 842.553
-margin_right = 1859.67
-margin_bottom = 1022.55
+margin_left = 1670.27
+margin_top = 824.155
+margin_right = 2258.27
+margin_bottom = 1429.16
+rect_scale = Vector2( 0.4, 0.4 )
 hint_tooltip = "Click to end your turn"
 texture_under = ExtResource( 50 )
 texture_progress = ExtResource( 3 )
@@ -625,6 +626,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="ProgressBar"]
+margin_left = 172.729
+margin_top = 44.3621
+margin_right = 430.729
+margin_bottom = 91.3621
+text = "6g progress..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ShareGraphic" parent="." instance=ExtResource( 15 )]
 margin_left = 547.0
 margin_top = 729.373
@@ -667,7 +678,7 @@ anchor_bottom = 1.0
 margin_top = 49.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Left/ISPInfoTabs/U"]
-margin_right = 307.0
+margin_right = 306.0
 margin_bottom = 63.0
 size_flags_vertical = 3
 
@@ -681,17 +692,17 @@ stretch_mode = 6
 
 [node name="MarginContainer" type="MarginContainer" parent="Left/ISPInfoTabs/U/HBoxContainer"]
 margin_left = 39.0
-margin_right = 307.0
+margin_right = 306.0
 margin_bottom = 63.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Left/ISPInfoTabs/U/HBoxContainer/MarginContainer"]
-margin_right = 268.0
+margin_right = 267.0
 margin_bottom = 63.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Left/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer"]
-margin_right = 268.0
+margin_right = 267.0
 margin_bottom = 63.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -734,7 +745,7 @@ valign = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Left/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2"]
 margin_left = 180.0
-margin_right = 268.0
+margin_right = 267.0
 margin_bottom = 63.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -743,12 +754,12 @@ custom_constants/margin_bottom = 5
 
 [node name="PriceChange" type="VBoxContainer" parent="Left/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/MarginContainer"]
 margin_top = 10.0
-margin_right = 88.0
+margin_right = 87.0
 margin_bottom = 58.0
 rect_min_size = Vector2( 20, 20 )
 
 [node name="TextureButton" type="TextureButton" parent="Left/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/MarginContainer/PriceChange"]
-margin_right = 88.0
+margin_right = 87.0
 margin_bottom = 22.0
 size_flags_vertical = 3
 texture_normal = ExtResource( 14 )
@@ -757,7 +768,7 @@ stretch_mode = 4
 
 [node name="TextureButton2" type="TextureButton" parent="Left/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/MarginContainer/PriceChange"]
 margin_top = 26.0
-margin_right = 88.0
+margin_right = 87.0
 margin_bottom = 48.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -767,7 +778,7 @@ stretch_mode = 4
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Left/ISPInfoTabs/U"]
 margin_top = 67.0
-margin_right = 307.0
+margin_right = 306.0
 margin_bottom = 130.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -786,14 +797,14 @@ __meta__ = {
 [node name="Player_ISP_name" type="Label" parent="Left/ISPInfoTabs/U/HBoxContainer4"]
 margin_left = 39.0
 margin_top = 8.0
-margin_right = 307.0
+margin_right = 306.0
 margin_bottom = 55.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 18 )
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="Left/ISPInfoTabs/U"]
 margin_top = 134.0
-margin_right = 307.0
+margin_right = 306.0
 margin_bottom = 197.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -812,14 +823,14 @@ __meta__ = {
 [node name="town_connections" type="Label" parent="Left/ISPInfoTabs/U/HBoxContainer5"]
 margin_left = 39.0
 margin_top = 8.0
-margin_right = 307.0
+margin_right = 306.0
 margin_bottom = 55.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 18 )
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Left/ISPInfoTabs/U"]
 margin_top = 201.0
-margin_right = 307.0
+margin_right = 306.0
 margin_bottom = 264.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -836,14 +847,14 @@ stretch_mode = 6
 [node name="loyalty" type="Label" parent="Left/ISPInfoTabs/U/HBoxContainer2"]
 margin_left = 39.0
 margin_top = 8.0
-margin_right = 307.0
+margin_right = 306.0
 margin_bottom = 55.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 18 )
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Left/ISPInfoTabs/U"]
 margin_top = 268.0
-margin_right = 307.0
+margin_right = 306.0
 margin_bottom = 333.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -860,7 +871,7 @@ stretch_mode = 6
 [node name="image" type="Label" parent="Left/ISPInfoTabs/U/HBoxContainer3"]
 margin_left = 39.0
 margin_top = 9.0
-margin_right = 307.0
+margin_right = 306.0
 margin_bottom = 56.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 18 )
@@ -936,9 +947,8 @@ __meta__ = {
 }
 
 [node name="town name" type="Label" parent="Right/MarginContainer/VBoxContainer"]
-margin_top = -1.0
 margin_right = 319.0
-margin_bottom = 88.0
+margin_bottom = 89.0
 rect_min_size = Vector2( 0, 89 )
 text = "Lakeside Reserve"
 align = 2
