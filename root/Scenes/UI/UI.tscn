@@ -653,9 +653,9 @@ anchor_top = 0.609
 anchor_right = 0.021
 anchor_bottom = 0.609
 margin_left = -40.32
-margin_top = -20.9092
+margin_top = -19.9092
 margin_right = 342.68
-margin_bottom = 421.091
+margin_bottom = 422.091
 theme = ExtResource( 51 )
 __meta__ = {
 "_edit_use_anchors_": false

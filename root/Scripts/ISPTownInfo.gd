@@ -8,7 +8,7 @@ var brand_loyalty = 0.0
 var brand_image = 0.0
 var tower
 var aoe_neighbouring_towers = {}
-var price = 5.0
+var price = 10.0
 var delta_price = 0.0
 export(float) var base_advertising_mod
 var advertising = 0.0
