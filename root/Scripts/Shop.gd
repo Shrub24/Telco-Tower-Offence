@@ -4,9 +4,9 @@ export(PackedScene) var tower_4g
 export(PackedScene) var tower_5g
 export var advertising_cost = 1
 export var cyber_attack_cost = 15
-var tower_3g_upgrade_costs = {"speed":[1000, 2000, 3000, 4000], "bandwidth":[10000, 20000, 30000, 40000], "reach":[100000, 200000, 300000, 400000]}
-var tower_4g_upgrade_costs = {"speed":[10000, 20000, 30000, 40000], "bandwidth":[10000, 20000, 30000, 40000], "reach":[10000, 20000, 30000, 40000]}
-var tower_5g_upgrade_costs = {"speed":[100000, 200000, 300000, 400000], "bandwidth":[100000, 200000, 300000, 400000], "reach":[100000, 200000, 300000, 400000]}
+var tower_3g_upgrade_costs = {"speed":[25000, 50000, 100000, 200000], "bandwidth":[25000, 50000, 100000, 200000], "reach":[25000, 50000, 100000, 200000]}
+var tower_4g_upgrade_costs = {"speed":[100000, 200000, 400000, 600000], "bandwidth":[100000, 200000, 400000, 600000], "reach":[100000, 200000, 400000, 600000]}
+var tower_5g_upgrade_costs = {"speed":[300000, 500000, 700000, 900000], "bandwidth":[300000, 500000, 700000, 900000], "reach":[300000, 500000, 700000, 900000]}
 
 func get_tower_3g():
 	return tower_3g.instance()

@@ -6,7 +6,7 @@
 script = ExtResource( 1 )
 speeds = [ 250, 500, 1000, 5000 ]
 bandwidths = [ 2000000, 4000000, 8000000, 16000000 ]
-operation_cost = 600000.0
-price = 1500000
-upgrade_cost = [ 1000000, 2500000, 5000000, 10000000 ]
+operation_cost = 150000.0
+price = 400000
+upgrade_cost = [ 300000, 500000, 700000, 900000 ]
 tower_type = "5g"

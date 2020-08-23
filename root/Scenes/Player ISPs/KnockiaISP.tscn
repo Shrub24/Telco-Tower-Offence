@@ -7,8 +7,8 @@ script = ExtResource( 1 )
 ISP_name = "Knockia"
 modifiers = {
 "advertising": 1.0,
-"brand_image": 2.0,
-"brand_loyalty": 1.0,
+"brand_image": 1.0,
+"brand_loyalty": 2.0,
 "cyber_attack_defense": 1.0,
 "cyber_attack_offense": 1.0,
 "price": 1.0

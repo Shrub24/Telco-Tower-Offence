@@ -260,9 +260,10 @@ func update_tower(tower_type, value):
 
 func update_tower_tooltip(tower_type, price, sell_price, operation_cost, bandwidth, reach, speed, bought):
 	var template = "%s Tower: $%s\nOperation Cost: $%s\nBandwidth: %s people\nReach: %s towns\nSpeed: %sMb/s"
+	tower_buttons[tower_type].set_tooltip(template % [tower_type, price, operation_cost, bandwidth, reach, speed])
 	if bought:
-		 template = "%s Tower: Bought (Sell: $%s)\nOperation Cost: $%s\nBandwidth: %s people\nReach: %s towns\nSpeed: %sMb/s"
-	tower_buttons[tower_type].set_tooltip(template % [tower_type, sell_price, operation_cost, bandwidth, reach, speed])
+		template = "%s Tower: Bought (Sell: $%s)\nOperation Cost: $%s\nBandwidth: %s people\nReach: %s towns\nSpeed: %sMb/s"
+		tower_buttons[tower_type].set_tooltip(template % [tower_type, sell_price, operation_cost, bandwidth, reach, speed])
 
 func update_shares(share_dict, colour_dict):
 	share_graphic.update_graphic(share_dict, colour_dict)
