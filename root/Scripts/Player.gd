@@ -70,7 +70,7 @@ func buy_advertising(town):
 	var max_advertising = ISP.get_max_advertising(town)
 	var advertising = ISP.get_advertising(town)
 	if advertising < max_advertising:
-		var price = ISP.get_advertising_price(town)
+		var price = ISP.get_advertising_price(town, ISP.get_advertising(town)+1)
 		if ISP.reserve_money(price):
 			emit_signal("ui_update_money")
 			ISP.set_advertising(town, advertising + 1)
@@ -84,7 +84,7 @@ func sell_advertising(town):
 	var min_advertising = 0
 	var advertising = ISP.get_advertising(town)
 	if advertising > min_advertising:
-		var price = ISP.get_advertising_price(town)
+		var price = ISP.get_advertising_price(town, ISP.get_advertising(town))
 		if ISP.unreserve_money(price):
 			emit_signal("ui_update_money")
 			ISP.set_advertising(town, advertising - 1)

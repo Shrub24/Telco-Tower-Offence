@@ -132,7 +132,7 @@ tower_loc = [ -10, 5 ]
 position = Vector2( -0.653809, 771.597 )
 polygon = PoolVector2Array( -706.069, -198.492, -642.501, -231.336, -386.641, -103.141, -320.33, -134.664, -130.045, -39.1473, -63.7449, -70.9863, -2.68886, -38.96, 64.9222, -70.4246, 126.353, -38.5855, 190.031, -70.2372, 255.395, -38.2108, 383.687, -102.451, 446.241, -70.2372, 639.165, -166.759, 701.391, -134.939, 446.832, -2.70996, 382.839, -38.4188, 253.792, 26.2813, 191.567, -6.24554, 63.5804, 59.8688, -64.4059, -6.95276, -129.46, 28.4026, -257.446, -38.4189, -320.025, -5.89203 )
 population = 1200000
-neighbours = [ "Minefool", "Norwood", "Whitesmith", "Desmos", "Kudizio", "Mysteri", "Hidden Plains", "Rocky Pass", "" ]
+neighbours = [ "Minefool", "Norwood", "Whitesmith", "Desmos", "Kudizio", "Mysteri", "Hidden Plains", "Rocky Valley", "" ]
 shares = {
 "ElonMask Co": 80,
 "PanCogan Mobile": 5,
@@ -748,7 +748,7 @@ affluency = 40.0
 tower_loc = [ -5, 17 ]
 
 [node name="Sworarton" parent="towns" instance=ExtResource( 4 )]
-position = Vector2( -869.813, 796.783 )
+position = Vector2( -869.813, 794.783 )
 polygon = PoolVector2Array( -285.074, 64.2871, 36.8113, -95.6265, 227.779, -0.0656738, 291.687, -32.4402, 355.175, -0.486084, 34.7933, 160.546, -27.4331, 128.171, -91.433, 162.941 )
 population = 15000
 neighbours = [ "Vox", "Rocky Valley" ]
@@ -763,7 +763,7 @@ affluency = 28.0
 tower_loc = [ 1, 19 ]
 
 [node name="Benrino" parent="towns" instance=ExtResource( 4 )]
-position = Vector2( 838.036, 1116.86 )
+position = Vector2( 840.036, 1116.86 )
 polygon = PoolVector2Array( -262.358, 30.674, -71.793, 127.548, 249.233, -31.9048, 119.126, -96.2515, 56.1934, -64.0781, -7.79974, -96.605 )
 population = 120000
 neighbours = [ "Foggy Plains", "Foresty Pass", "Nichidai", "Lankyair" ]

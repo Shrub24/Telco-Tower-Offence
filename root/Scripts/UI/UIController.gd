@@ -109,10 +109,15 @@ func init_tabs(ISP_logo_dict):
 func update_cyber_attack_tooltip(cost):
 	var template = "Cyber attack %s\n to decrease target brand image\nCost: $%s" 
 	for ISP in cyber_attack_buttons.keys():
-		cyber_attack_buttons[ISP].set_tooltip(template % [ISP, cost])
+		if cost:
+			cyber_attack_buttons[ISP].set_tooltip(template % [ISP, cost])
+		else:
+			cyber_attack_buttons[ISP].set_tooltip("Buy a tower first!")
 
 func update_advertising_tooltip(total_cost):
 	var tip = "Advertise to increase brand image\nTown Cost: $%s" % total_cost
+	if !total_cost:
+		tip = "Buy a tower first!"
 	advertising_down.set_tooltip(tip)
 	advertising_up.set_tooltip(tip)
 	advertising_icon.set_tooltip(tip)

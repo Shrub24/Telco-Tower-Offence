@@ -153,6 +153,9 @@ func town_clicked(town):
 func update_town_UI(town):
 	ui_update_town_info()
 	ui_update_town_connections()
+	ui_update_advertising("")
+	ui_update_cyber_attack(false, false)
+	ui_update_cyber_attack_tooltip()
 	for AI in AIs:
 		var ISP = AI.ISP
 		if ISP in town.get_ISPs():
@@ -164,17 +167,25 @@ func update_town_UI(town):
 	ui_update_player_ISP(town.Player_ISPTownInfo)
 	if town.Player_ISPTownInfo:
 		ui_update_cyber_attack_tooltip()
-		ui_update_advertising_tooltip()
 		ui_update_advertising(town.Player_ISPTownInfo.get_advertising())
-		ui_update_cyber_attack(false, false)
 		if town.Player_ISPTownInfo.get_cyber_attack():
 			ui_update_cyber_attack(town.Player_ISPTownInfo.get_cyber_attack(), true)
 
 func ui_update_cyber_attack_tooltip():
-	UI_controller.update_cyber_attack_tooltip(player.ISP.get_cyber_attack_price(selected_town))
-	
+	UI_controller.update_cyber_attack_tooltip(false)
+	if selected_town.Player_ISPTownInfo:
+		if selected_town.Player_ISPTownInfo.tower:
+			UI_controller.update_cyber_attack_tooltip(player.ISP.get_cyber_attack_price(selected_town))
+		
+
 func ui_update_advertising_tooltip():
-	UI_controller.update_advertising_tooltip(player.ISP.get_advertising_price(selected_town))
+	UI_controller.update_advertising_tooltip(false)
+	if selected_town.Player_ISPTownInfo:
+		if selected_town.Player_ISPTownInfo.tower:
+			UI_controller.update_advertising_tooltip(player.ISP.get_advertising_price(selected_town, player.ISP.get_advertising(selected_town)))
+		
+
+		
 
 func ui_update_shares(town):
 	var shares = town.get_ISP_shares()
@@ -379,6 +390,7 @@ func ui_update_bandwidth_tooltip(tower):
 	UI_controller.update_bandwidth_upgrade_tooltip(tower, level, tower.get_bandwidth(), next_level, upgrade_price, tower.get_next_bandwidth())
 
 func ui_update_advertising(value):
+	ui_update_advertising_tooltip()
 	UI_controller.update_advertising(value)
 	
 func ui_update_cyber_attack(ISP, value):
@@ -438,7 +450,7 @@ func check_win():
 		total_pop += town.population
 	var proportion = float(curr)/total_pop
 	if proportion > win_proportion:
-		game_win()
+		query_win()
 		return true
 
 func query_win():

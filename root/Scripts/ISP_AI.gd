@@ -112,7 +112,7 @@ func do_actions(action_budget):
 
 # kinda random xD
 func do_advertising(action_budget, town):
-	var price = ISP.get_advertising_price(town)
+	var price = ISP.get_advertising_price(town, ISP.get_advertising(town) + 1)
 	var max_num = floor(action_budget/price)
 	var amt = min(max_num, rng.randi_range(1, 5))
 	if amt > 0:

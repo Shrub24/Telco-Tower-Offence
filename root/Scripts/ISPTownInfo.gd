@@ -124,6 +124,7 @@ func update_turn(max_speed):
 		cumulative_advertising = advertising - 1
 	else:
 		cumulative_advertising -= 1
+	cumulative_advertising = max(cumulative_advertising, 0)
 	update_advertising(0)
 
 

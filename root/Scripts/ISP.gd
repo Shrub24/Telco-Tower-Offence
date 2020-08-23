@@ -118,9 +118,11 @@ func get_tower_upgrade_price(town, type):
 	elif tower_type == "5g":
 		return shop.get_tower_5g_upgrade_price(type, tower.get_level(type) + 1)
 
-func get_advertising_price(town):
+func get_advertising_price(town, level):
 	var shop = load(shop_path)
-	return shop.get_advertising_price(town.population)
+	if level <= get_max_advertising(town):
+		return shop.get_advertising_price(town.population, level)
+	return false
 
 func set_advertising(town, value):
 	return town.get_ISP_town_info(self).update_advertising(value)

@@ -7,4 +7,5 @@
 script = ExtResource( 1 )
 ISP_logo = ExtResource( 2 )
 ISP_name = "Who-awei"
+primary_colour = Color( 0, 0.376471, 0.00784314, 1 )
 money = 200000

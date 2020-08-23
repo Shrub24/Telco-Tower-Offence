@@ -8,4 +8,5 @@ script = ExtResource( 1 )
 ISP_logo = ExtResource( 2 )
 ISP_name = "Alidada"
 primary_colour = Color( 1, 0.0823529, 0.219608, 1 )
+secondary_colour = Color( 1, 1, 1, 1 )
 money = 200000
