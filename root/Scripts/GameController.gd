@@ -77,6 +77,9 @@ func _on_UI_accept_bankruptcy():
 func query_sell_tower(tower):
 	UI_controller.query_sell_tower(selected_town.town_name, tower)
 
+func query_bankruptcy(negative_money):
+	UI_controller.query_bankruptcy(negative_money)
+
 func game_start():
 	for town in towns:
 		for town2 in towns:
@@ -401,7 +404,7 @@ func _on_UI_price_up_pressed():
 
 func _on_UI_next_turn_pressed():
 	if player.ISP.get_available_money() < 0:
-		emit_signal("query_bankruptcy", player.ISP.get_available_money())
+		query_bankruptcy(player.ISP.get_available_money())
 	else:
 		next_turn() 
 
