@@ -94,6 +94,7 @@ func game_start():
 	camera.set_camera_loc(loc[0], loc[1])
 	ui_init_tabs()
 	ui_update_connections()
+	ui_set_player_ISP()
 
 func ui_update_6g_progress():
 	UI_controller.update_6g_progress(progress_6g * 100/ progress_max_6g)
@@ -141,6 +142,7 @@ func town_clicked(town):
 		
 func update_town_UI(town):
 	ui_update_town_info()
+	ui_update_town_connections()
 	for AI in AIs:
 		var ISP = AI.ISP
 		if ISP in town.get_ISPs():
@@ -151,23 +153,34 @@ func update_town_UI(town):
 	ui_update_tower()
 	ui_update_player_ISP(town.Player_ISPTownInfo)
 	if town.Player_ISPTownInfo:
+		ui_update_cyber_attack_tooltip()
+		ui_update_advertising_tooltip()
 		ui_update_advertising(town.Player_ISPTownInfo.get_advertising())
 		ui_update_cyber_attack(false, false)
 		if town.Player_ISPTownInfo.get_cyber_attack():
 			ui_update_cyber_attack(town.Player_ISPTownInfo.get_cyber_attack(), true)
 
+func ui_update_cyber_attack_tooltip():
+	UI_controller.update_cyber_attack_tooltip(player.ISP.get_cyber_attack_price(selected_town))
+	
+func ui_update_advertising_tooltip():
+	UI_controller.update_advertising_tooltip(player.ISP.get_cyber_attack_price(selected_town))
+
 func ui_update_shares(town):
 	var shares = town.get_ISP_shares()
 	var share_dict = {}
 	var colour_dict = {}
+	var connection_dict = {}
 	for ISP in shares.keys():
 		if ISP.is_player:
+			connection_dict["Player"] = town.Player_ISPTownInfo.connections
 			share_dict["Player"] = shares[ISP]
 			colour_dict["Player"] = ISP.primary_colour
 		else:
+			connection_dict[ISP.ISP_name] = town.ISPs[ISP].connections
 			share_dict[ISP.ISP_name] = shares[ISP]
 			colour_dict[ISP.ISP_name] = ISP.primary_colour
-	UI_controller.update_shares(share_dict, colour_dict)
+	UI_controller.update_shares(share_dict, colour_dict, connection_dict)
 
 func ui_update_delta_price(delta_price):
 	UI_controller.update_delta_price(delta_price)
@@ -181,23 +194,24 @@ func ui_update_ISP(ISP, town_info):
 	else:
 		if town_info:
 			if town_info.tower:
-				UI_controller.update_ISP_info(town_info.brand_loyalty, town_info.brand_image, town_info.price, ISP.ISP_name)
+				UI_controller.update_ISP_info(int(town_info.brand_loyalty * 100), int(town_info.brand_image * 100), town_info.price, ISP.ISP_name)
 			else:
-				UI_controller.update_ISP_info("", town_info.brand_image, "", ISP.ISP_name)
+				UI_controller.update_ISP_info("", int(town_info.brand_image * 100), "", ISP.ISP_name)
 		else:
 			UI_controller.update_ISP_info("", "", "", ISP.ISP_name)
+			
 
 func ui_update_player_ISP(town_info):
 	if town_info:
 		if town_info.tower:
 			ui_update_delta_price(town_info.get_delta_price())
-			ui_update_player_loyalty(town_info.brand_loyalty)
+			ui_update_player_loyalty(int(town_info.brand_loyalty * 100))
 			ui_update_price(town_info.price)
 		else:
 			ui_update_delta_price("")
 			ui_update_player_loyalty("")
 			ui_update_price("")
-		ui_update_player_image(town_info.brand_image)
+		ui_update_player_image(int(town_info.brand_image * 100))
 	else:
 		ui_update_delta_price("")
 		ui_update_player_loyalty("")
@@ -241,13 +255,29 @@ func ui_update_connections():
 		total_pop += town.population
 	var proportion = curr/total_pop
 	var level = "no"
-	if proportion > 0.4:
+	if proportion > 0.2:
 		level = "great"
-	elif proportion > 0.25:
-		level = "okay"
 	elif proportion > 0.1:
+		level = "okay"
+	elif proportion > 0.03:
 		level = "poor"
-	UI_controller.update_connections(curr, level)
+	UI_controller.update_connections(curr, level, proportion)
+
+func ui_update_town_connections():
+	var shares = selected_town.get_ISP_shares()
+	var connection_dict = {}
+	for ISP in shares.keys():
+		if ISP.is_player:
+			connection_dict["Player"] = shares[ISP] * selected_town.population
+		else:
+			connection_dict[ISP.ISP_name] = shares[ISP] * selected_town.population
+	UI_controller.update_town_connections(connection_dict)
+
+
+func ui_set_player_ISP():
+	UI_controller.set_player_ISP(player.ISP.ISP_name, player.ISP.primary_colour, player.ISP.ISP_logo)
+	
+
 		
 		
 func ui_update_tower_tooltip(tower, bought):
@@ -258,6 +288,7 @@ func ui_update_tower_tooltip(tower, bought):
 func ui_update_tower():
 	ui_update_speed_tooltip(false)
 	ui_update_reach_tooltip(false)
+	ui_update_bandwidth_tooltip(false)
 	ui_update_all_tower_tooltip()
 	UI_controller.update_tower(false, -1)
 	if selected_town.Player_ISPTownInfo:

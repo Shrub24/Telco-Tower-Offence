@@ -6,6 +6,8 @@ var left_position
 var right_position
 var off_screen_left_position
 var off_screen_right_position
+var share_position
+var off_screen_share_position
 
 export(NodePath) onready var price_label = get_node(price_label)
 export(NodePath) onready var delta_price_label = get_node(delta_price_label)
@@ -28,7 +30,6 @@ export(NodePath) onready var bandwidth_button = get_node(bandwidth_button)
 export(NodePath) onready var progress_bar_6g = get_node(progress_bar_6g)
 export(NodePath) onready var connection_label = get_node(connection_label)
 export(NodePath) onready var connection_icon = get_node(connection_icon)
-export(NodePath) onready var bottom_next_turn = get_node(bottom_next_turn)
 export(NodePath) onready var top_next_turn = get_node(top_next_turn)
 export(NodePath) onready var town_name_label = get_node(town_name_label)
 export(NodePath) onready var affluency_label = get_node(affluency_label)
@@ -37,6 +38,9 @@ export(NodePath) onready var tower_type_label = get_node(tower_type_label)
 export(NodePath) onready var advertising_icon = get_node(advertising_icon)
 export(NodePath) onready var advertising_up = get_node(advertising_up)
 export(NodePath) onready var advertising_down = get_node(advertising_down)
+export(NodePath) onready var player_ISP_icon = get_node(player_ISP_icon)
+export(NodePath) onready var player_ISP_label = get_node(player_ISP_label)
+export(NodePath) onready var town_connection_label = get_node(town_connection_label)
 
 export var tower_button_paths = {"3g":0, "4g":0, "5g":0}
 var tower_buttons = {}
@@ -77,6 +81,8 @@ func _ready():
 		ISP_infos[ISP] = get_node(ISP_info_paths[ISP])
 	for tower in tower_button_paths.keys():
 		tower_buttons[tower] = get_node(tower_button_paths[tower])
+	share_position = share_graphic.rect_position
+	off_screen_share_position = Vector2(share_position.x, share_position.y+400)
 	position = $Bottom.rect_position
 	off_screen_position = Vector2(position.x, position.y+400)
 	left_position = $Left.rect_position
@@ -86,8 +92,9 @@ func _ready():
 	$Bottom.rect_position = off_screen_position
 	$Left.rect_position = off_screen_left_position
 	$Right.rect_position = off_screen_right_position
+	share_graphic.rect_position = off_screen_share_position
+	
 	query.hide()
-	top_next_turn.hide()
 
 func init_tabs(ISP_logo_dict):
 	pass
@@ -96,6 +103,19 @@ func init_tabs(ISP_logo_dict):
 #		ISP_info_container.set_tab_icon(id, ISP_logo_dict[ISP])
 #	var id = player_ISP_info.get_index()
 #	ISP_info_container.set_tab_icon(id, ISP_logo_dict["Player"])
+
+
+
+func update_cyber_attack_tooltip(cost):
+	var template = "Cyber attack %s\n to decrease target brand image\nCost: $%s" 
+	for ISP in cyber_attack_buttons.keys():
+		cyber_attack_buttons[ISP].set_tooltip(template % [ISP, cost])
+
+func update_advertising_tooltip(total_cost):
+	var tip = "Advertise to increase brand image\nTown Cost: $%s" % total_cost
+	advertising_down.set_tooltip(tip)
+	advertising_up.set_tooltip(tip)
+	advertising_icon.set_tooltip(tip)
 
 func _process(delta):
 	if Input.is_action_pressed("ui_click"):
@@ -111,22 +131,9 @@ func _process(delta):
 		hold_time = 0.0
 	
 	if !current_query:
-		if hover_next_turn:
-			if hover_time >= hover_time_threshold:
-				bottom_next_turn.hide()
-				top_next_turn.show()
-				hover_next_turn = false
-				hover_time = 0.0
-			else:
-				hover_time += delta
-
-		else:
-			hover_time = 0.0
 		
 		if next_turn:
 			if next_turn_time >= next_turn_time_threshold:
-				bottom_next_turn.show()
-				top_next_turn.hide()
 				next_turn = false
 				emit_signal("next_turn_pressed")
 				next_turn_time = 0.0
@@ -135,17 +142,15 @@ func _process(delta):
 		else:
 			next_turn_time = 0.0
 	else:
-		hover_next_turn = false
-		hover_time = 0.0
 		next_turn = false
 		next_turn_time = 0.0
-	bottom_next_turn.value = hover_time * 100/hover_time_threshold
+
 	top_next_turn.value = next_turn_time * 100/next_turn_time_threshold
 
 func update_town_UI(town_name, affluency_level, population, tower_type):
 	town_name_label.text = town_name
 	var money = ""
-	for i in range(affluency_level):
+	for i in range(affluency_level + 1):
 		money += "$"
 	affluency_label.text = money
 	population_label.text = "%s pop." % population
@@ -153,24 +158,44 @@ func update_town_UI(town_name, affluency_level, population, tower_type):
 		tower_type_label.text = "No connection"
 	else:
 		tower_type_label.text = "%s enabled" % tower_type
+
+func set_player_ISP(ISP_name, colour, logo):
+	player_ISP_icon.texture = logo
+	player_ISP_label.text = ISP_name
+	player_ISP_icon.add_color_override("font_color", colour)
+
+func update_town_connections(connection_dict):
+	for ISP in ISP_infos.keys():
+		if ISP in connection_dict.keys():
+			ISP_infos[ISP].update_connections(connection_dict[ISP])
+		else:
+			ISP_infos[ISP].update_connections(false)
+	if "Player" in connection_dict.keys():
+		town_connection_label.text = "%s people" % connection_dict["Player"]
+	else:
+		town_connection_label.text = ""
 	
 
 func show_town_UI(town):
 	var curr_position = $Bottom.rect_position 
 	var curr_left_position = $Left.rect_position
 	var curr_right_position = $Right.rect_position
+	var curr_share_position = share_graphic.rect_position
 	$Tween.interpolate_property($Left, "rect_position", curr_left_position, left_position, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	$Tween.interpolate_property($Right, "rect_position", curr_right_position, right_position, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	$Tween.interpolate_property($Bottom, "rect_position", curr_position, position, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	$Tween.interpolate_property($ShareGraphic, "rect_position", curr_share_position, share_position, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	$Tween.start()
 	
 func hide_town_UI():
 	var curr_left_position = $Left.rect_position
 	var curr_right_position = $Right.rect_position
 	var curr_position = $Bottom.rect_position 
+	var curr_share_position = share_graphic.rect_position
 	$Tween.interpolate_property($Left, "rect_position", curr_left_position, off_screen_left_position, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	$Tween.interpolate_property($Right, "rect_position", curr_right_position, off_screen_right_position, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	$Tween.interpolate_property($Bottom, "rect_position", curr_position, off_screen_position, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	$Tween.interpolate_property($ShareGraphic, "rect_position", curr_share_position, off_screen_share_position, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)	
 	$Tween.start()
 
 func query_bankruptcy(negative_money):
@@ -205,8 +230,8 @@ func update_ISP_info(loyalty, image, price, ISP):
 	ISP_info.update_image(image)
 	ISP_info.update_loyalty(loyalty)
 
-func update_connections(connections, level):
-	connection_label.text = "%s connections" % connections
+func update_connections(connections, level, proportion):
+	connection_label.text = "%s connections (%s%%)" % [connections, int(proportion * 100)]
 	connection_icon.texture = connection_icon.textures[level]
 
 func update_6g_progress(value):
@@ -260,12 +285,13 @@ func update_tower(tower_type, value):
 
 func update_tower_tooltip(tower_type, price, sell_price, operation_cost, bandwidth, reach, speed, bought):
 	var template = "%s Tower: $%s\nOperation Cost: $%s\nBandwidth: %s people\nReach: %s towns\nSpeed: %sMb/s"
+	tower_buttons[tower_type].set_tooltip(template % [tower_type, price, operation_cost, bandwidth, reach, speed])
 	if bought:
-		 template = "%s Tower: Bought (Sell: $%s)\nOperation Cost: $%s\nBandwidth: %s people\nReach: %s towns\nSpeed: %sMb/s"
-	tower_buttons[tower_type].set_tooltip(template % [tower_type, sell_price, operation_cost, bandwidth, reach, speed])
-
-func update_shares(share_dict, colour_dict):
-	share_graphic.update_graphic(share_dict, colour_dict)
+		template = "%s Tower: Bought (Sell: $%s)\nOperation Cost: $%s\nBandwidth: %s people\nReach: %s towns\nSpeed: %sMb/s"
+		tower_buttons[tower_type].set_tooltip(template % [tower_type, sell_price, operation_cost, bandwidth, reach, speed])
+	
+func update_shares(share_dict, colour_dict, connection_dict):
+	share_graphic.update_graphic(share_dict, colour_dict, connection_dict)
 
 func update_price(price):
 	if price:
@@ -297,9 +323,6 @@ func update_cyber_attack(target, value):
 				button.texture = button.pressed
 			else:
 				button.texture = button.unpressed
-
-func update_advertising_tooltip(cost):
-	pass
 
 func update_advertising(value):
 	advertising_label.text = str(value)
@@ -399,32 +422,9 @@ func _on_QueryAccept_pressed():
 		elif current_query == "sell_tower":
 			emit_signal("accept_sell_tower")
 			end_query()
-			
-
-
-
-
-
-func _on_BottomNextTurn_mouse_entered():
-	if !hover_next_turn:
-		hover_next_turn = true
-
-
-func _on_BottomNextTurn_mouse_exited():
-	if hover_next_turn:
-		hover_next_turn = false
-	hover_time = 0
-	bottom_next_turn.value = 0
-
 
 func _on_TopNextTurn_gui_input(event):
 	if event.is_action_pressed("ui_click"):
 		next_turn = true
 
-
-func _on_TopNextTurn_mouse_exited():
-	if !next_turn:
-		bottom_next_turn.show()
-		bottom_next_turn.value = 0
-		top_next_turn.hide()
 

@@ -152,7 +152,7 @@ margin_bottom = 605.0
 [node name="Label4" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
 margin_right = 400.0
 margin_bottom = 89.0
-text = "Knockia"
+text = "Nockia"
 align = 1
 
 [node name="Knockia" type="TextureButton" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
@@ -167,9 +167,9 @@ margin_top = 447.0
 margin_right = 400.0
 margin_bottom = 605.0
 theme = ExtResource( 9 )
-text = "Knockia's famed
-upbreakable devices
-have lead to greater
+text = "Nockia's famed
+unbreakable devices
+have led to greater
 brand image"
 align = 1
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/Who-awei" to="." method="_on_Whoawei_pressed"]
