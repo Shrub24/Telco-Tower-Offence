@@ -141,5 +141,6 @@ func learn_tech(effect):
 func update_turn():
 	var cost = ISP.get_total_operation_cost()
 	ISP.force_reserve_money(cost)
+	ISP.update_connections()
 	emit_signal("ui_update_money")
-	emit_signal("update_connections", ISP.update_connections())
+	emit_signal("ui_update_connections", ISP.update_connections())

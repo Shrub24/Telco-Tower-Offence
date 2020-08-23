@@ -14,3 +14,4 @@ modifiers = {
 "price": 0.75
 }
 money = 200000
+is_player = true

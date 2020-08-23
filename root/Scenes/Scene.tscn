@@ -58,10 +58,10 @@ tower_button_paths = {
 "5g": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/5gTowerBuy")
 }
 ISP_info_paths = {
-"ElonMask Co": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/E"),
-"PanCogan Mobile": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/P"),
-"Tedstra": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/T"),
-"Vodaclone": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/ISPInfoTabs/V")
+"ElonMask Co": NodePath("Left/ISPInfoTabs/E"),
+"PanCogan Mobile": NodePath("Left/ISPInfoTabs/P"),
+"Tedstra": NodePath("Left/ISPInfoTabs/T"),
+"Vodaclone": NodePath("Left/ISPInfoTabs/V")
 }
 [connection signal="query_sell_tower" from="Player" to="." method="query_sell_tower"]
 [connection signal="ui_update_advertising" from="Player" to="." method="ui_update_advertising"]

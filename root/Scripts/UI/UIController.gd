@@ -2,6 +2,10 @@ extends CanvasLayer
 
 var off_screen_position
 var position
+var left_position
+var right_position
+var off_screen_left_position
+var off_screen_right_position
 
 export(NodePath) onready var price_label = get_node(price_label)
 export(NodePath) onready var delta_price_label = get_node(delta_price_label)
@@ -21,6 +25,19 @@ export(NodePath) onready var ISP_info_container = get_node(ISP_info_container)
 export(NodePath) onready var reach_button = get_node(reach_button)
 export(NodePath) onready var speed_button = get_node(speed_button)
 export(NodePath) onready var bandwidth_button = get_node(bandwidth_button)
+export(NodePath) onready var progress_bar_6g = get_node(progress_bar_6g)
+export(NodePath) onready var connection_label = get_node(connection_label)
+export(NodePath) onready var connection_icon = get_node(connection_icon)
+export(NodePath) onready var bottom_next_turn = get_node(bottom_next_turn)
+export(NodePath) onready var top_next_turn = get_node(top_next_turn)
+export(NodePath) onready var town_name_label = get_node(town_name_label)
+export(NodePath) onready var affluency_label = get_node(affluency_label)
+export(NodePath) onready var population_label = get_node(population_label)
+export(NodePath) onready var tower_type_label = get_node(tower_type_label)
+export(NodePath) onready var advertising_icon = get_node(advertising_icon)
+export(NodePath) onready var advertising_up = get_node(advertising_up)
+export(NodePath) onready var advertising_down = get_node(advertising_down)
+
 export var tower_button_paths = {"3g":0, "4g":0, "5g":0}
 var tower_buttons = {}
 var cyber_attack_buttons = {}
@@ -31,6 +48,12 @@ var decreasing_price = false
 var hold_time = 0
 export var hold_time_threshold = 0.2
 var current_query = false
+var next_turn = false
+var hover_next_turn = false
+var hover_time = 0
+var next_turn_time = 0
+export var hover_time_threshold = 0.5
+export var next_turn_time_threshold = 1
 export(NodePath) onready var query = get_node(query)
 export(NodePath) onready var query_title_label = get_node(query_title_label)
 export(NodePath) onready var query_text_label = get_node(query_text_label)
@@ -56,8 +79,15 @@ func _ready():
 		tower_buttons[tower] = get_node(tower_button_paths[tower])
 	position = $Bottom.rect_position
 	off_screen_position = Vector2(position.x, position.y+400)
+	left_position = $Left.rect_position
+	off_screen_left_position = Vector2(left_position.x-300, left_position.y+300)
+	right_position = $Right.rect_position 
+	off_screen_right_position = Vector2(right_position.x+400, right_position.y-400)
 	$Bottom.rect_position = off_screen_position
+	$Left.rect_position = off_screen_left_position
+	$Right.rect_position = off_screen_right_position
 	query.hide()
+	top_next_turn.hide()
 
 func init_tabs(ISP_logo_dict):
 	pass
@@ -66,7 +96,6 @@ func init_tabs(ISP_logo_dict):
 #		ISP_info_container.set_tab_icon(id, ISP_logo_dict[ISP])
 #	var id = player_ISP_info.get_index()
 #	ISP_info_container.set_tab_icon(id, ISP_logo_dict["Player"])
-	
 
 func _process(delta):
 	if Input.is_action_pressed("ui_click"):
@@ -80,14 +109,67 @@ func _process(delta):
 			hold_time += delta
 	else:
 		hold_time = 0.0
+	
+	if !current_query:
+		if hover_next_turn:
+			if hover_time >= hover_time_threshold:
+				bottom_next_turn.hide()
+				top_next_turn.show()
+				hover_next_turn = false
+				hover_time = 0.0
+			else:
+				hover_time += delta
+
+		else:
+			hover_time = 0.0
+		
+		if next_turn:
+			if next_turn_time >= next_turn_time_threshold:
+				bottom_next_turn.show()
+				top_next_turn.hide()
+				next_turn = false
+				emit_signal("next_turn_pressed")
+				next_turn_time = 0.0
+			else:
+				next_turn_time += delta
+		else:
+			next_turn_time = 0.0
+	else:
+		hover_next_turn = false
+		hover_time = 0.0
+		next_turn = false
+		next_turn_time = 0.0
+	bottom_next_turn.value = hover_time * 100/hover_time_threshold
+	top_next_turn.value = next_turn_time * 100/next_turn_time_threshold
+
+func update_town_UI(town_name, affluency_level, population, tower_type):
+	town_name_label.text = town_name
+	var money = ""
+	for i in range(affluency_level):
+		money += "$"
+	affluency_label.text = money
+	population_label.text = "%s pop." % population
+	if tower_type == "":
+		tower_type_label.text = "No connection"
+	else:
+		tower_type_label.text = "%s enabled" % tower_type
+	
 
 func show_town_UI(town):
 	var curr_position = $Bottom.rect_position 
+	var curr_left_position = $Left.rect_position
+	var curr_right_position = $Right.rect_position
+	$Tween.interpolate_property($Left, "rect_position", curr_left_position, left_position, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	$Tween.interpolate_property($Right, "rect_position", curr_right_position, right_position, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	$Tween.interpolate_property($Bottom, "rect_position", curr_position, position, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	$Tween.start()
 	
 func hide_town_UI():
+	var curr_left_position = $Left.rect_position
+	var curr_right_position = $Right.rect_position
 	var curr_position = $Bottom.rect_position 
+	$Tween.interpolate_property($Left, "rect_position", curr_left_position, off_screen_left_position, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	$Tween.interpolate_property($Right, "rect_position", curr_right_position, off_screen_right_position, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	$Tween.interpolate_property($Bottom, "rect_position", curr_position, off_screen_position, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	$Tween.start()
 
@@ -123,8 +205,13 @@ func update_ISP_info(loyalty, image, price, ISP):
 	ISP_info.update_image(image)
 	ISP_info.update_loyalty(loyalty)
 
-func update_connections(connections):
-	pass
+func update_connections(connections, level):
+	connection_label.text = "%s connections" % connections
+	connection_icon.texture = connection_icon.textures[level]
+
+func update_6g_progress(value):
+	progress_bar_6g.value = value
+	
 	
 func update_tower_upgrade(reach, bandwidth, speed):
 	reach_label.text = str(reach)
@@ -161,17 +248,21 @@ func update_bandwidth_upgrade_tooltip(tower, level, curr_value, next_level, next
 		var template = "Current Level: %s\nBandwidth: %s people"
 		bandwidth_button.set_tooltip(template % [level, curr_value])
 
-func update_tower(tower_type):
-	for tower in tower_buttons.keys():
-		tower_buttons[tower].texture = tower_buttons[tower].unpressed
-	if tower_type:
-		tower_buttons[tower_type].texture = tower_buttons[tower_type].pressed
+func update_tower(tower_type, value):
+	if value != 0:
+		for tower in tower_buttons.keys():
+			tower_buttons[tower].texture = tower_buttons[tower].disabled
+		if tower_type:
+			tower_buttons[tower_type].texture = tower_buttons[tower_type].pressed
+	else:
+		for tower in tower_buttons.keys():
+			tower_buttons[tower].texture = tower_buttons[tower].unpressed
 
 func update_tower_tooltip(tower_type, price, sell_price, operation_cost, bandwidth, reach, speed, bought):
 	var template = "%s Tower: $%s\nOperation Cost: $%s\nBandwidth: %s people\nReach: %s towns\nSpeed: %sMb/s"
 	if bought:
 		 template = "%s Tower: Bought (Sell: $%s)\nOperation Cost: $%s\nBandwidth: %s people\nReach: %s towns\nSpeed: %sMb/s"
-	tower_buttons[tower_type].set_tooltip(template % [tower_type, price, sell_price, bandwidth, reach, speed])
+	tower_buttons[tower_type].set_tooltip(template % [tower_type, sell_price, operation_cost, bandwidth, reach, speed])
 
 func update_shares(share_dict, colour_dict):
 	share_graphic.update_graphic(share_dict, colour_dict)
@@ -228,10 +319,6 @@ func _on_PriceUp_pressed():
 func _on_PriceDown_pressed():
 	if !current_query:
 		emit_signal("price_down_pressed")
-
-func _on_Next_Turn_pressed():
-	if !current_query:
-		emit_signal("next_turn_pressed")
 
 func _on_TedstraAttack_gui_input(event):
 	if event.is_action_pressed("ui_click") and !current_query:
@@ -315,4 +402,29 @@ func _on_QueryAccept_pressed():
 			
 
 
+
+
+
+func _on_BottomNextTurn_mouse_entered():
+	if !hover_next_turn:
+		hover_next_turn = true
+
+
+func _on_BottomNextTurn_mouse_exited():
+	if hover_next_turn:
+		hover_next_turn = false
+	hover_time = 0
+	bottom_next_turn.value = 0
+
+
+func _on_TopNextTurn_gui_input(event):
+	if event.is_action_pressed("ui_click"):
+		next_turn = true
+
+
+func _on_TopNextTurn_mouse_exited():
+	if !next_turn:
+		bottom_next_turn.show()
+		bottom_next_turn.value = 0
+		top_next_turn.hide()
 
