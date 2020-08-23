@@ -120,7 +120,10 @@ func update_turn(max_speed):
 		delta_price = 0
 	update_brand_image()
 	cancel_all_cyber_attacks()
-	cumulative_advertising = advertising - 1
+	if advertising > cumulative_advertising:
+		cumulative_advertising = advertising - 1
+	else:
+		cumulative_advertising -= 1
 	update_advertising(0)
 
 

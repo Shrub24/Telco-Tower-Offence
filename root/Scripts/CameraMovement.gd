@@ -18,7 +18,7 @@ export var camera_speed = 25.0
 export var min_boundary_x = -1800
 export var max_boundary_x = 2100
 export var min_boundary_y = -1200
-export var max_boundary_y = 1400
+export var max_boundary_y = 1600
 
 
 
