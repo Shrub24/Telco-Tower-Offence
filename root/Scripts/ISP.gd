@@ -1,6 +1,6 @@
 extends Node
 
-
+export(Texture) var ISP_logo
 export(String) var ISP_name
 export(Color) var primary_colour
 export(Color) var secondary_colour
@@ -10,9 +10,12 @@ export var modifiers = {"advertising":1.0, "cyber_attack_offense":1.0, "cyber_at
 export var money = 100000000000
 var towns = []
 var reserved_money = 0
-export var money_round = 0.5
+export var money_round = 1
 var connections = 0
 export var is_player = false
+
+func player():
+	return is_player
 	
 func update_turn():
 	money -= reserved_money
@@ -25,6 +28,9 @@ func spend_money(amount):
 		money -= amount
 		return true
 	return false
+	
+func increase_money(amount):
+	money += amount
 
 func force_reserve_money(amount):
 	reserved_money += amount
@@ -48,6 +54,7 @@ func get_reserved_money():
 	return reserved_money
 	
 func update_connections():
+	connections = 0
 	for town in towns:
 		connections += town.get_ISP_town_info(self).connections
 	return connections
@@ -57,7 +64,7 @@ func add_town(town):
 		towns.append(town)
 	
 func change_price(town, amount):
-	amount = stepify(amount, 0.5)
+	amount = stepify(amount, 1)
 	return town.get_ISP_town_info(self).update_delta_price(amount)
 
 func get_delta_price(town):
@@ -85,37 +92,37 @@ func build_tower(town, type):
 	var temp_tower = get_tower(type)
 	town.build_tower(self, temp_tower)
 	
+func sell_tower(town):
+	town.sell_tower(self)
+	
 func upgrade_tower(town, type):
-	town.upgrade_tower(self, town, type)
+	town.upgrade_tower(self, type)
 	var tower = get_town_tower(town)
 	
 func get_tower_upgrade_level(town, type):
 	var tower = get_town_tower(town)
-	if type == "speed":
-		return tower.speed_level
-	elif type == "bandwidth":
-		return tower.bandwidth_level
-	elif type == "reach":
-		return tower.reach_level
+	return tower.get_level(type)
 
 func get_tower_max_upgrade_level(town):
 	var tower = get_town_tower(town)
 	return tower.max_level
 
-func get_tower_upgrade_price(town, type, level):
+func get_tower_upgrade_price(town, type):
 	var shop = load(shop_path)
 	var tower = get_town_tower(town)
 	var tower_type = tower.tower_type
-	if type == "3g":
-		return shop.get_tower_3g_upgrade_price(type, level)
-	elif type == "4g":
-		return shop.get_tower_4g_upgrade_price(type, level)
-	elif type == "5g":
-		return shop.get_tower_5g_upgrade_price(type, level)
+	if tower_type == "3g":
+		return shop.get_tower_3g_upgrade_price(type, tower.get_level(type) + 1)
+	elif tower_type == "4g":
+		return shop.get_tower_4g_upgrade_price(type, tower.get_level(type) + 1)
+	elif tower_type == "5g":
+		return shop.get_tower_5g_upgrade_price(type, tower.get_level(type) + 1)
 
-func get_advertising_price(town):
+func get_advertising_price(town, level):
 	var shop = load(shop_path)
-	return shop.get_advertising_price(town.population)
+	if level <= get_max_advertising(town):
+		return shop.get_advertising_price(town.population, level)
+	return false
 
 func set_advertising(town, value):
 	return town.get_ISP_town_info(self).update_advertising(value)

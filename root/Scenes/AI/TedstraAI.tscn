@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/ISP_AI.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/ISP.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/UI/tedstra.png" type="Texture" id=3]
 
 [node name="TedstraAI" type="Node"]
 script = ExtResource( 1 )
 
 [node name="ISP" parent="." instance=ExtResource( 2 )]
+ISP_logo = ExtResource( 3 )
 ISP_name = "Tedstra"
-primary_colour = Color( 0.00784314, 0.639216, 0.913725, 1 )
+primary_colour = Color( 0, 0.215686, 0.278431, 1 )
+secondary_colour = Color( 0.87451, 0.898039, 0.509804, 1 )
+money = 200000

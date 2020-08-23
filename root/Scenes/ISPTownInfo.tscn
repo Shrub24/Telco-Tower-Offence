@@ -4,5 +4,5 @@
 
 [node name="ISPTownInfo" type="Node"]
 script = ExtResource( 1 )
-base_advertising_mod = 0.1
-base_cyber_attack_mod = 0.5
+base_advertising_mod = 0.3
+base_cyber_attack_mod = 0.9

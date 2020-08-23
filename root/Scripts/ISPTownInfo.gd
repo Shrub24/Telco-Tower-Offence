@@ -2,13 +2,13 @@ extends Node
 
 var connections_delta = 0
 export var min_price = 1
-export var max_price = 250
+export var max_price = 100
 var connections = 0
 var brand_loyalty = 0.0
 var brand_image = 0.0
 var tower
 var aoe_neighbouring_towers = {}
-var price = 10.0
+var price = 5.0
 var delta_price = 0.0
 export(float) var base_advertising_mod
 var advertising = 0.0
@@ -17,10 +17,11 @@ var cyber_attack_mod = 0.0
 var cyber_attack = 0.0
 var max_advertising = 5
 var max_cyber_attack = 1
+var cumulative_advertising = 0
 var ISP
 var costs = 0
 var shop
-export var loyalty_scale_factor = 100
+export var loyalty_scale_factor = 1
 export var tower_max_speed = 5000
 var town_population = 0
 var cyber_attack_target
@@ -28,12 +29,15 @@ var connection_loss = {}
 
 const min_affluency = 1
 const max_affluency = 99
-var max_affluency_pricing = max_price - 100
-var min_affluency_pricing = min_price + 100
-const affluency_dampening_factor = 5
+var max_affluency_pricing = max_price
+var min_affluency_pricing = min_price + 5
+const affluency_dampening_factor = 40
 
-export var base_starting_price = -5
+export var base_starting_price = -15
 export var max_share_factor = 12
+
+var prev_connections_delta = 0
+var prev_affluency_delta = 0
 
 var rng = RandomNumberGenerator.new()
 
@@ -46,23 +50,17 @@ func initialise(new_ISP, town, population):
 	ISP.add_town(town)
 	town_population = population
 
-func generate_starter(no_isp_pop):
+func generate_starter(no_ISP_pop):
 	shop = load("res://Resources/Shop.tres")
-	connections = town_population - no_isp_pop
-	
+	connections = town_population - no_ISP_pop
 	build_tower(shop.get_tower_3g())
 	price = min_price * 5
-	
-	update_brand_image()
-	update_brand_loyalty()
 
-func generate(share, no_isp_pop, affluency):
-	connections = int(share * (town_population - no_isp_pop)/100)
+
+func generate(share, no_ISP_pop, affluency):
+	connections = int(share * (town_population - no_ISP_pop)/100)
 	
 	build_tower(calculate_starting_tower(affluency))
-	
-	update_brand_image()
-	update_brand_loyalty()
 	
 	# initial price for ISPs
 	var affluency_pricing = (float(affluency-min_affluency)/(max_affluency-min_affluency))*(max_price-min_price) + min_price
@@ -78,7 +76,7 @@ func get_connections_loss(ISPTownInfos):
 		other.connection_loss[self] = considering_switch
 
 func get_affluency_delta(affluency):
-	var affluency_pricing = (float(affluency-min_affluency)/(max_affluency-min_affluency))*(max_price * min_price) + min_price
+	var affluency_pricing = (float(affluency-min_affluency)/(max_affluency-min_affluency)) * (max_price - min_price) + min_price
 	var x = affluency_pricing/price
 	return affluency_dampening_factor * tanh(x-1)
 
@@ -86,19 +84,19 @@ func calculate_aoe_image():
 	var aoe_image = 0
 	for aoe_image_val in aoe_neighbouring_towers.values():
 		aoe_image += aoe_image_val
-	return aoe_image
+	return clamp(aoe_image, 0, 0.5)
 
 func update_brand_image():
 	var share = float(connections)/town_population
 	var aoe_image = calculate_aoe_image()
-	brand_image = float(share)/100 + ((1 - float(share)/100) * get_advertising_mod()) * cyber_attack_mod + aoe_image
+	brand_image = float(share) + ((1 - float(share)) * get_advertising_mod()) * (1 - cyber_attack_mod) + aoe_image
 	brand_image = clamp(brand_image, 0.0, 1.0)
 
-func update_brand_loyalty():
+func update_brand_loyalty(max_speed):
 	var bandwidth_used = get_bandwidth_used()
-	brand_loyalty = loyalty_scale_factor * ISP.modifiers["brand_loyalty"] * (float(tower.get_speed())/tower_max_speed) * 1/(1 + exp(6 * (2 * bandwidth_used - 1.9)))
+	brand_loyalty = loyalty_scale_factor * ISP.modifiers["brand_loyalty"] * (float(tower.get_speed())/max_speed) * 1/(1 + exp(6 * (2 * bandwidth_used - 1.9)))
 	brand_loyalty = clamp(brand_loyalty, 0.0, 1.0)
-
+ 
 func get_income():
 	return connections * price
 
@@ -114,31 +112,45 @@ func normalise_connection_loss():
 		if loss_sum > 1:
 			connection_loss[ISP] /= loss_sum
 
-func update_turn():
+func update_turn(max_speed):
 	if tower:
-		update_advertising(0)
-		cancel_cyber_attack()
-		update_brand_loyalty()
+		update_brand_loyalty(max_speed)
 		update_connections()
 		price += delta_price
 		delta_price = 0
 	update_brand_image()
+	cancel_all_cyber_attacks()
+	if advertising > cumulative_advertising:
+		cumulative_advertising = advertising - 1
+	else:
+		cumulative_advertising -= 1
+	cumulative_advertising = max(cumulative_advertising, 0)
+	update_advertising(0)
+
 
 func calculate_starting_tower(affluency):
 	shop = preload("res://Resources/Shop.tres")
-	if connections > 1000000 and affluency > 75:
+	if connections > 150000 and affluency > 75:
 		return shop.get_tower_5g()
 	elif connections > 75000 or affluency > 40:
 		return shop.get_tower_4g()
 	else:
 		return shop.get_tower_3g()
 
+func cancel_all_cyber_attacks():
+	if cyber_attack_target:
+		cyber_attack_target = null
+	cyber_attack = 0
+	cyber_attack_mod = 0
 
 func update_price(amount):
 	price += amount
 
 func update_connections():
 	connections += connections_delta
+	
+	prev_connections_delta = connections_delta
+	
 	connections_delta = 0
 
 func update_connection_deltas():
@@ -150,7 +162,7 @@ func calculate_costs():
 	costs = tower.operation_costs
 
 func get_advertising_mod():
-	return (base_advertising_mod * ISP.modifiers["advertising"]) * advertising
+	return (base_advertising_mod * ISP.modifiers["advertising"]) * (advertising + cumulative_advertising)
 
 func get_advertising():
 	return advertising
@@ -186,6 +198,9 @@ func upgrade_tower(type):
 
 func build_tower(new_tower):
 	tower = new_tower
+	
+func remove_tower():
+	tower = null
 
 func get_delta_price():
 	return delta_price
@@ -203,10 +218,14 @@ func remove_aoe_image(aoe_tower):
 func update_affluency_conns(affluency_delta):
 	if affluency_delta >= 0:
 		connections += affluency_delta
+		
+		prev_affluency_delta = affluency_delta
 		return affluency_delta
 	else:
-		var delta = int(affluency_delta * connections)
-		connections += affluency_delta
+		var delta = int(affluency_delta/100 * connections)
+		connections += delta
+		
+		prev_affluency_delta = delta
 		return delta
 	
 

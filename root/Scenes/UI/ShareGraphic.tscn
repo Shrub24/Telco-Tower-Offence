@@ -7,7 +7,7 @@
 
 [node name="ShareGraphic" type="CenterContainer"]
 margin_left = 134.0
-margin_right = 209.0
+margin_right = 188.0
 margin_bottom = 360.0
 rect_min_size = Vector2( 30, 221 )
 script = ExtResource( 3 )
@@ -17,8 +17,9 @@ __meta__ = {
 progress_paths = [ NodePath("0"), NodePath("1"), NodePath("2"), NodePath("3"), NodePath("4") ]
 
 [node name="No_ISP" type="TextureProgress" parent="."]
-margin_right = 75.0
-margin_bottom = 360.0
+margin_top = 6.0
+margin_right = 54.0
+margin_bottom = 353.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture_under = ExtResource( 2 )
@@ -27,31 +28,36 @@ texture_progress = ExtResource( 4 )
 fill_mode = 3
 
 [node name="4" type="TextureProgress" parent="."]
-margin_right = 75.0
-margin_bottom = 360.0
+margin_top = 6.0
+margin_right = 54.0
+margin_bottom = 353.0
 texture_progress = ExtResource( 4 )
 fill_mode = 3
 
 [node name="3" type="TextureProgress" parent="."]
-margin_right = 75.0
-margin_bottom = 360.0
+margin_top = 6.0
+margin_right = 54.0
+margin_bottom = 353.0
 texture_progress = ExtResource( 4 )
 fill_mode = 3
 
 [node name="2" type="TextureProgress" parent="."]
-margin_right = 75.0
-margin_bottom = 360.0
+margin_top = 6.0
+margin_right = 54.0
+margin_bottom = 353.0
 texture_progress = ExtResource( 4 )
 fill_mode = 3
 
 [node name="1" type="TextureProgress" parent="."]
-margin_right = 75.0
-margin_bottom = 360.0
+margin_top = 6.0
+margin_right = 54.0
+margin_bottom = 353.0
 texture_progress = ExtResource( 4 )
 fill_mode = 3
 
 [node name="0" type="TextureProgress" parent="."]
-margin_right = 75.0
-margin_bottom = 360.0
+margin_top = 6.0
+margin_right = 54.0
+margin_bottom = 353.0
 texture_progress = ExtResource( 4 )
 fill_mode = 3

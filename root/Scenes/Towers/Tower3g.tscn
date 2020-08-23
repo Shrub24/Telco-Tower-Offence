@@ -6,6 +6,6 @@
 script = ExtResource( 1 )
 speeds = [ 1, 2, 3, 6 ]
 bandwidths = [ 2500, 5000, 10000, 20000 ]
-reach = [ 2, 1, 2, 3 ]
-price = 10000
-upgrade_cost = [ 2500, 5000, 10000, 20000 ]
+operation_cost = 10000.0
+price = 100000
+upgrade_cost = [ 25000, 50000, 100000, 200000 ]
