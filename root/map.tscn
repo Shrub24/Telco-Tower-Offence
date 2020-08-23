@@ -630,7 +630,7 @@ tower_loc = [ 18, 19 ]
 position = Vector2( -307.296, 1211.09 )
 polygon = PoolVector2Array( -78.0709, -158.98, 304.315, 33.1578, 47.9212, 163.56, -207.213, 33.7878, -144.217, 2.9198, -270.839, -62.5962 )
 population = 10000
-neighbours = [ "Sholto Farms", "Rocky Pass" ]
+neighbours = [ "Sholto Farms", "Rocky Valley" ]
 shares = {
 "ElonMask Co": 25,
 "PanCogan Mobile": 25,
