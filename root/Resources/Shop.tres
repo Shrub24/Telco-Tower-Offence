@@ -10,5 +10,3 @@ script = ExtResource( 1 )
 tower_3g = ExtResource( 2 )
 tower_4g = ExtResource( 3 )
 tower_5g = ExtResource( 4 )
-advertising_cost = 1
-cyber_attack_cost = 1

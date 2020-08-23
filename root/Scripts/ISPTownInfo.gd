@@ -17,6 +17,7 @@ var cyber_attack_mod = 0.0
 var cyber_attack = 0.0
 var max_advertising = 5
 var max_cyber_attack = 1
+var cumulative_advertising = 0
 var ISP
 var costs = 0
 var shop
@@ -83,12 +84,12 @@ func calculate_aoe_image():
 	var aoe_image = 0
 	for aoe_image_val in aoe_neighbouring_towers.values():
 		aoe_image += aoe_image_val
-	return aoe_image
+	return clamp(aoe_image, 0, 0.5)
 
 func update_brand_image():
 	var share = float(connections)/town_population
 	var aoe_image = calculate_aoe_image()
-	brand_image = float(share) + ((1 - float(share)/100) * get_advertising_mod()) * cyber_attack_mod + aoe_image
+	brand_image = float(share) + ((1 - float(share)) * get_advertising_mod()) * (1 - cyber_attack_mod) + aoe_image
 	brand_image = clamp(brand_image, 0.0, 1.0)
 
 func update_brand_loyalty(max_speed):
@@ -119,6 +120,10 @@ func update_turn(max_speed):
 		delta_price = 0
 	update_brand_image()
 	cancel_all_cyber_attacks()
+	if advertising > cumulative_advertising:
+		cumulative_advertising = advertising - 1
+	else:
+		cumulative_advertising -= 1
 	update_advertising(0)
 
 
@@ -156,7 +161,7 @@ func calculate_costs():
 	costs = tower.operation_costs
 
 func get_advertising_mod():
-	return (base_advertising_mod * ISP.modifiers["advertising"]) * advertising
+	return (base_advertising_mod * ISP.modifiers["advertising"]) * (advertising + cumulative_advertising)
 
 func get_advertising():
 	return advertising

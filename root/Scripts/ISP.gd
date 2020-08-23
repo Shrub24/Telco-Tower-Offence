@@ -64,7 +64,7 @@ func add_town(town):
 		towns.append(town)
 	
 func change_price(town, amount):
-	amount = stepify(amount, 0.5)
+	amount = stepify(amount, 1)
 	return town.get_ISP_town_info(self).update_delta_price(amount)
 
 func get_delta_price(town):
