@@ -5,4 +5,4 @@
 [node name="ISP" type="Node"]
 script = ExtResource( 1 )
 ISP_name = "Alidada"
-money = 20000
+money = 200000

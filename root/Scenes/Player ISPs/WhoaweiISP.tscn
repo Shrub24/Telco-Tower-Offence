@@ -5,3 +5,4 @@
 [node name="ISP" type="Node"]
 script = ExtResource( 1 )
 ISP_name = "Who-awei"
+money = 20000
