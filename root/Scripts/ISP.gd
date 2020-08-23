@@ -13,6 +13,9 @@ var reserved_money = 0
 export var money_round = 1
 var connections = 0
 export var is_player = false
+
+func player():
+	return is_player
 	
 func update_turn():
 	money -= reserved_money
@@ -51,6 +54,7 @@ func get_reserved_money():
 	return reserved_money
 	
 func update_connections():
+	connections = 0
 	for town in towns:
 		connections += town.get_ISP_town_info(self).connections
 	return connections

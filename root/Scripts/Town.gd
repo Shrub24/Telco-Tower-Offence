@@ -14,9 +14,12 @@ var Player_ISPTownInfo
 export(float) var affluency
 export(NodePath) onready var bound
 export(NodePath) onready var border
-export var unselected_opacity = 0.4
-export var hover_opacity = 1
-export var selected_opacity = 2.5
+var unselected_opacity
+var hover_opacity
+export var selected_opacity = 0.8
+export var player_opacity = 0.2
+export var base_unselected_opacity = 0.4
+export var base_hover_opacity = 0.7
 var selected = false
 
 signal clicked(town)
@@ -40,8 +43,12 @@ var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+
+	hover_opacity = base_hover_opacity
+	unselected_opacity = base_unselected_opacity
 	get_node(bound).set_polygon(polygon)
 	border = get_node(border)
+	selected_opacity = border.modulate.a
 	border.set_polygon(polygon)
 	self_modulate.a = 0
 
@@ -63,9 +70,7 @@ func randomise_shares():
 	share_vals.shuffle()
 	for i in range(0, len(ISPs)):
 		shares[ISPs[i]] = share_vals[i]
-		
-		
-	
+
 
 func init_starter_town(player):
 	create_ISPTownInfo(player.ISP)
@@ -92,6 +97,8 @@ func init_town_ISPs(AIs):
 		print("\n")
 
 func set_town_colour():
+	hover_opacity = base_hover_opacity
+	unselected_opacity = base_unselected_opacity
 	var ashares = get_ISP_shares()
 	var max_ISP = null
 	for ISP in ashares.keys():
@@ -102,7 +109,13 @@ func set_town_colour():
 	if max_ISP:
 		border.set_color(max_ISP.primary_colour)
 		border.border_color = max_ISP.secondary_colour
-	border.modulate.a = unselected_opacity
+		if max_ISP.is_player:
+			unselected_opacity = base_unselected_opacity + player_opacity
+			hover_opacity = base_hover_opacity + player_opacity
+	if selected:
+		select()
+	else:
+		deselect()
 
 func get_ISP_town_info(ISP):
 	if ISPs.keys().has(ISP):
@@ -134,6 +147,19 @@ func get_max_speed():
 			if  speed > max_speed:
 				max_speed = speed
 	return max_speed
+
+func get_max_tower_type():
+	var max_type = ""
+	for town_info in get_ISP_town_infos():
+		if town_info.tower:
+			var type = town_info.tower.tower_type
+			if max_type in ["", "3g"]:
+				if type in ["3g", "4g", "5g"]:
+					max_type = type
+			elif max_type == "4g":
+				if type == "5g":
+					max_type = "5g"
+	return max_type
 
 func get_share(ISP):
 	return float(ISPs[ISP].connections)/population
@@ -167,7 +193,6 @@ func update_turn():
 		town_info.update_turn(get_max_speed())
 		if town_info.tower:
 			no_ISP_pop -= town_info.update_affluency_conns(affluency_connection_delta[town_info])
-			
 	set_town_colour()
 
 func create_ISPTownInfo(ISP):
@@ -238,24 +263,28 @@ func upgrade_tower(ISP, type):
 		propagate_brand_image(tower, ISP, tower.get_reach())
 
 func deselect():
-	hovered=true
+	hovered = true
 	selected = false
 	border.modulate.a = unselected_opacity
-	
+	border.update_color_and_opacity()
+		
 func select():
 	hovered = false
 	selected = true
 	border.modulate.a = selected_opacity
+	border.update_color_and_opacity()
 
 func _on_Collider_mouse_entered():
 	if !selected and !hovered:
 		hovered = true
 		border.modulate.a = hover_opacity
+		border.update_color_and_opacity()
 
 func _on_Collider_mouse_exited():
 	if hovered:
 		hovered = false
 		border.modulate.a = unselected_opacity
+		border.update_color_and_opacity()
 
 func _on_Collider_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("ui_click"):

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/UI/next_turn.png" type="Texture" id=1]
+
+[node name="Next Turn" type="TextureButton"]
+margin_left = 826.271
+margin_top = 65.6755
+margin_right = 1041.27
+margin_bottom = 181.676
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}

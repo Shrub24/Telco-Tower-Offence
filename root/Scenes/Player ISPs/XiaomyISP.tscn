@@ -13,3 +13,4 @@ modifiers = {
 "cyber_attack_offense": 1.0,
 "price": 0.75
 }
+is_player = true
