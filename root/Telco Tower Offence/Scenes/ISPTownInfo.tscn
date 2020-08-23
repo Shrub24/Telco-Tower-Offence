@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/ISPTownInfo.gd" type="Script" id=1]
+
+[node name="ISPTownInfo" type="Node"]
+script = ExtResource( 1 )
+base_advertising_mod = 0.3
+base_cyber_attack_mod = 0.9

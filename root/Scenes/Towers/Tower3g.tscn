@@ -5,7 +5,7 @@
 [node name="Tower3g" type="Node"]
 script = ExtResource( 1 )
 speeds = [ 1, 2, 3, 6 ]
-bandwidths = [ 2500, 5000, 10000, 20000 ]
+bandwidths = [ 500, 1000, 5000, 10000 ]
 operation_cost = 10000.0
 price = 100000
 upgrade_cost = [ 25000, 50000, 100000, 200000 ]

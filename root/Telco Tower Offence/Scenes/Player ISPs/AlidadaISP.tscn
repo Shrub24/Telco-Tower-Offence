@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/PlayerISPs/AlidadaISP.gd" type="Script" id=1]
+[ext_resource path="res://real assets/playerisps/alidada.png" type="Texture" id=2]
+
+[node name="ISP" type="Node"]
+script = ExtResource( 1 )
+ISP_logo = ExtResource( 2 )
+ISP_name = "Alidada"
+primary_colour = Color( 1, 0.0823529, 0.219608, 1 )
+secondary_colour = Color( 1, 1, 1, 1 )
+money = 200000

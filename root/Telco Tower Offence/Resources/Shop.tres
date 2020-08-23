@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Shop.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Towers/Tower3g.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Towers/Tower4g.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Towers/Tower5g.tscn" type="PackedScene" id=4]
+
+[resource]
+script = ExtResource( 1 )
+tower_3g = ExtResource( 2 )
+tower_4g = ExtResource( 3 )
+tower_5g = ExtResource( 4 )
