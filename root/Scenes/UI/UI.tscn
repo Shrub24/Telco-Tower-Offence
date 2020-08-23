@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Scripts/UI/UIController.gd" type="Script" id=1]
 [ext_resource path="res://Assets/UI/down.png" type="Texture" id=2]
@@ -48,9 +48,12 @@
 [ext_resource path="res://Assets/UI/buy4gtower_false.png" type="Texture" id=46]
 [ext_resource path="res://Assets/UI/buy5gtower_false.png" type="Texture" id=47]
 [ext_resource path="res://Assets/UI/buy3gtower_false.png" type="Texture" id=48]
-[ext_resource path="res://Assets/UI/next_turn_unselected.png" type="Texture" id=49]
+[ext_resource path="res://Assets/UI/brand_image.png" type="Texture" id=49]
 [ext_resource path="res://Assets/UI/next_turn_hovered.png" type="Texture" id=50]
 [ext_resource path="res://Assets/Theme/Town Panel.tres" type="Theme" id=51]
+[ext_resource path="res://Assets/UI/PANCOGAN.png" type="Texture" id=52]
+[ext_resource path="res://Assets/UI/vodaclone.png" type="Texture" id=53]
+[ext_resource path="res://Assets/UI/elonmask.png" type="Texture" id=54]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 45 )
@@ -84,7 +87,6 @@ bandwidth_button = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/V
 progress_bar_6g = NodePath("ProgressBar")
 connection_label = NodePath("Panel/MarginContainer/HBoxContainer2/MarginContainer/HBoxContainer2/Label")
 connection_icon = NodePath("Panel/MarginContainer/HBoxContainer2/MarginContainer/HBoxContainer2/MarginContainer/TextureRect")
-bottom_next_turn = NodePath("BottomNextTurn")
 top_next_turn = NodePath("TopNextTurn")
 town_name_label = NodePath("Right/MarginContainer/VBoxContainer/town name")
 affluency_label = NodePath("Right/MarginContainer/VBoxContainer/affluency")
@@ -93,6 +95,9 @@ tower_type_label = NodePath("Right/MarginContainer/VBoxContainer/tower")
 advertising_icon = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer/TextureRect")
 advertising_up = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/TextureButton")
 advertising_down = NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer2/HBoxContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/TextureButton2")
+player_ISP_icon = NodePath("Left/ISPInfoTabs/U/HBoxContainer4/Player_ISP_logo")
+player_ISP_label = NodePath("Left/ISPInfoTabs/U/HBoxContainer4/Player_ISP_name")
+town_connection_label = NodePath("Left/ISPInfoTabs/U/HBoxContainer5/town_connections")
 tower_button_paths = {
 "3g": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/3gTowerBuy"),
 "4g": NodePath("Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/4gTowerBuy"),
@@ -108,25 +113,11 @@ query = NodePath("Query")
 query_title_label = NodePath("Query/MarginContainer/VBoxContainer/Query Title")
 query_text_label = NodePath("Query/MarginContainer/VBoxContainer/Query Text")
 
-[node name="BottomNextTurn" type="TextureProgress" parent="."]
-margin_left = 825.679
-margin_top = 72.379
-margin_right = 1191.68
-margin_bottom = 252.379
-rect_scale = Vector2( 0.7, 0.7 )
-hint_tooltip = "Loading Next Turn..."
-texture_under = ExtResource( 49 )
-texture_progress = ExtResource( 50 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="TopNextTurn" type="TextureProgress" parent="."]
-margin_left = 827.457
-margin_top = 72.2634
-margin_right = 1193.46
-margin_bottom = 252.263
-rect_scale = Vector2( 0.7, 0.7 )
+margin_left = 1493.67
+margin_top = 842.553
+margin_right = 1859.67
+margin_bottom = 1022.55
 hint_tooltip = "Click to end your turn"
 texture_under = ExtResource( 50 )
 texture_progress = ExtResource( 3 )
@@ -642,6 +633,7 @@ margin_bottom = 1076.37
 rect_min_size = Vector2( 70, 100 )
 size_flags_horizontal = 7
 size_flags_vertical = 7
+theme = ExtResource( 23 )
 
 [node name="Left" type="Panel" parent="."]
 anchor_left = 0.021
@@ -649,19 +641,19 @@ anchor_top = 0.609
 anchor_right = 0.021
 anchor_bottom = 0.609
 margin_left = -40.32
-margin_top = 87.28
-margin_right = 228.68
-margin_bottom = 422.28
+margin_top = -20.9092
+margin_right = 342.68
+margin_bottom = 421.091
 theme = ExtResource( 51 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ISPInfoTabs" type="TabContainer" parent="Left"]
-margin_left = 7.0
-margin_top = 44.0
-margin_right = 232.0
-margin_bottom = 294.0
+margin_left = 24.9594
+margin_top = 42.8775
+margin_right = 331.959
+margin_bottom = 424.878
 rect_min_size = Vector2( 225, 200 )
 theme = ExtResource( 23 )
 tab_align = 0
@@ -675,13 +667,13 @@ anchor_bottom = 1.0
 margin_top = 49.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Left/ISPInfoTabs/U"]
-margin_right = 225.0
-margin_bottom = 64.0
+margin_right = 307.0
+margin_bottom = 63.0
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Left/ISPInfoTabs/U/HBoxContainer"]
 margin_right = 35.0
-margin_bottom = 64.0
+margin_bottom = 63.0
 rect_min_size = Vector2( 35, 35 )
 texture = ExtResource( 10 )
 expand = true
@@ -689,49 +681,50 @@ stretch_mode = 6
 
 [node name="MarginContainer" type="MarginContainer" parent="Left/ISPInfoTabs/U/HBoxContainer"]
 margin_left = 39.0
-margin_right = 225.0
-margin_bottom = 64.0
+margin_right = 307.0
+margin_bottom = 63.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Left/ISPInfoTabs/U/HBoxContainer/MarginContainer"]
-margin_right = 186.0
-margin_bottom = 64.0
+margin_right = 268.0
+margin_bottom = 63.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Left/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer"]
-margin_right = 186.0
-margin_bottom = 64.0
+margin_right = 268.0
+margin_bottom = 63.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="MarginContainer2" type="CenterContainer" parent="Left/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2"]
-margin_right = 59.0
-margin_bottom = 64.0
+margin_right = 86.0
+margin_bottom = 63.0
 size_flags_horizontal = 3
 
 [node name="PriceLabel" type="Label" parent="Left/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/MarginContainer2"]
-margin_left = 14.0
+margin_left = 28.0
 margin_top = 8.0
-margin_right = 44.0
+margin_right = 58.0
 margin_bottom = 55.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0.929412, 0.827451, 0, 1 )
 text = "0"
+align = 1
 valign = 1
 
 [node name="MarginContainer3" type="CenterContainer" parent="Left/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2"]
-margin_left = 63.0
-margin_right = 122.0
-margin_bottom = 64.0
+margin_left = 90.0
+margin_right = 176.0
+margin_bottom = 63.0
 size_flags_horizontal = 3
 
 [node name="DeltaPriceLabel" type="Label" parent="Left/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/MarginContainer3"]
-margin_left = 17.0
-margin_top = 14.0
-margin_right = 41.0
-margin_bottom = 50.0
+margin_left = 31.0
+margin_top = 13.0
+margin_right = 55.0
+margin_bottom = 49.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 19 )
@@ -740,9 +733,9 @@ text = "0"
 valign = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Left/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2"]
-margin_left = 126.0
-margin_right = 186.0
-margin_bottom = 64.0
+margin_left = 180.0
+margin_right = 268.0
+margin_bottom = 63.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_top = 10
@@ -750,12 +743,12 @@ custom_constants/margin_bottom = 5
 
 [node name="PriceChange" type="VBoxContainer" parent="Left/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/MarginContainer"]
 margin_top = 10.0
-margin_right = 60.0
-margin_bottom = 59.0
+margin_right = 88.0
+margin_bottom = 58.0
 rect_min_size = Vector2( 20, 20 )
 
 [node name="TextureButton" type="TextureButton" parent="Left/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/MarginContainer/PriceChange"]
-margin_right = 60.0
+margin_right = 88.0
 margin_bottom = 22.0
 size_flags_vertical = 3
 texture_normal = ExtResource( 14 )
@@ -764,41 +757,94 @@ stretch_mode = 4
 
 [node name="TextureButton2" type="TextureButton" parent="Left/ISPInfoTabs/U/HBoxContainer/MarginContainer/HBoxContainer/HBoxContainer2/MarginContainer/PriceChange"]
 margin_top = 26.0
-margin_right = 60.0
-margin_bottom = 49.0
+margin_right = 88.0
+margin_bottom = 48.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource( 2 )
 expand = true
 stretch_mode = 4
 
+[node name="HBoxContainer4" type="HBoxContainer" parent="Left/ISPInfoTabs/U"]
+margin_top = 67.0
+margin_right = 307.0
+margin_bottom = 130.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Player_ISP_logo" type="TextureRect" parent="Left/ISPInfoTabs/U/HBoxContainer4"]
+margin_right = 35.0
+margin_bottom = 63.0
+rect_min_size = Vector2( 35, 35 )
+texture = ExtResource( 17 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_editor_description_": "Your ISP"
+}
+
+[node name="Player_ISP_name" type="Label" parent="Left/ISPInfoTabs/U/HBoxContainer4"]
+margin_left = 39.0
+margin_top = 8.0
+margin_right = 307.0
+margin_bottom = 55.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 18 )
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Left/ISPInfoTabs/U"]
+margin_top = 134.0
+margin_right = 307.0
+margin_bottom = 197.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Left/ISPInfoTabs/U/HBoxContainer5"]
+margin_right = 35.0
+margin_bottom = 63.0
+rect_min_size = Vector2( 35, 35 )
+texture = ExtResource( 43 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_editor_description_": "Your ISP"
+}
+
+[node name="town_connections" type="Label" parent="Left/ISPInfoTabs/U/HBoxContainer5"]
+margin_left = 39.0
+margin_top = 8.0
+margin_right = 307.0
+margin_bottom = 55.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 18 )
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="Left/ISPInfoTabs/U"]
-margin_top = 68.0
-margin_right = 225.0
-margin_bottom = 132.0
+margin_top = 201.0
+margin_right = 307.0
+margin_bottom = 264.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Left/ISPInfoTabs/U/HBoxContainer2"]
 margin_right = 35.0
-margin_bottom = 64.0
+margin_bottom = 63.0
 rect_min_size = Vector2( 35, 35 )
-texture = ExtResource( 17 )
+hint_tooltip = "Your Brand Loyalty"
+texture = ExtResource( 4 )
 expand = true
 stretch_mode = 6
 
 [node name="loyalty" type="Label" parent="Left/ISPInfoTabs/U/HBoxContainer2"]
 margin_left = 39.0
 margin_top = 8.0
-margin_right = 225.0
+margin_right = 307.0
 margin_bottom = 55.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 18 )
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Left/ISPInfoTabs/U"]
-margin_top = 136.0
-margin_right = 225.0
-margin_bottom = 201.0
+margin_top = 268.0
+margin_right = 307.0
+margin_bottom = 333.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -806,14 +852,15 @@ size_flags_vertical = 3
 margin_right = 35.0
 margin_bottom = 65.0
 rect_min_size = Vector2( 35, 35 )
-texture = ExtResource( 4 )
+hint_tooltip = "Your Brand Image"
+texture = ExtResource( 49 )
 expand = true
 stretch_mode = 6
 
 [node name="image" type="Label" parent="Left/ISPInfoTabs/U/HBoxContainer3"]
 margin_left = 39.0
 margin_top = 9.0
-margin_right = 225.0
+margin_right = 307.0
 margin_bottom = 56.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 18 )
@@ -824,8 +871,9 @@ margin_left = 0.0
 margin_top = 49.0
 margin_right = 0.0
 margin_bottom = 0.0
-image_label = NodePath("../T/HBoxContainer3/MarginContainer2/brand_image")
-loyalty_label = NodePath("../T/HBoxContainer2/MarginContainer/brand_loyalty")
+ISP_logo = ExtResource( 17 )
+ISP_name = "Tedstra"
+ISP_colour = Color( 0, 0.215686, 0.278431, 1 )
 
 [node name="P" parent="Left/ISPInfoTabs" instance=ExtResource( 16 )]
 visible = false
@@ -833,9 +881,9 @@ margin_left = 0.0
 margin_top = 49.0
 margin_right = 0.0
 margin_bottom = 0.0
-price_label = NodePath("../../../Left/ISPInfoTabs/P/HBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/PriceLabel")
-image_label = NodePath("../P/HBoxContainer3/MarginContainer2/brand_image")
-loyalty_label = NodePath("../P/HBoxContainer2/MarginContainer/brand_loyalty")
+ISP_logo = ExtResource( 52 )
+ISP_name = "PanCogan Mbl"
+ISP_colour = Color( 0.933333, 0.678431, 0.4, 1 )
 
 [node name="V" parent="Left/ISPInfoTabs" instance=ExtResource( 16 )]
 visible = false
@@ -843,9 +891,9 @@ margin_left = 0.0
 margin_top = 49.0
 margin_right = 0.0
 margin_bottom = 0.0
-price_label = NodePath("../../../Left/ISPInfoTabs/V/HBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/PriceLabel")
-image_label = NodePath("../V/HBoxContainer3/MarginContainer2/brand_image")
-loyalty_label = NodePath("../V/HBoxContainer2/MarginContainer/brand_loyalty")
+ISP_logo = ExtResource( 53 )
+ISP_name = "Vodaclone"
+ISP_colour = Color( 0.901961, 0, 0, 1 )
 
 [node name="E" parent="Left/ISPInfoTabs" instance=ExtResource( 16 )]
 visible = false
@@ -853,9 +901,9 @@ margin_left = 0.0
 margin_top = 49.0
 margin_right = 0.0
 margin_bottom = 0.0
-price_label = NodePath("../../../Left/ISPInfoTabs/E/HBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/PriceLabel")
-image_label = NodePath("../E/HBoxContainer3/MarginContainer2/brand_image")
-loyalty_label = NodePath("../E/HBoxContainer2/MarginContainer/brand_loyalty")
+ISP_logo = ExtResource( 54 )
+ISP_name = "ElonMask Co"
+ISP_colour = Color( 0.780392, 0.87451, 0.760784, 1 )
 
 [node name="Right" type="Panel" parent="."]
 margin_left = 1562.49
@@ -882,35 +930,38 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="Right/MarginContainer"]
 margin_top = 15.0
 margin_right = 319.0
-margin_bottom = 224.0
+margin_bottom = 257.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="town name" type="Label" parent="Right/MarginContainer/VBoxContainer"]
+margin_top = -1.0
 margin_right = 319.0
-margin_bottom = 47.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 0, 89 )
 text = "Lakeside Reserve"
 align = 2
+autowrap = true
 
 [node name="affluency" type="Label" parent="Right/MarginContainer/VBoxContainer"]
-margin_top = 51.0
+margin_top = 93.0
 margin_right = 319.0
-margin_bottom = 98.0
+margin_bottom = 140.0
 text = "$$$"
 align = 2
 
 [node name="population" type="Label" parent="Right/MarginContainer/VBoxContainer"]
-margin_top = 102.0
+margin_top = 144.0
 margin_right = 319.0
-margin_bottom = 149.0
+margin_bottom = 191.0
 text = "4000000 pop."
 align = 2
 
 [node name="tower" type="Label" parent="Right/MarginContainer/VBoxContainer"]
-margin_top = 153.0
+margin_top = 195.0
 margin_right = 319.0
-margin_bottom = 200.0
+margin_bottom = 242.0
 align = 2
 
 [node name="Panel" type="Panel" parent="."]
@@ -1012,8 +1063,6 @@ margin_right = 658.0
 margin_bottom = 47.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
-[connection signal="mouse_entered" from="BottomNextTurn" to="." method="_on_BottomNextTurn_mouse_entered"]
-[connection signal="mouse_exited" from="BottomNextTurn" to="." method="_on_BottomNextTurn_mouse_exited"]
 [connection signal="gui_input" from="TopNextTurn" to="." method="_on_TopNextTurn_gui_input"]
 [connection signal="mouse_exited" from="TopNextTurn" to="." method="_on_TopNextTurn_mouse_exited"]
 [connection signal="gui_input" from="Bottom/Bottom Panel/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/3gTowerBuy" to="." method="_on_3gTowerBuy_gui_input"]

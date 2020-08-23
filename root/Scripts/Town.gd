@@ -142,6 +142,7 @@ func get_ISP_shares():
 		
 	return ISP_shares
 
+
 func get_ISP_town_infos():
 	var town_infos = ISPs.values()
 	return town_infos

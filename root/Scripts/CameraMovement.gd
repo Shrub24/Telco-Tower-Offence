@@ -36,14 +36,14 @@ func _process(delta):
 	var y = position.y
 	
 	#mouse camera movement
-	if mouse_position.x < margin_x:
-		x = lerp(position.x, position.x - abs(mouse_position.x - margin_x)/margin_x * camera_speed * zoom.x, camera_speed * delta)
-	elif mouse_position.x > get_viewport_rect().size.x - margin_x:
-		x = lerp(position.x, position.x + abs(mouse_position.x - get_viewport_rect().size.x + margin_x)/margin_x * camera_speed * zoom.x, camera_speed * delta)
-	if mouse_position.y < margin_y:
-		y = lerp(position.y, position.y - abs(mouse_position.y - margin_y)/margin_y * camera_speed * zoom.y, camera_speed * delta)
-	elif mouse_position.y > get_viewport_rect().size.y - margin_y:
-		y = lerp(position.y, position.y + abs(mouse_position.y - get_viewport_rect().size.y + margin_y)/margin_y * camera_speed * zoom.y, camera_speed * delta)
+#	if mouse_position.x < margin_x:
+#		x = lerp(position.x, position.x - abs(mouse_position.x - margin_x)/margin_x * camera_speed * zoom.x, camera_speed * delta)
+#	elif mouse_position.x > get_viewport_rect().size.x - margin_x:
+#		x = lerp(position.x, position.x + abs(mouse_position.x - get_viewport_rect().size.x + margin_x)/margin_x * camera_speed * zoom.x, camera_speed * delta)
+#	if mouse_position.y < margin_y:
+#		y = lerp(position.y, position.y - abs(mouse_position.y - margin_y)/margin_y * camera_speed * zoom.y, camera_speed * delta)
+#	elif mouse_position.y > get_viewport_rect().size.y - margin_y:
+#		y = lerp(position.y, position.y + abs(mouse_position.y - get_viewport_rect().size.y + margin_y)/margin_y * camera_speed * zoom.y, camera_speed * delta)
 	
 	
 	#keyboard camera movement

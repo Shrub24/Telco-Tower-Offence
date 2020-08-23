@@ -150,9 +150,9 @@ margin_right = 1819.0
 margin_bottom = 625.0
 
 [node name="Label4" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
-margin_right = 418.0
-margin_bottom = 109.0
-text = "Knockia"
+margin_right = 400.0
+margin_bottom = 89.0
+text = "Nockia"
 align = 1
 
 [node name="Knockia" type="TextureButton" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]

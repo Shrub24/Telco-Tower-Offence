@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/UI/brand_loyalty.png" type="Texture" id=1]
 [ext_resource path="res://Assets/UI/coin.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/UI/ISP_tab.gd" type="Script" id=3]
-[ext_resource path="res://Assets/UI/tedstra.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/brand_image.png" type="Texture" id=4]
 [ext_resource path="res://Assets/fonts/Money Font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/UI/okay_connection.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/elonmask.png" type="Texture" id=7]
 
 [node name="AI ISP" type="VBoxContainer"]
 anchor_right = 1.0
@@ -17,77 +19,104 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-price_label = NodePath("HBoxContainer/MarginContainer/HBoxContainer/MarginContainer2/PriceLabel")
-image_label = NodePath("HBoxContainer3/MarginContainer2/brand_image")
-loyalty_label = NodePath("HBoxContainer2/MarginContainer/brand_loyalty")
+price_label = NodePath("HBoxContainer/PriceLabel")
+image_label = NodePath("HBoxContainer3/brand_image")
+loyalty_label = NodePath("HBoxContainer2/brand_loyalty")
+connection_label = NodePath("HBoxContainer5/ConnectionLabel")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_right = 1912.0
-margin_bottom = 345.0
+margin_bottom = 205.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 margin_right = 35.0
-margin_bottom = 345.0
+margin_bottom = 205.0
 rect_min_size = Vector2( 35, 35 )
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+[node name="PriceLabel" type="Label" parent="HBoxContainer"]
 margin_left = 39.0
 margin_right = 1912.0
-margin_bottom = 345.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.929412, 0.827451, 0, 1 )
+valign = 1
+
+[node name="Logo_Container" type="HBoxContainer" parent="."]
+margin_top = 209.0
+margin_right = 1912.0
+margin_bottom = 414.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer"]
-margin_right = 1873.0
-margin_bottom = 345.0
+[node name="Logo" type="TextureRect" parent="Logo_Container"]
+margin_right = 35.0
+margin_bottom = 205.0
+rect_min_size = Vector2( 35, 35 )
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
 
-[node name="MarginContainer2" type="CenterContainer" parent="HBoxContainer/MarginContainer/HBoxContainer"]
-margin_right = 1873.0
-margin_bottom = 345.0
+[node name="BrandLabel" type="Label" parent="Logo_Container"]
+margin_left = 39.0
+margin_right = 1912.0
+margin_bottom = 205.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.929412, 0.827451, 0, 1 )
+valign = 1
 
-[node name="PriceLabel" type="Label" parent="HBoxContainer/MarginContainer/HBoxContainer/MarginContainer2"]
-margin_left = 936.0
-margin_top = 153.0
-margin_right = 936.0
-margin_bottom = 192.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
+[node name="HBoxContainer5" type="HBoxContainer" parent="."]
+margin_top = 418.0
+margin_right = 1912.0
+margin_bottom = 623.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer5"]
+margin_right = 35.0
+margin_bottom = 205.0
+rect_min_size = Vector2( 35, 35 )
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="ConnectionLabel" type="Label" parent="HBoxContainer5"]
+margin_left = 39.0
+margin_right = 1912.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.929412, 0.827451, 0, 1 )
 valign = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
-margin_top = 349.0
+margin_top = 627.0
 margin_right = 1912.0
-margin_bottom = 694.0
+margin_bottom = 832.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer2"]
 margin_right = 35.0
-margin_bottom = 345.0
+margin_bottom = 205.0
 rect_min_size = Vector2( 35, 35 )
-texture = ExtResource( 4 )
+texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
-[node name="MarginContainer" type="CenterContainer" parent="HBoxContainer2"]
+[node name="brand_loyalty" type="Label" parent="HBoxContainer2"]
 margin_left = 39.0
-margin_right = 1912.0
-margin_bottom = 345.0
-size_flags_horizontal = 3
-
-[node name="brand_loyalty" type="Label" parent="HBoxContainer2/MarginContainer"]
-margin_left = 936.0
-margin_top = 153.0
-margin_right = 936.0
-margin_bottom = 192.0
+margin_right = 39.0
+margin_bottom = 39.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 5 )
@@ -95,7 +124,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 valign = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="."]
-margin_top = 698.0
+margin_top = 836.0
 margin_right = 1912.0
 margin_bottom = 1044.0
 size_flags_horizontal = 3
@@ -103,23 +132,16 @@ size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer3"]
 margin_right = 35.0
-margin_bottom = 346.0
+margin_bottom = 208.0
 rect_min_size = Vector2( 35, 35 )
-texture = ExtResource( 1 )
+texture = ExtResource( 4 )
 expand = true
 stretch_mode = 6
 
-[node name="MarginContainer2" type="CenterContainer" parent="HBoxContainer3"]
+[node name="brand_image" type="Label" parent="HBoxContainer3"]
 margin_left = 39.0
-margin_right = 1912.0
-margin_bottom = 346.0
-size_flags_horizontal = 3
-
-[node name="brand_image" type="Label" parent="HBoxContainer3/MarginContainer2"]
-margin_left = 936.0
-margin_top = 153.0
-margin_right = 936.0
-margin_bottom = 192.0
+margin_right = 39.0
+margin_bottom = 39.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 5 )
