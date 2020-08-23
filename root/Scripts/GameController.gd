@@ -253,15 +253,15 @@ func ui_update_connections():
 	var total_pop = 0
 	for town in towns:
 		total_pop += town.population
-	var proportion = curr/total_pop
+	var proportion = float(curr)/total_pop
 	var level = "no"
-	if proportion > 0.2:
+	if proportion > 0.3:
 		level = "great"
-	elif proportion > 0.1:
+	elif proportion > 0.2:
 		level = "okay"
-	elif proportion > 0.03:
+	elif proportion > 0.1:
 		level = "poor"
-	UI_controller.update_connections(curr, level, proportion)
+	UI_controller.update_connections(curr, level, int(proportion*100))
 
 func ui_update_town_connections():
 	var shares = selected_town.get_ISP_shares()

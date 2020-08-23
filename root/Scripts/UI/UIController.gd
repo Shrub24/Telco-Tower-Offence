@@ -231,7 +231,7 @@ func update_ISP_info(loyalty, image, price, ISP):
 	ISP_info.update_loyalty(loyalty)
 
 func update_connections(connections, level, proportion):
-	connection_label.text = "%s connections (%s%%)" % [connections, int(proportion * 100)]
+	connection_label.text = "%s connections (%s%%)" % [connections, proportion]
 	connection_icon.texture = connection_icon.textures[level]
 
 func update_6g_progress(value):
