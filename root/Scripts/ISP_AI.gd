@@ -72,22 +72,23 @@ func set_town_prices(action_budget, revenue, operational_costs):
 
 func do_actions(action_budget):
 	# pass by ref?
-	
+
+		
 	var delta_conns = []
 	#sort by lowest delta_connections
 	for town in ISP.towns:
 		#refactor to use getter
 		var town_info = town.ISPs[ISP]
 		delta_conns.append([town_info.connections_delta, town])
-		
+
 	delta_conns.sort_custom(self, "first_element_sorter")
-		
+
 	for town_deltas in delta_conns:
 		var town = town_deltas[1]
 		var town_info = town.ISPs[ISP]
 		# todo use town get share isp function
 		var share = float(town_info.connections)/town.population
-		
+
 		# todo check current adverising
 		# decisions of actions
 		# decisions of actions
