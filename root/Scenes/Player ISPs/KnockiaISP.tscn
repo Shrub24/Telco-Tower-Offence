@@ -14,4 +14,3 @@ modifiers = {
 "price": 1.0
 }
 money = 200000
-is_player = true

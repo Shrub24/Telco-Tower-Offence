@@ -90,11 +90,11 @@ func init_town_ISPs(AIs):
 			var tower = ISPTownInfo.tower
 			propagate_brand_image(tower, ISPTownInfo.ISP, tower.get_reach())
 			
-	if town_name == "Berwick":
-		for isp in ISPs.keys():
-			print(isp.ISP_name + ": " + str(ISPs[isp].connections))
-		print("No ISPpop: " + str(no_ISP_pop))
-		print("\n")
+#	if town_name == "Berwick":
+#		for isp in ISPs.keys():
+#			print(isp.ISP_name + ": " + str(ISPs[isp].connections))
+#		print("No ISPpop: " + str(no_ISP_pop))
+#		print("\n")
 
 func set_town_colour():
 	hover_opacity = base_hover_opacity
@@ -176,7 +176,8 @@ func update_turn():
 		if town_info.tower:
 			town_info.get_connections_loss(ISPTownInfos)
 			affluency_connection_delta[town_info] = town_info.get_affluency_delta(affluency)
-		
+	
+	
 	normalise_affluency_delta()
 	affluency_convert_pos_share_to_pop()
 
@@ -228,8 +229,8 @@ func normalise_affluency_delta():
 		if delta > 0:
 			pos_sum += delta
 	for ISP in affluency_connection_delta.keys():
-		if pos_sum > 1:
-			affluency_connection_delta[ISP] /= pos_sum
+		if pos_sum > 100:
+			affluency_connection_delta[ISP] /= (pos_sum/100)
 
 func build_tower(ISP, tower):
 	get_ISP_town_info(ISP).build_tower(tower)
