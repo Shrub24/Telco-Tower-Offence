@@ -35,7 +35,7 @@ export(NodePath) onready var tower_sprite = get_node(tower_sprite) if tower_spri
 export var tower_loc = [0, 0] 
 
 #put this somewhere else?
-export var base_aoe_image = 0.1
+export var base_aoe_image = 0.05
 
 export var min_no_ISP = 2
 export var max_no_ISP = 10
@@ -43,6 +43,8 @@ var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	population /= 10
 
 	hover_opacity = base_hover_opacity
 	unselected_opacity = base_unselected_opacity
@@ -55,8 +57,12 @@ func _ready():
 	# set initial pop with no ISP
 	rng.randomize()
 	randomize()
-	no_ISP_pop = int(rng.randf_range(min_no_ISP, max_no_ISP) * population/100)
 	
+	if check_ISPs_exist() or starter_town:
+		no_ISP_pop = int(rng.randf_range(min_no_ISP, max_no_ISP) * population/100)
+	else:
+		no_ISP_pop = population
+		
 	randomise_shares()
 	
 func randomise_shares():
@@ -71,7 +77,12 @@ func randomise_shares():
 	for i in range(0, len(ISPs)):
 		shares[ISPs[i]] = share_vals[i]
 
-
+func check_ISPs_exist():
+	for val in shares.values():
+		if val != 0:
+			return true
+	return false
+	
 func init_starter_town(player):
 	create_ISPTownInfo(player.ISP)
 	Player_ISPTownInfo.generate_starter(no_ISP_pop)
@@ -90,11 +101,11 @@ func init_town_ISPs(AIs):
 			var tower = ISPTownInfo.tower
 			propagate_brand_image(tower, ISPTownInfo.ISP, tower.get_reach())
 			
-	if town_name == "Berwick":
-		for isp in ISPs.keys():
-			print(isp.ISP_name + ": " + str(ISPs[isp].connections))
-		print("No ISPpop: " + str(no_ISP_pop))
-		print("\n")
+#	if town_name == "Berwick":
+#		for isp in ISPs.keys():
+#			print(isp.ISP_name + ": " + str(ISPs[isp].connections))
+#		print("No ISPpop: " + str(no_ISP_pop))
+#		print("\n")
 
 func set_town_colour():
 	hover_opacity = base_hover_opacity
@@ -177,19 +188,14 @@ func update_turn():
 		if town_info.tower:
 			town_info.get_connections_loss(ISPTownInfos)
 			affluency_connection_delta[town_info] = town_info.get_affluency_delta(affluency)
-		
+	
+	
 	normalise_affluency_delta()
 	affluency_convert_pos_share_to_pop()
 
 	for town_info in ISPTownInfos:
 		if town_info.tower:
 			town_info.get_connections_delta()
-#	if town_name == "Juliest":
-#		for isp in ISPs.keys():
-#			print(isp.ISP_name + ": " + str(ISPs[isp].connections))
-#		print("No ISPpop: " + str(no_ISP_pop))
-#		print("\n")
-#	print(affluency_connection_delta)
 	for town_info in ISPTownInfos:
 		town_info.update_turn(get_max_speed())
 		if town_info.tower:
@@ -199,7 +205,6 @@ func update_turn():
 func create_ISPTownInfo(ISP):
 	var ISPTownInfo = ISPTownInfo_scene.instance()
 	ISPTownInfo.initialise(ISP, self, population)
-	ISP.towns.append(self)
 	ISPs[ISP] = ISPTownInfo
 	if ISP.is_player:
 		Player_ISPTownInfo = ISPTownInfo
@@ -229,8 +234,8 @@ func normalise_affluency_delta():
 		if delta > 0:
 			pos_sum += delta
 	for ISP in affluency_connection_delta.keys():
-		if pos_sum > 1:
-			affluency_connection_delta[ISP] /= pos_sum
+		if pos_sum > 100:
+			affluency_connection_delta[ISP] /= (pos_sum/100)
 
 func build_tower(ISP, tower):
 	get_ISP_town_info(ISP).build_tower(tower)

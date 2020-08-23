@@ -2,7 +2,7 @@ extends Node
 
 var connections_delta = 0
 export var min_price = 1
-export var max_price = 250
+export var max_price = 100
 var connections = 0
 var brand_loyalty = 0.0
 var brand_image = 0.0
@@ -28,9 +28,9 @@ var connection_loss = {}
 
 const min_affluency = 1
 const max_affluency = 99
-var max_affluency_pricing = max_price - 100
-var min_affluency_pricing = min_price + 100
-const affluency_dampening_factor = 15
+var max_affluency_pricing = max_price
+var min_affluency_pricing = min_price + 5
+const affluency_dampening_factor = 40
 
 export var base_starting_price = -15
 export var max_share_factor = 12

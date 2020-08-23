@@ -7,4 +7,4 @@
 script = ExtResource( 1 )
 ISP_logo = ExtResource( 2 )
 ISP_name = "Who-awei"
-is_player = true
+money = 200000
